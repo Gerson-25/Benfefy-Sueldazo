@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatis_loyalty_plan_label">What is a loyalty program?</string>
+    <string name="corporate_label">Corporate</string>
+    <string name="corporate_desc_label">If you are part of a group, company or association that provides benefits to its members, we can integrate all the exclusive benefits through Benefy.</string>
+    <string name="miles_desc_label">Accumulate points or miles according to the policies of each business to redeem for prizes or discounts with which the business values your loyalty and frequency of use. In addition, there is the possibility of acquiring miles or extra points with exclusive promotions.</string>
+    <string name="seal_label">Stamps</string>
+    <string name="seals_desc_label">It participates digitally in the stamp loyalty system. No more cards in your wallet, now you can carry your favorite merchants loyalty cards in the App along with all the other benefits.</string>
+    <string name="need_more_info_label">Do you need more information?</string>
+    <string name="contactus_label">Contact us and we will gladly assist you</string>
+    <string name="email_loyalty_label">Email</string>
+    <string name="whataspp_loyalty_label">Whatsapp</string>
+    <string name="unlink_label">Unlink</string>
+    <string name="must_select_plan">You must select a plan!</string>
+    <string name="plan_type_label">Plan type</string>
+    <string name="categories_label">Categories</string>
+    <string name="commerce_label">Commerces</string>
+    <string name="loyalty_label">Loyalty</string>
+</resources>

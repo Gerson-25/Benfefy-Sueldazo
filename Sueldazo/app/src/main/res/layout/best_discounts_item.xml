@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemId"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:layout_margin="4dp"
+    android:foregroundTint="@android:color/transparent"
+    cardview:cardBackgroundColor="@android:color/transparent"
+    cardview:cardElevation="0dp"
+    cardview:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bannerImageId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/commerceImageId"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            cardview:layout_constraintStart_toStartOf="parent"
+            cardview:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/commerce_info_label"/>
+
+        <LinearLayout
+            android:layout_width="125dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:background="@drawable/bg_rounded_discount"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cupones de hasta"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/myriad_pro_regular"/>
+
+                <TextView
+                    android:id="@+id/discountPercentageId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/circular_bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="de descuento"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/myriad_pro_bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

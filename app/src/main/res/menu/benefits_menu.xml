@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/scan"
+        android:icon="@drawable/ic_scan"
+        android:title="@string/scanner_menu"
+        app:showAsAction="ifRoom"
+        tools:gravity="left" />
+
+    <item
+        android:id="@+id/notificaciones"
+        app:actionLayout="@layout/custom_notification_layout"
+        android:icon="@drawable/ic_notificacion"
+        android:title="@string/notificaciones_menu"
+        app:showAsAction="always" />
+
+</menu>

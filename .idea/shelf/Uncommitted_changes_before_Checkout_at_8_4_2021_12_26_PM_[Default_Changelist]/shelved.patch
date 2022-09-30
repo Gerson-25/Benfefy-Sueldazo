@@ -1,0 +1,59 @@
+Index: app/hms/release/output-metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 2,\r\n  \"artifactType\": {\r\n    \"type\": \"APK\",\r\n    \"kind\": \"Directory\"\r\n  },\r\n  \"applicationId\": \"com.syntepro.appbeneficiosbolivia\",\r\n  \"variantName\": \"hmsRelease\",\r\n  \"elements\": [\r\n    {\r\n      \"type\": \"SINGLE\",\r\n      \"filters\": [],\r\n      \"versionCode\": 87,\r\n      \"versionName\": \"5.6.8\",\r\n      \"outputFile\": \"app-hms-release.apk\"\r\n    }\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/hms/release/output-metadata.json	(revision 6a23610531901f2e49ced0992c77284ab9dd9d5b)
++++ app/hms/release/output-metadata.json	(date 1628006477583)
+@@ -10,7 +10,7 @@
+     {
+       "type": "SINGLE",
+       "filters": [],
+-      "versionCode": 87,
++      "versionCode": 84,
+       "versionName": "5.6.8",
+       "outputFile": "app-hms-release.apk"
+     }
+Index: app/gms/release/output-metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 2,\r\n  \"artifactType\": {\r\n    \"type\": \"APK\",\r\n    \"kind\": \"Directory\"\r\n  },\r\n  \"applicationId\": \"com.syntepro.appbeneficiosbolivia\",\r\n  \"variantName\": \"gmsRelease\",\r\n  \"elements\": [\r\n    {\r\n      \"type\": \"SINGLE\",\r\n      \"filters\": [],\r\n      \"versionCode\": 87,\r\n      \"versionName\": \"5.6.8\",\r\n      \"outputFile\": \"app-gms-release.apk\"\r\n    }\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/gms/release/output-metadata.json	(revision 6a23610531901f2e49ced0992c77284ab9dd9d5b)
++++ app/gms/release/output-metadata.json	(date 1628005316631)
+@@ -10,7 +10,7 @@
+     {
+       "type": "SINGLE",
+       "filters": [],
+-      "versionCode": 87,
++      "versionCode": 84,
+       "versionName": "5.6.8",
+       "outputFile": "app-gms-release.apk"
+     }
+Index: app/src/androidTest/java/com/syntepro/appbeneficiosbolivia/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.syntepro.appbeneficiosbolivia;\r\n\r\nimport android.content.Context;\r\nimport androidx.test.InstrumentationRegistry;\r\nimport androidx.test.runner.AndroidJUnit4;\r\n\r\nimport org.junit.Test;\r\nimport org.junit.runner.RunWith;\r\n\r\nimport static org.junit.Assert.*;\r\n\r\n/**\r\n * Instrumented test, which will execute on an Android device.\r\n *\r\n * @see <a href=\"http://d.android.com/tools/testing\">Testing documentation</a>\r\n */\r\n@RunWith(AndroidJUnit4.class)\r\npublic class ExampleInstrumentedTest {\r\n    @Test\r\n    public void useAppContext() {\r\n        // Context of the app under test.\r\n        Context appContext = InstrumentationRegistry.getTargetContext();\r\n\r\n        assertEquals(\"com.syntepro.appbeneficiosbolivia\", appContext.getPackageName());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/androidTest/java/com/syntepro/appbeneficiosbolivia/ExampleInstrumentedTest.java	(revision 6a23610531901f2e49ced0992c77284ab9dd9d5b)
++++ app/src/androidTest/java/com/syntepro/appbeneficiosbolivia/ExampleInstrumentedTest.java	(date 1627489951462)
+@@ -1,13 +1,7 @@
+ package com.syntepro.appbeneficiosbolivia;
+ 
+ import android.content.Context;
+-import androidx.test.InstrumentationRegistry;
+-import androidx.test.runner.AndroidJUnit4;
+ 
+-import org.junit.Test;
+-import org.junit.runner.RunWith;
+-
+-import static org.junit.Assert.*;
+ 
+ /**
+  * Instrumented test, which will execute on an Android device.

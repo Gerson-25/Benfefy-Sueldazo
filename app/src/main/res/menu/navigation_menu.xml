@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+
+        <item android:id="@+id/navigation_drawer_item3"
+            android:icon="@drawable/ic_pais"
+            android:title=""
+            app:actionLayout="@layout/countryspinner_navigation"
+            android:checked="false"/>
+
+        <item
+            android:title="Test"
+            android:id="@+id/nav_test"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_perfil_menu"/>
+        <item
+            android:title="@string/perfil_menu"
+            android:id="@+id/nav_profile"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_perfil_menu"/>
+
+        <item
+            android:title="@string/terminos_y_condiciones_menu"
+            android:id="@+id/terminos"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_conditions"/>
+
+        <item
+            android:title="@string/comentarios_menu"
+            android:id="@+id/comentarios"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_report"/>
+
+        <item
+            android:title="@string/ayuda_menu"
+            android:id="@+id/ayuda"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_help"/>
+
+        <item
+            android:title="@string/acerca_de"
+            android:id="@+id/acercaDe"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_about"/>
+
+        <item
+            android:title="@string/configuracion_menu"
+            android:id="@+id/configuracion"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_configuration"/>
+
+        <item
+            android:title="@string/cerrar_sesi_n_menu"
+            android:id="@+id/logout"
+            android:fontFamily="@font/normal"
+            android:icon="@drawable/ic_menu_logout"/>
+
+    </group>
+
+</menu>

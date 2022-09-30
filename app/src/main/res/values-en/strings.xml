@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Benefy</string>
+
+    //Facebook
+    <string name="facebook_application_id" translatable="false">508540496613548</string>
+
+    <string name="default_notification_channel_id">locationtest_channel</string>
+    <string name="geofence_transition_invalid_type">Geofence Transition Invalid Type</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register_btn">SIGN UP</string>
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="no_account">Don\'t you have an account yet?, </string>
+
+    //Fragment login
+    <string name="login_usr">User</string>
+    <string name="login_pass">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="login_recover_pass">Forget Password?</string>
+
+    //Fragment_sign_up
+    <string name="usuario_su">Email</string>
+    <string name="apellido_su">Last Name</string>
+    <string name="telefono_su">Phone</string>
+    <string name="fechaNac_su">Birth Date</string>
+    <string name="hint_su">dd/mm/aaaa</string>
+    <string name="hinttel_su">xxxx-xxxx</string>
+    <string name="genero_su">Gender</string>
+    <string name="estado_su">Marital Status</string>
+    <string name="email_su">Email</string>
+    <string name="pass_su">Password</string>
+    <string name="conPass_su">Confirm Password</string>
+    <string name="depto_su">Department</string>
+    <string name="prov_su">Province</string>
+    <string name="codigo_su">+591</string>
+    <string name="no_tienes_una_cuenta_registrate_main">Don\'t have an account? Sign Up!</string>
+    <string name="debil_su">Weak</string>
+    <string name="date_format">mm/dd/yyyy</string>
+
+    //Activity Reset Password
+    <string name="recover_text">We can help you recover your password, we will send you a new password to your email to access your account.</string>
+    <string name="recover_email">Email</string>
+    <string name="recover_btn">Recover</string>
+    <string name="recover_correo">Email</string>
+    <string name="recover_atras">Back</string>
+
+    //Fragment Explorar
+    <string name="hint_exp">Search on Explore</string>
+    <string name="buscar_exp">SEARCH</string>
+    <string name="cerca_exp">Near you</string>
+    <string name="aprovecha_exp">Advantage now</string>
+    <string name="nuevo_exp">The new</string>
+    <string name="descuentos_exp">Best discounts</string>
+    <string name="personalizar_exp">Personalize</string>
+    <string name="accesos_exp">My Preferences</string>
+
+    //Fragment Favoritos
+    <string name="no_hay_fav">No favorites</string>
+
+    //Fragment Beneficios
+    <string name="no_hay_cat">No active categories</string>
+
+    //Activity Tipo Beneficio
+    <string name="no_hay_be">No benefits</string>
+
+    //Fragment Cupon
+    <string name="no_hay_cu">No campaigns</string>
+    <string name="title_activity_detalle_cupon">Detail Coupon Activity</string>
+
+    //Detalle Cupon
+    <string name="desc_de">Description</string>
+    <string name="cond_de">Terms and Conditions</string>
+    <string name="tiem_de">Remaining time</string>
+    <string name="efectuar_de">Steps to make the redemption</string>
+    <string name="cant_de">Available</string>
+    <string name="noCanjes_de">Sold out coupons!</string>
+    <string name="pasos">1. Generate QR Code at the time of making the exchange in one of the designated establishments. 2. Present it at the cash register of the store to be scanned or typed. 3. Enjoy your benefit, promotion or discount.</string>
+
+    //Activity Perfil
+    <string name="ahorroA_p">Accumulated Savings</string>
+    <string name="perdida_p">Lost</string>
+    <string name="ahorro_p">Saving</string>
+    <string name="pendiente_c">Pending Exchange</string>
+    <string name="other_p">Others</string>
+
+    //Bottom Navigation Menu
+    <string name="explorar_menu">Explore</string>
+    <string name="cupones_menu">Coupons</string>
+    <string name="beneficios_menu">Benefits</string>
+    <string name="favoritos_menu">Favorites</string>
+    <string name="canje_menu">Exchanges</string>
+
+    //Activity Comentarios
+    <string name="enviar_coment">SEND</string>
+    <string name="mensaje_coment">Message:</string>
+    <string name="comentarios_coment">Comments</string>
+
+    //Activity Codigo
+    <string name="adv_qr">** When generating this code, DO NOT RESERVE the promotion. You must make the exchange in the establishment to validate the promotion.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="no_hay_comercios">No stores</string>
+    <string name="mes_actual">Current:</string>
+    <string name="ahorro_del_mes">Saving of the month</string>
+    <string name="calificaci_n">Rating</string>
+    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">How do you feel about our app services?</string>
+    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">1. In general, how satisfied are you with the benefit you have acquired?</string>
+    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">2. Would you recommend this promotion?</string>
+    <string name="aceptar">Accept</string>
+    <string name="omitir">Skip</string>
+
+    //Menu
+    <string name="perfil_menu">Profile</string>
+    <string name="terminos_y_condiciones_menu">Terms and Conditions</string>
+    <string name="comentarios_menu">Comments and Reports</string>
+    <string name="configuracion_menu">Configuration</string>
+    <string name="ayuda_menu">Help</string>
+    <string name="cerrar_sesi_n_menu">Log out</string>
+    <string name="scanner_menu">Scanner</string>
+    <string name="notificaciones_menu">Notifications</string>
+    <string name="gps_menu">GPS</string>
+    <string name="busca_tus_cupones_menu">Find your coupons</string>
+    <string name="compartir_menu">Share</string>
+    <string name="cambio_pais_consulta">Change country</string>
+    <string name="otras_opciones">Advanced options</string>
+    <string name="direccion_menu">Addresses</string>
+
+    //Popup
+    <string name="canje_exitoso_popup">SUCCESSFUL EXCHANGE!</string>
+    <string name="has_canjeado_tu_cup_n_exitosamente_gracias_por_utilizar_tu_app_de_beneficios_popup">You have successfully redeemed your coupon. Thank you for using Benefy App.</string>
+    <string name="nombre_su">Name</string>
+
+    //Ayuda Activity
+    <string name="ayuda_act">Help</string>
+    <string name="escr_benos_al_siguiente_correo_para_poder_resolver_tus_dudas_sobre_nuestros_servicios_en_el_app_n_n_ayudame_beneficioslatam_com_n_nestamos_para_servirte_tu_equipo_de_beneficios_act">Write to us at the following email to solve your doubts about our services in the app.</string>
+
+    //Comentarios Activity
+    <string name="mis_comentarios_co">My comments</string>
+    <string name="notificaciones_noti">Notifications</string>
+    <string name="no_hay_notificaciones_noti">No notifications</string>
+
+    //Segmentacion Activity
+    <string name="escoje_3_accesos_directos_de_tus_categorias_favoritas_seg">Choose at least 3 shortcuts from your favorite categories</string>
+    <string name="cancelar_seg">CANCEL</string>
+    <string name="aceptar_seg">ACCEPT</string>
+
+    //Terminos y Condiciones Activity
+    <string name="acepto_los_terminos_y_condiciones_tyc">Accept the Terms and Conditions</string>
+    <string name="siguiente_tyc">NEXT</string>
+
+    //Historial de Canje Fragment
+    <string name="historial_de_canje_hist">Exchange History</string>
+    <string name="no_hay_ningun_canje_hist">No exchange</string>
+
+    //Sucursales Activity
+    <string name="no_hay_suc">No branches</string>
+    <string name="sucursales_cercanas">Nearby branches</string>
+    <string name="ver_sucursales">See branches</string>
+    <string name="generar_nuevo_c_digo">Generate new code</string>
+
+    //Configuracion Activity
+    <string name="configuracion_conf">Configuration</string>
+    <string name="permite_notificaciones_al_crear_nuevo_cup_n">Allow notifications when creating new coupon in Preferred Categories.</string>
+    <string name="permite_ruta">Allow route notifications.</string>
+    <string name="permite_notificaciones_de_cupones_proximos_a_vencer">Allow notifications of upcoming coupons to expired.</string>
+    <string name="cuantas_notificaciones_desea_recibir_como_m_ximo_al_d_a">¿How many notifications do you want to receive per day at most?</string>
+    <string name="seleccione_idioma">Select language:</string>
+    <string name="continue_with_google">Continue with Google</string>
+
+    //Toast
+    <string name="usuario_existente">Existing user</string>
+    <string name="failure_sign">Registration failed.</string>
+    <string name="update_profile">Updated profile</string>
+    <string name="invalid_credentials">Incorrect credentials</string>
+    <string name="welcome">Welcome</string>
+    <string name="account_invalid">This account is already link!</string>
+    <string name="error_connection">Something went wrong. Try again.</string>
+    <string name="login_canceled">Login canceled</string>
+    <string name="scanner">Scanner canceled</string>
+    <string name="send_comment">Sent comment</string>
+    <string name="min_categories">Minimun 3 categories</string>
+    <string name="max_categories">Maximun 6 categories</string>
+    <string name="dont_have_wa">Commerce doest not have Whatsapp!</string>
+    <string name="wa_not_instaled">You do not have Whatsapp installed!</string>
+    <string name="dont_have_ig">Commerce doest not have Instagram!</string>
+    <string name="dont_have_fb">Commerce doest not have Facebook!</string>
+    <string name="social_error">Something went wrong. Try again.</string>
+    <string name="install_maps">You must install Google Maps!</string>
+    <string name="sold_out">Sold out coupons</string>
+    <string name="exceeded">Coupons per user exceeded</string>
+
+    //Snack
+    <string name="qr">Generating QR</string>
+    <string name="close">Close</string>
+
+    //Variables
+    <string name="bienvenido">Welcome</string>
+    <string name="maps">You must install Google Maps!</string>
+
+    //Labels
+    <string name="cu_ntanos_queremos_saber_de_que_pais_deseas_recibir_tus_promociones_y_notificaciones">Tell us about it! We want to know which country you want to receive your promotions and notifications from.</string>
+    <string name="debil_pass">Weak</string>
+    <string name="fuerte_pass">Strong</string>
+    <string name="medio_pass">Medium</string>
+    <string name="first_coupon">You have</string>
+    <string name="second_coupon">available per user. Take advantage of them!</string>
+
+    //Errors Form
+    <string name="c_required">Required Fields</string>
+    <string name="f_invalid">Invalid format</string>
+    <string name="e_invalid">Invalid mail</string>
+    <string name="min_characters">Mimimun 6 characters password</string>
+    <string name="pass_match">Passwords do not match</string>
+    <string name="email_match">Non existent mail</string>
+    <string name="send_email">Invalid mail</string>
+
+    //Spinner
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="soltero">Single</string>
+    <string name="comprometido">Committed</string>
+    <string name="casado">Married</string>
+    <string name="separado">Separated</string>
+    <string name="divorciado">Divorced</string>
+    <string name="viudo">Widower</string>
+    <string name="guardar">Save</string>
+
+    //Alert Dialog
+    <string name="exit_app">Dou you wanto to leave the application?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="country_changed">We have detected that you have change your location. You want to change your contry to</string>
+    <string name="calification_exit">Dou you want to get out of the qualification</string>
+    <string name="infoCupon">Allow the application to notify you every time a coupon is created within the categories you have selected as preferred so that you are aware of all new promotions of your interest.</string>
+    <string name="infoRuta">Allow the application to notify you every time you are near a store that has current promotions so you can approach and enjoy them.</string>
+    <string name="infoVenc">Allow the application to notify you every time a coupon, belonging to your preferred categories, is about to expire so that you can approach and take advantage of the last coupons of this promotion.</string>
+    <string name="first_profile">You have completed the</string>
+    <string name="second_profile">% of your profile, help us by completing the remaining information.</string>
+
+    //Toolbar
+    <string name="now">Advantage now</string>
+    <string name="new_c">New</string>
+    <string name="best">Best discounts</string>
+    <string name="campain">Campaign available</string>
+    <string name="scan">Scanner</string>
+
+    //Notifications
+    <string name="canje">Successful Benefit</string>
+    <string name="app_beneficios_notification">Than you for usign Benefy App</string>
+    <string name="commerce_list_label">Commerce list</string>
+    <string name="commerce_list_empty">No commerces available</string>
+    <string name="commerce_list_title">Commerces</string>
+    <string name="comercios">Commerces</string>
+    <string name="personalizar">My preferences</string>
+    <string name="o_entra_con">or join with</string>
+    <string name="millas">Miles</string>
+    <string name="follow_text">Follow</string>
+    <string name="cons_label">Consultations</string>
+    <string name="miles_label">Miles</string>
+    <string name="favorite_label">Favorite</string>
+    <string name="coupons_label">Coupons</string>
+    <string name="loyalty_plan_label">Loyalty plans</string>
+    <string name="agencies_label">Agencies</string>
+    <string name="commerce_info_label">Commerce information</string>
+    <string name="total_commecer_label"><![CDATA[Commerces: <b><font color=\'#f76B1C\'>%1s</font></b>]]></string>
+    <string name="view_all">View all</string>
+    <string name="error_message_title">Unexpected error</string>
+    <string name="close_label">Close</string>
+    <string name="following_label">Following</string>
+    <string name="coupons_list_label">Coupon list</string>
+    <string name="coupons_list_empty">Currently no coupons available</string>
+    <string name="invalid_url">Invalid URL</string>
+    <string name="app_url">https://beneficioslatam.com</string>
+    <string name="sendto">Send to</string>
+    <string name="siguiente">Next</string>
+    <string name="iniciar">START</string>
+    <string name="ver_mi_c_digo_qr">View my QR code</string>
+    <string name="cerrar">Close</string>
+    <string name="tu_c_digo_qr">YOUR QR CODE</string>
+    <string name="acerca_de">About</string>
+    <string name="ubicaci_n">Location</string>
+    <string name="direcci_n">Address</string>
+    <string name="tel_fono">Phone</string>
+    <string name="horarios">Schedules</string>
+    <string name="ver_mis_canjes">View my transactions</string>
+    <string name="sucursal">Agency</string>
+
+    <string name="view_inmap_label">View on map</string>
+    <string name="open_waze_label">Open in Waze</string>
+    <string name="share_label">Share</string>
+    <string name="phones_label">Phone</string>
+    <string name="email_label">Email</string>
+    <string name="location_label">Location</string>
+    <string name="shared_from">Shared from:</string>
+    <string name="nolocation_configured_label">Location not configured for this commerce</string>
+    <string name="opened_now"><![CDATA[<font color=\'#02B256\'>Open now</font> %1s]]></string>
+    <string name="closed_now"><![CDATA[<font color=\'#FF0000\'>Closed now</font> %1s]]></string>
+    <string name="associations_bycountry_label">My clubs</string>
+    <string name="recent_associations_label">My loyalty cards</string>
+    <string name="add_loyalty_plan_label">Join a club</string>
+    <string name="clear_label">Clean</string>
+    <string name="search">Search</string>
+    <string name="required_label">Required</string>
+    <string name="tipo_plan_label">Select a club</string>
+    <string name="codigo_validacion_label">Code</string>
+    <string name="subscribe_label">Subscribe</string>
+    <string name="plan_lealtad_title">Loyalty Plans</string>
+    <string name="accept_checkbox_label">Accept the Terms and Conditions</string>
+    <string name="unirse_label">Join</string>
+    <string name="warning_message">Warning</string>
+    <string name="must_accept_terms">You must accept the terms and conditions</string>
+    <string name="members_label">Members</string>
+    <string name="welcome_plan_label">Welcome to</string>
+    <string name="dias_transcurridos_label">%1s days %2s</string>
+    <string name="desvincular_label">Unlink</string>
+    <string name="following_from_label"><![CDATA[Linked from: <b>%1s</b>]]></string>
+    <string name="loyalty_list_label">List of clubs</string>
+    <string name="loyalty_list_empty">You are not a member of any of the clubs in this commerce</string>
+    <string name="seals_list_label">List of Stamps</string>
+    <string name="seals_list_empty">You are not attached to any of this commerce\'s stamping plans</string>
+    <string name="conditions_label">Conditions</string>
+    <string name="my_loyalty_plans">My Programs and Clubs</string>
+    <string name="unlink_trade_label">Unlink program</string>
+    <string name="are_you_sure_label">Are you sure you want to opt out of this program? If you do, you will lose all information regarding the plan</string>
+
+    <string name="editar_perfil">Edit profile</string>
+    <string name="complete_your_data">Complete your data</string>
+    <string name="transacciones">Transactions</string>
+    <string name="ver_mis_estad_sticas">View my statistics</string>
+
+    <string name="mis_estadisticas">My statistics</string>
+    <string name="mis_transacciones">Transactions History</string>
+    <string name="canje_nav">Exchange</string>
+    <string name="acumulaci_n_de_millas_nav">Mileage accumulation</string>
+    <string name="acumulaci_n_de_sellos_de_lealtad_nav">Loyalty seals accumulation</string>
+    <string name="canjes_de_millas_nav">Exchange miles</string>
+    <string name="canjes_de_tarjetas_de_lealtad_nav">Loyalty card exchange</string>
+    <string name="vinculaci_n_a_plan_de_lealtad_nav">Link to loyalty plan</string>
+    <string name="desvinculaci_n_de_plan_de_lealtad_nav">Unlink to loyalty plan</string>
+    <string name="bloqueo_de_plan_de_lealtad_nav">Loyalty plan lockout</string>
+    <string name="sucursales">Branches</string>
+    <string name="ver_todas_las_transacciones">View all transactions</string>
+    <string name="opened_now2"><![CDATA[<font color=\'#02B256\'>Open now</font>]]></string>
+    <string name="closed_soon"><![CDATA[<font color=\'#FF9306\'>Close soon</font>]]></string>
+    <string name="closed_now2"><![CDATA[<font color=\'#FF0000\'>Close now</font>]]></string>
+    <string name="tel_no_registrado">Unregistered phone.</string>
+    <string name="preferencias">Preferences</string>
+    <string name="acerca_de_text">Benefits is the program that rewards your loyalty and preference. You get free, easily and quickly, a wide range of promotions and exclusive discounts in selected establishments.</string>
+    <string name="selecciona_el_departamento">Select the department:</string>
+    <string name="horarios_de_la_sucursal">Agency schedule</string>
+    <string name="cerrado">Closed</string>
+    <string name="mediodia">Closed at noon</string>
+    <string name="invalid_number_seals">Number of stamps is invalid</string>
+    <string name="without_plans_label">No loyalty plans available</string>
+    <string name="plan_not_exists">There is no loyalty plan. Please consult with the administrator</string>
+    <string name="exchange_label">Exchange</string>
+    <string name="excahnge_history_label">Exchange History</string>
+    <string name="stamps_label">Loyalty cards</string>
+    <string name="empty_stamps_plans">They do not have a card</string>
+    <string name="stamp_card_info">Card Information</string>
+    <string name="start_date_label"><![CDATA[Start Date: <b>%1s</b>]]></string>
+    <string name="end_date_label"><![CDATA[Expiration Date: <b>%1s</b>]]></string>
+    <string name="requierd_stamps_label"><![CDATA[Seal Required: <b>%1s</b>]]></string>
+    <string name="stamped_stamps_label"><![CDATA[Seals Obtained: <b>%1s</b>]]></string>
+    <string name="completed_date_label"><![CDATA[Date Completed: <b>%1s</b>]]></string>
+    <string name="exchange_date_label"><![CDATA[Date Redeemed: <b>%1s</b>]]></string>
+    <string name="last_stamp_date_label"><![CDATA[Date of last seal: <b>%1s</b>]]></string>
+    <string name="status_label"><![CDATA[Status: <b>%1s</b>]]></string>
+    <string name="stamp_status_inprogress">In progress</string>
+    <string name="stamp_status_completed">Completed</string>
+    <string name="stamp_status_expired">Expired</string>
+    <string name="stamp_status"><![CDATA[Status: <b><font color=\'%1s\'>%2s</font></b>]]></string>
+    <string name="stamp_info">Seal information</string>
+    <string name="stamp_date_label"><![CDATA[Date stamped: <b>%1s</b>]]></string>
+    <string name="stamp_agency_label"><![CDATA[Agency: <b>%1s</b>]]></string>
+    <string name="stamp_pos_label"><![CDATA[Checkout: <b>%1s</b>]]></string>
+    <string name="stamp_cashier_label"><![CDATA[Cashier: <b>%1s</b>]]></string>
+    <string name="stamp_description_label"><![CDATA[Description: <b>%1s</b>]]></string>
+    <string name="stamp_card_qr">STAMP CARD QR</string>
+    <string name="stamp_status_redimeed">Redeemed</string>
+
+    <string name="lista_de_transacciones">Transaction History</string>
+    <string name="no_hay_transacciones_actualmente">No transactions</string>
+    <string name="billetera">Wallet</string>
+    <string name="lista_de_cupones_favoritos">Favorite coupon list</string>
+    <string name="detalle_transacci_n">Transaction detail</string>
+    <string name="lista_de_sucursales">Agency list</string>
+    <string name="no_hay_sucursales_disponibles">Currently no branches</string>
+    <string name="no_hay_notificaciones_actualmente">Currently no notifications</string>
+    <string name="lista_de_notificaciones">Notification list</string>
+
+    <string name="info_label">Information</string>
+    <string name="rubro_list_title">Categories</string>
+    <string name="filter_trend_string">Item = %1s</string>
+    <string name="default_suggestion_test">Default Suggestion Test</string>
+    <string name="cu_ntanos">Tell us</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_10">10</string>
+    <string name="error_inesperado">Unexpected error</string>
+    <string name="no_hay_horarios_disponibles">No schedules available</string>
+    <string name="cupones_lealtad">Loyalty coupons</string>
+    <string name="cupones_generales">General coupons</string>
+    <string name="actualmente_no_sigues_ningun_comercio">Currently you do not follow any commerce</string>
+    <string name="permitir_notificaciones">ALLOW NOTIFICATION</string>
+    <string name="progreso_perfil">PROFILE PROGRESS</string>
+    <string name="lista_de_categor_as">Categories list</string>
+    <string name="no_hay_categor_as_disponibles">No categories available</string>
+    <string name="logo_comercio_content">Commerce logo</string>
+    <string name="loyaltyimage">loyaltyImage</string>
+    <string name="access_icon">Access Icon</string>
+
+    <string name="qr_generator">QR Generation</string>
+    <string name="set_qr_number">Please enter the number of coupons to redeem:*</string>
+    <string name="coupon_number">Number of coupons</string>
+    <string name="information">* This actions does not reserve any coupon.</string>
+    <string name="logo">Logo</string>
+    <string name="accept">Accept</string>
+    <string name="create_account"><u>Create Account</u></string>
+    <string name="drop_down">Drop Down</string>
+    <string name="google_image">Google Image</string>
+    <string name="facebook_image">Facebook Image</string>
+    <string name="category_image">Category Image</string>
+
+    <string name="action_close">Close</string>
+    <string name="image_profile">Image Profile</string>
+    <string name="banner_image">Banner Image</string>
+    <string name="coupon_block">Coupon Block</string>
+    <string name="benefy_mail">ayudame@beneficioslatam.com</string>
+    <string name="help_string">We are here to help you,</string>
+    <string name="benefy_team">Your Benefy Team</string>
+    <string name="about_us">You get free, easily and quickly, a wide range of promotions and exclusive discounts in selected establishments.</string>
+    <string name="accumulated_stamps">Accumulate Seals</string>
+    <string name="card_information_detail">Card Information</string>
+
+    <string name="insured_data">Insured\'s Data</string>
+    <string name="first_name">First Name</string>
+    <string name="second_name">Second Name</string>
+    <string name="first_last_name">First Last Name</string>
+    <string name="second_last_name">Second Last Name</string>
+    <string name="extension">Extension</string>
+    <string name="document">Identity Card (CI)</string>
+    <string name="expedition_date">Expedition Date CI</string>
+    <string name="beneficiary_data">Beneficiary\'s Data</string>
+    <string name="relationship">Relationship</string>
+    <string name="next">Next</string>
+    <string name="health_form">Good Health Form</string>
+    <string name="health_form_description">To purchase your life insurance, please complete the following questions, it will only take a few minutes.</string>
+    <string name="question_1">Question 1 of 6</string>
+    <string name="question1_selected">Have you suffered from any illness that has forced you to interrupt your professional activity in the last 10 years, for more than 15 consecutive days?</string>
+    <string name="question1_description">If yes, please provide details: (date, type of illness, duration, treating physician):</string>
+    <string name="question_2">Question 2 of 6</string>
+    <string name="question2_selected">Have you suffered an accident or have any physical alterations?</string>
+    <string name="question2_description">If yes, please provide details: (date, type of alteration, treating physician):</string>
+    <string name="question_3">Question 3 of 6</string>
+    <string name="question3_selected">Have you had surgery?</string>
+    <string name="question3_description">If yes, please provide details: (date, cause, consequences and treating physician):</string>
+    <string name="question_4">Question 4 of 6</string>
+    <string name="question4_selected">Indicate your current weight and size</string>
+    <string name="weight_form">Weight</string>
+    <string name="kilograms">kg</string>
+    <string name="height_form">Height</string>
+    <string name="centimeters">cm</string>
+    <string name="question_5">Question 5 of 6</string>
+    <string name="question5_selected">Are you currently in perfect health and without any symptoms of illness?</string>
+    <string name="question5_description">In case of a negative answer, please provide details: (symptoms, since when and, treating physician):</string>
+    <string name="question_6">Question 6 of 6*</string>
+    <string name="question6_description">(*Optional) Name and address of the family doctor or the last doctor who attended you.</string>
+    <string name="finish">Finish</string>
+
+    <string name="participant_brances">View participant agencies</string>
+    <string name="availables">Available</string>
+    <string name="cupon_number"># OF COUPONS</string>
+    <string name="to_exchange">TO REDEEM</string>
+    <string name="insert_code">Enter code</string>
+    <string name="select_all">Select all</string>
+    <string name="aplicar">Apply</string>
+    <string name="city_filter">Choose a city to filter your articles and giftcards</string>
+    <string name="department">Departments</string>
+    <string name="cities">Cities</string>
+    <string name="apply">Apply</string>
+    <string name="clean">Clean</string>
+    <string name="insert_promotional_code">Enter promotional code</string>
+    <string name="your_coupons">Your coupons</string>
+    <string name="shop_online_coupon">Purchase coupons online</string>
+    <string name="direct_access">Direct Access</string>
+    <string name="shops">Purchasing</string>
+
+    <string name="steps_to_see_benefits">You are a few steps away from seeing your benefits</string>
+    <string name="login">Login</string>
+    <string name="start_saving">¡Start saving</string>
+    <string name="favorite_commerces">with your favorite commerces!</string>
+    <string name="limited_coupons">Campaigns for limited time</string>
+    <string name="all_departments">All departments</string>
+    <string name="buy">Buy</string>
+    <string name="blocked_coupon">The coupon is currently blocked.</string>
+    <string name="not_specidied">Not specified</string>
+    <string name="deep_coupon_redirect">We have detected that the coupon you wish to open is </string>
+    <string name="deep_coupon_redirect_2">, Do you want to move to this country?</string>
+    <string name="article_description">Article Description</string>
+    <string name="loading_coupon_error">An error occurred while loading the coupon information.</string>
+    <string name="undertood">Understood</string>
+    <string name="payment_error">Payment was not made correctly, try again.</string>
+    <string name="coupons_available_user">Coupons available per user:</string>
+    <string name="purchased_coupon">Purchased Coupon</string>
+    <string name="purchased_giftcard">Purchased Giftcard</string>
+    <string name="promotional">Promotional</string>
+    <string name="coupon_type">Coupon Type</string>
+    <string name="purchase_order">Purchase Order</string>
+    <string name="success_purchase">SUCCESSFUL PURCHASE</string>
+    <string name="check_email">Check your email</string>
+    <string name="huawei_promotional">Buy this article in Huawei stores</string>
+    <string name="huawei_device">Consume the promotional code with a Huawei device</string>
+    <string name="confirm_data">Confirm your data to continue</string>
+    <string name="personal_data">Personal information</string>
+    <string name="document_identity">Identity Document</string>
+    <string name="coupon_description">Description</string>
+    <string name="bolivia_prefix">+591</string>
+    <string name="pet_data">Pet\'s data</string>
+    <string name="pet_type">Type</string>
+    <string name="breed">Breed</string>
+    <string name="years">Years</string>
+    <string name="months">Months</string>
+    <string name="policy_data">Policy Data</string>
+    <string name="age_does_not_apply">The client does not apply because of age.</string>
+    <string name="pet_name">Name</string>
+    <string name="age">Age</string>
+    <string name="not_corporate_affiliated">You are not yet affiliated with a corporate plan.</string>
+    <string name="corporate_benefit_description">If your group and/or company is affiliated with Benefy, you will soon be able to enjoy excellent benefits.</string>
+    <string name="explore_available_plans">Explore available plans</string>
+    <string name="sud_required">It does not meet the requirements of Sudamericana.</string>
+
+    <string name="corporate_voucher">Corporate Voucher</string>
+
+    <string name="how_works">HOW DOES IT WORK?</string>
+    <string name="information_1">1. Select the gift option before processing your payment.</string>
+    <string name="information_2">2. Enter the recipient\'s email address and the dedication.</string>
+    <string name="information_3">3. A promotional code will be generated at checkout, which will also be sent to the recipient\'s email address.</string>
+    <string name="information_4">4. The recipient must enter the promotional code in the app and it will be automatically applied to their benefy voucher, ready to redeem!.</string>
+    <string name="gifted_article">This article is for a gift</string>
+    <string name="how_gift_works">How do gift work?</string>
+    <string name="check_mail_invoice">Check your email for receipt</string>
+    <string name="success_gift_shop">SUCCESS PURCHASE!</string>
+    <string name="view_gift">View gift</string>
+    <string name="addressee_gift">has received an email with a gift code, additionally you can send it to them yourself by clicking on the \'View gift\' button.</string>
+    <string name="to_gift">To</string>
+    <string name="from_gift">From</string>
+    <string name="gift_recipient_description">To send the gift to the recipient, enter the following information:</string>
+    <string name="mail_recipient">Recipient\'s mail</string>
+    <string name="gift_dedication">Dedication</string>
+    <string name="gift_option">A new gift option!</string>
+    <string name="share_gift">Share Gift</string>
+    <string name="how_exchange">HOW TO REDEEM?</string>
+    <string name="shop_detail">Purchase Detail</string>
+    <string name="unlink_loyalty_plan">Do you want to unlink for the plan?</string>
+    <string name="first_gift_detail">Tell</string>
+    <string name="second_gift_detail">that he must enter the promotional code in the app for it to appear in the Benefy coupon box. Remind him that he will also receive an email with the gift code.</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="first_gift_user">You have been assigned the following gift of </string>
+    <string name="second_gift_user">, go to your coupon box and enjoy it.</string>
+    <string name="from_label"><![CDATA[From: <b>%1s</b>]]></string>
+    <string name="to_label"><![CDATA[To: <b>%1s</b>]]></string>
+    <string name="available_label"><![CDATA[Valid until: <b>%1s</b>]]></string>
+    <string name="gift_items">Items I have given as gifts</string>
+    <string name="grateful">Thanks for the gift!</string>
+    <string name="send_thanks">Send thanks</string>
+    <string name="gift_detail">Gift detail</string>
+    <string name="amount">Amount</string>
+    <string name="gift_detail_date_label"><![CDATA[Gift date: <b>%1s</b>]]></string>
+    <string name="gift_detail_article_label"><![CDATA[Article: <b>%1s</b>]]></string>
+    <string name="gift_detail_commerce_label"><![CDATA[Commerce: <b>%1s</b>]]></string>
+    <string name="gift_detail_dedication_label"><![CDATA[Dedicatory: <b>%1s</b>]]></string>
+    <string name="days">days</string>
+    <string name="transaction_date_label"><![CDATA[Transaction date: <b>%1s</b>]]></string>
+    <string name="transaction_date">Date: </string>
+    <string name="my_gift_items">Items I have received as gifts</string>
+
+    <string name="delivery_1">1. Select Schedule delivery.</string>
+    <string name="delivery_2">2. Add your address and delivery information, including the day and time you can receive it.</string>
+    <string name="delivery_3">3. Make the payment for your item.</string>
+    <string name="delivery_4">4. You will receive an email with the information of your purchase and the data entered for the delivery.</string>
+    <string name="delivery_5">5. Receive your order on the day and time scheduled.</string>
+    <string name="schedule_delivery">Schedule home delivery</string>
+    <string name="schedule_delivery_works">How do schedule deliveries work?</string>
+    <string name="cancel_delivery">By unchecking this option the item will not be delivered by delivery and the information will be discarded.</string>
+    <string name="delivery_address">Address</string>
+    <string name="delivery_location">Delivery location</string>
+    <string name="receiver_person">Person who will receive the order</string>
+    <string name="contact_phone">Contact phone</string>
+    <string name="delivery_date">Delivery date</string>
+    <string name="payment_tb">Payment</string>
+    <string name="visa_card">Visa Card</string>
+    <string name="digits_card">XXXX XXXX XXXX XXXX</string>
+    <string name="expiration_card_date">Exp. Date MMYYYY</string>
+    <string name="card_holder">Card Holder</string>
+    <string name="card_number_form">Card number</string>
+    <string name="expiration_date_form">Expiration date (MMYYYY)</string>
+    <string name="cvv">CVV</string>
+    <string name="end_purchase">End purchase</string>
+    <string name="invalid_delivery_zone">Oops, you are out of the coverage area, select another delivery point to continue.</string>
+    <string name="edit_map">Edit</string>
+    <string name="accept_delivery_payment">You must accept Delivery\'s payment terms.</string>
+    <string name="select_location_map">Select a point on the map to continue.</string>
+    <string name="covid_question">Do you suffer from any of these diseases: Cancer, HIV AIDS, Diabetes, Heart Disease, Kidney Failure, Cerebrovascular Disease, COVID-19 or Chronic Obstructive Pulmonary Disease?</string>
+    <string name="unique_question">Question 1 of 1</string>
+    <string name="longitude_document_validation">Document must not have more than 10 characters</string>
+    <string name="expire_today">Expires today</string>
+    <string name="online_giftcards">Purchase giftcards online</string>
+    <string name="savings_history">Historic savings</string>
+
+    // Fragment Home
+    <string name="articles_store">Store - Articles</string>
+    <string name="gift_card_store">Store - GiftCards</string>
+    <string name="article_label">Articles</string>
+    <string name="gift_card_label">GiftCards</string>
+    <string name="loyalty_menu">Loyalty</string>
+    <string name="coupons_menu">Coupons</string>
+    <string name="store_menu">Store</string>
+    <string name="articles_home">Articles</string>
+    <string name="gift_cards_home">Gift Cards</string>
+    <string name="given_item">Gift</string>
+
+    // About activity
+    <string name="about_first">Benefy is the program that </string>
+    <string name="about_second"> rewards your fidelity and preference.</string>
+
+</resources>

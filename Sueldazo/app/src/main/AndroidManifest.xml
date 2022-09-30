@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.syntepro.appbeneficiosbolivia"
+    tools:ignore="LockedOrientationActivity">
+
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA" />
+
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <application
+        android:name=".core.AndroidApplication"
+        android:allowBackup="true"
+        android:configChanges="uiMode"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".ui.login.EmailConfirmationActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.shop.ui.activities.CardInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.InvoiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.DeliveryInformationActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.shop.ui.activities.CouponGiftDetailActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.shop.ui.activities.SuccessGiftUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.GiftDetailActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.general.SuccessGiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.GiftCouponInformationActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.coupon.ui.activities.BestDiscountListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.coupon.ui.activities.CouponListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.sudamericana.ui.activities.SurveyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.commerce.ui.activities.CommerceList2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.coupon.ui.activities.CouponDetail2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.general.ExchangeInfoDialog"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.syntepro.appbeneficiosbolivia.NOTIFICATION_ACTION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.commerce.ui.activities.CommerceDetail2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.commerce.ui.activities.BranchFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.commerce.ui.activities.Commerce2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lealtad.LoyaltyCodePlanDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.wallet.MilesGoalsInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.shop.ui.activities.SuccessPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.agency.ui.activities.AgencyActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.category.CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.benefy.PromotionalCodeActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.benefy.BenefyDetailActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.syntepro.appbeneficiosbolivia.NOTIFICATION_ACTION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.login.ConditionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.PaymentOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.ShopDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.ui.activities.ShopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true"
+            android:parentActivityName=".ui.MainActivity" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation"/>
+        <activity
+            android:name=".ui.coupon.QRDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.coupon.QRAmountActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.filter.FilterActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.explore.ExploreCouponsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.general.InformationDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.general.WarningInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.general.StampsQRInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.general.UserQRInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.general.ErrorInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.profile.ui.activities.TransactionsInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.menu.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.profile.ui.activities.TransactionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.profile.ui.activities.StatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lealtad.TermsViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lealtad.FinishDialog"
+            android:excludeFromRecents="true" />
+        <activity
+            android:name=".ui.lealtad.TermsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.lealtad.AddLoyaltyPlanDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.lealtad.LoyaltyPlansActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".base.BaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.extras.IntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.CountrySelectionActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_application_id"
+            tools:replace="android:value" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".ui.menu.ConfigurationActivity"
+            android:screenOrientation="portrait" /> <!-- &lt;!&ndash; -->
+        <!-- The API key for Google Maps-based APIs is defined as a string resource. -->
+        <!-- (See the file "res/values/google_maps_api.xml"). -->
+        <!-- Note that the API key is linked to the encryption key used to sign the APK. -->
+        <!-- You need a different API key for each encryption key, including the release key that is used to -->
+        <!-- sign the APK for publishing. -->
+        <!-- You can define the keys for the debug and release targets in src/debug/ and src/release/. -->
+        <!-- &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.geo.API_KEY" -->
+        <!-- android:value="@string/google_maps_key" /> -->
+        <activity
+            android:name=".ui.explore.MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".ui.menu.ScannerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.coupon.ui.activities.RatingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.CommentsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.menu.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.notifications.ui.activities.NotificationsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.explore.CercaDeTiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ResetPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.wallet.StampCardInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" />
+        <activity
+            android:name=".ui.wallet.StampInfoDialog"
+            android:excludeFromRecents="true"
+            android:theme="@style/simpleDialog" /> <!-- <activity -->
+        <!-- android:name=".ui.MainActivity" -->
+        <!-- android:adjustViewBounds="true" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:theme="@style/FullScreenTheme"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- <intent-filter -->
+        <!-- android:autoVerify="true" -->
+        <!-- tools:targetApi="m"> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+        <!-- <data -->
+        <!-- android:host="www.beneficioslatam.page.link" -->
+        <!-- android:scheme="https" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Base.Theme.AppCompat" /> <!-- START Location Service -->
+        <service
+            android:name=".service.GPS_Service"
+            android:exported="false" /> <!-- END Location Service -->
+        <!-- &lt;!&ndash; START Notification Service &ndash;&gt; -->
+        <!-- <service -->
+        <!-- android:name=".service.Notification_Service" -->
+        <!-- android:exported="false" /> &lt;!&ndash; END Notification Service &ndash;&gt; -->
+        <!-- START Firebase Cloud Message Service -->
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- END Firebase Cloud Message Service -->
+        <!-- Share Provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.syntepro.appbeneficiosbolivia.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- Ressource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

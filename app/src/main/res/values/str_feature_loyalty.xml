@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whatis_loyalty_plan_label">¿Qué es un programa de lealtad?</string>
+    <string name="corporate_label">Corporativos</string>
+    <string name="corporate_desc_label">Si eres parte de un grupo, empresa o asociación que brinda beneficios a sus miembros, podemos integrar todos los Beneficios exclusivos por medio de Benefy</string>
+    <string name="miles_desc_label">Acumula puntos o millas según las políticas de cada negocio para canjear por premios o descuentos con los que el comercio valora tu lealtad y frecuencia de uso. Además, existe la posibilidad de adquirir millas o puntos extra con promociones exclusivas.</string>
+    <string name="seal_label">Sellos</string>
+    <string name="seals_desc_label">Participa de forma digital en el sistema de lealtad por sellos. No más tarjetas en la billetera, ahora puede llevar las tarjetas de lealtad de tus comercios favoritos en el App junto con todos los demás Beneficios.</string>
+    <string name="need_more_info_label">¿Necesita más información?</string>
+    <string name="contactus_label">Contáctanos y con gusto te atenderemos</string>
+    <string name="email_loyalty_label">Email</string>
+    <string name="whataspp_loyalty_label">Whatsapp</string>
+    <string name="unlink_label">Desvincular</string>
+    <string name="must_select_plan">Debe seleccionar un plan!</string>
+    <string name="plan_type_label">Tipo de plan</string>
+    <string name="categories_label">Categorías</string>
+    <string name="commerce_label">Comercios</string>
+    <string name="loyalty_label">Lealtad</string>
+</resources>

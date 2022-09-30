@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_loyalty"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_lealtad"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.LoyaltyInfoFragment"
+        tools:layout="@layout/fragment_loyalty_info" >
+        <action
+            android:id="@+id/action_nav_lealtad_to_nav_loyalty_plan"
+            app:destination="@id/nav_loyalty_plan" />
+        <action
+            android:id="@+id/action_nav_lealtad_to_addPlanFragment"
+            app:destination="@id/nav_add_plan"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_loyalty_plan"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.LoyaltyPlanFragment"
+        android:label="Planes de Lealtad"
+        tools:layout="@layout/fragment_loyalty_plan" >
+        <argument
+            android:name="planType"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/actionNavToAddNavId"
+            app:destination="@id/nav_add_plan" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_test"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.home.WalletFragment"
+        android:label="WalletFragment" />
+    <fragment
+        android:id="@+id/nav_add_plan"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.AddPlanFragment"
+        android:label="@string/loyalty_label"
+        tools:layout="@layout/fragment_add_plan">
+        <argument
+            android:name="planType"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_benfy"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.BenefyFragment"
+        android:label="" />
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.FavoriteFragment"
+        android:label="FavoriteFragment" />
+</navigation>

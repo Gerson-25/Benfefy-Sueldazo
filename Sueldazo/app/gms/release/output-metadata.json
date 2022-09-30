@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.syntepro.appbeneficiosbolivia",
+  "variantName": "gmsRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 87,
+      "versionName": "5.6.9",
+      "outputFile": "app-gms-release.apk"
+    }
+  ]
+}

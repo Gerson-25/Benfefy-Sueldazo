@@ -1,0 +1,649 @@
+<resources>
+    <string name="app_name">Benefy</string>
+
+    //Facebook
+    <string name="facebook_application_id" translatable="false">508540496613548</string>
+
+    <string name="default_notification_channel_id">locationtest_channel</string>
+    <string name="geofence_transition_invalid_type">Geofence Transition Invalid Type</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register_btn">REGISTRARSE</string>
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+
+    //Fragment login
+    <string name="login_usr">Usuario</string>
+    <string name="login_pass">Contraseña</string>
+    <string name="login_btn">Iniciar Sesión</string>
+    <string name="login_recover_pass">Recuperar mi contraseña</string>
+
+    //Fragment_sign_up
+    <string name="usuario_su">Correo</string>
+    <string name="apellido_su">Apellido</string>
+    <string name="telefono_su">Teléfono</string>
+    <string name="fechaNac_su">Fecha de Nacimiento</string>
+    <string name="hint_su">dd/mm/aaaa</string>
+    <string name="hinttel_su">xxxx-xxxx</string>
+    <string name="genero_su">Género</string>
+    <string name="estado_su">Estado Civil</string>
+    <string name="email_su">Correo Electrónico</string>
+    <string name="pass_su">Contraseña</string>
+    <string name="conPass_su">Confirmar Contraseña</string>
+    <string name="depto_su">Departamento</string>
+    <string name="prov_su">Provincia</string>
+    <string name="codigo_su">+591</string>
+    <string name="no_tienes_una_cuenta_registrate_main">¿No tienes una cuenta? Registrate!</string>
+    <string name="debil_su">Débil</string>
+    <string name="date_format">dd/mm/aaaa</string>
+
+    //Activity Reset Password
+    <string name="recover_text">Podemos ayudarte a recuperar tu contraseña, te enviaremos una nueva contraseña a tu correo electrónico para que accedas a tu cuenta.</string>
+    <string name="recover_email">Correo Electrónico</string>
+    <string name="recover_btn">Recuperar</string>
+    <string name="recover_correo">Correo Electrónico</string>
+    <string name="recover_atras">Atras</string>
+
+    //Fragment Explorar
+    <string name="hint_exp">Busca en Explorar</string>
+    <string name="buscar_exp">BUSCAR</string>
+    <string name="cerca_exp">Cerca de ti</string>
+    <string name="aprovecha_exp">Aprovecha ya</string>
+    <string name="nuevo_exp">Lo nuevo</string>
+    <string name="descuentos_exp">Mejores descuentos</string>
+    <string name="personalizar_exp">Personalizar</string>
+    <string name="accesos_exp">Mis Preferencias</string>
+
+    //Fragment Favoritos
+    <string name="no_hay_fav">No hay favoritos</string>
+
+    //Fragment Beneficios
+    <string name="no_hay_cat">No hay Categorias Activas</string>
+
+    //Activity Tipo Beneficio
+    <string name="no_hay_be">No hay Beneficios</string>
+
+    //Fragment Cupon
+    <string name="no_hay_cu">No hay Campañas</string>
+    <string name="title_activity_detalle_cupon">DetalleCuponActivity</string>
+
+    //Detalle Cupon
+    <string name="desc_de">Descripción</string>
+    <string name="cond_de">Terminos y Condiciones</string>
+    <string name="tiem_de">Tiempo Restante</string>
+    <string name="efectuar_de">Pasos para efectuar el canje</string>
+    <string name="cant_de">Disponibles</string>
+    <string name="noCanjes_de">Cupones Agotados!</string>
+    <string name="pasos">1. Generar Codigo QR al momento de hacer el canje en uno de los establecimientos designados.\n2. Presentarlo en la caja del comercio para que sea escaneado o digitado.\n3. ¡Listo! Disfruta tu beneficio, promoción o descuento.</string>
+
+    //Activity Perfil
+    <string name="ahorroA_p">Ahorro Acumulado</string>
+    <string name="perdida_p">Perdida</string>
+    <string name="ahorro_p">Ahorro</string>
+    <string name="pendiente_c">Pendiente de Canje</string>
+    <string name="other_p">Otros</string>
+
+    //Bottom Navigation Menu
+    <string name="explorar_menu">Explorar</string>
+    <string name="cupones_menu">Cupones</string>
+    <string name="beneficios_menu">Beneficios</string>
+    <string name="favoritos_menu">Favoritos</string>
+    <string name="canje_menu">Canjes</string>
+
+    //Activity Comentarios
+    <string name="enviar_coment">ENVIAR</string>
+    <string name="mensaje_coment">Mensaje:</string>
+    <string name="comentarios_coment">Comentarios</string>
+
+    //Activity Codigo
+    <string name="adv_qr">** Al generar este código, NO RESERVA la promoción. Debe realizar el canje en el establecimiento para hacer valida la promoción.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="no_hay_comercios">No hay comercios</string>
+    <string name="mes_actual">Actual:</string>
+    <string name="ahorro_del_mes">Ahorro del Mes</string>
+    <string name="calificaci_n">Calificación</string>
+    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">¿Cómo te sientes con los servicios de nuestra app?</string>
+    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">1. ¿En general cuan satisfecho se encuentra con el beneficio adquirido?</string>
+    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">2. ¿Recomendaría usted esta promoción?</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="omitir">Omitir</string>
+
+    //Menu
+    <string name="perfil_menu">Perfil</string>
+    <string name="terminos_y_condiciones_menu">Términos y Condiciones</string>
+    <string name="comentarios_menu">Comentarios y Reportes</string>
+    <string name="configuracion_menu">Configuración</string>
+    <string name="ayuda_menu">Ayuda</string>
+    <string name="cerrar_sesi_n_menu">Cerrar Sesión</string>
+    <string name="scanner_menu">Scanner</string>
+    <string name="notificaciones_menu">Notificaciones</string>
+    <string name="gps_menu">GPS</string>
+    <string name="busca_tus_cupones_menu">Busca tus cupones</string>
+    <string name="compartir_menu">Compartir</string>
+    <string name="cambio_pais_consulta">Cambiar País</string>
+    <string name="otras_opciones">Opciones Avanzadas</string>
+    <string name="direccion_menu">Direcciones</string>
+
+    //Popup
+    <string name="canje_exitoso_popup">¡CANJE EXITOSO!</string>
+    <string name="has_canjeado_tu_cup_n_exitosamente_gracias_por_utilizar_tu_app_de_beneficios_popup">Has canjeado tu cupón exitosamente.\n\n Gracias por utilizar Benefy App.</string>
+
+    <string name="nombre_su">Nombre</string>
+
+    //Ayuda Activity
+    <string name="ayuda_act">Ayuda</string>
+    <string name="escr_benos_al_siguiente_correo_para_poder_resolver_tus_dudas_sobre_nuestros_servicios_en_el_app_n_n_ayudame_beneficioslatam_com_n_nestamos_para_servirte_tu_equipo_de_beneficios_act">Escríbenos al siguiente correo para poder resolver tus dudas sobre nuestros servicios en el app.</string>
+
+    //Comentarios Activity
+    <string name="mis_comentarios_co">Mis Comentarios</string>
+    <string name="notificaciones_noti">Notificaciones</string>
+    <string name="no_hay_notificaciones_noti">No hay notificaciones.</string>
+
+    //Segmentacion Activity
+    <string name="escoje_3_accesos_directos_de_tus_categorias_favoritas_seg">Escoje al menos 3 Accesos Directos de tus categorias favoritas</string>
+    <string name="cancelar_seg">CANCELAR</string>
+    <string name="aceptar_seg">ACEPTAR</string>
+
+    //Terminos y Condiciones Activity
+    <string name="acepto_los_terminos_y_condiciones_tyc">Acepto los Terminos y Condiciones</string>
+    <string name="siguiente_tyc">SIGUIENTE</string>
+
+    //Historial de Canje Fragment
+    <string name="historial_de_canje_hist">Historial de Canje</string>
+    <string name="no_hay_ningun_canje_hist">No hay ningun canje.</string>
+
+    //Sucursales Activity
+    <string name="no_hay_suc">No hay Sucursales</string>
+    <string name="sucursales_cercanas">Sucursales Cercanas</string>
+    <string name="ver_sucursales">Ver Sucursales</string>
+    <string name="generar_nuevo_c_digo">Generar nuevo código</string>
+
+    //Configuracion Activity
+    <string name="configuracion_conf">Configuración</string>
+    <string name="permite_notificaciones_al_crear_nuevo_cup_n">Permitir notificaciones al crear nuevo cupón en Categorías Preferentes.</string>
+    <string name="permite_ruta">Permitir notificaciones de ruta.</string>
+    <string name="permite_notificaciones_de_cupones_proximos_a_vencer">Permitir notificaciones de cupones proximos a vencer.</string>
+    <string name="cuantas_notificaciones_desea_recibir_como_m_ximo_al_d_a">¿Cuantas notificaciones desea recibir como máximo al día?</string>
+    <string name="seleccione_idioma">Seleccione idioma:</string>
+    <string name="continue_with_google">Continue with Google</string>
+
+    //Toast
+    <string name="usuario_existente">Usuario Existente</string>
+    <string name="failure_sign">Registro Fallido.</string>
+    <string name="update_profile">Perfil Actualizado</string>
+    <string name="invalid_credentials">Credenciales Incorrectas</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="account_invalid">Esta cuenta ya esta vinculada!</string>
+    <string name="error_connection">Algo salio mal.. Inténtelo de nuevo.</string>
+    <string name="login_canceled">Inicio de Sesión Cancelado</string>
+    <string name="scanner">Scanner Cancelado</string>
+    <string name="send_comment">Comentario Enviado</string>
+    <string name="min_categories">Minimo 3 Categorias</string>
+    <string name="max_categories">Máximo 6 Categorias</string>
+    <string name="dont_have_wa">Comercio no posee Whatsapp!</string>
+    <string name="wa_not_instaled">No tienes instalado Whatsapp!</string>
+    <string name="dont_have_ig">Comercio no posee Instagram!</string>
+    <string name="dont_have_fb">Comercio no posee Facebook!</string>
+    <string name="social_error">Ocurrio un error! Intentelo de nuevo.</string>
+    <string name="install_maps">Debes instalar Google Maps!</string>
+    <string name="sold_out">Cupones Agotados</string>
+    <string name="exceeded">Cupones por Usuario Exedidos</string>
+
+    //Snack
+    <string name="qr">Generando QR</string>
+    <string name="close">Cerrar</string>
+
+    //Variables
+    <string name="bienvenido">Bienvenido</string>
+    <string name="maps">Debes instalar Google Maps!</string>
+
+    //Labels
+    <string name="cu_ntanos_queremos_saber_de_que_pais_deseas_recibir_tus_promociones_y_notificaciones">¡Cuéntanos! Queremos saber de que pais deseas recibir tus promociones y notificaciones.</string>
+    <string name="debil_pass">Débil</string>
+    <string name="fuerte_pass">Fuerte</string>
+    <string name="medio_pass">Medio</string>
+    <string name="first_coupon">Tienes</string>
+    <string name="second_coupon">disponibles por usuario. Aprovechalos!</string>
+
+    //Errors Form
+    <string name="c_required">Campos Requeridos</string>
+    <string name="f_invalid">Formato Invalido</string>
+    <string name="e_invalid">Correo Invalido</string>
+    <string name="min_characters">Contraseña mínima de 6 caracteres</string>
+    <string name="pass_match">Contraseñas no coinciden</string>
+    <string name="email_match">Correo no existente.</string>
+    <string name="send_email">Correo Enviado</string>
+
+    //Spinner
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="soltero">Soltero</string>
+    <string name="comprometido">Comprometido</string>
+    <string name="casado">Casado</string>
+    <string name="separado">Separado</string>
+    <string name="divorciado">Divorciado</string>
+    <string name="viudo">Viudo</string>
+    <string name="guardar">Guardar</string>
+
+    //Alert Dialog
+    <string name="exit_app">Quieres salir de la aplicación?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancelar</string>
+    <string name="country_changed">Hemos detectado que has cambiado tu ubicación. Quieres cambiar de pais a</string>
+    <string name="calification_exit">Quieres salir de la calificación?</string>
+    <string name="infoCupon">Permite a la aplicación que te notifique cada vez que se cree un cupón dentro de las categorias que tu has seleccionado como preferentes para que estes al pendiente de todas las nuevas promociones de tu interes.</string>
+    <string name="infoRuta">Permite a la aplicación que te notifique cada vez que estes cerca de algun comercio que tenga promociones vigentes para que puedas acercarte y disfrutar de ellas.</string>
+    <string name="infoVenc">Permite a la aplicación que te notifique cada vez que un cupón, que pertenezca a tus categorias preferentes, este cerca de vencer para que puedas acercarte y aprovechar los ultimos cupones de esta promoción.</string>
+    <string name="first_profile">Has completado el</string>
+    <string name="second_profile">% de tu perfil, ayudanos completando la información restante.</string>
+
+    //Toolbar
+    <string name="now">Aprovecha Ya</string>
+    <string name="new_c">Lo Nuevo</string>
+    <string name="best">Mejores Descuentos</string>
+    <string name="campain">Campañas Disponibles</string>
+    <string name="scan">Scanner</string>
+
+    //Notifications
+    <string name="canje">Canje Exitoso</string>
+    <string name="app_beneficios_notification">Gracias por utilizar tu app de Beneficios</string>
+    <string name="commerce_list_label">Lista de Comercios</string>
+    <string name="commerce_list_empty">No hay comercios disponibles!</string>
+    <string name="commerce_list_title">Comercios</string>
+    <string name="comercios">Comercios</string>
+    <string name="personalizar">Mis Preferencias</string>
+
+    <string name="o_entra_con">o unirme con</string>
+    <string name="millas">Millas</string>
+
+    <string name="follow_text">Seguir</string>
+
+    <string name="cons_label">Consultas</string>
+    <string name="miles_label">Millas</string>
+    <string name="favorite_label">Favorito</string>
+    <string name="coupons_label">Cupones</string>
+    <string name="loyalty_plan_label">Planes de Lealtad</string>
+    <string name="agencies_label">Sucursales</string>
+    <string name="commerce_info_label">Información del Comercio</string>
+    <string name="total_commecer_label"><![CDATA[Comercios: <b><font color=\'#f76B1C\'>%1s</font></b>]]></string>
+    <string name="view_all">Ver todos</string>
+    <string name="error_message_title">Error inesperado</string>
+    <string name="close_label">Cerrar</string>
+    <string name="following_label">Siguiendo</string>
+    <string name="coupons_list_label">Lista de Cupones</string>
+    <string name="coupons_list_empty">Actualmente no hay cupones disponibles</string>
+    <string name="invalid_url">URL Inválida</string>
+    <string name="app_url">https://beneficioslatam.com</string>
+    <string name="sendto">Enviado a</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="iniciar">INICIAR</string>
+    <string name="ver_mi_c_digo_qr">Ver mi código QR</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="tu_c_digo_qr">TU CÓDIGO QR</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="ubicaci_n">Ubicación</string>
+    <string name="direcci_n">Dirección</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="horarios">Horarios</string>
+    <string name="ver_mis_canjes">Ver mis Transacciones</string>
+    <string name="sucursal">Sucursal</string>
+    <string name="view_inmap_label">Ver en el Mapa</string>
+    <string name="open_waze_label">Abrir en Waze</string>
+    <string name="share_label">Compartir</string>
+    <string name="phones_label">Teléfono</string>
+    <string name="email_label">Correo Electrónico</string>
+    <string name="location_label">Localización</string>
+    <string name="shared_from">Compartido desde:</string>
+    <string name="nolocation_configured_label">Localización no configurada para este comercio</string>
+    <string name="opened_now"><![CDATA[<font color=\'#02B256\'>Abierto ahora</font> %1s]]></string>
+    <string name="closed_now"><![CDATA[<font color=\'#FF0000\'>Cerrado ahora</font> %1s]]></string>
+    <string name="associations_bycountry_label">Mis Clubs</string>
+    <string name="recent_associations_label">Mis Tarjetas de Lealtad</string>
+    <string name="add_loyalty_plan_label">Inscribirme a un Club</string>
+    <string name="clear_label">Limpiar</string>
+    <string name="search">Buscar</string>
+    <string name="required_label">Requerido</string>
+    <string name="tipo_plan_label">Seleccione un Club</string>
+    <string name="codigo_validacion_label">Código (*)</string>
+    <string name="subscribe_label">Suscribir</string>
+    <string name="plan_lealtad_title">Planes de Lealtad</string>
+    <string name="accept_checkbox_label">Acepto los términos y condiciones</string>
+    <string name="unirse_label">Unirse</string>
+    <string name="warning_message">Advertencia</string>
+    <string name="must_accept_terms">Debe aceptar los términos y condiciones</string>
+    <string name="members_label">Miembros</string>
+    <string name="welcome_plan_label">Bienvenido(a) a</string>
+    <string name="dias_transcurridos_label">%1s días %2s</string>
+    <string name="desvincular_label">Desvincular</string>
+    <string name="following_from_label"><![CDATA[Vinculado desde: <b>%1s</b>]]></string>
+    <string name="loyalty_list_label">Lista de Clubs</string>
+    <string name="loyalty_list_empty">Usted no está unido a ningún Club de este comercio</string>
+    <string name="seals_list_label">Lista de Sellos</string>
+    <string name="seals_list_empty">Usted no está unido a ningún plan de Sellos de este comercio</string>
+    <string name="conditions_label">Condiciones</string>
+    <string name="my_loyalty_plans">Mis Programas y Clubs</string>
+    <string name="unlink_trade_label">Desvincular Programa</string>
+    <string name="are_you_sure_label">Está seguro que desea desvincularse de este programa? Si lo haces perderas toda la información referente al plan.</string>
+
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="complete_your_data">Completa tus datos</string>
+    <string name="transacciones">Transacciones</string>
+    <string name="ver_mis_estad_sticas">Ver mis Estadísticas</string>
+
+    <string name="mis_estadisticas">Mis Estadísticas</string>
+    <string name="mis_transacciones">Historial de Transacciones</string>
+    <string name="canje_nav">Canje</string>
+    <string name="acumulaci_n_de_millas_nav">Acumulación de Millas</string>
+    <string name="acumulaci_n_de_sellos_de_lealtad_nav">Acumulación de Sellos de Lealtad</string>
+    <string name="canjes_de_millas_nav">Canjes de Millas</string>
+    <string name="canjes_de_tarjetas_de_lealtad_nav">Canjes de Tarjetas de Lealtad</string>
+    <string name="vinculaci_n_a_plan_de_lealtad_nav">Vinculación a Plan de Lealtad</string>
+    <string name="desvinculaci_n_de_plan_de_lealtad_nav">Desvinculación de Plan de Lealtad</string>
+    <string name="bloqueo_de_plan_de_lealtad_nav">Bloqueo de Plan de Lealtad</string>
+    <string name="sucursales">Sucursales</string>
+    <string name="ver_todas_las_transacciones">Ver Todas las Transacciones</string>
+    <string name="opened_now2"><![CDATA[<font color=\'#02B256\'>Abierto ahora</font>]]></string>
+    <string name="closed_soon"><![CDATA[<font color=\'#FF9306\'>Cierra Pronto</font>]]></string>
+    <string name="closed_now2"><![CDATA[<font color=\'#FF0000\'>Cerrado ahora</font>]]></string>
+    <string name="tel_no_registrado">Teléfono no registrado.</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="acerca_de_text">Beneficios es el programa que premia tu fidelidad y preferencia.\n\nObtienes gratis, de forma fácil y rápida, una amplia gama de promociones y descuentos exclusivos en establecimientos seleccionados.</string>
+    <string name="selecciona_el_departamento">Selecciona el departamento:</string>
+    <string name="horarios_de_la_sucursal">Horarios de la Sucursal</string>
+    <string name="cerrado">Cerrado</string>
+    <string name="mediodia">Cerrado al mediodía</string>
+    <string name="invalid_number_seals">Cantidad de sellos es invalida</string>
+    <string name="without_plans_label">No hay planes de lealtad disponibles</string>
+    <string name="plan_not_exists">No existe plan de lealtad. Favor consulte con el administrador.</string>
+    <string name="exchange_label">Canjear</string>
+    <string name="excahnge_history_label">Historial de Canjes</string>
+    <string name="stamps_label">Tarjetas de Lealtad</string>
+    <string name="empty_stamps_plans">No tienen ninguna tarjeta</string>
+    <string name="stamp_card_info">Información de Tarjeta</string>
+    <string name="start_date_label"><![CDATA[Fecha Inicio: <b>%1s</b>]]></string>
+    <string name="end_date_label"><![CDATA[Fecha Vencimiento: <b>%1s</b>]]></string>
+    <string name="requierd_stamps_label"><![CDATA[Sello Requeridos: <b>%1s</b>]]></string>
+    <string name="stamped_stamps_label"><![CDATA[Sellos Obtenidos: <b>%1s</b>]]></string>
+    <string name="completed_date_label"><![CDATA[Fecha Completada: <b>%1s</b>]]></string>
+    <string name="exchange_date_label"><![CDATA[Fecha Canjeada: <b>%1s</b>]]></string>
+    <string name="status_label"><![CDATA[Estado: <b>%1s</b>]]></string>
+    <string name="last_stamp_date_label"><![CDATA[Fecha de Último Sello: <b>%1s</b>]]></string>
+    <string name="stamp_status_inprogress">En progreso</string>
+    <string name="stamp_status_completed">Completada</string>
+    <string name="stamp_status_expired">Expirada</string>
+    <string name="stamp_status"><![CDATA[Estado: <b><font color=\'%1s\'>%2s</font></b>]]></string>
+    <string name="stamp_info">Información de Sello</string>
+    <string name="stamp_date_label"><![CDATA[Fecha de sello: <b>%1s</b>]]></string>
+    <string name="stamp_agency_label"><![CDATA[Sucursal: <b>%1s</b>]]></string>
+    <string name="stamp_pos_label"><![CDATA[Caja: <b>%1s</b>]]></string>
+    <string name="stamp_cashier_label"><![CDATA[Cajero: <b>%1s</b>]]></string>
+    <string name="stamp_description_label"><![CDATA[Descripción: <b>%1s</b>]]></string>
+    <string name="stamp_card_qr">QR DE TARJETA DE SELLOS</string>
+    <string name="stamp_status_redimeed">Canjeada</string>
+
+    <string name="lista_de_transacciones">Historial de Transacciones</string>
+    <string name="no_hay_transacciones_actualmente">No hay transacciones</string>
+    <string name="billetera">Billetera</string>
+    <string name="lista_de_cupones_favoritos">Lista de Cupones Favoritos</string>
+    <string name="detalle_transacci_n">Detalle Transacción</string>
+    <string name="lista_de_sucursales">Lista de sucursales</string>
+    <string name="no_hay_sucursales_disponibles">Actualmente no hay sucursales</string>
+    <string name="no_hay_notificaciones_actualmente">Actualmente no hay notificaciones</string>
+    <string name="lista_de_notificaciones">Lista de Notificaciones</string>
+
+    <string name="info_label">Informacion</string>
+    <string name="rubro_list_title">Categorías</string>
+    <string name="filter_trend_string">Rubro = %1s</string>
+    <string name="default_suggestion_test">Default Suggestion Test</string>
+    <string name="cu_ntanos">Cuéntanos</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_10">10</string>
+    <string name="error_inesperado">Error Inesperado</string>
+    <string name="no_hay_horarios_disponibles">No hay horarios disponibles</string>
+    <string name="cupones_lealtad">Cupones Lealtad</string>
+    <string name="cupones_generales">Cupones Generales</string>
+    <string name="actualmente_no_sigues_ningun_comercio">Actualmente no sigues ningún comercio</string>
+    <string name="permitir_notificaciones">PERMITIR NOTIFICACIONES</string>
+    <string name="progreso_perfil">PROGRESO DEL PERFIL</string>
+    <string name="lista_de_categor_as">Lista de Categorías</string>
+    <string name="no_hay_categor_as_disponibles">No hay categorías disponibles</string>
+    <string name="logo_comercio_content">Logo Comercio</string>
+    <string name="loyaltyimage">loyaltyImage</string>
+    <string name="access_icon">Access Icon</string>
+
+    <string name="qr_generator">Generación de QR</string>
+    <string name="set_qr_number">Favor ingresar el número de cupones a canjear*:</string>
+    <string name="coupon_number">Número de Cupones</string>
+    <string name="information">* Esta acción no reserva ningún cupón.</string>
+    <string name="accept">Aceptar</string>
+    <string name="logo">Logo</string>
+    <string name="create_account"><u>Crear Cuenta</u></string>
+    <string name="drop_down">Drop Down</string>
+    <string name="google_image">Google Image</string>
+    <string name="facebook_image">Facebook Image</string>
+    <string name="category_image">Category Image</string>
+
+    <string name="action_close">Cerrar</string>
+    <string name="image_profile">Image Profile</string>
+    <string name="banner_image">Banner Image</string>
+    <string name="coupon_block">Coupon Block</string>
+    <string name="benefy_mail">ayudame@beneficioslatam.com</string>
+    <string name="help_string">Estamos para servirte,</string>
+    <string name="benefy_team">Tu equipo de Beneficios</string>
+    <string name="about_us">Obtienes gratis, de forma fácil y rápida, una amplia gama de promociones y descuentos exclusivos en establecimientos seleccionados.</string>
+    <string name="target">Objetivo</string>
+    <string name="my_miles">Mis millas</string>
+    <string name="card_information">Información de la tarjeta</string>
+    <string name="accumulated_stamps">Sellos acumulados</string>
+    <string name="card_information_detail">Información de la Tarjeta</string>
+    <string name="stamp_information">Información de Sello</string>
+
+    <string name="insured_data">Datos del asegurado</string>
+    <string name="first_name">Primer Nombre</string>
+    <string name="second_name">Segundo Nombre</string>
+    <string name="first_last_name">Primer Apellido</string>
+    <string name="second_last_name">Segundo Apellido</string>
+    <string name="extension">Extensión</string>
+    <string name="document">Carnet de Identidad (CI)</string>
+    <string name="expedition_date">Fecha de Expedición CI</string>
+    <string name="beneficiary_data">Datos del beneficiario</string>
+    <string name="relationship">Parentesco</string>
+    <string name="next">Siguiente</string>
+
+    // Health Form
+    <string name="health_form">Formulario de buena salud</string>
+    <string name="health_form_description">Para la contratación de su seguro de vida, complete las siguientes preguntas, solo le tomará unos minutos.</string>
+    <string name="question_1">Pregunta 1 de 6</string>
+    <string name="question1_selected">¿Ha padecido alguna enfermedad que le haya obligado a interrumpir su actividad profesional en los ultimos 10 años, durante mas de 15 días consecutivos?</string>
+    <string name="question1_description">En caso de contestación afirmativa, proporcione detalles: (fecha, tipo de enfermedad, duración, médico tratante):</string>
+    <string name="question_2">Pregunta 2 de 6</string>
+    <string name="question2_selected">¿Ha sufrido algún accidente o tiene alguna alteración física?</string>
+    <string name="question2_description">En caso de contestación afirmativa, proporcione detalles: (fecha, tipo de alteración, médico tratante):</string>
+    <string name="question_3">Pregunta 3 de 6</string>
+    <string name="question3_selected">¿Ha sido intervenido quirúrgicamente?</string>
+    <string name="question3_description">En caso de contestación afirmativa, proporcione detalles: (fecha, causa, consecuencias y médico tratante):</string>
+    <string name="question_4">Pregunta 4 de 6</string>
+    <string name="question4_selected">Indique su peso y talla actual</string>
+    <string name="weight_form">Peso</string>
+    <string name="kilograms">kg</string>
+    <string name="height_form">Talla</string>
+    <string name="centimeters">cm</string>
+    <string name="question_5">Pregunta 5 de 6</string>
+    <string name="question5_selected">¿Se encuentra Ud. actualmente en perfecto estado de salud y sin ningún sintoma de enfermedad?</string>
+    <string name="question5_description">En caso de contestación negativa, proporcione detalles: (sintomas, desde cuando y, médico tratante):</string>
+    <string name="question_6">Pregunta 6 de 6*</string>
+    <string name="question6_description">(*Opcional) Nombre y dirección del médico de cabecera o del último médico que le ha asistido.</string>
+    <string name="finish">Finalizar</string>
+
+    <string name="participant_brances">Ver sucursales participantes</string>
+    <string name="availables">Disponibles</string>
+    <string name="cupon_number"># DE CUPONES</string>
+    <string name="to_exchange">A CANJEAR</string>
+    <string name="insert_code">Ingresar código</string>
+    <string name="select_all">Seleccionar todos</string>
+    <string name="aplicar">Aplicar</string>
+    <string name="city_filter">Elige una ciudad para filtrar tus articulos y giftcards</string>
+    <string name="department">Departamentos</string>
+    <string name="cities">Ciudades</string>
+    <string name="apply">Aplicar</string>
+    <string name="clean">Limpiar</string>
+    <string name="insert_promotional_code">Ingresa código promocional</string>
+    <string name="your_coupons">Tus cupones</string>
+    <string name="shop_online_coupon">Compra cupones en línea</string>
+    <string name="direct_access">Accesos directos</string>
+    <string name="shops">Compras</string>
+
+    <string name="steps_to_see_benefits">Estás a unos pasos de ver tus beneficios</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="already_have_account">¿Ya tienes una cuenta?</string>
+    <string name="start_saving">¡Empieza a ahorrar</string>
+    <string name="favorite_commerces">con tus comercios favoritos!</string>
+    <string name="limited_coupons">Campañas por tiempo limitado.</string>
+    <string name="all_departments">Todos los departamentos</string>
+    <string name="buy">Comprar</string>
+    <string name="blocked_coupon">El cupón actualmente se encuentra bloqueado.</string>
+    <string name="not_specidied">No se especificó</string>
+    <string name="deep_coupon_redirect">Hemos detectado que el cupón que deseas abrir es de </string>
+    <string name="deep_coupon_redirect_2">, deseas cambiarte a este país?</string>
+    <string name="article_description">Descripción del articulo</string>
+    <string name="loading_coupon_error">Ocurrió un error al cargar la información del cupón.</string>
+    <string name="undertood">Ententido</string>
+    <string name="payment_error">No se pugo efectuar el pago correctamente, intente de nuevo.</string>
+    <string name="coupons_available_user">Cupones disponibles por usuario:</string>
+    <string name="purchased_coupon">Cupón Comprado</string>
+    <string name="purchased_giftcard">Giftcard Comprada</string>
+    <string name="promotional">Promocional</string>
+    <string name="coupon_type">Tipo de Cupón</string>
+    <string name="purchase_order">Orden de Compra</string>
+    <string name="success_purchase">COMPRA EXITOSA</string>
+    <string name="check_email">Revisa tu correo</string>
+    <string name="huawei_promotional">Adquiere este artículo en tiendas Huawei</string>
+    <string name="huawei_device">Consume el código promocional con un dispositivo Huawei</string>
+    <string name="confirm_data">Confirma tus datos para seguir</string>
+    <string name="personal_data">Datos personales</string>
+    <string name="document_identity">Documento de Identidad</string>
+    <string name="coupon_description">Descripción</string>
+    <string name="pet_data">Datos de la masctota</string>
+    <string name="bolivia_prefix">+591</string>
+    <string name="pet_type">Tipo</string>
+    <string name="breed">Raza</string>
+    <string name="years">Años</string>
+    <string name="months">Meses</string>
+    <string name="policy_data">Datos de Póliza</string>
+    <string name="age_does_not_apply">El cliente no aplica por la edad.</string>
+    <string name="pet_name">Nombre</string>
+    <string name="age">Edad</string>
+    <string name="not_corporate_affiliated">Aún no estás afiliado a un plan corporativo.</string>
+    <string name="corporate_benefit_description">Si tu grupo y/o empresa está afiliada a Benefy, pronto podrás gozar de excelentes beneficios.</string>
+    <string name="explore_available_plans">Explorar planes disponibles</string>
+    <string name="sud_required">No cumple con los requisitos de Sudamericana.</string>
+    <string name="corporate_voucher">Vale Corporativo</string>
+    <string name="how_works">¿CÓMO FUNCIONA?</string>
+    <string name="information_1">1. Selecciona la opción de regalo antes de procesar tu pago.</string>
+    <string name="information_2">2. Ingresa el correo del destinatario y la dedicatoria.</string>
+    <string name="information_3">3. Al hacer la compra se te generará un código promocional, el cual también será enviado al correo del destinatario.</string>
+    <string name="information_4">4. El destinatario debe ingresar el código promocional en la app y se le aplicará automaticamente en su cuponera benefy, listo para canjear!.</string>
+    <string name="gifted_article">Este articulo es un regalo</string>
+    <string name="how_gift_works">¿Como funcionan los regalos?</string>
+    <string name="check_mail_invoice">Revisa tu mail para vel el recibo</string>
+    <string name="success_gift_shop">¡COMPRA EXITOSA!</string>
+    <string name="view_gift">Ver regalo</string>
+    <string name="addressee_gift">ha recibido un correo electrónico con un código de regalo, adicionalmente puedes enviarselo tú mismo haciendo tap en el botón \'Ver regalo\'</string>
+    <string name="to_gift">Para</string>
+    <string name="from_gift">De</string>
+    <string name="gift_recipient_description">Para enviar el regalo al destinatario, ingresa los siguientes datos:</string>
+    <string name="mail_recipient">Correo del destinatario</string>
+    <string name="gift_dedication">Dedicatoria</string>
+    <string name="gift_option">¡Una nueva opción para regalar!</string>
+    <string name="share_gift">Compartir Regalo</string>
+    <string name="how_exchange">¿COMO CANJEARLO?</string>
+    <string name="shop_detail">Detalle de tu compra</string>
+    <string name="unlink_loyalty_plan">¿Deseas desvincularte del plan?</string>
+    <string name="first_gift_detail">Dile a</string>
+    <string name="second_gift_detail">que debe ingresar el código promocional en el app para que le aparezca en la cuponera benefy. Recuérdale que también le llegará un correo electrónico con el código de regalo.</string>
+    <string name="congratulations">¡Felicidades!</string>
+    <string name="first_gift_user">Se te ha asignado el siguiente regalo de </string>
+    <string name="second_gift_user">, ve a tu cuponera y disfrútalo.</string>
+    <string name="from_label"><![CDATA[De: <b>%1s</b>]]></string>
+    <string name="to_label"><![CDATA[Para: <b>%1s</b>]]></string>
+    <string name="available_label"><![CDATA[Válido hasta: <b>%1s</b>]]></string>
+    <string name="gift_items">Artículos que he regalado</string>
+    <string name="grateful">Gracias por el regalo!</string>
+    <string name="send_thanks">Enviar agradecimiento</string>
+    <string name="gift_detail">Detalle del regalo</string>
+    <string name="amount">Monto</string>
+    <string name="gift_detail_date_label"><![CDATA[Fecha de regalo: <b>%1s</b>]]></string>
+    <string name="gift_detail_article_label"><![CDATA[Artículo: <b>%1s</b>]]></string>
+    <string name="gift_detail_commerce_label"><![CDATA[Comercio: <b>%1s</b>]]></string>
+    <string name="gift_detail_dedication_label"><![CDATA[Dedicatoria: <b>%1s</b>]]></string>
+    <string name="days">días</string>
+    <string name="transaction_date_label"><![CDATA[Fecha de transacción: <b>%1s</b>]]></string>
+    <string name="transaction_date">Fecha: </string>
+    <string name="my_gift_items">Articulos que me han regalado</string>
+    <string name="delivery_1">1. Selecciona Programar entrega a domicilio.</string>
+    <string name="delivery_2">2. Agrega tu dirección y datos de entrega, incluyendo el día y la hora en la que puedes recibirlo.</string>
+    <string name="delivery_3">3. Realiza el pago de tu artículo.</string>
+    <string name="delivery_4">4. Recibiras un correo con la información de tu compra y los datos ingresados por la entrega.</string>
+    <string name="delivery_5">5. Recibe tu pedido el día y la hora programada.</string>
+    <string name="schedule_delivery">Programar entrega a domicilio</string>
+    <string name="schedule_delivery_works">¿Como funcionan las entregas programadas?</string>
+    <string name="cancel_delivery">Al desmarcar esta opción el artículo no será entregado por medio de delivery y la información se descartará.</string>
+    <string name="delivery_address">Dirección</string>
+    <string name="delivery_location">Ubicación de entrega</string>
+    <string name="receiver_person">Persona que recibirá el pedido</string>
+    <string name="contact_phone">Teléfono de contacto</string>
+    <string name="delivery_date">Fecha de entrega</string>
+    <string name="payment_tb">Pago</string>
+    <string name="visa_card">Visa Card</string>
+    <string name="digits_card">XXXX XXXX XXXX XXXX</string>
+    <string name="expiration_card_date">Exp. Date MMYYYY</string>
+    <string name="card_holder">Card Holder</string>
+    <string name="card_number_form">Número de Tarjeta</string>
+    <string name="expiration_date_form">Fecha de Expiración (MMYYYY)</string>
+    <string name="cvv">CVV</string>
+    <string name="end_purchase">Finalizar Compra</string>
+    <string name="invalid_delivery_zone">Ups, estas fuera de la zona de cobertura, selecciona otro punto de entrega para continuar.</string>
+    <string name="edit_map">Editar</string>
+    <string name="accept_delivery_payment">Debes aceptar los terminos del pago de Delivery.</string>
+    <string name="select_location_map">Elige un punto en el mapa para continuar.</string>
+    <string name="covid_question">¿Padece usted alguna de estas enfermedades: Cáncer, HIV SIDA, Diabetes, Enfermedades del Corazón, Insuficiencia Renal, Enfermedades Cerebro Vasculares, COVID-19 o Enfermedades Pulmonar Crónica Obstructiva?</string>
+    <string name="unique_question">Pregunta 1 de 1</string>
+    <string name="longitude_document_validation">Documento no debe tener mas de 10 caracteres</string>
+    <string name="expire_today">Vence hoy</string>
+    <string name="online_giftcards">Compra giftcard en línea</string>
+    <string name="savings_history">Ahorro histórico</string>
+
+    // Fragment Home
+    <string name="articles_store">Tienda - Artículos</string>
+    <string name="gift_card_store">Tienda - GiftCards</string>
+    <string name="article_label">Artículos</string>
+    <string name="gift_card_label">GiftCards</string>
+    <string name="loyalty_menu">Lealtad</string>
+    <string name="coupons_menu">Cupones</string>
+    <string name="store_menu">Tienda</string>
+    <string name="articles_home">Artículos</string>
+    <string name="gift_cards_home">Gift Cards</string>
+    <string name="given_item">Regalo</string>
+
+    // About activity
+    <string name="about_first">Benefy es el programa que </string>
+    <string name="about_second"> premia tu fidelidad y preferencia.</string>
+
+    //splash
+    <string name="version_name">v 0.0.0</string>
+    <string name="click_to_open_calendar">Click to open calendar</string>
+    <string name="no_account">¿Aun no tienes una cuenta?, </string>
+
+</resources>

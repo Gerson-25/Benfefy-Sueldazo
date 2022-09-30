@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_shop"
+        android:orderInCategory="1"
+        android:title="@string/store_menu" />
+
+    <item
+        android:id="@+id/nav_favorite"
+        android:icon="@drawable/ic_coupon"
+        android:orderInCategory="2"
+        android:title="@string/coupons_menu"/>
+
+    <!-- Here is the trick -->
+    <item
+        android:id="@+id/nav_benfy"
+        android:enabled="false"
+        android:orderInCategory="3"
+        tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/nav_lealtad"
+        android:icon="@drawable/ic_lealtad"
+        android:orderInCategory="4"
+        android:title="@string/loyalty_menu"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_perfil"
+        android:orderInCategory="5"
+        android:title="@string/perfil_menu"/>
+
+</menu>

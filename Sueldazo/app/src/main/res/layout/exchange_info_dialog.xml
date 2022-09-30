@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_centerVertical="true"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:elevation="5dp"
+        android:src="@drawable/ic_close"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/img_canje"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_bg_exchange"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/canje_exitoso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/canje_exitoso_popup"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:fontFamily="@font/circular_bold"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/txt_exito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/circular_book"
+            android:text="@string/has_canjeado_tu_cup_n_exitosamente_gracias_por_utilizar_tu_app_de_beneficios_popup"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/accept"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:fontFamily="@font/circular_book"
+        android:background="@drawable/button_shape"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

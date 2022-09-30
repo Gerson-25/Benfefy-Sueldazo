@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    app:cardCornerRadius="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryLigth"
+                android:gravity="end"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_info"
+                    android:background="@color/dark_blue"
+                    android:padding="10dp"
+                    tools:ignore="ContentDescription"
+                    app:tint="@color/white" />
+                <TextView
+                    android:id="@+id/titleId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="@string/qr_generator"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/dark_blue" />
+
+                <ImageView
+                    android:id="@+id/closeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_close"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/base_margin"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/infoId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="10dp"
+                    android:text="@string/set_qr_number"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/normal"
+                    android:gravity="center_vertical"
+                    style="@style/TextAppearance.AppCompat"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/numberLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/coupon_number"
+                    android:inputType="number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/amountField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:backgroundTint="@color/transparent"
+                        android:minLines="1"
+                        android:paddingTop="35dp"
+                        style="@style/TextAppearance.AppCompat"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/userQRId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="10dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/normal"
+                    android:gravity="center_vertical"
+                    style="@style/TextAppearance.AppCompat"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginBottom="8dp"
+                    android:drawablePadding="10dp"
+                    android:textAlignment="viewEnd"
+                    android:text="@string/information"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/normal"
+                    android:gravity="center_vertical"
+                    style="@style/TextAppearance.AppCompat"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/bold"
+                    android:text="@string/cancel"
+                    app:backgroundTint="@color/colorPrimaryLigth"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sp_depto"
+                    style="@style/Widget.AppCompat.Button.Colored"/>
+
+                <Button
+                    android:id="@+id/accept"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/bold"
+                    android:text="@string/accept"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sp_depto"
+                    style="@style/Widget.AppCompat.Button.Colored"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>

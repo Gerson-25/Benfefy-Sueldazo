@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemId"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:layout_margin="4dp"
+    android:foregroundTint="@android:color/transparent"
+    cardview:cardBackgroundColor="@android:color/transparent"
+    cardview:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            cardview:layout_constraintGuide_percent="0.4" />
+
+        <ImageView
+            android:id="@+id/couponImageId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:padding="8dp"
+            android:contentDescription="@string/coupons_label"
+            cardview:layout_constraintStart_toStartOf="parent"
+            cardview:layout_constraintEnd_toEndOf="@id/bonus"/>
+
+        <TextView
+            android:id="@+id/titleCouponId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/circular_book"
+            android:textColor="@color/colorPrimary"
+            android:maxLines="1"
+            cardview:layout_constraintStart_toStartOf="@id/bonus"
+            cardview:layout_constraintEnd_toStartOf="@id/favorite"
+            cardview:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/subtitleCouponId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="2dp"
+            android:textColor="@color/secondaryGray"
+            android:maxLines="1"
+            android:fontFamily="@font/myriad_pro_regular"
+            cardview:layout_constraintStart_toStartOf="@id/bonus"
+            cardview:layout_constraintEnd_toStartOf="@id/favorite"
+            cardview:layout_constraintTop_toBottomOf="@id/titleCouponId"/>
+
+        <ImageButton
+            android:id="@+id/favorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_mark_fav"
+            android:layout_marginEnd="4dp"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintTop_toTopOf="@id/titleCouponId"
+            cardview:layout_constraintBottom_toBottomOf="@id/subtitleCouponId"
+            android:contentDescription="@string/favorite_label" />
+
+        <LinearLayout
+            android:id="@+id/couponPrices"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_vertical"
+            cardview:layout_constraintStart_toStartOf="@id/bonus"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintTop_toBottomOf="@id/subtitleCouponId">
+
+            <ImageView
+                android:id="@+id/commerceImageId"
+                android:layout_width="32dp"
+                android:layout_height="32dp"/>
+
+            <TextView
+                android:id="@+id/couponOriginalPriceId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/secondaryGray"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/couponPriceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textSize="19sp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorPrimary"
+                android:maxLines="1"
+                android:fontFamily="@font/circular_book" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/vip"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_star_yellow"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/favorite_label"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/blockedView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:alpha="0.4"
+            android:visibility="gone"
+            cardview:layout_constraintStart_toStartOf="@id/couponImageId"
+            cardview:layout_constraintEnd_toEndOf="@id/couponImageId"
+            cardview:layout_constraintTop_toTopOf="@id/couponImageId"
+            cardview:layout_constraintBottom_toBottomOf="@id/couponImageId"/>
+
+        <ImageView
+            android:id="@+id/blockedImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_bloqueo_cupon"
+            android:visibility="gone"
+            cardview:layout_constraintStart_toStartOf="@id/couponImageId"
+            cardview:layout_constraintEnd_toEndOf="@id/couponImageId"
+            cardview:layout_constraintTop_toTopOf="@id/couponImageId"
+            cardview:layout_constraintBottom_toBottomOf="@id/couponImageId"
+            android:contentDescription="@string/coupon_block" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

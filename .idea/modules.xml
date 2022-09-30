@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sueldazo.iml" filepath="$PROJECT_DIR$/.idea/modules/sueldazo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sueldazo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/sueldazo.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/sueldazo.core.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/sueldazo.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/sueldazo.core.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.unitTest.iml" />
+    </modules>
+  </component>
+</project>

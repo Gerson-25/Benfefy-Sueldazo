@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/view_inmap_grp" android:visible="true" >
+        <item
+            android:id="@+id/viewInMapid"
+            android:title="@string/view_inmap_label"
+            android:icon="@drawable/ic_view_inmap"/>
+    </group>
+
+    <group
+        android:id="@+id/open_waze_grp" android:visible="true" >
+        <item
+            android:id="@+id/openWithWazeId"
+            android:title="@string/open_waze_label"
+            android:icon="@drawable/ic_open_waze"/>
+    </group>
+
+    <group
+        android:id="@+id/share_grp" android:visible="true" >
+        <item
+            android:id="@+id/shareId"
+            android:title="@string/share_label"
+            android:icon="@drawable/ic_share_address"/>
+    </group>
+
+</menu>

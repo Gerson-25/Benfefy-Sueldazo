@@ -1,0 +1,117 @@
+Index: app/google-services.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"project_info\": {\r\n    \"project_number\": \"426617820255\",\r\n    \"firebase_url\": \"https://beneficios-uat.firebaseio.com\",\r\n    \"project_id\": \"beneficios-uat\",\r\n    \"storage_bucket\": \"beneficios-uat.appspot.com\"\r\n  },\r\n  \"client\": [\r\n    {\r\n      \"client_info\": {\r\n        \"mobilesdk_app_id\": \"1:426617820255:android:85fe6ca997e437ccb737ea\",\r\n        \"android_client_info\": {\r\n          \"package_name\": \"com.syntepro.appbeneficiosbolivia\"\r\n        }\r\n      },\r\n      \"oauth_client\": [\r\n        {\r\n          \"client_id\": \"426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com\",\r\n          \"client_type\": 3\r\n        }\r\n      ],\r\n      \"api_key\": [\r\n        {\r\n          \"current_key\": \"AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE\"\r\n        }\r\n      ],\r\n      \"services\": {\r\n        \"appinvite_service\": {\r\n          \"other_platform_oauth_client\": [\r\n            {\r\n              \"client_id\": \"426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com\",\r\n              \"client_type\": 3\r\n            },\r\n            {\r\n              \"client_id\": \"426617820255-tnsu378fca0scd81okotnacu9211u866.apps.googleusercontent.com\",\r\n              \"client_type\": 2,\r\n              \"ios_info\": {\r\n                \"bundle_id\": \"com.syntepro.beneficiosAdmin\"\r\n              }\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"client_info\": {\r\n        \"mobilesdk_app_id\": \"1:426617820255:android:e9e0857feff3229bb737ea\",\r\n        \"android_client_info\": {\r\n          \"package_name\": \"com.syntepro.beneficiosadministrativa\"\r\n        }\r\n      },\r\n      \"oauth_client\": [\r\n        {\r\n          \"client_id\": \"426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com\",\r\n          \"client_type\": 3\r\n        }\r\n      ],\r\n      \"api_key\": [\r\n        {\r\n          \"current_key\": \"AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE\"\r\n        }\r\n      ],\r\n      \"services\": {\r\n        \"appinvite_service\": {\r\n          \"other_platform_oauth_client\": [\r\n            {\r\n              \"client_id\": \"426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com\",\r\n              \"client_type\": 3\r\n            },\r\n            {\r\n              \"client_id\": \"426617820255-tnsu378fca0scd81okotnacu9211u866.apps.googleusercontent.com\",\r\n              \"client_type\": 2,\r\n              \"ios_info\": {\r\n                \"bundle_id\": \"com.syntepro.beneficiosAdmin\"\r\n              }\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"configuration_version\": \"1\"\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/google-services.json b/app/google-services.json
+--- a/app/google-services.json	(revision 6d6bab8b54aa636ea2ae625de998067320ae096c)
++++ b/app/google-services.json	(date 1639193437324)
+@@ -1,77 +1,41 @@
+ {
+   "project_info": {
+-    "project_number": "426617820255",
+-    "firebase_url": "https://beneficios-uat.firebaseio.com",
+-    "project_id": "beneficios-uat",
+-    "storage_bucket": "beneficios-uat.appspot.com"
++    "project_number": "797707140437",
++    "firebase_url": "https://beneficiosdevbol.firebaseio.com",
++    "project_id": "beneficiosdevbol",
++    "storage_bucket": "beneficiosdevbol.appspot.com"
+   },
+   "client": [
+     {
+       "client_info": {
+-        "mobilesdk_app_id": "1:426617820255:android:85fe6ca997e437ccb737ea",
++        "mobilesdk_app_id": "1:797707140437:android:874c769723c51fca",
+         "android_client_info": {
+           "package_name": "com.syntepro.appbeneficiosbolivia"
+         }
+       },
+       "oauth_client": [
+         {
+-          "client_id": "426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com",
++          "client_id": "797707140437-sc8rit4607g6gaq2cbsddd96g0dfrts7.apps.googleusercontent.com",
+           "client_type": 3
+         }
+       ],
+       "api_key": [
+         {
+-          "current_key": "AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE"
++          "current_key": "AIzaSyBj7DIE6wqKSSwYLhGfmpM7jil9g5tE5Uo"
+         }
+       ],
+       "services": {
+         "appinvite_service": {
+           "other_platform_oauth_client": [
+             {
+-              "client_id": "426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com",
++              "client_id": "797707140437-sc8rit4607g6gaq2cbsddd96g0dfrts7.apps.googleusercontent.com",
+               "client_type": 3
+             },
+             {
+-              "client_id": "426617820255-tnsu378fca0scd81okotnacu9211u866.apps.googleusercontent.com",
++              "client_id": "797707140437-aeuqnebpsmljvtbbcgv5f50kj3idk512.apps.googleusercontent.com",
+               "client_type": 2,
+               "ios_info": {
+-                "bundle_id": "com.syntepro.beneficiosAdmin"
+-              }
+-            }
+-          ]
+-        }
+-      }
+-    },
+-    {
+-      "client_info": {
+-        "mobilesdk_app_id": "1:426617820255:android:e9e0857feff3229bb737ea",
+-        "android_client_info": {
+-          "package_name": "com.syntepro.beneficiosadministrativa"
+-        }
+-      },
+-      "oauth_client": [
+-        {
+-          "client_id": "426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com",
+-          "client_type": 3
+-        }
+-      ],
+-      "api_key": [
+-        {
+-          "current_key": "AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE"
+-        }
+-      ],
+-      "services": {
+-        "appinvite_service": {
+-          "other_platform_oauth_client": [
+-            {
+-              "client_id": "426617820255-s46c2cctnmkiuhs42p7js6kei7hlr0ql.apps.googleusercontent.com",
+-              "client_type": 3
+-            },
+-            {
+-              "client_id": "426617820255-tnsu378fca0scd81okotnacu9211u866.apps.googleusercontent.com",
+-              "client_type": 2,
+-              "ios_info": {
+-                "bundle_id": "com.syntepro.beneficiosAdmin"
++                "bundle_id": "com.syntepro.boliviaBeneficios"
+               }
+             }
+           ]
+Index: app/gms/release/output-metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 2,\r\n  \"artifactType\": {\r\n    \"type\": \"APK\",\r\n    \"kind\": \"Directory\"\r\n  },\r\n  \"applicationId\": \"com.syntepro.appbeneficiosbolivia\",\r\n  \"variantName\": \"gmsRelease\",\r\n  \"elements\": [\r\n    {\r\n      \"type\": \"SINGLE\",\r\n      \"filters\": [],\r\n      \"versionCode\": 86,\r\n      \"versionName\": \"5.6.10\",\r\n      \"outputFile\": \"app-gms-release.apk\"\r\n    }\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/gms/release/output-metadata.json b/app/gms/release/output-metadata.json
+--- a/app/gms/release/output-metadata.json	(revision 6d6bab8b54aa636ea2ae625de998067320ae096c)
++++ b/app/gms/release/output-metadata.json	(date 1639195330682)
+@@ -11,7 +11,7 @@
+       "type": "SINGLE",
+       "filters": [],
+       "versionCode": 86,
+-      "versionName": "5.6.10",
++      "versionName": "5.6.9",
+       "outputFile": "app-gms-release.apk"
+     }
+   ]

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextColor="@color/white"
+        tools:targetApi="lollipop" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_NuevoCupon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/permite_notificaciones_al_crear_nuevo_cup_n"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/switchNotiCupon"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchNotiCupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:theme="@style/SCBSwitch"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@id/infoCupon"
+                app:layout_constraintTop_toTopOf="@id/txt_NuevoCupon"
+                app:layout_constraintBottom_toBottomOf="@id/txt_NuevoCupon" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/infoCupon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_info"
+                android:padding="5dp"
+                android:background="@color/zxing_transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/switchNotiCupon"
+                app:layout_constraintBottom_toBottomOf="@id/switchNotiCupon"/>
+
+            <TextView
+                android:id="@+id/txt_ruta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/permite_ruta"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_NuevoCupon"
+                app:layout_constraintEnd_toStartOf="@id/switchRuta"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchRuta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintEnd_toStartOf="@id/infoRuta"
+                app:layout_constraintTop_toTopOf="@id/txt_ruta"
+                app:layout_constraintBottom_toBottomOf="@id/txt_ruta"
+                android:layout_marginEnd="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/infoRuta"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_info"
+                android:background="@color/zxing_transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toTopOf="@id/switchRuta"
+                app:layout_constraintBottom_toBottomOf="@id/switchRuta"/>
+
+            <TextView
+                android:id="@+id/txt_ProxVenc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/permite_notificaciones_de_cupones_proximos_a_vencer"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_ruta"
+                app:layout_constraintEnd_toStartOf="@id/switchVenc"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchVenc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintEnd_toStartOf="@id/infoVenc"
+                app:layout_constraintTop_toTopOf="@id/txt_ProxVenc"
+                app:layout_constraintBottom_toBottomOf="@id/txt_ProxVenc"
+                android:layout_marginEnd="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/infoVenc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_info"
+                android:padding="5dp"
+                android:background="@color/zxing_transparent"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toTopOf="@id/switchVenc"
+                app:layout_constraintBottom_toBottomOf="@id/switchVenc"/>
+
+            <TextView
+                android:id="@+id/txt_NumNoti"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cuantas_notificaciones_desea_recibir_como_m_ximo_al_d_a"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_ProxVenc"
+                app:layout_constraintEnd_toStartOf="@id/spinnerNoti"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <Spinner
+                android:id="@+id/spinnerNoti"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/switchVenc"
+                app:layout_constraintTop_toTopOf="@id/txt_NumNoti"
+                app:layout_constraintBottom_toBottomOf="@id/txt_NumNoti"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txt_idioma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/seleccione_idioma"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/myriad_pro_regular"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_NumNoti"
+                app:layout_constraintEnd_toStartOf="@id/spinnerIdioma"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <Spinner
+                android:visibility="gone"
+                android:id="@+id/spinnerIdioma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txt_idioma"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_NumNoti"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</LinearLayout>

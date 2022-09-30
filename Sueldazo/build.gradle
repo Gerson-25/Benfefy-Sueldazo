@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.5.10'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' } // HUAWEI Maven repository
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.8' // Google Services plugin
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.6.1' // Add the Crashlytics Gradle plugin.
+        classpath "io.realm:realm-gradle-plugin:6.0.2" // REALM
+        classpath 'com.huawei.agconnect:agcp:1.5.0.300' // HUAWEI agcp plugin
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        // Safe arguments
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven{
+            url "https://maven.google.com"  // Google Maven Repository
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
+        maven { url 'https://developer.huawei.com/repo/' } // HUAWEI Maven repository
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

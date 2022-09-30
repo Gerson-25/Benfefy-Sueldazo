@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ToolbarTheme"
+        app:titleTextColor="@color/white"
+        tools:targetApi="lollipop" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/fb_add"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@drawable/oval_shape"
+                android:elevation="12dp"
+                android:padding="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="@id/circleImageView"
+                app:layout_constraintEnd_toEndOf="@id/circleImageView"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/text_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/nombre_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/circleImageView"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_nombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/normal"
+                app:counterEnabled="true"
+                app:counterMaxLength="50"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toStartOf="@id/tl_apellido"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_nombre"
+                style="@style/TextAppearance.AppCompat">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/normal"
+                    android:inputType="textPersonName"
+                    style="@style/TextAppearance.MaterialComponents.Overline"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_apellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/apellido_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toEndOf="@+id/tl_nombre"
+                app:layout_constraintTop_toBottomOf="@id/circleImageView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tl_apellido"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/normal"
+                app:counterEnabled="true"
+                app:counterMaxLength="50"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tl_nombre"
+                app:layout_constraintTop_toBottomOf="@+id/txt_apellido"
+                style="@style/TextAppearance.AppCompat">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_apellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/normal"
+                    android:inputType="textPersonName"
+                    style="@style/TextAppearance.MaterialComponents.Overline"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/simpleSpinnerCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tl_nombre"/>
+
+            <TextView
+                android:id="@+id/txt_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/telefono_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/simpleSpinnerCountry" />
+
+            <TextView
+                android:id="@+id/txt_prefijo"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/bold"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@id/edt_telefono"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_telefono" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_telefono"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/normal"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@id/sp_genero"
+                app:layout_constraintStart_toEndOf="@id/txt_prefijo"
+                app:layout_constraintTop_toBottomOf="@+id/txt_telefono"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <TextView
+                android:id="@+id/txt_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/fechaNac_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toEndOf="@id/edt_telefono"
+                app:layout_constraintTop_toBottomOf="@+id/simpleSpinnerCountry" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_fecha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/normal"
+                android:hint="@string/hint_su"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sp_genero"
+                app:layout_constraintTop_toBottomOf="@+id/txt_fecha"
+                style="@style/TextAppearance.AppCompat"/>
+
+            <TextView
+                android:id="@+id/txt_genero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/genero_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_fecha" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_genero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/normal"
+                app:layout_constraintEnd_toStartOf="@+id/sp_estado"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_genero" />
+
+            <TextView
+                android:id="@+id/txt_estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:text="@string/estado_su"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toEndOf="@+id/sp_genero"
+                app:layout_constraintTop_toBottomOf="@id/edt_fecha" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_estado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/normal"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sp_genero"
+                app:layout_constraintTop_toBottomOf="@+id/txt_genero" />
+
+            <TextView
+                android:id="@+id/text_depto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_genero" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_depto"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/normal"
+                app:layout_constraintEnd_toStartOf="@+id/sp_prov"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_depto" />
+
+            <TextView
+                android:id="@+id/txt_prov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/bold"
+                android:gravity="start|bottom"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintStart_toEndOf="@+id/sp_depto"
+                app:layout_constraintTop_toBottomOf="@id/sp_genero" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_prov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/normal"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sp_depto"
+                app:layout_constraintTop_toBottomOf="@+id/txt_prov" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:fontFamily="@font/bold"
+                android:textSize="20sp"
+                android:text="@string/guardar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sp_depto" />
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sp_depto"
+                android:layout_marginTop="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="40dp"
+                android:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</LinearLayout>

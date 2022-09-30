@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview_id"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    cardview:cardBackgroundColor="@android:color/transparent"
+    android:foregroundTint="@android:color/transparent"
+    cardview:cardElevation="0dp"
+    android:elevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_cat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerInside"
+            android:padding="12dp"
+            tools:ignore="ContentDescription"
+            cardview:layout_constraintTop_toTopOf="parent"
+            cardview:layout_constraintStart_toStartOf="parent"
+            cardview:layout_constraintBottom_toTopOf="@id/guidelineHorizontalText"
+            cardview:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            cardview:layout_constraintGuide_percent="0.85" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.PrimaryAccent"
+            cardview:layout_constraintStart_toStartOf="parent"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintTop_toTopOf="parent"
+            cardview:layout_constraintBottom_toBottomOf="@id/img_cat"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/txt_cat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:textSize="12sp"
+            cardview:layout_constraintStart_toStartOf="parent"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintTop_toBottomOf="@id/guidelineHorizontalText"
+            cardview:layout_constraintBottom_toBottomOf="parent"
+            style="@style/TextAppearance.AppCompat"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

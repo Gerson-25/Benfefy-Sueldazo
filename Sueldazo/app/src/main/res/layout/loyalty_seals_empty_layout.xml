@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/emptyId2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:layout_gravity="center"
+    android:layout_weight="1"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:layout_centerInParent="true">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/ic_planes"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        app:tint="@color/colorPrimaryLigth" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:fontFamily="@font/bold"
+        android:visibility="gone"
+        android:text="@string/seals_list_label"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/darkGray"
+        android:textStyle="normal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/normal"
+        android:layout_marginBottom="20dp"
+        android:text="@string/seals_list_empty"/>
+
+</LinearLayout>

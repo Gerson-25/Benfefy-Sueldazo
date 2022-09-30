@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="2dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="7dp">
+
+        <ImageView
+            android:id="@+id/commerceImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/commerceNameId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/bold"
+            android:textSize="22sp"
+            android:maxLines="1"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/commerceImage"
+            card_view:layout_constraintTop_toTopOf="parent"
+            style="@style/TextAppearance.AppCompat"/>
+
+        <TextView
+            android:id="@+id/txt_sucursal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/normal"
+            android:textSize="16sp"
+            android:maxLines="1"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/commerceImage"
+            card_view:layout_constraintTop_toBottomOf="@+id/commerceNameId"
+            style="@style/TextAppearance.AppCompat"/>
+
+        <TextView
+            android:id="@+id/txt_distancia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/normal"
+            android:textSize="14sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            style="@style/TextAppearance.AppCompat"/>
+
+        <ImageView
+            android:id="@+id/ubicacion"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintEnd_toStartOf="@id/txt_distancia"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_cerca_de_ti_ubicacion"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/sep"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            card_view:layout_constraintEnd_toStartOf="@id/ubicacion"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            style="@style/TextAppearance.AppCompat"/>
+
+        <TextView
+            android:id="@+id/txt_cupones"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/normal"
+            android:textSize="14sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toStartOf="@id/sep"
+            style="@style/TextAppearance.AppCompat"/>
+
+        <ImageView
+            android:id="@+id/cantidad"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="5dp"
+            card_view:layout_constraintEnd_toStartOf="@id/txt_cupones"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_cerca_de_ti_cantidad_de_cupones"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

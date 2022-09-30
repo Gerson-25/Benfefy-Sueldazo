@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_explore"
+        android:icon="@drawable/ic_explorar"
+        android:title="@string/explorar_menu"
+        android:fontFamily="@font/normal"/>
+
+    <item android:id="@+id/navigation_category"
+        android:icon="@drawable/ic_categorias"
+        android:title="@string/cupones_menu"
+        android:fontFamily="@font/normal"/>
+
+    <item android:id="@+id/navigation_benefits"
+        android:icon="@drawable/ic_beneficios"
+        android:title="@string/beneficios_menu"
+        android:fontFamily="@font/normal"/>
+
+    <item android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_favoritos"
+        android:title="@string/favoritos_menu"
+        android:fontFamily="@font/normal"/>
+
+    <item android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_wallet"
+        android:title="@string/billetera"
+        android:fontFamily="@font/normal"/>
+
+</menu>

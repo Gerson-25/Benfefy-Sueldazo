@@ -1,0 +1,274 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'  // AGConnect Gradle plugin
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.syntepro.appbeneficiosbolivia"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 87
+        versionName "5.6.9"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "es"
+        multiDexEnabled true
+    }
+
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // dynamic feature APK.
+            enableSplit = false
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('beneficiosKey.jks')
+            keyAlias 'beneficiosapp'
+            keyPassword '$yntepro2019'
+            storePassword '$yntepro2019'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            debuggable = false
+            jniDebuggable = false
+            minifyEnabled true
+            multiDexEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            debuggable true
+            minifyEnabled false
+            multiDexEnabled true
+        }
+    }
+
+    flavorDimensions "mobileServices"
+    productFlavors {
+        gms {
+//            flavour = "google"
+//            dimension "mobileServices"
+        }
+        hms {
+//            flavour = "huawei"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+realm {
+    kotlinExtensionsEnabled = false // Disable extensions if needed
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.10'
+    implementation 'android.arch.paging:runtime:1.0.1'
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    androidTestImplementation 'junit:junit:4.12'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.3.1'
+    kapt 'com.google.dagger:dagger-compiler:2.35'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    compileOnly 'javax.inject:javax.inject:1'
+
+    // Modules
+    implementation project(":core")
+
+    // Dagger
+    implementation 'com.google.dagger:dagger:2.35'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.28.3'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.35'
+
+    // Kotlin C routines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.5'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-firestore:23.0.0'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
+    implementation 'com.google.firebase:firebase-database:20.0.0'
+    implementation 'com.google.firebase:firebase-core:19.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.0.0'
+    implementation 'com.google.firebase:firebase-perf:20.0.0'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    implementation 'com.google.firebase:firebase-dynamic-links:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+
+    // Firebase Kotlin
+    implementation 'com.google.firebase:firebase-common-ktx:20.0.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:23.0.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.0'
+
+    // Facebook Auth
+    //implementation 'com.facebook.android:facebook-login:6.3.0'
+    implementation 'com.facebook.android:facebook-login:12.0.1'
+
+    // Google Auth
+    gmsImplementation 'com.google.android.gms:play-services-auth:20.0.1'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'id.zelory:compressor:2.1.0'
+
+    // ZXING
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation('com.journeyapps:zxing-android-embedded:4.1.0') { transitive = false }
+
+    // MaskFormat
+    implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
+
+    // Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    // Expandable EditText
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    // Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Google Location
+    gmsImplementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    // Google Maps
+    gmsImplementation 'com.google.android.gms:play-services-base:17.6.0'
+    gmsImplementation 'com.google.android.gms:play-services-maps:17.0.1'
+
+    // FireStore Pagination Adapter
+    implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+
+    // ROOM
+    implementation 'androidx.room:room-runtime:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    kapt 'androidx.room:room-compiler:2.3.0'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    // GSON
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // GIF
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    // SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+
+    // Jsoup
+    implementation 'org.jsoup:jsoup:1.10.3'
+
+    // Autofit TextView
+    implementation 'me.grantland:autofittextview:0.2.1'
+
+    // Firebase UI
+    implementation 'com.firebaseui:firebase-ui-firestore:4.3.2'
+    implementation 'com.firebaseui:firebase-ui-storage:4.3.2'
+    implementation 'com.firebaseui:firebase-ui-database:4.3.2'
+
+    // SQLiteAssetHelper
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+
+    // Dots Indicator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+    // Mask
+    implementation 'com.github.santalu:mask-edittext:1.1.1'
+
+    // Android Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.5"
+
+    // LeakCanary
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+//    implementation 'com.squareup.leakcanary:leakcanary-object-watcher-android:2.2'
+
+    // AA Chart Model
+    implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
+
+    // HMS Linking
+    implementation "com.huawei.agconnect:agconnect-applinking:1.4.1.300"
+
+    //HMS
+    hmsImplementation 'com.huawei.agconnect:agconnect-core:1.5.0.300'
+    hmsImplementation 'com.huawei.agconnect:agconnect-crash:1.5.0.300'
+    hmsImplementation 'com.huawei.hms:push:5.1.1.301'
+    hmsImplementation 'com.huawei.hms:maps:5.1.0.300'
+    hmsImplementation 'com.huawei.hms:location:4.0.4.300'
+    hmsImplementation 'com.github.anotherdev:firebase-auth-rest:0.1.8.1'
+    hmsImplementation 'com.google.firebase:firebase-common:20.0.0'
+    hmsImplementation 'com.google.firebase:firebase-firestore:23.0.0'
+    hmsImplementation 'com.google.firebase:firebase-auth-interop:20.0.0'
+    hmsImplementation 'com.huawei.agconnect:agconnect-auth-google:1.5.2.300'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
