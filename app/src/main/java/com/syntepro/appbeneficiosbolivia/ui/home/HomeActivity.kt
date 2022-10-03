@@ -106,8 +106,6 @@ class HomeActivity : AppCompatActivity() {
     private val adapter by lazy { DataBaseAdapter(this.applicationContext) }
     private val roomDataBase by lazy { RoomDataBase.getRoomDatabase(this) }
     private lateinit var profileImage: ImageView
-    private lateinit var nameText: TextView
-    private lateinit var emailText: TextView
     private var analytics: FirebaseAnalytics? = null
     private var changeCountry: Spinner? = null
     private var nomCountry: ArrayList<String>? = arrayListOf()
@@ -174,8 +172,6 @@ class HomeActivity : AppCompatActivity() {
 
                                 roomDataBase.accessDao().addCountryUser(newCountryUser)
                                 dialog.cancel()
-                                val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-                                if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START)
 
                                 loadGlobalData()
 
@@ -246,26 +242,10 @@ class HomeActivity : AppCompatActivity() {
         // GPS Permission
         if (!runtimePermissions()) enableService()
 
-        // Navigation Drawer Assignments3
-        val hView = navigation_view.getHeaderView(0)
-        val userQR = hView.findViewById<ImageButton>(R.id.qrUser)
-        val profileNav = hView.findViewById<LinearLayout>(R.id.navProfileId)
-        val conditionsNav = hView.findViewById<LinearLayout>(R.id.navConditionsId)
-        val commentsNav = hView.findViewById<LinearLayout>(R.id.navCommentsId)
-        val helpNav = hView.findViewById<LinearLayout>(R.id.navHelpId)
-        val aboutNav = hView.findViewById<LinearLayout>(R.id.navAboutId)
-        val configurationNav = hView.findViewById<LinearLayout>(R.id.navConfigurationId)
-        val logoutNav = hView.findViewById<LinearLayout>(R.id.navLogoutId)
-        profileImage = hView.findViewById(R.id.circleImageView)
-        nameText = hView.findViewById(R.id.txt_nombreHeader)
-        emailText = hView.findViewById(R.id.txt_correoHeader)
-
         // Abel Acosta
         initNavigation()
         // Load Global data
         loadGlobalData()
-
-        changeCountry = hView.findViewById(R.id.navCountryId)
 
         // Get the primary text color of the theme
         val typedValue = TypedValue()
@@ -273,165 +253,6 @@ class HomeActivity : AppCompatActivity() {
         theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true)
         @SuppressLint("Recycle") val arr = this.obtainStyledAttributes(typedValue.data, intArrayOf(android.R.attr.textColorPrimary))
         val primaryColor = arr.getColor(0, -1)
-
-        nameText.setTextColor(primaryColor)
-        emailText.setTextColor(primaryColor)
-
-        userQR.setOnClickListener { showUserQR(this@HomeActivity) }
-
-        profileNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        conditionsNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, ConditionsActivity::class.java)
-            intent.putExtra("provenance", 1)
-            startActivity(intent)
-        }
-
-        commentsNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, CommentsActivity::class.java)
-            startActivity(intent)
-        }
-
-        helpNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, HelpActivity::class.java)
-            startActivity(intent)
-        }
-
-        aboutNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, AboutActivity::class.java)
-            startActivity(intent)
-        }
-
-        configurationNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            val intent = Intent(this@HomeActivity, ConfigurationActivity::class.java)
-            startActivity(intent)
-        }
-
-        logoutNav.setOnClickListener {
-            drawer_layout.closeDrawer(GravityCompat.START)
-            roomDataBase.accessDao().dropCountry()
-            val serviceIntent = Intent(this@HomeActivity, NotificationService::class.java)
-            stopService(serviceIntent)
-            val access = roomDataBase.accessDao().access
-            if (!access.isNullOrEmpty()) roomDataBase.accessDao().dropAccess()
-            updateUI()
-        }
-
-        benefits.setOnClickListener {
-            // bottom_navigation_view.menu.findItem(R.id.navigationEmpty).isChecked = true
-            navController.navigate(R.id.nav_benfy)
-        }
-
-        // Get Countries
-        adapter.open()
-        val country: List<Pais>? = adapter.infoCountry as? List<Pais>
-
-        country?.let {
-            for (i in country.indices) {
-                nomCountry!!.add(country[i].nombre)
-            }
-        }
-
-        val customAdapter = CustomAdapter(this, flags, nomCountry)
-        changeCountry!!.adapter = customAdapter
-
-        adapter.close()
-
-        try {
-            onNewIntent(intent)
-            val cu = roomDataBase.accessDao().country
-            when (cu.abr) {
-                "SV" -> changeCountry!!.setSelection(0)
-                "BO" -> changeCountry!!.setSelection(1)
-                "GT" -> changeCountry!!.setSelection(2)
-                "HND" -> changeCountry!!.setSelection(3)
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        changeCountry!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, i: Int, l: Long) {
-                make_sort = true
-                val country = roomDataBase.accessDao().country
-                try {
-                    if (nomCountry!![i] != country.pais) {
-                        val builder = AlertDialog.Builder(this@HomeActivity)
-                        builder.setMessage(getString(R.string.country_changed) + " " + nomCountry!![i] + "?")
-                        builder.setPositiveButton(getString(R.string.yes)) { dialog: DialogInterface, _: Int ->
-                            try {
-                                val ids = TimeZone.getAvailableIDs()
-                                val tz = TimeZone.getTimeZone(ids[144])
-                                val c = Calendar.getInstance(tz)
-                                roomDataBase.accessDao().dropCountry()
-                                val newCountryUser = CountryUser()
-                                newCountryUser.id = 1
-                                newCountryUser.fechaActualizacion = c.time
-                                adapter.open()
-                                val selectedCountry = adapter.getCountryConfiguration(nomCountry!![i])
-                                newCountryUser.pais = selectedCountry.nombre
-                                newCountryUser.abr = selectedCountry.abreviacion
-                                newCountryUser.codArea = selectedCountry.codigoArea
-                                newCountryUser.moneda = selectedCountry.moneda
-                                newCountryUser.timeZone = selectedCountry.timeZone
-                                adapter.close()
-
-                                val user = Constants.userProfile
-                                user?.actualCountry = selectedCountry.abreviacion
-                                user?.areaCode = selectedCountry.codigoArea
-                                user?.currency = selectedCountry.moneda
-                                Constants.userProfile = user
-                                Functions.savePersistentProfile(this@HomeActivity)
-                                updateUserCountry(selectedCountry.abreviacion)
-
-                                roomDataBase.accessDao().addCountryUser(newCountryUser)
-                                changeCountry!!.setSelection(i)
-                                dialog.cancel()
-                                val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-                                if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START)
-
-                                loadGlobalData()
-                            } catch (e: Exception) {
-                                when (country.abr) {
-                                    "SV" -> changeCountry!!.setSelection(0)
-                                    "BO" -> changeCountry!!.setSelection(1)
-                                    "GT" -> changeCountry!!.setSelection(2)
-                                    "HND" -> changeCountry!!.setSelection(3)
-                                }
-                                dialog.cancel()
-                            }
-                        }
-                        builder.setNegativeButton(getString(R.string.no)) { dialog: DialogInterface, _: Int ->
-                            when (country.abr) {
-                                "SV" -> changeCountry!!.setSelection(0)
-                                "BO" -> changeCountry!!.setSelection(1)
-                                "GT" -> changeCountry!!.setSelection(2)
-                                "HND" -> changeCountry!!.setSelection(3)
-                            }
-                            dialog.cancel()
-                        }
-                        val dialog = builder.create()
-                        dialog.setCancelable(false)
-                        dialog.show()
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-
-            override fun onNothingSelected(adapterView: AdapterView<*>?) { }
-        }
-
-        cardImage.setOnClickListener { drawer_layout.openDrawer(GravityCompat.START) }
 
         scanId.setOnClickListener {
             val integrator = IntentIntegrator(this)
@@ -452,25 +273,6 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        readUserInfo()
-    }
-
-    override fun onBackPressed() {
-        // Abel Acosta
-        // Call OnBackPressed on fragments
-        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
-
-        if (drawer.isDrawerOpen(GravityCompat.START)) drawer.closeDrawer(GravityCompat.START)
-        else {
-            if (!navController.popBackStack()) {
-                val builder = AlertDialog.Builder(this)
-                builder.setMessage(getString(R.string.exit_app))
-                builder.setPositiveButton(getString(R.string.yes)) { _: DialogInterface?, _: Int -> this@HomeActivity.finish() }
-                builder.setNegativeButton(getString(R.string.no)) { dialog: DialogInterface, _: Int -> dialog.cancel() }
-                val dialog = builder.create()
-                dialog.show()
-            } else super.onBackPressed()
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -558,25 +360,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * App Functions
-     */
-    private fun readUserInfo() {
-        Constants.userProfile?.let {
-            Functions.showRoundedImage(it.photoUrl, userImageId)
-            Picasso.get()
-                .load(it.photoUrl)
-                .error(R.drawable.notfound)
-                .placeholder(R.drawable.cargando)
-                .into(profileImage)
-            val fn = it.names?.substringBefore(" ")
-            welcomeId.text = "Hola, $fn"
-            nameText.text = "${it.names} ${it.lastNames ?: ""}"
-//            nameText.text = "${it.names} ${it.lastNames ?: ""}"
-            emailText.text = it.email
-        }
-        navigation_view.bringToFront()
-    }
 
     private fun runtimePermissions(): Boolean {
         return Build.VERSION.SDK_INT >= 23 && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -602,47 +385,14 @@ class HomeActivity : AppCompatActivity() {
     // Abel Acosta
     @RequiresApi(Build.VERSION_CODES.M)
     private fun initNavigation() {
-        navView = findViewById(R.id.navigation_view)
         navController = findNavController(R.id.nav_host_fragment)
 
-        /*
-        navView.menu.findItem(androidx.navigation.ui.R.id.logout).setOnMenuItemClickListener {
-            drawerLayoutId.closeDrawers()
-            logOut()
-            true
-        }
-         */
-
-        /*navView.menu.findItem(R.id.nav_test).setOnMenuItemClickListener {
-            drawer_layout.closeDrawers()
-            navController.navigate(R.id.nav_test)
-            true
-        }
-
-         */
-
-//        // Manage Navigation Rodrigo Osegueda
-//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//            if (destination.id == R.id.nav_profile)
-//                bottom_navigation_view.visibility = View.GONE
-//            else
-//                bottom_navigation_view.visibility = View.VISIBLE
-//        }
-        // openAction<MainActivity>(1)
-        navView.itemIconTintList = null
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         // Las opciones que van aqui aparecen con icon burguer, el resto con flecha back
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home
-            ),
-            drawer_layout
-        )
 
         NavigationUI.setupWithNavController(bottom_navigation_view, navController)
         // setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
 
         if (Constants.userProfile?.actualCountry == "BO") {
             try {
@@ -862,8 +612,6 @@ class HomeActivity : AppCompatActivity() {
         getUserSavings()
         if (Constants.TOKEN.isNotEmpty()) getCounter()
     }
-
-    fun openDrawer() { drawer_layout.openDrawer(GravityCompat.START) }
 
     /**
      * Gerson Aquino 28JUN2021

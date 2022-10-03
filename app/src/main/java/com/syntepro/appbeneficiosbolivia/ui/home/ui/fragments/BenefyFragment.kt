@@ -83,8 +83,6 @@ class BenefyFragment: BaseFragment() {
         if (!Functions.isDarkTheme(requireActivity()) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             savingsCard.setCardBackgroundColor(requireContext().getColor(R.color.gray_card_benefit))
 
-        cardImage.setOnClickListener { (activity as HomeActivity).openDrawer() }
-
         scanId.setOnClickListener {
             val integrator = IntentIntegrator(requireActivity())
             integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)

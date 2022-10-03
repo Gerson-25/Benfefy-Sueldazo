@@ -82,8 +82,6 @@ class FavoriteFragment : BaseFragment() {
 
         Functions.readUserInfo(userImageId, welcomeId, total_notificationsId)
 
-        cardImage.setOnClickListener { (activity as HomeActivity).openDrawer() }
-
         scanId.setOnClickListener {
             val integrator = IntentIntegrator(requireActivity())
             integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)

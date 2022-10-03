@@ -67,8 +67,6 @@ class LoyaltyPlanFragment : BaseFragment() {
         this.observe(homeViewModel.unlink, ::unlinkResponse)
         this.failure(homeViewModel.failure, ::handleFailure)
 
-        cardImage.setOnClickListener { (activity as HomeActivity).openDrawer() }
-
         swipeRefreshLayout.setOnRefreshListener {
             (activity as HomeActivity). getLoyaltyPlans()
             fragmentManager?.beginTransaction()
@@ -85,12 +83,10 @@ class LoyaltyPlanFragment : BaseFragment() {
 
     private fun setUpToolbar() {
         val mainActivity = activity as HomeActivity
-        val navigationView: NavigationView = mainActivity.findViewById(R.id.navigation_view)
         mainActivity.setSupportActionBar(toolbarId)
         val navController = NavHostFragment.findNavController(this)
         val appBarConfiguration = mainActivity.appBarConfiguration
         NavigationUI.setupActionBarWithNavController(mainActivity, navController, appBarConfiguration)
-        NavigationUI.setupWithNavController(navigationView, navController)
     }
 
     private fun initControls() {
