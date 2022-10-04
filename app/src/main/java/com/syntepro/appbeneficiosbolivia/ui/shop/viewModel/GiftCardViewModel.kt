@@ -22,7 +22,6 @@ class GiftCardViewModel: ViewModel() {
             .build()
 
     private val ret = Transformations.map(parameters) { pr ->
-        dsFactory = BaseDataSourceFactory(viewModelScope, pr) { apiService.getGiftCards(pr) }
         LivePagedListBuilder(dsFactory!!, config).build()
     }
 

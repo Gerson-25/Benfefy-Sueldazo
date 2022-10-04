@@ -13,10 +13,6 @@ import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
 import com.syntepro.appbeneficiosbolivia.entity.firebase.TarjetaSellos
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.CardDetailRequest
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.CardDetailResponse
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.LoyaltyInfoFragment
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.viewmodel.LoyaltyPlanViewModel
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import com.syntepro.appbeneficiosbolivia.utils.Helpers
@@ -26,7 +22,6 @@ import java.util.*
 
 class StampCardInfoDialog: BaseActivity() {
 
-    private lateinit var loyaltyViewModel: LoyaltyPlanViewModel
     private var canceled = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,19 +31,11 @@ class StampCardInfoDialog: BaseActivity() {
         setContentView(R.layout.stamp_card_info_layout)
         this.setFinishOnTouchOutside(true)
 
-        loyaltyViewModel = viewModel(viewModelFactory) {
-            observe(cardDetail, ::cardResponse)
-            failure(failure, ::handleError)
-        }
-
         // Extras
         val extras = intent.extras
         if (extras != null) {
             val mPlan = extras.getString("planId")
             val mStampId = extras.getString("stampId")
-
-            // Show Data
-            getData(mStampId ?: "")
         }
 
     }
@@ -76,28 +63,6 @@ class StampCardInfoDialog: BaseActivity() {
         finish()
     }
 
-    private fun getData(id: String) {
-        val request = CardDetailRequest(
-                country = Constants.userProfile?.actualCountry ?: "BO",
-                language = Functions.getLanguage(),
-                idCard = id
-        )
-        loyaltyViewModel.getCardDetail(request)
-    }
-
-    private fun cardResponse(response: BaseResponse<CardDetailResponse>?) {
-        statusId.text = Functions.fromHtml(String.format(getString(R.string.status_label), response?.data?.state))
-        actualStampsId.text = "${response?.data?.obtainedStamp}/${response?.data?.requiredStamp}"
-        startDateId.text = Functions.fromHtml(String.format(getString(R.string.start_date_label), Helpers.dateToStr(response?.data?.stardDate ?: Date(), DateFormat.MEDIUM)))
-        endDateId.text = Functions.fromHtml(String.format(getString(R.string.end_date_label),
-                if(response?.data?.stardDate != null) Helpers.dateToStr(response.data.endDate, DateFormat.MEDIUM) else "-"))
-        dateCompletedId.text = Functions.fromHtml(String.format(getString(R.string.completed_date_label),
-                if(response?.data?.dateCompleted != null) Helpers.dateToStr(response.data.dateCompleted, DateFormat.MEDIUM) else "-"))
-        exchangeDateId.text = Functions.fromHtml(String.format(getString(R.string.exchange_date_label),
-                if(response?.data?.exchangeDate != null) Helpers.dateToStr(response.data.exchangeDate, DateFormat.MEDIUM) else "-"))
-        dateLastStampId.text = Functions.fromHtml(String.format(getString(R.string.last_stamp_date_label),
-                if(response?.data?.dateLastStamp != null) Helpers.dateToStr(response.data.dateLastStamp, DateFormat.MEDIUM) else "-"))
-    }
 
     private fun getStatus(status: Int): String {
         var st = ""

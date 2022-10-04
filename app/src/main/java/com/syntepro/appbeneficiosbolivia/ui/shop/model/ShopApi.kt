@@ -1,7 +1,7 @@
 package com.syntepro.appbeneficiosbolivia.ui.shop.model
 
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ApiConfig
+import com.syntepro.appbeneficiosbolivia.service.ApiConfig.CONTENT_TYPE_JSON
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -12,7 +12,7 @@ interface ShopApi {
         private const val GIFT_DETAIL = "PresentCoupon/GetPresentCouponDetail"
     }
 
-    @Headers(ApiConfig.CONTENT_TYPE_JSON)
+    @Headers(CONTENT_TYPE_JSON)
     @POST(GIFT_DETAIL)
     fun getGiftDetail(
             @Body body: GiftDetailRequest

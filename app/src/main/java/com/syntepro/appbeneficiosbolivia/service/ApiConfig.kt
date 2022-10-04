@@ -1,4 +1,4 @@
-package com.syntepro.appbeneficiosbolivia.ui.lealtad
+package com.syntepro.appbeneficiosbolivia.service
 
 object ApiConfig {
     const val  CONTENT_TYPE_JSON = "Content-Type: application/json"

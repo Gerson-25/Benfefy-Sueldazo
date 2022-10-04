@@ -24,8 +24,6 @@ import com.syntepro.appbeneficiosbolivia.ui.agency.viewModel.AgencyViewModel
 import com.syntepro.appbeneficiosbolivia.ui.commerce.viewModel.CommerceViewModel
 import com.syntepro.appbeneficiosbolivia.ui.coupon.viewModel.CouponViewModel
 import com.syntepro.appbeneficiosbolivia.ui.home.viewModel.HomeViewModel
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.viewmodel.LoyaltyPlanViewModel
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.viewmodel.LoyaltyPlansDetailViewModel
 import com.syntepro.appbeneficiosbolivia.ui.notifications.viewModel.NotificationViewModel
 import com.syntepro.appbeneficiosbolivia.ui.profile.viewModel.ProfileViewModel
 import com.syntepro.appbeneficiosbolivia.ui.shop.viewModel.ShopViewModel
@@ -46,18 +44,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(LoyaltyPlanViewModel::class)
-    abstract fun bindsLoyaltyPlanViewModel(loyaltyPlanViewModel: LoyaltyPlanViewModel): ViewModel
-
-    @Binds
-    @IntoMap
     @ViewModelKey(HomeViewModel::class)
     abstract fun bindsHomeViewModel(homeViewModel: HomeViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(LoyaltyPlansDetailViewModel::class)
-    abstract fun bindsLoyaltyPlansDetailViewModel(homeViewModel: LoyaltyPlansDetailViewModel): ViewModel
 
     @Binds
     @IntoMap

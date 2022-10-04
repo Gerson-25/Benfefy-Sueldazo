@@ -13,12 +13,9 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.core.AndroidApplication
-import com.syntepro.appbeneficiosbolivia.ui.MainActivity
 import com.syntepro.appbeneficiosbolivia.ui.benefy.BenefyDetailActivity
 import com.syntepro.appbeneficiosbolivia.ui.general.ExchangeInfoDialog
 import com.syntepro.appbeneficiosbolivia.ui.general.SuccessGiftActivity
-import com.syntepro.appbeneficiosbolivia.ui.home.HomeActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.Loyalty
 import com.syntepro.appbeneficiosbolivia.ui.shop.ui.activities.SuccessPaymentActivity
 import java.util.*
 
@@ -67,22 +64,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                         intent.putExtra("giftCode", remoteMessage.data["Code"])
                         startActivity(intent)
                     }
-                    6 -> {
-                        val intent = Intent(this, HomeActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        intent.putExtra("loyaltyPush", true)
-                        intent.putExtra("planType", Loyalty.LOYALTY_PLAN_MILES)
-                        intent.putExtra("idPlan", remoteMessage.data["IdLoyaltyPlan"])
-                        startActivity(intent)
-                    }
-                    7 -> {
-                        val intent = Intent(this, HomeActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        intent.putExtra("loyaltyPush", true)
-                        intent.putExtra("planType", Loyalty.LOYALTY_PLAN_SEALS)
-                        intent.putExtra("idPlan", remoteMessage.data["IdLoyaltyPlan"])
-                        startActivity(intent)
-                    }
                 }
             } else
                 generalNotification(remoteMessage.notification?.title, remoteMessage.notification?.body)
@@ -95,22 +76,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                         val intent = Intent(this, BenefyDetailActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
                         intent.putExtra("productId", remoteMessage.data["IdPurchasedProductIndex"]?.toInt())
-                        showCouponAssigned(remoteMessage.data["Title"], remoteMessage.data["Subtitle"], intent)
-                    }
-                    remoteMessage.data["NotificationType"]?.toInt() == 6 -> {
-                        val intent = Intent(this, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                        intent.putExtra("loyaltyPush", true)
-                        intent.putExtra("planType", Loyalty.LOYALTY_PLAN_MILES)
-                        intent.putExtra("idPlan", remoteMessage.data["IdLoyaltyPlan"])
-                        showCouponAssigned(remoteMessage.data["Title"], remoteMessage.data["Subtitle"], intent)
-                    }
-                    remoteMessage.data["NotificationType"]?.toInt() == 7 -> {
-                        val intent = Intent(this, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                        intent.putExtra("loyaltyPush", true)
-                        intent.putExtra("planType", Loyalty.LOYALTY_PLAN_SEALS)
-                        intent.putExtra("idPlan", remoteMessage.data["IdLoyaltyPlan"])
                         showCouponAssigned(remoteMessage.data["Title"], remoteMessage.data["Subtitle"], intent)
                     }
                     else -> showNotification(remoteMessage.data)

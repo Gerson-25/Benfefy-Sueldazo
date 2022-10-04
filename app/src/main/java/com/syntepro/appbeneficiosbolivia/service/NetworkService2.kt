@@ -51,24 +51,6 @@ interface NetworkService2 {
     @POST("api/User/UpdateUser")
     suspend fun updateUser(@Body body: UserUpdateRequest): Response<BaseResponseBoolean>
 
-    // Items
-    @Headers("Content-Type: application/json", "No-Authentication: true")
-    @POST("api/Item/GetItems")
-    suspend fun getItems(@Body body: ArticleRequest): Response<BaseResponse<ArticleResponse>>
-
-    @Headers("Content-Type: application/json", "No-Authentication: true")
-    @POST("api/Item/GetItemDetail")
-    suspend fun getItemDetail(@Body body: ItemDetailRequest): Response<BaseResponseModel<ArticleResponse>>
-
-    // GiftCard
-    @Headers("Content-Type: application/json", "No-Authentication: true")
-    @POST("api/Giftcard/GetGiftcards")
-    suspend fun getGiftCards(@Body body: GiftCardRequest): Response<BaseResponse<GiftCard>>
-
-    @Headers("Content-Type: application/json", "No-Authentication: true")
-    @POST("api/Giftcard/GetGiftcardDetail")
-    suspend fun getGiftCardDetail(@Body body: GiftCardDetailRequest): Response<BaseResponseModel<GiftCard>>
-
     // Purchase
     @Headers("Content-Type: application/json")
     @POST("api/Purchase/CreatePaymentOrder")

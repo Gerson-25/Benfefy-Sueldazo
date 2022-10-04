@@ -22,7 +22,6 @@ class DiscountViewModel: ViewModel() {
             .build()
 
     private val ret = Transformations.map(parameters) { pr ->
-        dsFactory = BaseDataSourceFactory(viewModelScope, pr) { apiService.getItems(pr) }
         LivePagedListBuilder(dsFactory!!, config).build()
     }
 

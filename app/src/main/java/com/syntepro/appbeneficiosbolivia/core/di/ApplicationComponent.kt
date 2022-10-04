@@ -15,7 +15,6 @@
  */
 package com.syntepro.appbeneficiosbolivia.core.di
 
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.MilesFragment
 import com.syntepro.appbeneficiosbolivia.ui.MainActivity
 import com.syntepro.appbeneficiosbolivia.core.AndroidApplication
 import com.syntepro.appbeneficiosbolivia.core.di.viewmodel.ViewModelModule
@@ -34,9 +33,6 @@ import com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.BenefyFragment
 import com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.FavoriteFragment
 import com.syntepro.appbeneficiosbolivia.ui.home.HomeActivity
 import com.syntepro.appbeneficiosbolivia.ui.home.ui.fragments.HomeFragment
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.AddLoyaltyPlanDialog
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.TermsActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ui.fragments.*
 import com.syntepro.appbeneficiosbolivia.ui.notifications.ui.activities.NotificationsActivity
 import com.syntepro.appbeneficiosbolivia.ui.profile.ui.activities.StatisticsActivity
 import com.syntepro.appbeneficiosbolivia.ui.profile.ui.activities.TransactionsActivity
@@ -54,15 +50,7 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun inject(application: AndroidApplication)
     fun inject(mainActivity: MainActivity)
-    fun inject(loyaltyPlanFragment: LoyaltyPlanFragment)
-    fun inject(loyaltyInfo: LoyaltyInfoFragment)
     fun inject(homeActivity: HomeActivity)
-    fun inject(addPlanFragment: AddPlanFragment)
-    fun inject(addLoyaltyPlanDialog: AddLoyaltyPlanDialog)
-    fun inject(corporateFragment: CorporateFragment)
-    fun inject(milesFragment: MilesFragment)
-    fun inject(cardFragment: CardFragment)
-    fun inject(termsActivity: TermsActivity)
 
     // Rodrigo Osegueda
     fun inject(stampCardInfoDialog: StampCardInfoDialog)

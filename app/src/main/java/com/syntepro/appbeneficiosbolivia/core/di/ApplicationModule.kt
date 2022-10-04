@@ -24,7 +24,6 @@ import com.syntepro.appbeneficiosbolivia.ui.agency.model.AgencyRepository
 import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceRepository
 import com.syntepro.appbeneficiosbolivia.ui.coupon.model.CouponRepository
 import com.syntepro.appbeneficiosbolivia.ui.home.model.HomeRepository
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.LoyaltyPlanRepository
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationRepository
 import com.syntepro.appbeneficiosbolivia.ui.profile.model.ProfileRepository
 import com.syntepro.appbeneficiosbolivia.ui.shop.model.ShopRepository
@@ -166,10 +165,6 @@ class ApplicationModule(private val application: AndroidApplication) {
     @Provides
     @Singleton
     fun provideAccountsRepository(dataSource: AccountsRepository.Network): AccountsRepository = dataSource
-
-    @Provides
-    @Singleton
-    fun provideLoyaltyPlanRepository(dataSource: LoyaltyPlanRepository.Network): LoyaltyPlanRepository = dataSource
 
     @Provides
     @Singleton

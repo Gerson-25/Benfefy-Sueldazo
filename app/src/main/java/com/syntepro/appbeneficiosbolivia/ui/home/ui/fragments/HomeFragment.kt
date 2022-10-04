@@ -205,34 +205,6 @@ class HomeFragment : BaseFragment() {
         homeViewModel.loadCategories(request)
     }
 
-    private fun getItems() {
-        val request = with(ArticleRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            idUser = Constants.userProfile?.idUser ?: ""
-            language = 1
-            recordsNumber = Constants.LIST_PAGE_SIZE
-            sortType = 1
-            idCity = Constants.stateFiltered
-            idCategory = Constants.categoryFiltered
-            this
-        }
-        homeViewModel.loadItems(request)
-    }
-
-    private fun getGiftCards() {
-        val request = with(GiftCardRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            language = 1
-            recordsNumber = Constants.LIST_PAGE_SIZE
-            pageNumber = 1
-            sortType = 1
-            idCity = Constants.stateFiltered
-            idCategory = Constants.categoryFiltered
-            this
-        }
-        homeViewModel.loadGiftCards(request)
-    }
-
     @SuppressLint("NotifyDataSetChanged")
     private fun handleCategories(categories: BaseResponse<List<Category>>?) {
         categories?.data?.let {
@@ -285,7 +257,6 @@ class HomeFragment : BaseFragment() {
             emptyId.visibility = View.GONE
             if (response?.data?.size ?: 0 > 10) showMoreListId.visibility = View.VISIBLE else showMoreListId.visibility = View.GONE
         }
-        getGiftCards()
 //        response?.data?.let {
 //            Log.e("Articles Size", "Size: ${it.size}")
 //            emptyId.visibility = View.GONE
@@ -332,7 +303,6 @@ class HomeFragment : BaseFragment() {
         HomeActivity.make_sort = false
         val model = item as Category
         Constants.categoryFiltered = model.idCategory
-        getItems()
         // getGiftCards()
     }
 

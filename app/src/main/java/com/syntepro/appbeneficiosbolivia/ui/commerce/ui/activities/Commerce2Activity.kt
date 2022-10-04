@@ -183,12 +183,12 @@ class Commerce2Activity: BaseActivity() {
                 branchDataModel.urlImage = b.urlImage
                 branchDataModel.commerceCount = b.commerceCount
                 dataModel.add(branchDataModel)
-                for (c in b.commerceList) {
-                    val commerceDataModel = CommerceByBranchDataModel()
-                    commerceDataModel.type = 2
-                    commerceDataModel.commerce = c
-                    dataModel.add(commerceDataModel)
-                }
+//                for (c in b.commerceList) {
+//                    val commerceDataModel = CommerceByBranchDataModel()
+//                    commerceDataModel.type = 2
+//                    commerceDataModel.commerce = c
+//                    dataModel.add(commerceDataModel)
+//                }
             }
             commerceByBranchesAdapter.collection = dataModel
         } ?: run  {
@@ -227,7 +227,7 @@ class Commerce2Activity: BaseActivity() {
 
     fun openCommerce(model: CommerceByBranchDataModel) {
         callIntent<CommerceDetail2Activity> {
-            this.putExtra("commerceId", model.commerce.idComercio)
+//            this.putExtra("commerceId", model.commerce.idComercio)
         }
     }
 

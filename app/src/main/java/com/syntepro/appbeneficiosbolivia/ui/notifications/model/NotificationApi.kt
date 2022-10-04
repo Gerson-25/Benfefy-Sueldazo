@@ -1,7 +1,7 @@
 package com.syntepro.appbeneficiosbolivia.ui.notifications.model
 
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ApiConfig
+import com.syntepro.appbeneficiosbolivia.service.ApiConfig.CONTENT_TYPE_JSON
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -14,19 +14,19 @@ interface NotificationApi {
         private const val NOTIFICATION_COUNTER = "Notification/NotificationCount"
     }
 
-    @Headers(ApiConfig.CONTENT_TYPE_JSON)
+    @Headers(CONTENT_TYPE_JSON)
     @POST(NOTIFICATION)
     fun getNotification(
             @Body body: NotificationRequest
     ): Call<BaseResponse<List<NotificationResponse>>>
 
-    @Headers(ApiConfig.CONTENT_TYPE_JSON)
+    @Headers(CONTENT_TYPE_JSON)
     @POST(READ_NOTIFICATION)
     fun readNotification(
             @Body body: ReadNotificationRequest
     ): Call<BaseResponse<Boolean>>
 
-    @Headers(ApiConfig.CONTENT_TYPE_JSON)
+    @Headers(CONTENT_TYPE_JSON)
     @POST(NOTIFICATION_COUNTER)
     fun notificationCounter(
             @Body body: NotificationCountRequest

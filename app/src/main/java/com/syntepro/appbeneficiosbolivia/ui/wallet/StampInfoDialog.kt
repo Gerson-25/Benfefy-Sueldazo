@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.Stamp
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import com.syntepro.appbeneficiosbolivia.utils.Helpers
 import kotlinx.android.synthetic.main.stamp_info_layout.*
@@ -28,8 +27,7 @@ class StampInfoDialog : BaseActivity() {
         // Extras
         val extras = intent.extras
         if (extras != null) {
-            val model = extras.getSerializable("model") as Stamp
-            showData(model)
+
         }
 
         closeId.setOnClickListener{
@@ -61,14 +59,6 @@ class StampInfoDialog : BaseActivity() {
         setResult(RESULT_OK, data)
         super.onBackPressed()
         finish()
-    }
-
-    private fun showData(model: Stamp) {
-        dateId.text = Functions.fromHtml(String.format(getString(R.string.stamp_date_label), Helpers.dateToStr(model.date, DateFormat.MEDIUM)))
-        agencyId.text = Functions.fromHtml(String.format(getString(R.string.stamp_agency_label), model.agency))
-        posId.text = Functions.fromHtml(String.format(getString(R.string.stamp_pos_label), model.payDesk))
-        cashierId.text = Functions.fromHtml(String.format(getString(R.string.stamp_cashier_label), model.cashier))
-        descriptionId.text = Functions.fromHtml(String.format(getString(R.string.stamp_description_label), model.description))
     }
 
 }

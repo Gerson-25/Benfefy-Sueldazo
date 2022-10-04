@@ -16,10 +16,6 @@ import com.syntepro.appbeneficiosbolivia.ui.home.model.FavoriteRequest
 import com.syntepro.appbeneficiosbolivia.ui.home.model.StatesRequest
 import com.syntepro.appbeneficiosbolivia.ui.home.usecase.DoFeaturedGiftCards
 import com.syntepro.appbeneficiosbolivia.ui.home.usecase.*
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.*
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.usecase.DoCommerceByCategory
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.usecase.DoLoyaltyPlanList
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.usecase.DoUnlinkPlan
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationCountRequest
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationCountResponse
 import com.syntepro.appbeneficiosbolivia.ui.notifications.usecase.DoNotificationCount
@@ -37,9 +33,6 @@ class HomeViewModel
         private val doItems: DoItems,
         private val doParameters: DoParameters,
         private val doFavorites: DoFavorites,
-        private val doLoyaltyPlanList: DoLoyaltyPlanList,
-        private val doCommerceByCategory: DoCommerceByCategory,
-        private val doUnlinkPlan: DoUnlinkPlan,
         private val doNotificationCount: DoNotificationCount,
         private val doBestDiscounts: DoBestDiscounts,
         private val doBanners: DoBanners,
@@ -55,8 +48,6 @@ class HomeViewModel
     val items: MutableLiveData<BaseResponse<List<ArticleResponse>>> = MutableLiveData()
     val parameters: MutableLiveData<BaseResponse<ParameterResponse>> = MutableLiveData()
     val favorites: MutableLiveData<BaseResponse<List<FavoriteResponse>>> = MutableLiveData()
-    val plans: MutableLiveData<BaseResponse<LoyaltyPlanListResponse>> = MutableLiveData()
-    val commerce: MutableLiveData<BaseResponse<List<Commerce>>> = MutableLiveData()
     val unlink: MutableLiveData<BaseResponse<Boolean>> = MutableLiveData()
     val counter: MutableLiveData<BaseResponse<NotificationCountResponse>> = MutableLiveData()
     val bestDiscounts: MutableLiveData<BaseResponse<List<BestDiscountResponse>>> = MutableLiveData()
@@ -86,21 +77,6 @@ class HomeViewModel
     fun loadFavorites(request: FavoriteRequest) =
             doFavorites(DoFavorites.Params(request)) {
                 it.fold(::handleFailure, ::handleFavorites)
-            }
-
-    fun loyaltyPlans(request: LoyaltyPlanListRequest) =
-            doLoyaltyPlanList(DoLoyaltyPlanList.Params(request)) {
-                it.fold(::handleFailure, ::handlePlans)
-            }
-
-    fun commerceByCategory(request: CommerceRequest) =
-            doCommerceByCategory(DoCommerceByCategory.Params(request)) {
-                it.fold(::handleFailure, ::handleCommerce)
-            }
-
-    fun unlinkPlan(request: UnlinkPlanRequest) =
-            doUnlinkPlan(DoUnlinkPlan.Params(request)) {
-                it.fold(::handleFailure, ::handleUnlink)
             }
 
     fun notificationCounter(request: NotificationCountRequest) =
@@ -148,8 +124,6 @@ class HomeViewModel
             it.fold(::handleFailure, ::handleUserSavings)
         }
 
-    fun clearCommerceData()  { commerce.value = null }
-
     private fun handleCategories(response: BaseResponse<List<Category>>) {
         this.categories.value = response
     }
@@ -164,14 +138,6 @@ class HomeViewModel
 
     private fun handleFavorites(response: BaseResponse<List<FavoriteResponse>>) {
         this.favorites.value = response
-    }
-
-    private fun handlePlans(response: BaseResponse<LoyaltyPlanListResponse>) {
-        this.plans.value = response
-    }
-
-    private fun handleCommerce(response: BaseResponse<List<Commerce>>) {
-        this.commerce.value = response
     }
 
     private fun handleUnlink(response: BaseResponse<Boolean>) {

@@ -81,22 +81,6 @@ class ShopDetailActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
         supportActionBar!!.title = null
 
-        // Extras
-        val extras = intent.extras
-        if (extras != null) {
-            shopId = extras.getString("couponId")
-            type = extras.getInt("type")
-            total = if (type == 1) {
-                getCouponData(shopId)
-                1
-            } else {
-                minus.visibility = View.GONE
-                plus.visibility = View.GONE
-                getGiftCardData(shopId)
-                0
-            }
-        }
-
         if (!Functions.isDarkTheme(this@ShopDetailActivity) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             agenciesId.setCardBackgroundColor(getColor(R.color.gray_card_benefit))
 
@@ -199,76 +183,6 @@ class ShopDetailActivity : AppCompatActivity() {
         } else {
             buy.text = getString(R.string.buy)
             progress_bar_accept.visibility = View.GONE
-        }
-    }
-
-    private fun getCouponData(id: String?) {
-        val request = with(ItemDetailRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            language = Functions.getLanguage()
-            iditem = id
-            this
-        }
-        val job = Job()
-        val scopeMainThread = CoroutineScope(job + Dispatchers.Main)
-        val apiService = RetrofitClientInstance.getClient(Constants.BASE_URL_MICRO2).create(NetworkService2::class.java)
-        scopeMainThread.launch {
-            try {
-                val response = apiService.getItemDetail(request)
-                when {
-                    response.isSuccessful -> {
-                        val ret = response.body()!!
-                        if (ret.isSuccess) {
-                            ret.data?.let { showCouponData(it) }
-                        } else {
-                            Functions.showWarning(this@ShopDetailActivity, ret.description ?: "Ocurrió un error")
-                            Log.e("Error", "${ret.code}")
-                        }
-                    }
-                    else -> {
-                        Functions.showWarning(this@ShopDetailActivity, response.message() ?: "Ocurrió un error")
-                        Log.e("Error", response.message() + "-" + response.errorBody()?.string())
-                    }
-                }
-            } catch (e: Exception) {
-                showError()
-                Log.e("Exception", e.message ?: e.cause?.message ?: e.cause.toString())
-            }
-        }
-    }
-
-    private fun getGiftCardData(id: String?) {
-        val request = with(GiftCardDetailRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            language = Functions.getLanguage()
-            idGiftcard = id
-            this
-        }
-        val job = Job()
-        val scopeMainThread = CoroutineScope(job + Dispatchers.Main)
-        val apiService = RetrofitClientInstance.getClient(Constants.BASE_URL_MICRO2).create(NetworkService2::class.java)
-        scopeMainThread.launch {
-            try {
-                val response = apiService.getGiftCardDetail(request)
-                when {
-                    response.isSuccessful -> {
-                        val ret = response.body()!!
-                        if (ret.isSuccess) {
-                            ret.data?.let { showGiftCardData(it) }
-                        } else {
-                            Functions.showWarning(this@ShopDetailActivity, ret.description ?: "Ocurrió un error")
-                            Log.e("Error", "${ret.code}")
-                        }
-                    }
-                    else -> {
-                        Functions.showWarning(this@ShopDetailActivity, response.message() ?: "Ocurrió un error")
-                        Log.e("Error", response.message() + "-" + response.errorBody()?.string())
-                    }
-                }
-            } catch (e: Exception) {
-                showError()
-                Log.e("Exception", e.message ?: e.cause?.message ?: e.cause.toString())
-            }
         }
     }
 

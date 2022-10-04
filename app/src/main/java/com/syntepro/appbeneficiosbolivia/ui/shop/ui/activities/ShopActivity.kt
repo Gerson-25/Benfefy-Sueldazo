@@ -25,6 +25,8 @@ import com.merckers.core.extension.failure
 import com.merckers.core.extension.observe
 import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
+import com.syntepro.appbeneficiosbolivia.core.AndroidApplication
+import com.syntepro.appbeneficiosbolivia.core.di.ApplicationComponent
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
 import com.syntepro.appbeneficiosbolivia.entity.service.*
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.FavoriteData

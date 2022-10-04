@@ -17,8 +17,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -26,7 +24,6 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.facebook.login.LoginManager
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -37,13 +34,11 @@ import com.google.firebase.dynamiclinks.PendingDynamicLinkData
 import com.google.zxing.integration.android.IntentIntegrator
 import com.merckers.core.exception.Failure
 import com.merckers.core.extension.failure
-import com.squareup.picasso.Picasso
 import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.core.AndroidApplication
 import com.syntepro.appbeneficiosbolivia.core.app.ErrorMessage
 import com.syntepro.appbeneficiosbolivia.core.di.ApplicationComponent
 import com.syntepro.appbeneficiosbolivia.database.DataBaseAdapter
-import com.syntepro.appbeneficiosbolivia.entity.app.Pais
 import com.syntepro.appbeneficiosbolivia.entity.service.PresentDetail
 import com.syntepro.appbeneficiosbolivia.entity.service.UpdateActualCountryRequest
 import com.syntepro.appbeneficiosbolivia.room.database.RoomDataBase
@@ -56,34 +51,22 @@ import com.syntepro.appbeneficiosbolivia.ui.commerce.ui.activities.CommerceDetai
 import com.syntepro.appbeneficiosbolivia.ui.coupon.model.BestDiscountRequest
 import com.syntepro.appbeneficiosbolivia.ui.coupon.model.FeaturedCouponRequest
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.activities.CouponDetail2Activity
-import com.syntepro.appbeneficiosbolivia.ui.home.adapter.CustomAdapter
 import com.syntepro.appbeneficiosbolivia.ui.home.model.*
 import com.syntepro.appbeneficiosbolivia.ui.home.viewModel.HomeViewModel
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.LoyaltyPlanListRequest
-import com.syntepro.appbeneficiosbolivia.ui.login.ConditionsActivity
 import com.syntepro.appbeneficiosbolivia.ui.login.LogoutService
 import com.syntepro.appbeneficiosbolivia.ui.login.WelcomeActivity
 import com.syntepro.appbeneficiosbolivia.ui.menu.*
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationCountRequest
 import com.syntepro.appbeneficiosbolivia.ui.notifications.ui.activities.NotificationsActivity
-import com.syntepro.appbeneficiosbolivia.ui.shop.model.ArticleRequest
-import com.syntepro.appbeneficiosbolivia.ui.shop.model.GiftCardRequest
 import com.syntepro.appbeneficiosbolivia.ui.shop.ui.activities.ShopDetailActivity
 import com.syntepro.appbeneficiosbolivia.ui.shop.ui.activities.SuccessGiftUserActivity
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
-import com.syntepro.appbeneficiosbolivia.utils.Functions.Companion.showUserQR
 import com.syntepro.appbeneficiosbolivia.utils.Functions.Companion.userCountry
 import com.syntepro.appbeneficiosbolivia.utils.Functions.Companion.userTimeZone
-import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.app_bar_main.cardImage
 import kotlinx.android.synthetic.main.app_bar_main.ntfId
 import kotlinx.android.synthetic.main.app_bar_main.scanId
-import kotlinx.android.synthetic.main.app_bar_main.userImageId
-import kotlinx.android.synthetic.main.app_bar_main.welcomeId
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.fragment_benefy.*
-import kotlinx.android.synthetic.main.navigation_drawer.*
 import kotlinx.coroutines.*
 import java.util.*
 import javax.inject.Inject
@@ -443,17 +426,6 @@ class HomeActivity : AppCompatActivity() {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 
-    fun getLoyaltyPlans() {
-        val request = LoyaltyPlanListRequest(
-            country = Constants.userProfile?.actualCountry ?: "BO",
-            language = Functions.getLanguage(),
-            recordsNumber = Constants.LIST_PAGE_SIZE,
-            pageNumber = 1,
-            idUser = Constants.userProfile?.idUser ?: ""
-        )
-        homeViewModel.loyaltyPlans(request)
-    }
-
     private fun getCategories() {
         val request = CategoryRequest(
             country = Constants.userProfile?.actualCountry ?: "BO",
@@ -461,19 +433,6 @@ class HomeActivity : AppCompatActivity() {
             filterType = 1
         )
         homeViewModel.loadCategories(request)
-    }
-
-    private fun getItems() {
-        val request = with(ArticleRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            idUser = Constants.userProfile?.idUser ?: ""
-            language = 1
-            recordsNumber = 10
-            sortType = 1
-            idCity = Constants.stateFiltered
-            this
-        }
-        homeViewModel.loadItems(request)
     }
 
     private fun getParams() {
@@ -533,33 +492,6 @@ class HomeActivity : AppCompatActivity() {
         homeViewModel.loadStates(request)
     }
 
-    private fun getGiftCards() {
-        val request = with(GiftCardRequest()) {
-            country = Constants.userProfile?.actualCountry ?: "BO"
-            language = 1
-            recordsNumber = 10
-            pageNumber = 1
-            sortType = 1
-            idCity = Constants.stateFiltered
-            idCategory = Constants.categoryFiltered
-            this
-        }
-        homeViewModel.loadGiftCards(request)
-    }
-
-    private fun getFeaturedGiftCards() {
-        val request = FeaturedGiftCardRequest(
-            country = Constants.userProfile?.actualCountry ?: "BO",
-            language = 1,
-            recordsNumber = Constants.LIST_PAGE_SIZE,
-            pageNumber = 1,
-            sortType = 1,
-            idCity = Constants.stateFiltered,
-            idCategory = Constants.categoryFiltered
-        )
-        homeViewModel.loadFeaturedGiftCards(request)
-    }
-
     private fun getFeaturedCoupons() {
         val request = FeaturedCouponRequest(
             country = Constants.userProfile?.actualCountry ?: "BO",
@@ -598,16 +530,12 @@ class HomeActivity : AppCompatActivity() {
      *
      */
     private fun loadGlobalData() {
-        getLoyaltyPlans()
         getCategories()
-        getItems()
         getParams()
         getBestDiscounts()
         getBanners()
         getPurchaseProducts()
         getStates()
-        // getGiftCards()
-        getFeaturedGiftCards()
         getFeaturedCoupons()
         getUserSavings()
         if (Constants.TOKEN.isNotEmpty()) getCounter()

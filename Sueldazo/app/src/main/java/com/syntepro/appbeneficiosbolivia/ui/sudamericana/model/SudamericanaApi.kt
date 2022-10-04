@@ -1,7 +1,7 @@
 package com.syntepro.appbeneficiosbolivia.ui.sudamericana.model
 
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.ApiConfig
+import com.syntepro.appbeneficiosbolivia.service.ApiConfig.CONTENT_TYPE_JSON
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -12,7 +12,7 @@ interface SudamericanaApi {
         private const val SURVEY = ""
     }
 
-    @Headers(ApiConfig.CONTENT_TYPE_JSON)
+    @Headers(CONTENT_TYPE_JSON)
     @POST(SURVEY)
     fun saveSurvey(
             @Body body: SurveyRequest

@@ -82,9 +82,6 @@ class CommerceByBranchesAdapter @Inject constructor() :
 
     inner class DataViewHolder(val view: View) : BaseViewHolder<CommerceByBranchDataModel>(view) {
         override fun bind(item: CommerceByBranchDataModel, position: Int) {
-            Functions.showImage(item.commerce.urlImage, view.commerceImageId)
-            view.nameId.text = item.commerce.nombre
-            view.descriptionId.text = item.commerce.categoryName
 
             view.setOnClickListener { activity?.openCommerce(item) }
         }

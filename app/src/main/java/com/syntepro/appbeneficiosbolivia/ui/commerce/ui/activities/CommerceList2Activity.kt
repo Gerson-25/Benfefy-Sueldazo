@@ -20,13 +20,10 @@ import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
 import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceByBranchRequest
-import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceByBranchResponse
 import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceFilterRequest
 import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceFilterResponse
-import com.syntepro.appbeneficiosbolivia.ui.commerce.ui.adapters.CommerceListAdapter
 import com.syntepro.appbeneficiosbolivia.ui.commerce.ui.adapters.CustomSearchAdapter
 import com.syntepro.appbeneficiosbolivia.ui.commerce.viewModel.CommerceViewModel
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.Commerce
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import kotlinx.android.synthetic.main.activity_commerce_list2.*
@@ -35,8 +32,8 @@ import javax.inject.Inject
 
 class CommerceList2Activity : BaseActivity() {
 
-    @Inject
-    lateinit var commerceListAdapter: CommerceListAdapter
+//    @Inject
+//    lateinit var commerceListAdapter: CommerceListAdapter
 
     private lateinit var commerceViewModel: CommerceViewModel
     private var searchView: SearchView? = null
@@ -56,7 +53,7 @@ class CommerceList2Activity : BaseActivity() {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         commerceViewModel = viewModel(viewModelFactory) {
-            observe(commerceByBranch, ::handleCommerce)
+//            observe(commerceByBranch, ::handleCommerce)
             observe(filteredCommerce, ::handleFilteredCommerce)
             failure(failure, ::handleError)
         }
@@ -77,7 +74,7 @@ class CommerceList2Activity : BaseActivity() {
 
         initList()
 
-        commerceListAdapter.setActivity(this)
+//        commerceListAdapter.setActivity(this)
 
         nestedScroll.setOnScrollChangeListener { v: NestedScrollView?, _: Int, scrollY: Int, _: Int, oldScrollY: Int ->
             val nestedScrollView = checkNotNull(v) {
@@ -170,8 +167,8 @@ class CommerceList2Activity : BaseActivity() {
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         listId.layoutManager = linearLayoutManager
         listId.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
-        listId.adapter = commerceListAdapter
-        commerceListAdapter.setActivity(this)
+//        listId.adapter = commerceListAdapter
+//        commerceListAdapter.setActivity(this)
     }
 
     private fun loadCommerce(filter: MutableList<String>?) {
@@ -185,22 +182,16 @@ class CommerceList2Activity : BaseActivity() {
         commerceViewModel.getCommerceByBranch(request)
     }
 
-    private fun handleCommerce(response: BaseResponse<List<CommerceByBranchResponse>>?) {
-        showProgress(false)
-        response?.data?.let {
-            if (page > 1) {
-                val temp = commerceListAdapter.collection
-                val full = merge(temp, it[0].commerceList)
-                commerceListAdapter.collection = full
-            } else commerceListAdapter.collection = it[0].commerceList
-        }
-    }
-
-    fun openDetail(model: Commerce) {
-        callIntent<CommerceDetail2Activity> {
-            this.putExtra("commerceId", model.idComercio)
-        }
-    }
+//    private fun handleCommerce(response: BaseResponse<List<CommerceByBranchResponse>>?) {
+//        showProgress(false)
+//        response?.data?.let {
+//            if (page > 1) {
+//                val temp = commerceListAdapter.collection
+//                val full = merge(temp, it[0].commerceList)
+//                commerceListAdapter.collection = full
+//            } else commerceListAdapter.collection = it[0].commerceList
+//        }
+//    }
 
     private fun populateAdapter(query: String) {
         if (query.length > 3) {

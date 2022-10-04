@@ -16,7 +16,6 @@ import com.syntepro.appbeneficiosbolivia.ui.benefy.BenefyDetailActivity
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.activities.RatingActivity
 import com.syntepro.appbeneficiosbolivia.ui.general.SuccessGiftActivity
 import com.syntepro.appbeneficiosbolivia.ui.home.HomeActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.Loyalty
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationRequest
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.NotificationResponse
 import com.syntepro.appbeneficiosbolivia.ui.notifications.model.ReadNotificationRequest
@@ -164,7 +163,6 @@ class NotificationsActivity : BaseActivity(){
                     val idPlan = objectJSON.get("IdLoyaltyPlan").asString
                     val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("loyaltyPush", true)
-                    intent.putExtra("planType", Loyalty.LOYALTY_PLAN_MILES)
                     intent.putExtra("idPlan", idPlan)
                     startActivity(intent)
 //                    callIntent<HomeActivity> {
@@ -177,7 +175,6 @@ class NotificationsActivity : BaseActivity(){
                     val idPlan = objectJSON.get("IdLoyaltyPlan").asString
                     val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("loyaltyPush", true)
-                    intent.putExtra("planType", Loyalty.LOYALTY_PLAN_MILES)
                     intent.putExtra("idPlan", idPlan)
                     startActivity(intent)
 //                    callIntent<HomeActivity> {

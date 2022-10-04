@@ -8,7 +8,6 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.FileProvider
@@ -24,7 +23,6 @@ import com.syntepro.appbeneficiosbolivia.ui.commerce.model.CommerceDetailRespons
 import com.syntepro.appbeneficiosbolivia.ui.commerce.viewModel.CommerceViewModel
 import com.syntepro.appbeneficiosbolivia.ui.coupon.AgencyActivity
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.activities.CouponListActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.AddLoyaltyPlanDialog
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import kotlinx.android.synthetic.main.activity_commerce_detail2.*
@@ -80,7 +78,6 @@ class CommerceDetail2Activity : BaseActivity() {
         website.setOnClickListener { openWebsite(commerceWebId.text.toString()) }
         share.setOnClickListener { shareContent("${commerceNameId.text} - ${commerceDescriptionId.text}", commerceId) }
         commerceCoupons.setOnClickListener { openCoupons() }
-        commerceLoyalty.setOnClickListener { openLoyaltyPlans() }
         commerceAgency.setOnClickListener { openAgencies() }
     }
 
@@ -91,10 +88,6 @@ class CommerceDetail2Activity : BaseActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == AddLoyaltyPlanDialog.ADD_LOYALTY_PLAN_DIALOG_ID && resultCode == RESULT_OK) {
-            // Reload loyalty plans
-            Log.e("Reload Plans", "Ok")
-        }
     }
 
     private fun loadCommerceDetail(id: String?) {
@@ -237,16 +230,6 @@ class CommerceDetail2Activity : BaseActivity() {
             this.putExtra("commerceId", commerceId)
             this.putExtra("commerceName", commerceName)
         }
-    }
-
-    private fun openLoyaltyPlans() {
-        val intent = Intent(this@CommerceDetail2Activity, AddLoyaltyPlanDialog::class.java)
-        intent.putExtra("commerceId", commerceId)
-        intent.putExtra("commerceImage", commerceImage)
-        intent.putExtra("rubroName", branchName)
-        intent.putExtra("commerceName", commerceName)
-        intent.putExtra("commerceBanner", "")
-        startActivityForResult(intent, AddLoyaltyPlanDialog.ADD_LOYALTY_PLAN_DIALOG_ID)
     }
 
     private fun openAgencies() {

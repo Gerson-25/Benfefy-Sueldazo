@@ -109,47 +109,4 @@
         app:layout_constraintTop_toBottomOf="@id/login"/>
 
 
-    <LinearLayout
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:id="@+id/options"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/google"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:fontFamily="@font/circular_book"
-            android:text="GOOGLE"
-            android:background="@drawable/button_shape_google"
-            app:backgroundTint="#C94539"
-            android:contentDescription="@string/google_image" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_marginTop="15dp"
-            android:id="@+id/facebook"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:fontFamily="@font/circular_book"
-            android:text="FACEBOOK"
-            android:background="@drawable/button_shape"
-            app:backgroundTint="#4A5A8F"
-            android:contentDescription="@string/facebook_image" />
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/buttonFacebookLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,6 @@ import com.syntepro.appbeneficiosbolivia.entity.firebase.Comercio
 import com.syntepro.appbeneficiosbolivia.entity.firebase.ComercioPickList
 import com.syntepro.appbeneficiosbolivia.entity.firebase.SeguirComercio
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.activities.CouponListActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.LoyaltyPlansActivity
 import com.syntepro.appbeneficiosbolivia.ui.profile.ui.activities.TransactionsActivity
 import com.syntepro.appbeneficiosbolivia.ui.wallet.WalletAdapter
 import com.syntepro.appbeneficiosbolivia.utils.Constants
@@ -339,10 +338,10 @@ class WalletFragment : Fragment() {
 
     private fun showLoyaltyPlans() {
         if (mCurrentCommerce != null) {
-            val intent = Intent(requireContext(), LoyaltyPlansActivity::class.java)
-            intent.putExtra("commerceId", mCurrentCommerce?.id)
-            intent.putExtra("commerceImage", mCurrentCommerce?.logo)
-            startActivity(intent)
+//            val intent = Intent(requireContext(), LoyaltyPlansActivity::class.java)
+//            intent.putExtra("commerceId", mCurrentCommerce?.id)
+//            intent.putExtra("commerceImage", mCurrentCommerce?.logo)
+//            startActivity(intent)
         } else
             Functions.showWarning(requireContext(), "No hay comercio seleccionado.")
     }

@@ -20,6 +20,8 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.syntepro.appbeneficiosbolivia.R
+import com.syntepro.appbeneficiosbolivia.core.AndroidApplication
+import com.syntepro.appbeneficiosbolivia.core.di.ApplicationComponent
 import com.syntepro.appbeneficiosbolivia.database.DataBaseAdapter
 import com.syntepro.appbeneficiosbolivia.entity.app.Pais
 import com.syntepro.appbeneficiosbolivia.entity.service.*
@@ -65,6 +67,10 @@ class MainActivity : AppCompatActivity() {
     private var isLoyalty = false
     private var idPlanType = 0
     private var idPlan = ""
+
+    val appComponent: ApplicationComponent by lazy(mode = LazyThreadSafetyMode.NONE) {
+        (application as AndroidApplication).appComponent
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

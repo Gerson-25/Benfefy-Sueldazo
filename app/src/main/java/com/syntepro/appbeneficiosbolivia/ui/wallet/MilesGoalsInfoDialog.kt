@@ -13,8 +13,6 @@ import com.merckers.core.extension.observe
 import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.MilesGoalsRequest
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.viewmodel.LoyaltyPlanViewModel
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import com.syntepro.appbeneficiosbolivia.utils.Helpers
@@ -25,7 +23,6 @@ import java.util.*
 
 class MilesGoalsInfoDialog: BaseActivity() {
 
-    private lateinit var loyaltyViewModel: LoyaltyPlanViewModel
     private val mCalendar = Calendar.getInstance()
     private var mDateSelected: Date? = Date()
     private var mGoalId: String? = ""
@@ -39,10 +36,6 @@ class MilesGoalsInfoDialog: BaseActivity() {
         setContentView(R.layout.miles_goals_info_dialog)
         this.setFinishOnTouchOutside(true)
 
-        loyaltyViewModel = viewModel(viewModelFactory) {
-            observe(milesGoals, ::applyGoals)
-            failure(failure, ::handleError)
-        }
 
         // Extras
         val extras = intent.extras
@@ -67,12 +60,6 @@ class MilesGoalsInfoDialog: BaseActivity() {
             hideKeyboard(it)
             apply.text = ""
             progress_circular.visibility = View.VISIBLE
-            if (validateData()) getData()
-            else {
-                apply.text = "Aplicar"
-                progress_circular.visibility = View.GONE
-                Functions.showWarning(this@MilesGoalsInfoDialog, "Datos Incompletos")
-            }
         }
     }
 
@@ -90,19 +77,6 @@ class MilesGoalsInfoDialog: BaseActivity() {
             it.height = ViewGroup.LayoutParams.WRAP_CONTENT
         }
         windowManager.updateViewLayout(view, lp)
-    }
-
-    private fun getData() {
-        val request = MilesGoalsRequest(
-                country = Constants.userProfile?.actualCountry ?: "BO",
-                language = Functions.getLanguage(),
-                idGoal = mGoalId,
-                idUser = Constants.userProfile?.idUser ?: "",
-                idLoyaltyPlan = mPlanId ?: "",
-                goal = goalField.text.toString().toInt(),
-                dateGoal = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US).format(mDateSelected ?: Date())
-        )
-        loyaltyViewModel.saveMilesGoals(request)
     }
 
     private fun applyGoals(response: BaseResponse<Boolean>?) {

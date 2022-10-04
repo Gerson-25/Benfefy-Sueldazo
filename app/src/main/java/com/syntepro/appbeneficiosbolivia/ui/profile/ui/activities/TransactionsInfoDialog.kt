@@ -18,7 +18,6 @@ import com.syntepro.appbeneficiosbolivia.R
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
 import com.syntepro.appbeneficiosbolivia.core.entities.BaseResponse
 import com.syntepro.appbeneficiosbolivia.ui.home.HomeActivity
-import com.syntepro.appbeneficiosbolivia.ui.lealtad.model.Loyalty
 import com.syntepro.appbeneficiosbolivia.ui.profile.model.TransactionDetailRequest
 import com.syntepro.appbeneficiosbolivia.ui.profile.model.TransactionDetailResponse
 import com.syntepro.appbeneficiosbolivia.ui.profile.viewModel.ProfileViewModel
@@ -103,7 +102,6 @@ class TransactionsInfoDialog : BaseActivity() {
                     isLoyalty = true
                     shareGift.visibility = View.VISIBLE
                     shareGift.text = "Ver plan"
-                    planType = Loyalty.LOYALTY_PLAN_MILES
                     idPlan = it.idReference ?: ""
                     dedicatoryId.text = Functions.fromHtml(String.format(getString(R.string.stamp_description_label), it.description))
                 }
@@ -111,7 +109,6 @@ class TransactionsInfoDialog : BaseActivity() {
                     isLoyalty = true
                     shareGift.visibility = View.VISIBLE
                     shareGift.text = "Ver plan"
-                    planType = Loyalty.LOYALTY_PLAN_SEALS
                     idPlan = it.idReference ?: ""
                     dedicatoryId.text = Functions.fromHtml(String.format(getString(R.string.stamp_description_label), it.description))
                 }
