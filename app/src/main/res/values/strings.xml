@@ -645,5 +645,6 @@
     <string name="version_name">v 0.0.0</string>
     <string name="click_to_open_calendar">Click to open calendar</string>
     <string name="no_account">¿Aun no tienes una cuenta?, </string>
+    <string name="terms_cond_string">Estoy de acuerdo con los <u>terminos y condiciones</u></string>
 
 </resources>

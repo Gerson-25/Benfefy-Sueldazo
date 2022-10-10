@@ -1,5 +1,6 @@
 package com.syntepro.appbeneficiosbolivia.ui.login
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,7 @@ import com.syntepro.appbeneficiosbolivia.room.entity.CountryUser
 import com.syntepro.appbeneficiosbolivia.service.NetworkService2
 import com.syntepro.appbeneficiosbolivia.service.RetrofitClientInstance
 import com.syntepro.appbeneficiosbolivia.ui.extras.IntroActivity
+import com.syntepro.appbeneficiosbolivia.ui.general.InformationDialog
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Constants.Companion.userCountryProfile
 import com.syntepro.appbeneficiosbolivia.utils.Functions
@@ -48,18 +50,18 @@ class CredentialsActivity : AppCompatActivity() {
         // Firebase
         mAuth = FirebaseAuth.getInstance()
 
-        resetPassword.setOnClickListener {
-            val intent = Intent(this@CredentialsActivity, ResetPasswordActivity::class.java)
-            startActivity(intent)
-        }
-
         login.setOnClickListener {
-            if (validate()) {
-                login.visibility = View.INVISIBLE
-                progress_circular.visibility = View.VISIBLE
-                loginUser(userField.text.toString(), passwordField.text.toString())
+            if (documentIsTyped() && termsAcepted()){
+
+            }
+            else {
+                val intent = Intent(this, InformationDialog::class.java)
+                intent.putExtra("title", "Formulariio incompleto")
+                intent.putExtra("info", "Asegurate de ingresar tu número de Cédula y aceptar los términos y condiciones")
+                startActivity(intent)
             }
         }
+
     }
 
     /**
@@ -206,24 +208,6 @@ class CredentialsActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * App Functions
-     */
-    private fun validate(): Boolean {
-        val email: String = userField.text.toString().trim()
-        val passwordInput: String = passwordField.text.toString().trim()
-        return if (email.isEmpty() || passwordInput.isEmpty()) {
-            showWarning(this, getString(R.string.c_required))
-            false
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            showWarning(this, getString(R.string.e_invalid))
-            false
-        } else if (passwordInput.length < 6) {
-            showWarning(this, getString(R.string.min_characters))
-            false
-        } else true
-    }
-
     private fun loadData(pais: String, cod: String, abr: String, moneda: String) {
         val country = roomDataBase.accessDao().country
         if (country == null) {
@@ -272,6 +256,14 @@ class CredentialsActivity : AppCompatActivity() {
                 if (!task.isSuccessful) msg = "Error subscribed"
                 Log.d("TOPIC", msg)
             }
+    }
+
+    private fun termsAcepted(): Boolean{
+        return termCheckBox.isChecked
+    }
+
+    private fun documentIsTyped(): Boolean{
+        return CINumber.text.isNotEmpty()
     }
 
 }

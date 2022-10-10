@@ -25,6 +25,13 @@
         <item name="fontFamily">@font/myriad_pro_regular</item>
     </style>
 
+    <style name="buttonPrimaryActionStyle" parent="AppTheme">
+        <item name="textSize">24sp</item>
+        <item name="textColor">@color/colorPrimary</item>
+        <item name="textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
     <style name="FullScreenTheme" parent="AppTheme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>

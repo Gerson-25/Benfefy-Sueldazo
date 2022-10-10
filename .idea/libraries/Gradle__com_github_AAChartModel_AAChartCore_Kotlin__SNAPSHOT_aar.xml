@@ -10,8 +10,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f247dca300f2f2e1e19156461b5179ee/jetified-AAChartCore-Kotlin--SNAPSHOT/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b7d32c08f8d5fea5a7a49c8823d37bdc/jetified-AAChartCore-Kotlin--SNAPSHOT/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4e6bffe52b207b9ec3e03b19ab2c495/jetified-AAChartCore-Kotlin--SNAPSHOT/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4e6bffe52b207b9ec3e03b19ab2c495/jetified-AAChartCore-Kotlin--SNAPSHOT/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4e6bffe52b207b9ec3e03b19ab2c495/jetified-AAChartCore-Kotlin--SNAPSHOT/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97ca0061357c9025b2566324f4a928e9/jetified-AAChartCore-Kotlin--SNAPSHOT/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97ca0061357c9025b2566324f4a928e9/jetified-AAChartCore-Kotlin--SNAPSHOT/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/97ca0061357c9025b2566324f4a928e9/jetified-AAChartCore-Kotlin--SNAPSHOT/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -34,6 +34,7 @@ import com.syntepro.appbeneficiosbolivia.service.NotificationService
 import com.syntepro.appbeneficiosbolivia.service.RetrofitClientInstance
 import com.syntepro.appbeneficiosbolivia.ui.extras.IntroActivity
 import com.syntepro.appbeneficiosbolivia.ui.login.ConditionsActivity
+import com.syntepro.appbeneficiosbolivia.ui.login.CredentialsActivity
 import com.syntepro.appbeneficiosbolivia.ui.login.UserData
 import com.syntepro.appbeneficiosbolivia.ui.login.WelcomeActivity
 import com.syntepro.appbeneficiosbolivia.utils.Constants
@@ -142,9 +143,10 @@ class MainActivity : AppCompatActivity() {
                         val ret = response.body()!!
                         if (ret.isSuccess) {
                             ret.data?.let {
-                                val contains = it.any { v -> v.versionNumber == currentVersion }
-                                if (contains) updateUI(currentUser)
-                                else showUpdateDialog()
+//                                val contains = it.any { v -> v.versionNumber == currentVersion }
+//                                if (contains) updateUI(currentUser)
+//                                else showUpdateDialog()
+                                updateUI(currentUser)
                             } ?: run {
                                 updateUI(currentUser)
                             }
@@ -281,7 +283,7 @@ class MainActivity : AppCompatActivity() {
                             } else {
                                 LoginManager.getInstance().logOut()
                                 FirebaseAuth.getInstance().signOut()
-                                val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                                val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
                                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                                 startActivity(intent)
                             }
@@ -289,7 +291,7 @@ class MainActivity : AppCompatActivity() {
                     } ?: run {
                         LoginManager.getInstance().logOut()
                         FirebaseAuth.getInstance().signOut()
-                        val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                        val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                         startActivity(intent)
                     }
@@ -297,7 +299,7 @@ class MainActivity : AppCompatActivity() {
             }, splashDuration.toLong())
         } ?: run {
             Handler().postDelayed({
-                val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
                 startActivity(intent)
                 finish()
             }, splashDuration.toLong())
