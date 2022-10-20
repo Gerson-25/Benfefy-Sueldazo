@@ -4,22 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.*
 import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
-import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
-import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
 import com.syntepro.appbeneficiosbolivia.R
@@ -35,7 +29,6 @@ import com.syntepro.appbeneficiosbolivia.service.NetworkService2
 import com.syntepro.appbeneficiosbolivia.service.RetrofitClientInstance
 import com.syntepro.appbeneficiosbolivia.ui.extras.IntroActivity
 import com.syntepro.appbeneficiosbolivia.utils.Constants
-import com.syntepro.appbeneficiosbolivia.utils.Constants.Companion.RC_SIGN_IN
 import com.syntepro.appbeneficiosbolivia.utils.Constants.Companion.userCountryProfile
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import kotlinx.android.synthetic.gms.activity_welcome.*
@@ -187,7 +180,7 @@ class WelcomeActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?, data: SocialUser?) {
         user?.let {
-            val intent = Intent(this@WelcomeActivity, CountrySelectionActivity::class.java)
+            val intent = Intent(this@WelcomeActivity, CitySelectionActivity::class.java)
             intent.putExtra("userId", it.uid)
             intent.putExtra("model", data)
             intent.putExtra("registerStore", Constants.PLAY_STORE)

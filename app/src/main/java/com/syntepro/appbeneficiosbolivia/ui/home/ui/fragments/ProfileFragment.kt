@@ -23,50 +23,31 @@ class ProfileFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        scanId.setOnClickListener {
-            val integrator = IntentIntegrator(requireActivity())
-            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            integrator.setPrompt("Scanner")
-            integrator.setCameraId(0)
-            integrator.setBeepEnabled(false)
-            integrator.setOrientationLocked(false)
-            integrator.setBarcodeImageEnabled(false)
-            integrator.initiateScan()
-        }
-
-        notificationsId.setOnClickListener {
-            val intent = Intent(requireContext(), NotificationsActivity::class.java)
-            startActivity(intent)
-        }
-
-        editProfile.setOnClickListener {
-            val intent = Intent(requireContext(), EditProfileActivity2::class.java)
-            intent.putExtra("provenance", 1)
-            startActivity(intent)
-        }
-
-        transactions.setOnClickListener {
-            val intent = Intent(requireContext(), TransactionsActivity::class.java)
-            startActivity(intent)
-        }
-
-        qrCode.setOnClickListener { Functions.showUserQR(requireContext()) }
-
-        stats.setOnClickListener {
-            val intent = Intent(requireContext(), StatisticsActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Show Data
-        Functions.readUserInfo(userImageId, welcomeId, total_notificationsId)
         showData()
+
+//        editProfile.setOnClickListener {
+//            val intent = Intent(requireContext(), EditProfileActivity2::class.java)
+//            intent.putExtra("provenance", 1)
+//            startActivity(intent)
+//        }
+//
+//        transactions.setOnClickListener {
+//            val intent = Intent(requireContext(), TransactionsActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        qrCode.setOnClickListener { Functions.showUserQR(requireContext()) }
+//
+//        stats.setOnClickListener {
+//            val intent = Intent(requireContext(), StatisticsActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     private fun showData() {
         Constants.userProfile?.let {
-            Functions.showImage(it.photoUrl, circleImageView)
             val fullName = "${it.names} ${it.lastNames}"
-            nameId.text = fullName
+            name.text = fullName
             emailId.text = "${it.email}"
         }
     }

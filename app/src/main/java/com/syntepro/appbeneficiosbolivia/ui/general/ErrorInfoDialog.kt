@@ -9,10 +9,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.syntepro.appbeneficiosbolivia.base.BaseActivity
 import com.syntepro.appbeneficiosbolivia.R
+import kotlinx.android.synthetic.main.error_layout.*
 
 class ErrorInfoDialog : BaseActivity() {
 
     private lateinit var error: String
+    private lateinit var title: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +28,12 @@ class ErrorInfoDialog : BaseActivity() {
         // Parameters
         val extras = intent.extras
         if (extras != null) {
-            error = extras.getString("error")!!
+            error = extras.getString("error", "Uppss! Ocurrió un error")!!
+            title = extras.getString("title", "Lo sentimos, hemos tenido un inconveniente al procesar su solicitud")!!
         }
 
         errorId.text = error
+        errorTitle.text = title
     }
 
     override fun onAttachedToWindow() {

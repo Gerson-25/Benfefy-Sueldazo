@@ -178,7 +178,7 @@ class ShopDetailActivity : AppCompatActivity() {
         } else if (requestCode == 550 && resultCode == Activity.RESULT_CANCELED) {
             data?.let {
                 val error = it.getBooleanExtra("error", false)
-                if (error) Functions.showError(this, getString(R.string.payment_error))
+                if (error) Functions.showError(this, getString(R.string.payment_error), "")
             }
         } else {
             buy.text = getString(R.string.buy)

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/base_margin"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/closeOtpValidation"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_exit"/>
+
+                <ImageView
+                    android:id="@+id/closeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_close"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/base_margin"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/worksans_bold"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:text="VALIDA TU CUENTA"
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/sendDisclaimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Acabamos de enviar un código mediante sms al número 7*****454 que nos permitirá validar tu cuenta."
+                    android:fontFamily="@font/worksans_regular"
+                    android:textColor="@color/textSecondaryColor"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Por favor ingresa el código de 6 dígitos en el siguiente campo."
+                android:fontFamily="@font/worksans_regular"
+                android:textColor="@color/textSecondaryColor"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otpId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="# DE TOKEN"
+                    android:fontFamily="@font/worksans_medium"
+                    android:letterSpacing="0.07"
+                    android:maxLength="6"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:background="@drawable/outline_edittext_bg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/worksans_regular"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="¿Aun no recibes tu código?"/>
+
+                <TextView
+                    android:id="@+id/timerSendOtp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                android:fontFamily="@font/worksans_regular"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="@string/sent_otp_again"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/accent_button"
+                    android:fontFamily="@font/worksans_regular"
+                    android:text="VALIDAR MI CUENTA"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+
+                    />
+
+                <ProgressBar
+                    android:id="@+id/loadingScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

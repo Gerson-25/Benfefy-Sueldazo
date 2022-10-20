@@ -18,16 +18,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b054db7e-acab-4a3e-9688-4a72741d8613" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_checked_state.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check_checked.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check_unchecked.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sueldazo_logo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/secondary_button.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/apira_medium.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/aspira_bold.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/aspira_regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/theme.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/service/AnonymousUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ObtenerTokenRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ObtenerTokenResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ValidarClienteRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ValidarClienteResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ValidateTokenRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/model/ValidateTokenResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/TextView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/card_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_ahorro_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_ahorro_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_exit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_home_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_notification.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_paper_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_time_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_user_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_user_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/outline_edittext_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/aspira_black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/worksans_black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/worksans_bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/worksans_light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/worksans_medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/font/worksans_regular.otf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -42,32 +57,81 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_AAChartModel_AAChartCore_Kotlin__SNAPSHOT_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_AAChartModel_AAChartCore_Kotlin__SNAPSHOT_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/core/sueldazo.core.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/SignUpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/SignUpActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/WelcomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/WelcomeActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/gms/res/layout/activity_credentials.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/res/layout/activity_credentials.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/gms/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/res/layout/activity_sign_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/button_semi_rounded_gray.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/accent_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/information_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/information_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/NetworkService2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/NetworkService2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/ExploreCouponsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/ExploreCouponsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/general/ErrorInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/general/ErrorInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/WalletFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/WalletFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/CustomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/CustomAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/BenefyFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/BenefyFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/FavoriteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/FavoriteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/ui/fragments/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/ConditionsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/ConditionsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/CountrySelectionActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/CitySelectionActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/EmailConfirmationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/OTPValidationActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/shop/ui/activities/ShopDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/shop/ui/activities/ShopDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/Functions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/Functions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_notificacion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/item_selected.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/item_selected.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_conditions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_conditions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_country_selection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_country_selection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_email_confirmation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_o_t_p_validation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_countryspinner_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_countryspinner_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_notification_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_notification_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_benefy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_benefy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/benefits_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/benefits_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/theme.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/theme.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\msi\.android\avd\Pixel_3_API_28.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[f234ea1c]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,6 +141,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -113,6 +180,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/msi/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/bottomnavigation/BottomNavigationView.java_SELECTED" value="BottomNavigationView" />
     <property name="android-custom-viewC:/Users/msi/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/navigation/NavigationView.java_SELECTED" value="NavigationView" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
@@ -127,6 +195,9 @@
     </key>
     <key name="android.template.398476760">
       <recent name="com.syntepro.appbeneficiosbolivia" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.syntepro.appbeneficiosbolivia.entity.service" />
     </key>
   </component>
   <component name="RunManager">
@@ -220,29 +291,29 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt</url>
-          <line>71</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/SignUpActivity.kt</url>
           <line>73</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/SignUpActivity.kt</url>
+          <line>78</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt</url>
-          <line>72</line>
-          <option name="timeStamp" value="4" />
+          <line>99</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/hms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt</url>
-          <line>76</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/OTPValidationActivity.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/hms/java/com/syntepro/appbeneficiosbolivia/ui/login/CredentialsActivity.kt</url>
-          <line>72</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/login/OTPValidationActivity.kt</url>
+          <line>132</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/build.gradle</url>

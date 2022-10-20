@@ -2,5 +2,22 @@
 <resources>
     <style name="LoginTheme" parent="AppTheme">
         <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+    </style>
+    <style name="ConditionsTheme" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+    <style name="HomeTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+    </style>
+    <style name="BottomStyleActive" parent="AppTheme">
+        <item name="fontFamily">@font/worksans_bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="BottomStyleInactive" parent="AppTheme">
+        <item name="fontFamily">@font/worksans_regular</item>
+        <item name="android:letterSpacing">0.05</item>
     </style>
 </resources>

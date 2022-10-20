@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_shop"
+        android:icon="@drawable/ic_home_nav"
         android:orderInCategory="1"
-        android:title="@string/store_menu" />
+        android:title="@string/home_menu" />
 
     <!-- Here is the trick -->
     <item
         android:id="@+id/nav_favorite"
-        android:icon="@drawable/ic_coupon"
+        android:icon="@drawable/ic_ahorro_nav"
         android:orderInCategory="2"
-        android:title="@string/favorite_label"/>
+        android:title="@string/beneficios_menu"/>
 
 
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/ic_perfil"
+        android:icon="@drawable/ic_user_nav"
         android:orderInCategory="3"
         android:title="@string/perfil_menu"/>
 

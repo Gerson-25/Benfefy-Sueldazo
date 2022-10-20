@@ -17,6 +17,8 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -53,6 +55,7 @@ import com.syntepro.appbeneficiosbolivia.ui.coupon.model.FeaturedCouponRequest
 import com.syntepro.appbeneficiosbolivia.ui.coupon.ui.activities.CouponDetail2Activity
 import com.syntepro.appbeneficiosbolivia.ui.home.model.*
 import com.syntepro.appbeneficiosbolivia.ui.home.viewModel.HomeViewModel
+import com.syntepro.appbeneficiosbolivia.ui.login.CredentialsActivity
 import com.syntepro.appbeneficiosbolivia.ui.login.LogoutService
 import com.syntepro.appbeneficiosbolivia.ui.login.WelcomeActivity
 import com.syntepro.appbeneficiosbolivia.ui.menu.*
@@ -64,9 +67,9 @@ import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Functions
 import com.syntepro.appbeneficiosbolivia.utils.Functions.Companion.userCountry
 import com.syntepro.appbeneficiosbolivia.utils.Functions.Companion.userTimeZone
-import kotlinx.android.synthetic.main.app_bar_main.ntfId
-import kotlinx.android.synthetic.main.app_bar_main.scanId
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.coroutines.*
 import java.util.*
 import javax.inject.Inject
@@ -88,11 +91,8 @@ class HomeActivity : AppCompatActivity() {
 
     private val adapter by lazy { DataBaseAdapter(this.applicationContext) }
     private val roomDataBase by lazy { RoomDataBase.getRoomDatabase(this) }
-    private lateinit var profileImage: ImageView
     private var analytics: FirebaseAnalytics? = null
-    private var changeCountry: Spinner? = null
-    private var nomCountry: ArrayList<String>? = arrayListOf()
-    private val flags = intArrayOf(R.drawable.sv, R.drawable.bo, R.drawable.gt)
+    private var userName = ""
 
     @RequiresApi(Build.VERSION_CODES.M)
     @InternalCoroutinesApi
@@ -101,9 +101,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.navigation_drawer)
         appComponent.inject(this)
 
+        val extras = intent.extras
+        if (extras != null) {
+            userName = extras.getString("userName", "")!!
+        }
+
         homeViewModel = viewModel(viewModelFactory) {
             failure(failure, ::handleError)
         }
+
+        showData()
 
         // Initialize SQLite
         adapter.createDatabase()
@@ -156,7 +163,7 @@ class HomeActivity : AppCompatActivity() {
                                 roomDataBase.accessDao().addCountryUser(newCountryUser)
                                 dialog.cancel()
 
-                                loadGlobalData()
+//                                loadGlobalData()
 
                                 if (!couponId.isNullOrEmpty()) {
                                     val intent = Intent(this, CouponDetail2Activity::class.java)
@@ -228,7 +235,7 @@ class HomeActivity : AppCompatActivity() {
         // Abel Acosta
         initNavigation()
         // Load Global data
-        loadGlobalData()
+//        loadGlobalData()
 
         // Get the primary text color of the theme
         val typedValue = TypedValue()
@@ -237,16 +244,6 @@ class HomeActivity : AppCompatActivity() {
         @SuppressLint("Recycle") val arr = this.obtainStyledAttributes(typedValue.data, intArrayOf(android.R.attr.textColorPrimary))
         val primaryColor = arr.getColor(0, -1)
 
-        scanId.setOnClickListener {
-            val integrator = IntentIntegrator(this)
-            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            integrator.setPrompt("Scanner")
-            integrator.setCameraId(0)
-            integrator.setBeepEnabled(false)
-            integrator.setOrientationLocked(false)
-            integrator.setBarcodeImageEnabled(false)
-            integrator.initiateScan()
-        }
 
         ntfId.setOnClickListener {
             val intent = Intent(this@HomeActivity, NotificationsActivity::class.java)
@@ -278,6 +275,29 @@ class HomeActivity : AppCompatActivity() {
                 if (result.contents == null) Toast.makeText(this, getString(R.string.scanner), Toast.LENGTH_SHORT).show()
                 else startActivity(ScannerActivity.getIntent(this, result.contents, getString(R.string.campain)))
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        if (!navController.popBackStack()) {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage(getString(R.string.exit_app))
+            builder.setPositiveButton(getString(R.string.yes)) { _: DialogInterface?, _: Int ->
+                val intent = Intent(this, CredentialsActivity::class.java)
+                startActivity(intent)
+                this.finish()
+            }
+            builder.setNegativeButton(getString(R.string.no)) { dialog: DialogInterface, _: Int -> dialog.cancel() }
+            val dialog = builder.create()
+            dialog.show()
+        } else super.onBackPressed()
+    }
+
+    private fun showData(){
+        val user = Constants.userProfile
+        user?.let {
+            welcomeId.text = "Hola ${it.names},"
+            checkProfile.text = "Bienvenido a App Sueldazo"
         }
     }
 

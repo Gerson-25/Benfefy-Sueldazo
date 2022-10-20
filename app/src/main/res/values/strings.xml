@@ -1,8 +1,34 @@
 <resources>
-    <string name="app_name">Benefy</string>
+    <string name="app_name">Sueldazo</string>
 
     //Facebook
     <string name="facebook_application_id" translatable="false">508540496613548</string>
+
+    <string name="terms_cond">TERMINOS Y CONDICIONES BENEFICIOS APP
+
+Aceptación de los términos y condiciones
+
+Le damos la bienvenida a Beneficios. Beneficios proveerá a Ud. sus servicios de acuerdo a los siguientes Términos y Condiciones, los cuales podrán ser periódicamente actualizados por Beneficios notificando al usuario y solicitando su aceptación. Usted podrá revisar la versión más reciente de los TERMINOS Y CONDICIONES DE USO en todo momento. Además, cuando se encuentre utilizando servicios particulares de Beneficios u operados por Beneficios, Ud. y Beneficios estarán sujetos a guías de uso o reglas correspondientes a dichos servicios, que puedan ser publicadas periódicamente. Todas estas guías de uso o reglas se encuentran incorporadas a estos TERMINOS Y CONDICIONES DE USO.
+
+1.	Descripción del servicio
+
+Beneficios provee a los usuarios el acceso a una amplia colección de promociones y recursos incluyendo variadas herramientas de comunicación, servicios de compra, contenido personalizado y programación de terceros, por medio de su red de propiedades, a la que se puede acceder a través de diversos medios o dispositivos conocidos o a ser desarrollados en el futuro (el "Servicio").
+Ud. comprende y acepta que el Servicio puede incluir publicidad y que la misma es necesaria para que Beneficios pueda prestar el Servicio.
+Ud. también comprende y acepta que el Servicio puede incluir ciertas comunicaciones de Beneficios, como anuncios de servicios, mensajes administrativos y el . Newsletter, y que estas comunicaciones se consideran parte de la membresía de Beneficios y que Ud. NO podrá optar por no recibirlas. A menos que se indique expresamente lo contrario, cualquier nueva funcionalidad que aumente o mejore el Servicio actual, incluyendo el lanzamiento de nuevas propiedades de Beneficios, estará sujeta a estos TERMINOS Y CONDICIONES DE USO. Ud. comprende y acepta que el Servicio se provee "TAL CUAL ES" y que Beneficios no asume responsabilidades por el retraso, borrado, entrega equivocada o falla al guardar cualquier comunicación del usuario, o sus criterios de personalización Ud. es responsable de obtener el acceso al Servicio, el cual podrá incluir cargos de terceros (tales como cargos del proveedor de acceso a Internet o de comunicaciones). Ud. será responsable de tales cargos, incluyendo aquellos cargos asociados con la exhibición o envío de publicidad. Además, deberá contar con todo el equipo necesario para acceder al Servicio y será responsable del mismo
+
+1.	Sus obligaciones de registro
+
+
+Como una condición esencial para usar el Servicio, Ud. que posee capacidad legal para contratar y que no posee ningún impedimento para recibir servicios bajo las leyes del Estado Plurinacional de Bolivia y otras jurisdicciones aplicables. Asimismo, Ud. se obliga a:
+(a) proveer información verdadera, correcta, actual y completa acerca de su persona del modo requerido en el formulario de registro del Servicio (información denominada en adelante "Datos de Registro"), y
+(b) mantener y actualizar en todo momento los Datos de Registro a fin de conservarlos veraces, correctos, actuales y completos. Si suministra información que es falsa, inexacta, desactualizada o incompleta, o si Beneficios tiene bases razonables para sospechar que dicha información es falsa, inexacta, desactualizada o incompleta, Beneficios tendrá el derecho de suspender o cerrar su cuenta y negarle el uso presente o futuro del Servicio (o cualquier parte del mismo).
+
+1.	Cuenta de usuario, contraseña y seguridad
+
+Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una contraseña y una designación de cuenta. Ud. será responsable de mantener la confidencialidad de la contraseña y de la cuenta, siendo también único y absoluto responsable por todas las actividades que ocurran bajo su contraseña o cuenta. Ud. se compromete a:
+(a) notificar inmediatamente a Beneficios de cualquier uso no autorizado de su contraseña o cuenta o de cualquier otra violación de seguridad, y
+(b) asegurarse de que su cuenta sea cerrada al final de cada sesión. Beneficios no será responsable por ninguna pérdida o daño que resulte como consecuencia de su incumplimiento a las disposiciones de este artículo
+</string>
 
     <string name="default_notification_channel_id">locationtest_channel</string>
     <string name="geofence_transition_invalid_type">Geofence Transition Invalid Type</string>
@@ -112,7 +138,7 @@
     <string name="omitir">Omitir</string>
 
     //Menu
-    <string name="perfil_menu">Perfil</string>
+    <string name="perfil_menu">Mi cuenta</string>
     <string name="terminos_y_condiciones_menu">Términos y Condiciones</string>
     <string name="comentarios_menu">Comentarios y Reportes</string>
     <string name="configuracion_menu">Configuración</string>
@@ -126,6 +152,8 @@
     <string name="cambio_pais_consulta">Cambiar País</string>
     <string name="otras_opciones">Opciones Avanzadas</string>
     <string name="direccion_menu">Direcciones</string>
+    <string name="terms_string">Términos y condiciones</string>
+    <string name="savings_string">Ver mi ahorro</string>
 
     //Popup
     <string name="canje_exitoso_popup">¡CANJE EXITOSO!</string>
@@ -636,6 +664,8 @@
     <string name="articles_home">Artículos</string>
     <string name="gift_cards_home">Gift Cards</string>
     <string name="given_item">Regalo</string>
+    <string name="home_menu">Inicio</string>
+    <string name="benefits_menu">Beneficios</string>
 
     // About activity
     <string name="about_first">Benefy es el programa que </string>
@@ -646,5 +676,6 @@
     <string name="click_to_open_calendar">Click to open calendar</string>
     <string name="no_account">¿Aun no tienes una cuenta?, </string>
     <string name="terms_cond_string">Estoy de acuerdo con los <u>terminos y condiciones</u></string>
+    <string name="sent_otp_again"><u>REENVIAR OTP</u></string>
 
 </resources>

@@ -83,22 +83,6 @@ class BenefyFragment: BaseFragment() {
         if (!Functions.isDarkTheme(requireActivity()) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             savingsCard.setCardBackgroundColor(requireContext().getColor(R.color.gray_card_benefit))
 
-        scanId.setOnClickListener {
-            val integrator = IntentIntegrator(requireActivity())
-            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            integrator.setPrompt("Scanner")
-            integrator.setCameraId(0)
-            integrator.setBeepEnabled(false)
-            integrator.setOrientationLocked(false)
-            integrator.setBarcodeImageEnabled(false)
-            integrator.initiateScan()
-        }
-
-        notificationsId.setOnClickListener {
-            val intent = Intent(requireContext(), NotificationsActivity::class.java)
-            startActivity(intent)
-        }
-
         promotional.setOnClickListener {
             val intent = Intent(requireContext(), PromotionalCodeActivity::class.java)
             intent.putExtra("allowAccess", true)
@@ -122,14 +106,12 @@ class BenefyFragment: BaseFragment() {
                 }
             }
         })
-
-        Functions.readUserInfo(userImageId, welcomeId, total_notificationsId)
     }
 
     override fun onStart() {
         super.onStart()
-        getPurchaseProducts()
-        getUserSavings()
+//        getPurchaseProducts()
+//        getUserSavings()
     }
 
     override fun onResume() {

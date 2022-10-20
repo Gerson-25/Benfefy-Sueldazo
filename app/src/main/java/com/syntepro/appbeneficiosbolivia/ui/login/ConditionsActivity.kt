@@ -20,30 +20,24 @@ class ConditionsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conditions)
 
-        // Toolbar
-        val myToolbar = findViewById<View>(R.id.back_toolbar) as Toolbar
-        setSupportActionBar(myToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = resources.getString(R.string.terminos_y_condiciones_menu)
-
         // Extras
         val extras = intent.extras
         if (extras != null) {
             val provenance = extras.getInt("provenance")
-            if (provenance == 1) checkbox.visibility = View.GONE
-            else checkbox.setOnCheckedChangeListener { _, isChecked -> next.visibility = if (isChecked) View.VISIBLE else View.GONE }
+        }
+
+        back.setOnClickListener {
+            onBackPressed()
         }
 
         // Get User Timezone
-        val tz = TimeZone.getTimeZone(userTimeZone)
-        val c = Calendar.getInstance(tz)
-        val date = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(c.timeInMillis)
+//        val tz = TimeZone.getTimeZone(userTimeZone)
+//        val c = Calendar.getInstance(tz)
+//        val date = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(c.timeInMillis)
 
         val conditions = readFileFromRawDirectory()
         conditionsId.text = conditions
 
-        next.setOnClickListener { updateData(date) }
     }
 
     override fun onSupportNavigateUp(): Boolean {

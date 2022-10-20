@@ -33,13 +33,11 @@ import com.syntepro.appbeneficiosbolivia.service.NetworkService2
 import com.syntepro.appbeneficiosbolivia.service.NotificationService
 import com.syntepro.appbeneficiosbolivia.service.RetrofitClientInstance
 import com.syntepro.appbeneficiosbolivia.ui.extras.IntroActivity
-import com.syntepro.appbeneficiosbolivia.ui.login.ConditionsActivity
-import com.syntepro.appbeneficiosbolivia.ui.login.CredentialsActivity
-import com.syntepro.appbeneficiosbolivia.ui.login.UserData
-import com.syntepro.appbeneficiosbolivia.ui.login.WelcomeActivity
+import com.syntepro.appbeneficiosbolivia.ui.login.*
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import com.syntepro.appbeneficiosbolivia.utils.Constants.Companion.userCountryProfile
 import com.syntepro.appbeneficiosbolivia.utils.Functions
+import kotlinx.android.synthetic.main.activity_o_t_p_validation.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -75,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_main)
 
         //version name
@@ -91,7 +88,13 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        validateVersions()
+//        validateVersions()
+
+        Handler().postDelayed({
+            val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }, 5000)
 
         val locale = applicationContext.resources.configuration.locale.country
 
@@ -291,7 +294,7 @@ class MainActivity : AppCompatActivity() {
                     } ?: run {
                         LoginManager.getInstance().logOut()
                         FirebaseAuth.getInstance().signOut()
-                        val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
+                        val intent = Intent(this@MainActivity, OTPValidationActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                         startActivity(intent)
                     }
@@ -299,7 +302,7 @@ class MainActivity : AppCompatActivity() {
             }, splashDuration.toLong())
         } ?: run {
             Handler().postDelayed({
-                val intent = Intent(this@MainActivity, CredentialsActivity::class.java)
+                val intent = Intent(this@MainActivity, OTPValidationActivity::class.java)
                 startActivity(intent)
                 finish()
             }, splashDuration.toLong())

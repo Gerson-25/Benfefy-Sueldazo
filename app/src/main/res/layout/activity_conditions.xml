@@ -3,99 +3,102 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/base_margin">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/back_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/transparent"
-        android:elevation="4dp"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:titleTextColor="@color/white"
-        tools:targetApi="lollipop"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/logo_benefy_blanco"
-        android:scaleType="fitCenter"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_toolbar"
-        app:layout_constraintBottom_toBottomOf="@id/bottomDiv"
-        tools:ignore="ContentDescription"
-        app:tint="@color/colorPrimary" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomDiv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/back_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorPrimary"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_arrow_left"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/terms_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/back"
+                    android:src="@drawable/ic_paper_menu" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/terms_icon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/checkProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/worksans_regular"
+                        android:gravity="center_vertical"
+                        android:text="@string/terms_string"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
         android:padding="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkbox"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomDiv">
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
 
         <TextView
             android:id="@+id/conditionsId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/normal"
             android:layout_gravity="center_horizontal"
-            style="@style/TextAppearance.AppCompat"/>
+            android:layout_margin="20dp"
+            android:fontFamily="@font/worksans_light"
+            android:textColor="@color/black"
+            tools:text="@string/terms_cond" />
 
     </ScrollView>
 
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="@string/acepto_los_terminos_y_condiciones_tyc"
-        android:theme="@style/CheckBoxIndigo"
-        android:fontFamily="@font/normal"
-        app:layout_constraintBottom_toTopOf="@+id/next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        style="@style/TextAppearance.AppCompat"/>
-
-    <Button
-        android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/green"
-        android:textColor="@color/white"
-        android:fontFamily="@font/bold"
-        android:text="@string/siguiente_tyc"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

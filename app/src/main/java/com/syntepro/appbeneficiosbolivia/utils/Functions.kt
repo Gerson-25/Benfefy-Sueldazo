@@ -141,9 +141,10 @@ class Functions {
          * @property ctx context of activity.
          * @property message error message to show.
          */
-        fun showError(ctx: Context?, message: String?) {
+        fun showError(ctx: Context?, message: String?, title: String?) {
             val intent = Intent(ctx, ErrorInfoDialog::class.java)
             intent.putExtra("error", message)
+            intent.putExtra("title", title)
             ctx!!.startActivity(intent)
         }
 

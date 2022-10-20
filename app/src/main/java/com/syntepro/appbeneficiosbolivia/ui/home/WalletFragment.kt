@@ -159,7 +159,7 @@ class WalletFragment : Fragment() {
                     startPicklist(list)
                 } catch (e: Exception) { e.printStackTrace() }
             }
-        }.addOnFailureListener { Functions.showError(context, it.message) }
+        }.addOnFailureListener { Functions.showError(context, it.message, "") }
 
         adapter = WalletAdapter(options, requireContext())
         mList.adapter = adapter
@@ -200,7 +200,7 @@ class WalletFragment : Fragment() {
                             commerceUser.colorTarjeta = mCommerce.colorTarjeta
                             FirebaseFirestore.getInstance().collection(Constants.USERS_COLLECTION).document(Functions.userUID)
                                     .collection(Constants.MY_TRADES_COLLECTION).document(commerceUser.id).set(commerceUser)
-                                    .addOnFailureListener { Functions.showError(activity, it.message!!) }
+                                    .addOnFailureListener { Functions.showError(activity, it.message!!, "") }
                             adapter!!.currentList!!.dataSource.invalidate()
                             walletEmptytId.visibility = View.GONE
                         }

@@ -46,7 +46,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".ui.login.EmailConfirmationActivity"
+        <activity android:name=".ui.login.OTPValidationActivity"
             android:excludeFromRecents="true"
             android:theme="@style/simpleDialog" />
 
@@ -117,10 +117,6 @@
             android:name=".ui.commerce.ui.activities.Commerce2Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.lealtad.LoyaltyCodePlanDialog"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
             android:name=".ui.wallet.MilesGoalsInfoDialog"
             android:excludeFromRecents="true"
             android:theme="@style/simpleDialog" />
@@ -150,7 +146,8 @@
         </activity>
         <activity
             android:name=".ui.login.ConditionsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ConditionsTheme"/>
         <activity
             android:name=".ui.shop.ui.activities.PaymentOrderActivity"
             android:screenOrientation="portrait" />
@@ -165,6 +162,7 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:excludeFromRecents="true"
+            android:theme="@style/HomeTheme"
             android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
@@ -218,30 +216,15 @@
             android:name=".ui.profile.ui.activities.StatisticsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.lealtad.TermsViewActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.lealtad.FinishDialog"
-            android:excludeFromRecents="true" />
-        <activity
-            android:name=".ui.lealtad.TermsActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.lealtad.AddLoyaltyPlanDialog"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
-            android:name=".ui.lealtad.LoyaltyPlansActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".base.BaseActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.extras.IntroActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.login.CountrySelectionActivity"
-            android:screenOrientation="portrait" />
+            android:name=".ui.login.CitySelectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/simpleDialog"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

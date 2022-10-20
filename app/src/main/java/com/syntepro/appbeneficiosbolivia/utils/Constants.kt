@@ -95,12 +95,12 @@ Constants {
 //        const val API_KEY: String = "75APPMA1-B4DF-475E-A331-F737424F013C"
 
         // URL UAT
-        var BASE_URL_MICRO: String = "https://uat.bck.backofficev1.appbenefy.com/api/"
-        var BASE_URL_MICRO2: String = "https://uat.bck.backofficev2.appbenefy.com/"
-        var BASE_URL_TRACKING: String = "http://192.168.1.68:84/"
-        var BASE_URL_SECURITY: String = "https://uat.bck.security.appbenefy.com/"
-        var BASE_URL_PAYMENT_GATEWAY = "https://uat.bck.paymentgateway.appbenefy.com/"
-        const val API_KEY: String = "75APPMA1-B4DF-475E-A331-F737424F013C"
+//        var BASE_URL_MICRO: String = "https://uat.bck.backofficev1.appbenefy.com/api/"
+//        var BASE_URL_MICRO2: String = "https://uat.bck.backofficev2.appbenefy.com/"
+//        var BASE_URL_TRACKING: String = "http://192.168.1.68:84/"
+//        var BASE_URL_SECURITY: String = "https://uat.bck.security.appbenefy.com/"
+//        var BASE_URL_PAYMENT_GATEWAY = "https://uat.bck.paymentgateway.appbenefy.com/"
+//        const val API_KEY: String = "75APPMA1-B4DF-475E-A331-F737424F013C"
 
         // URL PRD
 //        var BASE_URL_MICRO: String = "https://backoffice.beneficioslatam.com:85/api/"
@@ -118,6 +118,15 @@ Constants {
 //        var BASE_URL_PAYMENT_GATEWAY = "https://bck.paymentgateway.appbenefy.com/"
 //        const val  API_KEY: String = "75APPMA1-B4DF-475E-A331-F737424F013CPR"
 
+        // URL DEV
+        var BASE_URL_MICRO: String = "http://172.30.126.112:8090/api/"
+        var BASE_URL_MICRO2: String = "http://172.30.126.112:8092/"
+        var BASE_URL_TRACKING: String = "http://172.30.20.108:9080/"
+        var BASE_URL_SECURITY: String = "http://172.30.126.112:8094/"
+        var BASE_URL_PAYMENT_GATEWAY = "http://172.30.126.112:8093/"
+        var BASE_URL_MICROSUELDAZO: String = "http://192.168.194.175:9000/"
+        const val  API_KEY: String = "75APPMA1-B4DF-475E-A331-F737424F013C"
+
         // Variables
         private var _userProfile: User? = null
         var userProfile: User?
@@ -126,6 +135,14 @@ Constants {
                 return _userProfile
             }
             set (value) { _userProfile = value }
+
+        private var _anonymousUserProfile: User? = null
+        var anonymousUserProfile: User?
+            get() {
+                if (_anonymousUserProfile == null) { getPersistentProfile(AndroidApplication.applicationContext()) }
+                return _anonymousUserProfile
+            }
+            set (value) { _anonymousUserProfile = value }
 
         // Search Adapter
         const val SUGGESTION_COUPON = 1

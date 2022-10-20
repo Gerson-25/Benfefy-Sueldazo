@@ -308,7 +308,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<Cupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false
@@ -361,7 +361,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<VipCoupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false
@@ -419,7 +419,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<Cupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false
@@ -472,7 +472,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<VipCoupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false
@@ -536,7 +536,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<Cupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false
@@ -589,7 +589,7 @@ class ExploreCouponsActivity: BaseActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<VipCoupon>>, t: Throwable) {
-                showError(this@ExploreCouponsActivity, getString(R.string.error_connection))
+                showError(this@ExploreCouponsActivity, getString(R.string.error_connection), "")
                 showEmptyLayout(true)
                 dialog!!.dismiss()
                 swipeRefreshLayout!!.isRefreshing = false

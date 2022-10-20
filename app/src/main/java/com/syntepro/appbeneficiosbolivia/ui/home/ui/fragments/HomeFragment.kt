@@ -90,61 +90,17 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        readUserInfo(userImageId, welcomeId, total_notificationsId)
-        initList()
         configureRecyclerview(1)
-        getCategories(selectedShopItem)
+//        getCategories(selectedShopItem)
 
         if (!Functions.isDarkTheme(requireActivity()) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             shopType.setCardBackgroundColor(requireContext().getColor(R.color.gray_card_benefit))
-
-        scanId.setOnClickListener {
-            val integrator = IntentIntegrator(requireActivity())
-            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            integrator.setPrompt("Scanner")
-            integrator.setCameraId(0)
-            integrator.setBeepEnabled(false)
-            integrator.setOrientationLocked(false)
-            integrator.setBarcodeImageEnabled(false)
-            integrator.initiateScan()
-        }
-
-        notificationsId.setOnClickListener {
-            val intent = Intent(requireContext(), NotificationsActivity::class.java)
-            startActivity(intent)
-        }
 
         moreCategories.setOnClickListener {
             val intent = Intent(requireContext(), CategoryActivity::class.java)
             intent.putExtra("homeProvenance", true)
             intent.putExtra("selectionType", selectedShopItem)
             startActivity(intent)
-        }
-
-        showArticles.setOnClickListener {
-            articleSelectedId.setImageDrawable(activity?.let { it1 -> ContextCompat.getDrawable(it1, R.drawable.ic_article_selected) })
-            giftCardSelectedId.setImageDrawable(activity?.let { it1 -> ContextCompat.getDrawable(it1, R.drawable.ic_gift_card_deselected) })
-            shopTextId.text = requireContext().getString(R.string.articles_store)
-            listTextId.text = requireContext().getString(R.string.article_label)
-            featuredGiftCardsView.visibility = View.GONE
-            selectedShopItem = 1
-            configureRecyclerview(1)
-            getCategories(1)
-            if (articleSize > 10) showMoreListId.visibility = View.VISIBLE else showMoreListId.visibility = View.GONE
-            if (articleAdapter.collection.isEmpty()) emptyId.visibility = View.VISIBLE else emptyId.visibility = View.GONE
-        }
-
-        showGiftCards.setOnClickListener {
-            articleSelectedId.setImageDrawable(activity?.let { it1 -> ContextCompat.getDrawable(it1, R.drawable.ic_article_deselected) })
-            giftCardSelectedId.setImageDrawable(activity?.let { it1 -> ContextCompat.getDrawable(it1, R.drawable.ic_gift_card_selected) })
-            shopTextId.text = requireContext().getString(R.string.gift_card_store)
-            listTextId.text = requireContext().getString(R.string.gift_card_label)
-            featuredGiftCardsView.visibility = View.VISIBLE
-            selectedShopItem = 2
-            configureRecyclerview(2)
-            getCategories(2)
-            if (giftCardSize > 10) showMoreListId.visibility = View.VISIBLE else showMoreListId.visibility = View.GONE
-            if (giftCardsAdapter.collection.isEmpty()) emptyId.visibility = View.VISIBLE else emptyId.visibility = View.GONE
         }
 
         moreShopItems.setOnClickListener {
@@ -158,24 +114,8 @@ class HomeFragment : BaseFragment() {
             intent.putExtra("type", selectedShopItem)
             startActivity(intent)
         }
-    }
 
-    /**
-     * App Functions
-     */
 
-    private fun initList() {
-        // Category Recycler View
-        categoriesListId.setHasFixedSize(true)
-        categoriesListId.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        categoriesListId.itemAnimator = DefaultItemAnimator()
-        categoriesListId.adapter = categoryAdapter
-
-        // Featured GiftCards Recycler View
-        featuredGiftCardListId.setHasFixedSize(true)
-        featuredGiftCardListId.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        featuredGiftCardListId.itemAnimator = DefaultItemAnimator()
-        featuredGiftCardListId.adapter = featuredGiftCardAdapter
     }
 
     private fun configureRecyclerview(type: Int) {
@@ -257,31 +197,6 @@ class HomeFragment : BaseFragment() {
             emptyId.visibility = View.GONE
             if (response?.data?.size ?: 0 > 10) showMoreListId.visibility = View.VISIBLE else showMoreListId.visibility = View.GONE
         }
-//        response?.data?.let {
-//            Log.e("Articles Size", "Size: ${it.size}")
-//            emptyId.visibility = View.GONE
-//            val homeItemList = it.take(9)
-//            val dataModel: MutableList<ArticleResponseDataModel> = mutableListOf()
-//            homeItemList.forEachIndexed { i, a ->
-//                if (i != 8) {
-//                    val articleDataModel = ArticleResponseDataModel()
-//                    articleDataModel.type = ArticleResponseDataModel.DATA
-//                    articleDataModel.id = a.articleId ?: ""
-//                    articleDataModel.article = a
-//                    dataModel.add(articleDataModel)
-//                } else {
-//                    val articleDataModel = ArticleResponseDataModel()
-//                    articleDataModel.type = ArticleResponseDataModel.FOOTER
-//                    articleDataModel.id = "FooterId${i}"
-//                    articleDataModel.article = ArticleResponse()
-//                    dataModel.add(articleDataModel)
-//                }
-//            }
-//            articleAdapter.collection = dataModel
-//        } ?: run {
-//            articleAdapter.collection = emptyList()
-//            emptyId.visibility = View.VISIBLE
-//        }
     }
 
     private fun parametersResponse(response: BaseResponse<ParameterResponse>?) {

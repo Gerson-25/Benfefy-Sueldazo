@@ -6,6 +6,7 @@ import com.syntepro.appbeneficiosbolivia.ui.benefy.model.PurchasedProductDetail
 import com.syntepro.appbeneficiosbolivia.ui.benefy.model.PurchasedProductDetailRequest
 import com.syntepro.appbeneficiosbolivia.ui.home.model.RegisterCodeRequest
 import com.syntepro.appbeneficiosbolivia.ui.home.model.RegisterCodeResponse
+import com.syntepro.appbeneficiosbolivia.ui.login.model.*
 import com.syntepro.appbeneficiosbolivia.ui.shop.model.*
 import com.syntepro.appbeneficiosbolivia.utils.Constants
 import retrofit2.Response
@@ -34,6 +35,20 @@ interface NetworkService2 {
     @Headers("Content-Type: application/json", "No-Authentication: true")
     @POST("api/User/GetUser")
     suspend fun getUser(@Body body: GetUserRequest): Response<BaseResponseModel<User>>
+
+    // User
+    @Headers("Content-Type: application/json", "No-Authentication: true")
+    @POST("api/Login/ValidarClientePorDocumento")
+    suspend fun validarClientePorDoucmento(@Body body: ValidarClienteRequest): Response<BaseResponseModel<ValidarClienteResponse>>
+
+    @Headers("Content-Type: application/json", "No-Authentication: true")
+    @POST("api/Login/EnviarToken")
+    suspend fun obtenerToken(@Body body: ObtenerTokenRequest): Response<BaseResponseModel<ObtenerTokenResponse>>
+
+
+    @Headers("Content-Type: application/json", "No-Authentication: true")
+    @POST("api/Login/ValidarToken")
+    suspend fun validateOtp(@Body body: ValidateTokenRequest): Response<BaseResponseModel<ValidateTokenResponse>>
 
     @Headers("Content-Type: application/json", "No-Authentication: true")
     @POST("api/User/SaveUser")

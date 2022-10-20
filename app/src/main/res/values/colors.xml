@@ -5,6 +5,7 @@
     <color name="colorAccent">#65498C</color>
     <color name="lightPrimary">#BFBFBF</color>
     <color name="lightPrimaryDark">#BFBFBF</color>
+    <color name="textSecondaryColor">#65498C</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>

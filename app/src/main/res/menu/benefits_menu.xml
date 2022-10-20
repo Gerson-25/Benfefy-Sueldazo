@@ -13,7 +13,7 @@
     <item
         android:id="@+id/notificaciones"
         app:actionLayout="@layout/custom_notification_layout"
-        android:icon="@drawable/ic_notificacion"
+        android:icon="@drawable/ic_notification"
         android:title="@string/notificaciones_menu"
         app:showAsAction="always" />
 

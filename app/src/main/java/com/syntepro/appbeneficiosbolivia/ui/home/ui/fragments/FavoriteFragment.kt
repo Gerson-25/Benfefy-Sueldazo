@@ -78,25 +78,7 @@ class FavoriteFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initList()
-        getCategories()
-
-        Functions.readUserInfo(userImageId, welcomeId, total_notificationsId)
-
-        scanId.setOnClickListener {
-            val integrator = IntentIntegrator(requireActivity())
-            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-            integrator.setPrompt("Scanner")
-            integrator.setCameraId(0)
-            integrator.setBeepEnabled(false)
-            integrator.setOrientationLocked(false)
-            integrator.setBarcodeImageEnabled(false)
-            integrator.initiateScan()
-        }
-
-        notificationsId.setOnClickListener {
-            val intent = Intent(requireContext(), NotificationsActivity::class.java)
-            startActivity(intent)
-        }
+//        getCategories()
 
         moreCategories.setOnClickListener {
             val intent = Intent(requireContext(), CategoryActivity::class.java)
