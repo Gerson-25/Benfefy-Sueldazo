@@ -1,6 +1,6 @@
-package com.syntepro.appbeneficiosbolivia;
+package com.syntepro.sueldazo;
 
-import com.syntepro.appbeneficiosbolivia.utils.UploadData;
+import com.syntepro.sueldazo.utils.UploadData;
 
 import org.junit.Test;
 

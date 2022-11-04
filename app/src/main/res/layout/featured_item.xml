@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemId"
-    android:layout_width="160dp"
-    android:layout_height="160dp"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
     android:layout_margin="4dp"
+    style="@style/CustomCardViewStyle"
     android:foregroundTint="@android:color/transparent"
     cardview:cardBackgroundColor="@android:color/transparent"
     cardview:cardElevation="0dp">
@@ -20,10 +22,12 @@
             android:orientation="horizontal"
             cardview:layout_constraintGuide_percent="0.6" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/couponImageId"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            style="@style/CustomCardViewStyle"
+            android:src="@drawable/benefy_promotional"
             cardview:layout_constraintTop_toTopOf="parent"
             cardview:layout_constraintBottom_toBottomOf="@id/divider"
             android:scaleType="centerCrop"
@@ -35,14 +39,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
-            android:fontFamily="@font/circular_book"
+            android:layout_marginTop="@dimen/base_margin"
+            android:fontFamily="@font/worksans_regular"
             android:textColor="@color/colorPrimary"
             android:textSize="12sp"
             android:maxLines="1"
             android:ellipsize="end"
             cardview:layout_constraintStart_toStartOf="parent"
             cardview:layout_constraintEnd_toStartOf="@id/favorite"
-            cardview:layout_constraintTop_toTopOf="@id/divider"/>
+            cardview:layout_constraintTop_toTopOf="@id/divider"
+            tools:text="titulo del beneficio"/>
 
         <TextView
             android:id="@+id/subtitleCouponId"
@@ -54,64 +60,86 @@
             android:textSize="12sp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:fontFamily="@font/myriad_pro_regular"
+            android:fontFamily="@font/worksans_regular"
             cardview:layout_constraintStart_toStartOf="parent"
             cardview:layout_constraintEnd_toStartOf="@id/favorite"
-            cardview:layout_constraintTop_toBottomOf="@id/titleCouponId"/>
+            cardview:layout_constraintTop_toBottomOf="@id/titleCouponId"
+            tools:text="Descripción de la promoción para los usuarios"/>
 
-        <ImageButton
+        <CheckBox
             android:id="@+id/favorite"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/ic_mark_fav"
+            android:button="@drawable/like_checked_state"
+            android:checked="false"
+            android:buttonTint="@color/colorAccent"
             android:layout_marginEnd="4dp"
             cardview:layout_constraintEnd_toEndOf="parent"
             cardview:layout_constraintTop_toTopOf="@id/titleCouponId"
             cardview:layout_constraintBottom_toBottomOf="@id/subtitleCouponId"
             android:contentDescription="@string/favorite_label" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/commerceImageId"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/base_margin"
+            android:src="@drawable/benefy_promotional"
             cardview:layout_constraintStart_toStartOf="parent"
             cardview:layout_constraintTop_toBottomOf="@id/subtitleCouponId"
             cardview:layout_constraintBottom_toBottomOf="parent"
             android:contentDescription="@string/commerce_info_label"/>
 
-        <TextView
-            android:id="@+id/couponOriginalPriceId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="4dp"
-            android:textSize="12sp"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/secondaryGray"
-            android:maxLines="1"
-            android:fontFamily="@font/myriad_pro_regular"
-            cardview:layout_constraintStart_toEndOf="@id/commerceImageId"
-            cardview:layout_constraintEnd_toStartOf="@id/couponPriceId"
-            cardview:layout_constraintTop_toTopOf="@id/commerceImageId"
-            cardview:layout_constraintBottom_toBottomOf="@id/commerceImageId"/>
-
-        <TextView
-            android:id="@+id/couponPriceId"
+        <LinearLayout
+            android:id="@+id/couponPriceContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:textSize="17sp"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/colorPrimary"
-            android:maxLines="1"
-            android:fontFamily="@font/circular_book"
-            cardview:layout_constraintStart_toEndOf="@id/couponOriginalPriceId"
+            android:background="@drawable/accent_button"
+            android:backgroundTint="@color/lightPrimary"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/base_margin"
+            cardview:layout_constraintBottom_toBottomOf="@id/commerceImageId"
             cardview:layout_constraintEnd_toEndOf="parent"
-            cardview:layout_constraintTop_toTopOf="@id/commerceImageId"
-            cardview:layout_constraintBottom_toBottomOf="@id/commerceImageId"/>
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            cardview:layout_constraintStart_toEndOf="@+id/commerceImageId"
+            cardview:layout_constraintTop_toTopOf="@id/commerceImageId">
+
+            <TextView
+                android:id="@+id/couponOriginalPriceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/worksans_bold"
+                android:maxLines="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                cardview:layout_constraintBottom_toBottomOf="@id/commerceImageId"
+                cardview:layout_constraintEnd_toStartOf="@id/couponPriceId"
+                cardview:layout_constraintStart_toEndOf="@id/commerceImageId"
+                cardview:layout_constraintTop_toTopOf="@id/commerceImageId"
+                tools:text="15,00%" />
+
+            <TextView
+                android:id="@+id/couponPriceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/circular_book"
+                android:maxLines="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/secondaryGray"
+                android:textSize="12sp"
+                tools:text="De descuento" />
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

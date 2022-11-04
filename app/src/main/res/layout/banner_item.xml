@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemId"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="4dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="2dp">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:foregroundTint="@android:color/transparent"
+    cardview:cardBackgroundColor="@android:color/transparent"
+    cardview:cardElevation="0dp">
 
-    <ImageView
-        android:id="@+id/imageId"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/banner_image" />
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/couponImageId"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            style="@style/CustomCardViewStyle"
+            android:src="@drawable/benefy_promotional"
+            cardview:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/coupons_label"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            cardview:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/accent_button"
+            android:backgroundTint="@color/transparentFullDark"
+            cardview:layout_constraintEnd_toEndOf="parent"
+            cardview:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/titleCouponId"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:fontFamily="@font/worksans_bold"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                cardview:layout_constraintBottom_toBottomOf="parent"
+                cardview:layout_constraintStart_toStartOf="parent"
+                cardview:layout_constraintTop_toTopOf="parent"
+                tools:text="This is a description to the text that will be inserted in banners" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="@dimen/base_margin"
+                android:layout_marginTop="@dimen/base_margin"
+                android:background="@drawable/accent_button"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/worksans_regular"
+                android:paddingStart="15dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="2dp"
+                android:text="Ver más"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                cardview:layout_constraintBottom_toBottomOf="parent"
+                cardview:layout_constraintEnd_toEndOf="parent"
+                cardview:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

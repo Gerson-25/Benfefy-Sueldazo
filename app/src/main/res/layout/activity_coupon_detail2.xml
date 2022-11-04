@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <com.syntepro.appbeneficiosbolivia.utils.ProportionalImageView
+                <com.syntepro.sueldazo.utils.ProportionalImageView
                     android:id="@+id/couponImageId"
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"

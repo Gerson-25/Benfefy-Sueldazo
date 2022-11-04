@@ -3,7 +3,8 @@
     <color name="colorPrimary">#2CBF60</color>
     <color name="colorPrimaryDark">#262626</color>
     <color name="colorAccent">#65498C</color>
-    <color name="lightPrimary">#BFBFBF</color>
+    <color name="lightPrimary">#F2F2F2</color>
+    <color name="darkGrayPrimary">#BFBFBF</color>
     <color name="lightPrimaryDark">#BFBFBF</color>
     <color name="textSecondaryColor">#65498C</color>
 
@@ -49,6 +50,7 @@
     <color name="transparentWhite2">#0DFFFFFF</color>
     <color name="transparentDarkWhite">#80FFFFFF</color>
     <color name="transparentFullDarkWhite">#E6FFFFFF</color>
+    <color name="transparentFullDark">#E6000000</color>
 
     <color name="colorTextPrimary">#FFFFFF</color>
 

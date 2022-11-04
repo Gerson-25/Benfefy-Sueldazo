@@ -1,4 +1,4 @@
-package com.syntepro.appbeneficiosbolivia.entity.firebase;
+package com.syntepro.sueldazo.entity.firebase;
 
 import com.google.firebase.firestore.DocumentId;
 

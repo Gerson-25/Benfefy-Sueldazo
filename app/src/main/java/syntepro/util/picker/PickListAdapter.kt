@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.syntepro.appbeneficiosbolivia.R
+import com.syntepro.sueldazo.R
 
 class PickListAdapter<T: ListablePicker>(private val pickList: List<T>, private val listener: OnItemPickListClickListener<T>) : androidx.recyclerview.widget.RecyclerView.Adapter<PickListAdapter<T>.PickListViewHolder>() {
 

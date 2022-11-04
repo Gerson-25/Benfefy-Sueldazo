@@ -19,9 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keepclassmembers class com.syntepro.appbeneficiosbolivia.entity.** { *; }
--keepclassmembers class com.syntepro.appbeneficiosbolivia.ui.commerce.model.** { *; }
--keepclassmembers class com.syntepro.appbeneficiosbolivia.ui.coupon.model.** { *; }
--keepclassmembers class com.syntepro.appbeneficiosbolivia.ui.lealtad.model.** { *; }
--keepclassmembers class com.syntepro.appbeneficiosbolivia.core.entities.** { *; }
+-keepclassmembers class com.syntepro.sueldazo.entity.** { *; }
+-keepclassmembers class com.syntepro.sueldazo.ui.commerce.model.** { *; }
+-keepclassmembers class com.syntepro.sueldazo.ui.coupon.model.** { *; }
+-keepclassmembers class com.syntepro.sueldazo.ui.lealtad.model.** { *; }
+-keepclassmembers class com.syntepro.sueldazo.core.entities.** { *; }
 -keep class com.github.aachartmodel.aainfographics.* { *; }

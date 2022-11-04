@@ -9,7 +9,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.syntepro.appbeneficiosbolivia.R
+import com.syntepro.sueldazo.R
 
 
 /**

@@ -37,6 +37,7 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="register_btn">REGISTRARSE</string>
+    <string name="save_cahnges">Guardar cambios</string>
 
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
@@ -46,10 +47,11 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="login_pass">Contraseña</string>
     <string name="login_btn">Iniciar Sesión</string>
     <string name="login_recover_pass">Recuperar mi contraseña</string>
+    <string name="document_and_terms">Debe ingresar su número de cédula y acepte los términos y condiciones</string>
 
     //Fragment_sign_up
     <string name="usuario_su">Correo</string>
-    <string name="apellido_su">Apellido</string>
+    <string name="apellido_su">Apellidos</string>
     <string name="telefono_su">Teléfono</string>
     <string name="fechaNac_su">Fecha de Nacimiento</string>
     <string name="hint_su">dd/mm/aaaa</string>
@@ -62,6 +64,8 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="depto_su">Departamento</string>
     <string name="prov_su">Provincia</string>
     <string name="codigo_su">+591</string>
+    <string name="incomplete_form">Completa el formulario de registro con los datos requeridos.</string>
+    <string name="incomplete_form_title">UPS, FALTA INFORMACIÓN</string>
     <string name="no_tienes_una_cuenta_registrate_main">¿No tienes una cuenta? Registrate!</string>
     <string name="debil_su">Débil</string>
     <string name="date_format">dd/mm/aaaa</string>
@@ -159,7 +163,7 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="canje_exitoso_popup">¡CANJE EXITOSO!</string>
     <string name="has_canjeado_tu_cup_n_exitosamente_gracias_por_utilizar_tu_app_de_beneficios_popup">Has canjeado tu cupón exitosamente.\n\n Gracias por utilizar Benefy App.</string>
 
-    <string name="nombre_su">Nombre</string>
+    <string name="nombre_su">Nombres</string>
 
     //Ayuda Activity
     <string name="ayuda_act">Ayuda</string>
@@ -358,9 +362,11 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="are_you_sure_label">Está seguro que desea desvincularse de este programa? Si lo haces perderas toda la información referente al plan.</string>
 
     <string name="editar_perfil">Editar Perfil</string>
+    <string name="editar_perfil_anonimo">Editar Perfil Anónimo</string>
     <string name="complete_your_data">Completa tus datos</string>
     <string name="transacciones">Transacciones</string>
     <string name="ver_mis_estad_sticas">Ver mis Estadísticas</string>
+    <string name="employed_id">Código de empleado</string>
 
     <string name="mis_estadisticas">Mis Estadísticas</string>
     <string name="mis_transacciones">Historial de Transacciones</string>
@@ -677,5 +683,7 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="no_account">¿Aun no tienes una cuenta?, </string>
     <string name="terms_cond_string">Estoy de acuerdo con los <u>terminos y condiciones</u></string>
     <string name="sent_otp_again"><u>REENVIAR OTP</u></string>
+
+
 
 </resources>

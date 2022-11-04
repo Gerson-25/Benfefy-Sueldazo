@@ -1,90 +1,45 @@
 {
   "project_info": {
-    "project_number": "426617820255",
-    "firebase_url": "https://beneficios-uat.firebaseio.com",
-    "project_id": "beneficios-uat",
-    "storage_bucket": "beneficios-uat.appspot.com"
+    "project_number": "845383368644",
+    "project_id": "bex-desarrollo",
+    "storage_bucket": "bex-desarrollo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:426617820255:android:85fe6ca997e437ccb737ea",
+        "mobilesdk_app_id": "1:845383368644:android:6d466a6c55cbfec6dbae91",
         "android_client_info": {
           "package_name": "com.syntepro.appbeneficiosbolivia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "426617820255-ms2dbe5t4abgnla4vd3l88fsd7irnl6e.apps.googleusercontent.com",
+          "client_id": "845383368644-r8tg7dc6qjspvrmn8debjui0ppb4cte9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.syntepro.appbeneficiosbolivia",
-            "certificate_hash": "00af625d8ac668246b75e7ea24c7bce181c701f7"
+            "certificate_hash": "d17356f724dc4fecc2c3a83fa52db117acee9e8d"
           }
         },
         {
-          "client_id": "426617820255-ssa06d87c40uja3npgca55tdnlqc9mo2.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.syntepro.appbeneficiosbolivia",
-            "certificate_hash": "6d04e5bf6a15f38a6e221d77f26496ae486d51ae"
-          }
-        },
-        {
-          "client_id": "426617820255-bg9dt8nqkj4kbdtplr4kc77l6smnt62f.apps.googleusercontent.com",
+          "client_id": "845383368644-2774lopdpqlvnailnmvol23itpb3m0nt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE"
+          "current_key": "AIzaSyCAx5NFwRx5RrvlMHBNESeDZFTc6NJ6Pu0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "426617820255-bg9dt8nqkj4kbdtplr4kc77l6smnt62f.apps.googleusercontent.com",
+              "client_id": "845383368644-2774lopdpqlvnailnmvol23itpb3m0nt.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "426617820255-jgmblf3ba6jsc5614d281v6fhhedpkf0.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.syntepro.boliviaBeneficios"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:426617820255:android:e9e0857feff3229bb737ea",
-        "android_client_info": {
-          "package_name": "com.syntepro.beneficiosadministrativa"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "426617820255-bg9dt8nqkj4kbdtplr4kc77l6smnt62f.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCYUeVCUlXSNmUASVTny0eKWtbiQSnKxBE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "426617820255-bg9dt8nqkj4kbdtplr4kc77l6smnt62f.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "426617820255-jgmblf3ba6jsc5614d281v6fhhedpkf0.apps.googleusercontent.com",
+              "client_id": "845383368644-8imc708v00kemvdad395bh4v39e1m8iu.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.syntepro.boliviaBeneficios"

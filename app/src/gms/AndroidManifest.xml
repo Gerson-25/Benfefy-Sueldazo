@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.syntepro.appbeneficiosbolivia"
+    package="com.syntepro.sueldazo"
     tools:ignore="LockedOrientationActivity">
 
     <application>
@@ -18,7 +18,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.menu.EditProfileActivity2"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ConditionsTheme"/>
         <activity
             android:name=".ui.coupon.CouponDetailActivity"
             android:screenOrientation="portrait" />

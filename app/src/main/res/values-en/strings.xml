@@ -12,6 +12,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="register_btn">SIGN UP</string>
+    <string name="save_cahnges">Save changes</string>
 
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
@@ -22,6 +23,7 @@
     <string name="login_pass">Password</string>
     <string name="login_btn">Login</string>
     <string name="login_recover_pass">Forget Password?</string>
+    <string name="document_and_terms">You must enter your document ID and accept terms and conditions</string>
 
     //Fragment_sign_up
     <string name="usuario_su">Email</string>
@@ -38,6 +40,8 @@
     <string name="depto_su">Department</string>
     <string name="prov_su">Province</string>
     <string name="codigo_su">+591</string>
+    <string name="incomplete_form">Complete the form with the required data</string>
+    <string name="incomplete_form_title">UPS, MISSING INFORMATION</string>
     <string name="no_tienes_una_cuenta_registrate_main">Don\'t have an account? Sign Up!</string>
     <string name="debil_su">Weak</string>
     <string name="date_format">mm/dd/yyyy</string>
@@ -331,6 +335,7 @@
     <string name="are_you_sure_label">Are you sure you want to opt out of this program? If you do, you will lose all information regarding the plan</string>
 
     <string name="editar_perfil">Edit profile</string>
+    <string name="editar_perfil_anonimo">Edit Anonymous profile</string>
     <string name="complete_your_data">Complete your data</string>
     <string name="transacciones">Transactions</string>
     <string name="ver_mis_estad_sticas">View my statistics</string>
@@ -635,6 +640,7 @@
     <string name="given_item">Gift</string>
     <string name="home_menu">Home</string>
     <string name="benefits_menu">Benefits</string>
+    <string name="employed_id">Employee code</string>
 
     // About activity
     <string name="about_first">Benefy is the program that </string>

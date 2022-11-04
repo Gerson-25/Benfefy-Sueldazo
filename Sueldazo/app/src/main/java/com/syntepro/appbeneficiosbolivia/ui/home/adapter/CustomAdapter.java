@@ -1,4 +1,4 @@
-package com.syntepro.appbeneficiosbolivia.ui.home.adapter;
+package com.syntepro.sueldazo.ui.home.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.syntepro.appbeneficiosbolivia.R;
+import com.syntepro.sueldazo.R;
 
 import java.util.ArrayList;
 

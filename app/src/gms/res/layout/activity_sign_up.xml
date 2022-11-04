@@ -133,7 +133,7 @@
                android:gravity="start|bottom"
                android:textColor="@color/colorPrimary"
                android:textStyle="bold"
-               android:fontFamily="@font/circular_bold"
+               android:fontFamily="@font/worksans_bold"
                android:textSize="14sp"
                android:text="@string/apellido_su"
                app:layout_constraintStart_toEndOf="@+id/tl_nombre"
@@ -301,6 +301,76 @@
                        android:paddingTop="10dp"
                        tools:text="10/10/2020"/>
                </com.google.android.material.textfield.TextInputLayout>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/marital_status_container"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/txt_maritale_status"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="35dp"
+                   android:gravity="start|bottom"
+                   android:text="@string/estado_su"
+                   android:textColor="@color/colorPrimary"
+                   android:textStyle="bold"
+                   android:fontFamily="@font/worksans_bold"
+                   android:textSize="14sp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/edt_telefono" />
+
+               <androidx.appcompat.widget.AppCompatSpinner
+                   android:id="@+id/sp_estado"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:backgroundTint="@color/colorPrimary"
+                   android:ems="10"
+                   android:inputType="textPersonName"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toEndOf="@id/sp_genero"
+                   app:layout_constraintTop_toBottomOf="@+id/txt_genero"
+                   tools:listitem="@layout/spinner_item"/>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/gender_container"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/txt_gender"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="35dp"
+                   android:gravity="start|bottom"
+                   android:text="@string/genero_su"
+                   android:textColor="@color/colorPrimary"
+                   android:textStyle="bold"
+                   android:fontFamily="@font/worksans_bold"
+                   android:textSize="14sp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/edt_telefono" />
+
+               <androidx.appcompat.widget.AppCompatSpinner
+                   android:id="@+id/sp_genero"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:layout_marginEnd="8dp"
+                   android:backgroundTint="@color/colorPrimary"
+                   app:layout_constraintEnd_toStartOf="@+id/sp_prov"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/txt_genero"
+                   tools:listitem="@layout/spinner_item"/>
 
            </LinearLayout>
 
