@@ -27,6 +27,7 @@ import com.syntepro.sueldazo.ui.coupon.model.FeaturedCouponResponse
 import com.syntepro.sueldazo.ui.coupon.ui.FavoriteData
 import com.syntepro.sueldazo.ui.coupon.ui.activities.CouponDetail2Activity
 import com.syntepro.sueldazo.ui.coupon.ui.activities.CouponListActivity
+import com.syntepro.sueldazo.ui.coupon.ui.activities.RatingActivity
 import com.syntepro.sueldazo.ui.home.adapter.CategoryAdapter
 import com.syntepro.sueldazo.ui.home.model.CategoryRequest
 import com.syntepro.sueldazo.ui.home.ui.adapters.BestDiscountAdapter
@@ -314,7 +315,8 @@ class FavoriteFragment : BaseFragment() {
     }
 
     fun openBestDiscountDetail(idCommerce: String) {
-        val intent = Intent(requireContext(), CouponDetail2Activity::class.java)
+//        val intent = Intent(requireContext(), CouponDetail2Activity::class.java)
+        val intent = Intent(requireContext(), RatingActivity::class.java)
         intent.putExtra("commerceId", idCommerce)
         intent.putExtra("navigate", true)
         startActivity(intent)

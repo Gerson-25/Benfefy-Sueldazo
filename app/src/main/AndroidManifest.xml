@@ -257,7 +257,8 @@
         <activity
             android:name=".ui.coupon.ui.activities.RatingActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/simpleDialog"/>
         <activity
             android:name=".ui.menu.HelpActivity"
             android:screenOrientation="portrait" />

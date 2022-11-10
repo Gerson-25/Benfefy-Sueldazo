@@ -5,7 +5,8 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import android.view.*
+import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import com.merckers.core.extension.failure
 import com.merckers.core.extension.observe
@@ -30,7 +31,9 @@ class RatingActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
+        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_rating)
+        this.setFinishOnTouchOutside(true)
 
         couponViewModel = viewModel(viewModelFactory) {
             observe(saveRating, ::handleCouponRating)
@@ -202,6 +205,25 @@ class RatingActivity : BaseActivity() {
 
     private fun handleCouponRating(response: BaseResponse<Boolean>?) {
         Log.e("Rating Response", "${response?.data}")
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+
+        val view = window.decorView
+        val lp = view.layoutParams as WindowManager.LayoutParams
+        lp.gravity = Gravity.START or Gravity.CENTER
+        lp.x = 0
+        lp.y = 0
+        lp.horizontalMargin = 0f
+        lp.width = LinearLayout.LayoutParams.MATCH_PARENT
+        lp.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        windowManager.updateViewLayout(view, lp)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        setResult(Activity.RESULT_CANCELED)
     }
 
 }
