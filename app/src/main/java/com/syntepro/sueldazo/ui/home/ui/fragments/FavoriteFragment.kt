@@ -314,7 +314,7 @@ class FavoriteFragment : BaseFragment() {
     }
 
     fun openBestDiscountDetail(idCommerce: String) {
-        val intent = Intent(requireContext(), CommerceDetail2Activity::class.java)
+        val intent = Intent(requireContext(), CouponDetail2Activity::class.java)
         intent.putExtra("commerceId", idCommerce)
         intent.putExtra("navigate", true)
         startActivity(intent)

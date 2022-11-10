@@ -56,7 +56,7 @@ class BestDiscountAdapter@Inject constructor() :
 //                else -> view.discountPercentageId.text = "0%"
 //            }
 
-//            view.itemId.setOnClickListener { fragment?.openBestDiscountDetail(model.idCampana) }
+            view.itemId.setOnClickListener { fragment?.openBestDiscountDetail(model.idCampana) }
         }
     }
 

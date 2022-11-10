@@ -3,66 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_margin="@dimen/base_margin"
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/accent_button"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/back_toolbar"
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:cardview="http://schemas.android.com/apk/res-auto"
+            xmlns:app="http://schemas.android.com/tools"
+            android:id="@+id/itemId"
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:elevation="4dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextColor="@color/white"
-            tools:targetApi="lollipop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="155dp"
+            android:layout_margin="15dp"
+            android:foregroundTint="@android:color/transparent"
+            cardview:cardBackgroundColor="@android:color/transparent"
+            cardview:cardElevation="0dp"
+            app:ignore="NamespaceTypo">
 
-            <ImageView
-                android:id="@+id/share"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_share"
-                android:contentDescription="@string/maps"
-                app:tint="@color/white" />
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <LinearLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/back_toolbar">
-
-            <FrameLayout
-                android:id="@+id/myContainer"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
+                android:layout_height="match_parent"
+                android:background="@drawable/accent_button"
+                android:backgroundTint="@color/lightPrimary"
+                android:orientation="horizontal">
 
-                <com.syntepro.sueldazo.utils.ProportionalImageView
-                    android:id="@+id/couponImageId"
-                    android:layout_width="fill_parent"
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/commerceImageId"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:paddingLeft="0dp"
-                    android:paddingTop="0dp"
-                    android:paddingRight="0dp"
-                    android:paddingBottom="0dp"
-                    android:scaleType="fitCenter"
-                    android:contentDescription="@string/coupons_label" />
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    style="@style/CustomCardViewStyle"
+                    android:layout_margin="@dimen/base_margin"
+                    android:src="@drawable/benefy_promotional"
+                    android:background="@drawable/accent_button"
+                    android:contentDescription="@string/commerce_info_label"
+                    cardview:layout_constraintBottom_toBottomOf="parent"
+                    cardview:layout_constraintStart_toStartOf="parent"
+                    cardview:layout_constraintTop_toTopOf="parent" />
 
-            </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    cardview:layout_constraintEnd_toEndOf="parent"
+                    cardview:layout_constraintBottom_toBottomOf="parent">
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Beneficio"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/worksans_medium"/>
+
+                        <TextView
+                            android:id="@+id/discountPercentageId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="35sp"
+                            android:textColor="@color/colorPrimary"
+                            android:textAlignment="center"
+                            android:text="10%"
+                            android:fontFamily="@font/worksans_bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="en hamburguesas"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/worksans_regular"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:id="@+id/descriptionId"
@@ -76,33 +108,86 @@
             android:gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/container">
 
-            <ImageView
-                android:id="@+id/commerceImageId"
-                android:layout_width="60dp"
-                android:layout_height="60dp"/>
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp">
 
                 <TextView
                     android:id="@+id/titleId"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorAccent"
                     android:textSize="17sp"
-                    android:fontFamily="@font/circular_bold"/>
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/worksans_bold"
+                    android:text="commerce name"/>
+                <LinearLayout
+                    android:id="@+id/options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/conditionsId"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
-                <TextView
-                    android:id="@+id/subtitleId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:fontFamily="@font/circular_book"/>
+                    <ImageButton
+                        android:id="@+id/location"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_location"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/google_image"
+                        app:tint="@color/colorPrimary"/>
+
+                    <ImageButton
+                        android:id="@+id/linkedin"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_linkedin_social"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/google_image"
+                        android:tint="@color/colorPrimaryDark"
+                        android:visibility="gone"/>
+
+                    <ImageButton
+                        android:id="@+id/whatsapp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_whatsapp_social"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/google_image"
+                        app:tint="@color/colorPrimary"/>
+
+                    <ImageButton
+                        android:id="@+id/share"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_share"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/google_image"
+                        app:tint="@color/colorPrimary"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -119,194 +204,42 @@
             android:padding="8dp"
             app:layout_constraintTop_toBottomOf="@id/descriptionId">
 
-            <LinearLayout
-                android:id="@+id/available"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical">
-
-                <LinearLayout
-                    android:id="@+id/couponQuantity"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/totalCouponId"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:paddingTop="2dp"
-                        android:paddingBottom="2dp"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:textSize="19sp"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/circular_book"
-                        android:textColor="@color/white"
-                        android:maxLines="1"
-                        android:background="@drawable/button_shape"
-                        android:backgroundTint="@color/colorPrimary" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="4dp"
-                        android:textSize="14sp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/availables"
-                        android:textColor="@color/secondaryGray"
-                        android:maxLines="1"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/myriad_pro_regular"/>
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/effectiveId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="4dp"
-                    android:textSize="19sp"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLines="1"
-                    android:fontFamily="@font/circular_book" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/price"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/couponPriceId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:textSize="19sp"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/circular_book"
-                    android:maxLines="1"/>
-
-                <TextView
-                    android:id="@+id/couponOriginalPriceId"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:textSize="14sp"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/secondaryGray"
-                    android:fontFamily="@font/myriad_pro_regular"
-                    android:maxLines="1"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/agenciesId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:foreground="?attr/selectableItemBackground"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="0dp"
-            app:layout_constraintTop_toBottomOf="@id/informationId">
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/couponInfoId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="8dp">
+                android:layout_marginStart="@dimen/base_margin"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/worksans_regular"
+                android:textColor="@color/colorAccent"
+                android:text="Obtén 20% de descuento en Container, presenta este QR y accede directamente a el"
+                />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:id="@+id/locationImageId"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_cerca"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp">
-
-                        <TextView
-                            android:id="@+id/agencyNameId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/circular_book"/>
-
-                        <TextView
-                            android:id="@+id/agencyAddressId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:fontFamily="@font/myriad_pro_regular"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/showAgencies"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/participant_brances"
-                    android:textSize="12sp"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/circular_book"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="4dp"
-                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"/>
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/qrCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/agenciesId">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/informationId">
 
             <ImageView
                 android:id="@+id/qrImageId"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:scaleType="centerCrop"
-                tools:ignore="ContentDescription"
-                android:layout_gravity="center"/>
+                android:tint="@color/colorAccent"
+                android:src="@drawable/ic_qr"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/qrCodeId"
@@ -314,87 +247,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/worksans_bold"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:fontFamily="@font/circular_bold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/quantityId"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:padding="4dp"
-            app:layout_constraintStart_toStartOf="@id/qrCode"
-            app:layout_constraintEnd_toEndOf="@id/qrCode"
-            app:layout_constraintTop_toBottomOf="@id/qrCode">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cupon_number"
-                    android:textColor="@color/colorPrimary"
-                    android:maxLines="1"
-                    android:fontFamily="@font/circular_book"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/to_exchange"
-                    android:textColor="@color/secondaryGray"
-                    android:maxLines="1"
-                    android:fontFamily="@font/circular_book"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical">
-
-                <RelativeLayout
-                    android:id="@+id/availableType"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:background="@drawable/spinner_shape"
-                    android:orientation="horizontal">
-
-                    <Spinner
-                        android:id="@+id/availableSpinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="center"
-                        android:background="@android:color/transparent"
-                        android:gravity="center"
-                        android:spinnerMode="dropdown" />
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/drop_down"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/drop"
-                        app:tint="@color/secondaryGray"/>
-
-                </RelativeLayout>
-
-            </LinearLayout>
+                android:text="UCNWPP"/>
 
         </LinearLayout>
 
@@ -409,35 +265,6 @@
             app:layout_constraintEnd_toEndOf="@id/qrCode"
             app:layout_constraintTop_toBottomOf="@id/quantityId"/>
 
-        <LinearLayout
-            android:id="@+id/descriptionContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@id/quantityId">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/coupon_description"
-                android:textAlignment="center"
-                android:fontFamily="@font/circular_book"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintTop_toBottomOf="@id/descriptionContent"/>
-
-            <TextView
-                android:id="@+id/couponDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textAlignment="center"
-                android:fontFamily="@font/myriad_pro_regular"
-                app:layout_constraintTop_toBottomOf="@id/terms"/>
-
-        </LinearLayout>
-
         <TextView
             android:id="@+id/terms"
             android:layout_width="match_parent"
@@ -445,8 +272,14 @@
             android:layout_marginTop="16dp"
             android:text="@string/terminos_y_condiciones_menu"
             android:textAlignment="center"
-            android:fontFamily="@font/circular_book"
-            android:textColor="@color/colorPrimary"
+            android:background="@drawable/accent_button"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingTop="@dimen/base_margin"
+            android:paddingBottom="@dimen/base_margin"
+            android:fontFamily="@font/worksans_bold"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/descriptionContent"/>
 
         <TextView
@@ -459,70 +292,6 @@
             android:fontFamily="@font/circular_book"
             app:layout_constraintTop_toBottomOf="@id/terms"/>
 
-        <LinearLayout
-            android:id="@+id/options"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="40dp"
-            android:gravity="center_vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/conditionsId"
-            app:layout_constraintBottom_toBottomOf="parent">
 
-            <ImageButton
-                android:id="@+id/facebook"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_facebook_social"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/facebook_image"
-                android:tint="@color/colorPrimaryDark"/>
-
-            <ImageButton
-                android:id="@+id/instagram"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_instagram_social"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/google_image"
-                android:tint="@color/colorPrimaryDark"/>
-
-            <ImageButton
-                android:id="@+id/linkedin"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_linkedin_social"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/google_image"
-                android:tint="@color/colorPrimaryDark"
-                android:visibility="gone"/>
-
-            <ImageButton
-                android:id="@+id/whatsapp"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_whatsapp_social"
-                android:background="@null"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/google_image"
-                android:tint="@color/colorPrimaryDark"/>
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

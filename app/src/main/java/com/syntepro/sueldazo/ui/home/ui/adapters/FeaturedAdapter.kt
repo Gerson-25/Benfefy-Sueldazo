@@ -72,8 +72,8 @@ class FeaturedAdapter@Inject constructor() :
                 }
             }
 
-//            view.itemId.setOnClickListener { fragment?.openBestDiscountDetail(model.idCommerce) }
-//            view.favorite.setOnClickListener { fragment?.favorite(model, position) }
+            view.itemId.setOnClickListener { fragment?.openBestDiscountDetail(model.idCommerce) }
+            view.favorite.setOnClickListener { fragment?.favorite(model, position) }
         }
     }
 

@@ -95,7 +95,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.coupon.ui.activities.CouponDetail2Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/simpleDialog"/>
         <activity
             android:name=".ui.general.ExchangeInfoDialog"
             android:launchMode="singleTop"

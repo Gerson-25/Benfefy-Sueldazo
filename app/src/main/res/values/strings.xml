@@ -135,11 +135,12 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="mes_actual">Actual:</string>
     <string name="ahorro_del_mes">Ahorro del Mes</string>
     <string name="calificaci_n">Calificación</string>
-    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">¿Cómo te sientes con los servicios de nuestra app?</string>
-    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">1. ¿En general cuan satisfecho se encuentra con el beneficio adquirido?</string>
-    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">2. ¿Recomendaría usted esta promoción?</string>
+    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">Califica tu experiencia</string>
+    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">¿En general cuan satisfecho se encuentra con el beneficio adquirido?</string>
+    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">¿Recomendaría usted esta promoción?</string>
     <string name="aceptar">Aceptar</string>
     <string name="omitir">Omitir</string>
+    <string name="rate_now">Calificar ahora</string>
 
     //Menu
     <string name="perfil_menu">Mi cuenta</string>
@@ -434,6 +435,7 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="filter_trend_string">Rubro = %1s</string>
     <string name="default_suggestion_test">Default Suggestion Test</string>
     <string name="cu_ntanos">Cuéntanos</string>
+    <string name="survey_title">Beneficio canjeado con éxito</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>

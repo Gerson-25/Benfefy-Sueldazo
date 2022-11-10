@@ -111,10 +111,11 @@
     <string name="mes_actual">Current:</string>
     <string name="ahorro_del_mes">Saving of the month</string>
     <string name="calificaci_n">Rating</string>
-    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">How do you feel about our app services?</string>
-    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">1. In general, how satisfied are you with the benefit you have acquired?</string>
-    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">2. Would you recommend this promotion?</string>
+    <string name="cu_ntanos_c_mo_te_sentiste_con_los_servicios_de_nuestra_app">Rate your experience</string>
+    <string name="_1_en_general_cuan_satisfecho_se_encuentra_con_el_beneficio_adquirido">In general, how satisfied are you with the benefit you have acquired?</string>
+    <string name="_2_recomendar_a_usted_el_uso_de_nuestra_app">Would you recommend this promotion?</string>
     <string name="aceptar">Accept</string>
+    <string name="rate_now">Rate now</string>
     <string name="omitir">Skip</string>
 
     //Menu
@@ -406,6 +407,7 @@
     <string name="filter_trend_string">Item = %1s</string>
     <string name="default_suggestion_test">Default Suggestion Test</string>
     <string name="cu_ntanos">Tell us</string>
+    <string name="survey_title">Success Benefit Redeem</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>

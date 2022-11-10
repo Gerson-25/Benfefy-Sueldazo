@@ -1,6 +1,7 @@
 package com.syntepro.sueldazo.ui.coupon.ui.activities
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,12 +11,10 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
-import android.view.ContextThemeWrapper
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
@@ -81,14 +80,9 @@ class CouponDetail2Activity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
+        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_coupon_detail2)
-
-        // Toolbar
-        val myToolbar = findViewById<View>(R.id.back_toolbar) as Toolbar
-        setSupportActionBar(myToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = null
+        this.setFinishOnTouchOutside(true)
 
         couponViewModel = viewModel(viewModelFactory) {
             observe(couponDetail, ::handleCouponDetail)
@@ -112,65 +106,10 @@ class CouponDetail2Activity: BaseActivity() {
         year = date[Calendar.YEAR]
         month = date[Calendar.MONTH] + 1
 
-        availableSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                parent?.let {
-                    val value = it.selectedItem as Int
-                    quantityUserSelected = value
-                    loadUpdateQuantity(value)
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {  }
-        }
-
-        if (!Functions.isDarkTheme(this@CouponDetail2Activity) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            agenciesId.setCardBackgroundColor(getColor(R.color.gray_card_benefit))
-
-        locationImageId.setOnClickListener { showAddressMenu(it) }
-
-        showAgencies.setOnClickListener {
-            val intent = Intent(this@CouponDetail2Activity, AgencyActivity::class.java)
-            intent.putExtra("commerceId", commerceId)
-            intent.putExtra("commerceName", commerceName)
-            intent.putExtra("commerceImage", commerceImage)
-            intent.putExtra("couponId", couponId)
-            intent.putExtra("provenance", 0)
-            startActivity(intent)
-        }
-
         share.setOnClickListener {
-            shareContent("${titleId.text?.toString()} ${subtitleId.text}", couponId, Constants.userProfile?.actualCountry ?: "BO")
+            shareContent("${titleId.text?.toString()} ${couponInfoId.text}", couponId, Constants.userProfile?.actualCountry ?: "BO")
         }
-        facebook.setOnClickListener { Functions.openURL(couponFacebook, this@CouponDetail2Activity) }
-        instagram.setOnClickListener { Functions.openURL(couponInstagram, this@CouponDetail2Activity) }
         whatsapp.setOnClickListener { Functions.openWhatsApp(couponWhatsApp, pm, this@CouponDetail2Activity) }
-
-//            AGConnectAppLinking.getInstance()
-//                .getAppLinking(this)
-//                .addOnSuccessListener { resolvedLinkData: ResolvedLinkData? ->
-//                    var deepLink: Uri? = null
-//                    if (resolvedLinkData != null) deepLink = resolvedLinkData.deepLink
-//                    deppLinkHMS = deepLink?.toString() ?: ""
-//                    if (deepLink != null) {
-//                        val path = deepLink.lastPathSegment
-//                        if ("detail" == path) {
-//                            val intent = Intent(baseContext, DetailActivity::class.java)
-//                            for (name in deepLink.queryParameterNames) {
-//                                intent.putExtra(name, deepLink.getQueryParameter(name))
-//                            }
-//                            startActivity(intent)
-//                        }
-//                        if ("setting" == path) {
-//                            val intent = Intent(baseContext, SettingActivity::class.java)
-//                            for (name in deepLink.queryParameterNames) {
-//                                intent.putExtra(name, deepLink.getQueryParameter(name))
-//                            }
-//                            startActivity(intent)
-//                        }
-//                    }
-//                }
-//                .addOnFailureListener { e: Exception? -> Log.w("MainActivity", "getAppLinking:onFailure", e) }
 
     }
 
@@ -232,41 +171,14 @@ class CouponDetail2Activity: BaseActivity() {
 
         generateQRImage(jsonObject)
 
-        Functions.showImage(response?.data?.urlCouponImage, couponImageId)
+        Functions.showImage(response?.data?.urlCouponImage, commerceImageId)
         Functions.showRoundedImage(response?.data?.urlCommerceImage, commerceImageId)
         titleId.text = response?.data?.title
-        subtitleId.text = response?.data?.subtitle
-        totalCouponId.text = "${response?.data?.cantExchage}"
 
-        when(response?.data?.firebaseCodeType) {
-            CouponDetailResponse.TRADITIONAL -> {
-                couponPriceId.text = "${Constants.userProfile?.currency ?: "Bs"} ${format.format(response.data.discountPrice)}"
-                couponOriginalPriceId.text = Html.fromHtml("<del>${Constants.userProfile?.currency ?: "Bs"} ${format.format(response.data.realPrice)}</del>")
-            }
-            CouponDetailResponse.DISCOUNT_PERCENTAGE -> {
-                couponPriceId.text = "${format.format(response.data.discountPrice)}%"
-                couponOriginalPriceId.text = ""
-            }
-            CouponDetailResponse.FIXED_AMOUNT -> {
-                couponPriceId.text = "${Constants.userProfile?.currency ?: "Bs"} ${format.format(response.data.discountPrice)}"
-                couponOriginalPriceId.text = ""
-            }
-            CouponDetailResponse.MILES -> {
-                couponPriceId.text = "${getString(R.string.miles_label)}: ${response.data.realPrice.toInt()}"
-                couponOriginalPriceId.text = ""
-            }
-            CouponDetailResponse.SEALS -> {
-                couponPriceId.text = "${getString(R.string.seal_label)}: ${response.data.realPrice.toInt()}"
-                couponOriginalPriceId.text = ""
-            }
-        }
 
-        effectiveId.text = getDifferenceDates(Date(), response?.data?.finalDate)
         val arr = IntArray(response?.data?.cantExchangeUserLimit ?: 1) { it + 1 }
-        availableSpinner.adapter = ArrayAdapter(this@CouponDetail2Activity, R.layout.spinner_item, arr.toMutableList())
-        response?.data?.generatedCoupons?.let { availableSpinner.setSelection(it - 1) }
         userQuantityId.text = "${getString(R.string.coupons_available_user)} ${response?.data?.cantExchangeUserLimit}"
-        if (response?.data?.description != null) couponDescription.text = response.data.description else descriptionContent.visibility = View.GONE
+        if (response?.data?.description != null) couponInfoId.text = response.data.description else couponInfoId.visibility = View.GONE
         conditionsId.text = response?.data?.conditions
 
         if (response?.data?.cantExchangeUserLimit == 0 && response.data.cantExchage == 0) {
@@ -294,9 +206,6 @@ class CouponDetail2Activity: BaseActivity() {
                 else it[0].agencyName
                 mLatitude = it[0].latitude
                 mLongitude = it[0].longitude
-                agencyNameId.text = if (it[0].agencyName.isNullOrEmpty()) it[0].sucursalName
-                else it[0].agencyName
-                agencyAddressId.text = it[0].address
             }
         }
     }
@@ -432,7 +341,7 @@ class CouponDetail2Activity: BaseActivity() {
     @SuppressLint("SetWorldReadable")
     private fun shareContent(content: String, id: String?, country: String) {
         if (id.isNullOrEmpty()) return
-        val bitmap = getBitmapFromView(couponImageId)
+        val bitmap = getBitmapFromView(commerceImageId)
         try {
             val file = File(this.externalCacheDir, "coupon.png")
             val fOut = FileOutputStream(file)
@@ -517,6 +426,25 @@ class CouponDetail2Activity: BaseActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+
+        val view = window.decorView
+        val lp = view.layoutParams as WindowManager.LayoutParams
+        lp.gravity = Gravity.START or Gravity.CENTER
+        lp.x = 0
+        lp.y = 0
+        lp.horizontalMargin = 0f
+        lp.width = LinearLayout.LayoutParams.MATCH_PARENT
+        lp.height = ViewGroup.LayoutParams.WRAP_CONTENT
+        windowManager.updateViewLayout(view, lp)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        setResult(Activity.RESULT_CANCELED)
     }
 
 }
