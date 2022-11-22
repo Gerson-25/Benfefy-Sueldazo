@@ -59,7 +59,7 @@ interface NetworkService2 {
     suspend fun SaveAnonymousUser(@Body body: SaveUserRequest): Response<BaseResponseString>
 
     @Headers("Content-Type: application/json", "No-Authentication: true")
-    @POST("api/User/SaveTokenFirebase")
+    @POST("api/User/SaveToken")
     suspend fun addUserToken(@Body body: UserTokenRequest): Response<BaseResponseBoolean>
 
     @Headers("Content-Type: application/json", "No-Authentication: true")

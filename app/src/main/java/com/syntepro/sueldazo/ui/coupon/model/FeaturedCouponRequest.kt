@@ -6,5 +6,7 @@ import androidx.annotation.Keep
 data class FeaturedCouponRequest(
         val country: String,
         val language: Int,
-        val idUser: String
+        val recordsNumber: Int,
+        val pageNumber: Int,
+        val idCategoryType: String
 )

@@ -186,109 +186,14 @@ class FavoriteFragment : BaseFragment() {
     }
 
     private fun getFeaturedCoupons() {
-//        val request = FeaturedCouponRequest(
-//            country = Constants.userProfile?.actualCountry ?: "BO",
-//            language = 1,
-//            idUser = Constants.userProfile?.idUser ?: ""
-//        )
-//        homeViewModel.loadFeaturedCoupons(request)
-
-        val bestDiscount1 = FeaturedCouponResponse(
-            idCoupon = "1",
-            title="Best Discount 1",
-            subtitle = "Best Discount 1",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 1",
-            idCommerce = "1",
-            couponType = 1,
-            favorite = false,
-            vip = false
+        val request = FeaturedCouponRequest(
+            country = Constants.userProfile?.actualCountry ?: "BO",
+            language = Functions.getLanguage(),
+            recordsNumber = 20,
+            pageNumber = 1,
+            idCategoryType = "51C5CDE9-C6C0-46D9-9FDE-4E6DA357EC3F"
         )
-
-        val bestDiscount2 = FeaturedCouponResponse(
-            idCoupon = "1",
-            title="Best Discount 2",
-            subtitle = "Best Discount 2",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 2",
-            idCommerce = "2",
-            couponType = 2,
-            favorite = false,
-            vip = false
-        )
-
-        val bestDiscount3 = FeaturedCouponResponse(
-            idCoupon = "3",
-            title="Best Discount 3",
-            subtitle = "Best Discount 3",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 3",
-            idCommerce = "3",
-            couponType = 3,
-            favorite = false,
-            vip = false
-        )
-
-        val bestDiscount4 = FeaturedCouponResponse(
-            idCoupon = "4",
-            title="Best Discount 4",
-            subtitle = "Best Discount 4",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 4",
-            idCommerce = "4",
-            couponType = 4,
-            favorite = false,
-            vip = false
-        )
-
-        val bestDiscount5 = FeaturedCouponResponse(
-            idCoupon = "5",
-            title="Best Discount 5",
-            subtitle = "Best Discount 5",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 5",
-            idCommerce = "5",
-            couponType = 4,
-            favorite = false,
-            vip = false
-        )
-
-        val bestDiscount6 = FeaturedCouponResponse(
-            idCoupon = "6",
-            title="Best Discount 6",
-            subtitle = "Best Discount 6",
-            discountPrice = 0.00,
-            realPrice = 0.00,
-            couponImage = "",
-            commerceImage = "https://i1.wp.com/www.wipremiertrivia.com/wp-content/uploads/2019/10/Pizza.jpg?w=1972",
-            commerceName = "commerce 6",
-            idCommerce = "6",
-            couponType = 4,
-            favorite = false,
-            vip = false
-        )
-
-        val list = listOf(
-            bestDiscount1, bestDiscount2, bestDiscount3, bestDiscount4, bestDiscount5, bestDiscount6
-        )
-
-        featuredAdapter.collection = list
-        featuredAdapter.notifyDataSetChanged()
+        homeViewModel.loadFeaturedCoupons(request)
     }
 
     private fun handleCategories(categories: BaseResponse<List<Category>>?) {
@@ -316,9 +221,9 @@ class FavoriteFragment : BaseFragment() {
 
     fun openBestDiscountDetail(idCommerce: String) {
 //        val intent = Intent(requireContext(), CouponDetail2Activity::class.java)
-        val intent = Intent(requireContext(), RatingActivity::class.java)
-        intent.putExtra("commerceId", idCommerce)
-        intent.putExtra("navigate", true)
+        val intent = Intent(requireContext(), CouponDetail2Activity::class.java)
+        intent.putExtra("couponId", idCommerce)
+        intent.putExtra("loyaltyType", true)
         startActivity(intent)
     }
 

@@ -72,10 +72,10 @@ class CouponDetail2Activity: BaseActivity() {
     private var mName: String? = ""
     private var mLatitude: Double? = 0.0
     private var mLongitude: Double? = 0.0
-    private var loyaltyType: Int = 0
     private var quantityUserSelected: Int = 1
     private var shortLinkText: String = ""
     private var longLinkText: String = ""
+    private var couponDetails: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,9 +95,8 @@ class CouponDetail2Activity: BaseActivity() {
         val extras = intent.extras
         if (extras != null) {
             couponId = extras.getString("couponId")
-            loyaltyType = extras.getInt("loyaltyType")
             loadCouponDetail(couponId)
-            loadCouponAgency(couponId)
+//            loadCouponAgency(couponId)
         }
 
         val pm = applicationContext.packageManager
@@ -107,7 +106,7 @@ class CouponDetail2Activity: BaseActivity() {
         month = date[Calendar.MONTH] + 1
 
         share.setOnClickListener {
-            shareContent("${titleId.text?.toString()} ${couponInfoId.text}", couponId, Constants.userProfile?.actualCountry ?: "BO")
+            shareContent("${commerceNameId.text?.toString()} ${couponInfoId.text}", couponId, Constants.userProfile?.actualCountry ?: "BO")
         }
         whatsapp.setOnClickListener { Functions.openWhatsApp(couponWhatsApp, pm, this@CouponDetail2Activity) }
 
@@ -119,6 +118,8 @@ class CouponDetail2Activity: BaseActivity() {
     }
 
     private fun loadCouponDetail(id: String?) {
+        loading(true)
+        showError(false)
         val request = CouponDetailRequest(
                 country = Constants.userProfile?.actualCountry ?: "BO",
                 language = Functions.getLanguage(),
@@ -151,52 +152,62 @@ class CouponDetail2Activity: BaseActivity() {
     }
 
     private fun handleCouponDetail(response: BaseResponse<CouponDetailResponse>?) {
-        commerceId = response?.data?.idCommerce
-        commerceName = response?.data?.commerceName
-        commerceImage = response?.data?.urlCommerceImage
-        couponFacebook = response?.data?.facebook
-        couponWhatsApp = response?.data?.whatsapp
-        couponInstagram = response?.data?.instagram
-        couponExchangeLimit = response?.data?.cantExchage ?: 0
-        userExchangeLimit = response?.data?.cantExchangeUserLimit ?: 0
-        realPrice = response?.data?.realPrice ?: 0.0
-        discountPrice = response?.data?.discountPrice ?: 0.0
-        categoryId = response?.data?.idCouponCategory ?: ""
-        qrCodeGenerated = response?.data?.qrCode ?: ""
+        loading(false)
+        if (response != null) {
+            if (response.isSuccess){
+                commerceId = response?.data?.idCommerce
+                commerceName = response?.data?.commerceName
+                commerceImage = response?.data?.urlCommerceImage
+                couponFacebook = response?.data?.facebook
+                couponWhatsApp = response?.data?.whatsapp
+                couponInstagram = response?.data?.instagram
+                couponExchangeLimit = response?.data?.cantExchage ?: 0
+                userExchangeLimit = response?.data?.cantExchangeUserLimit ?: 0
+                realPrice = response?.data?.realPrice ?: 0.0
+                discountPrice = response?.data?.discountPrice ?: 0.0
+                categoryId = response?.data?.idCouponCategory ?: ""
+                qrCodeGenerated = response?.data?.qrCode ?: ""
+                couponDetails = response?.data?.description ?: ""
 
-        createAppLinking(commerceId, categoryId ?: "", Constants.userProfile?.actualCountry ?: "BO")
+                createAppLinking(commerceId, categoryId ?: "", Constants.userProfile?.actualCountry ?: "BO")
+                couponInfoId.text = couponDetails
+                val data = QRCode(response?.data?.generatedCoupons ?: 1, response?.data?.qrCode ?: "")
+                val jsonObject = Gson().toJson(data)
 
-        val data = QRCode(response?.data?.generatedCoupons ?: 1, response?.data?.qrCode ?: "")
-        val jsonObject = Gson().toJson(data)
+                generateQRImage(jsonObject)
 
-        generateQRImage(jsonObject)
-
-        Functions.showImage(response?.data?.urlCouponImage, commerceImageId)
-        Functions.showRoundedImage(response?.data?.urlCommerceImage, commerceImageId)
-        titleId.text = response?.data?.title
+                Functions.showImage(response?.data?.urlCouponImage, cuponImageId)
+//        Functions.showRoundedImage(response?.data?.urlCommerceImage, cuponImageId)
+                commerceNameId.text = response?.data?.commerceName
 
 
-        val arr = IntArray(response?.data?.cantExchangeUserLimit ?: 1) { it + 1 }
-        userQuantityId.text = "${getString(R.string.coupons_available_user)} ${response?.data?.cantExchangeUserLimit}"
-        if (response?.data?.description != null) couponInfoId.text = response.data.description else couponInfoId.visibility = View.GONE
-        conditionsId.text = response?.data?.conditions
+                val arr = IntArray(response?.data?.cantExchangeUserLimit ?: 1) { it + 1 }
+                if (response?.data?.description != null) couponInfoId.text = response.data.description else couponInfoId.visibility = View.GONE
 
-        if (response?.data?.cantExchangeUserLimit == 0 && response.data.cantExchage == 0) {
-            qrImageId.setImageBitmap(null)
-            qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
-            qrCodeId.text = getString(R.string.sold_out)
-            qrCodeId.textSize = 14f
-        } else if (response?.data?.cantExchangeUserLimit == 0) {
-            qrImageId.setImageBitmap(null)
-            qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
-            qrCodeId.text = getString(R.string.exceeded)
-            qrCodeId.textSize = 14f
-        } else if (response?.data?.cantExchage == 0) {
-            qrImageId.setImageBitmap(null)
-            qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
-            qrCodeId.text = getString(R.string.sold_out)
-            qrCodeId.textSize = 14f
+                if (response?.data?.cantExchangeUserLimit == 0 && response.data.cantExchage == 0) {
+                    qrImageId.setImageBitmap(null)
+                    qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
+                    qrCodeId.text = getString(R.string.sold_out)
+                    qrCodeId.textSize = 14f
+                } else if (response?.data?.cantExchangeUserLimit == 0) {
+                    qrImageId.setImageBitmap(null)
+                    qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
+                    qrCodeId.text = getString(R.string.exceeded)
+                    qrCodeId.textSize = 14f
+                } else if (response?.data?.cantExchage == 0) {
+                    qrImageId.setImageBitmap(null)
+                    qrImageId.setBackgroundResource(R.drawable.ic_sin_cupones)
+                    qrCodeId.text = getString(R.string.sold_out)
+                    qrCodeId.textSize = 14f
+                }
+            } else {
+                showError(true)
+            }
         }
+        else {
+            showError(true)
+        }
+
     }
 
     private fun handleCouponAgency(response: BaseResponse<List<AgencyResponse>>?) {
@@ -208,6 +219,10 @@ class CouponDetail2Activity: BaseActivity() {
                 mLongitude = it[0].longitude
             }
         }
+    }
+
+    private fun showError(isError: Boolean){
+        errorId.visibility = if (isError) View.VISIBLE else View.GONE
     }
 
     private fun handleUpdateCouponQuantity(response: BaseResponse<Boolean>?) {
@@ -299,6 +314,10 @@ class CouponDetail2Activity: BaseActivity() {
         return true
     }
 
+    private fun loading(isLoading: Boolean){
+        loaderId.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
     private fun getDifferenceDates(start: Date?, end: Date?): String {
         try {
             if (start == null || end == null) return ""
@@ -341,7 +360,7 @@ class CouponDetail2Activity: BaseActivity() {
     @SuppressLint("SetWorldReadable")
     private fun shareContent(content: String, id: String?, country: String) {
         if (id.isNullOrEmpty()) return
-        val bitmap = getBitmapFromView(commerceImageId)
+        val bitmap = getBitmapFromView(cuponImageId)
         try {
             val file = File(this.externalCacheDir, "coupon.png")
             val fOut = FileOutputStream(file)

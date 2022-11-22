@@ -14,6 +14,7 @@ import com.google.firebase.messaging.RemoteMessage
 import com.syntepro.sueldazo.R
 import com.syntepro.sueldazo.core.AndroidApplication
 import com.syntepro.sueldazo.ui.benefy.BenefyDetailActivity
+import com.syntepro.sueldazo.ui.coupon.ui.activities.RatingActivity
 import com.syntepro.sueldazo.ui.general.ExchangeInfoDialog
 import com.syntepro.sueldazo.ui.general.SuccessGiftActivity
 import com.syntepro.sueldazo.ui.shop.ui.activities.SuccessPaymentActivity
@@ -30,7 +31,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             if (remoteMessage.data.isNotEmpty()) {
                 when(remoteMessage.data["NotificationType"]?.toInt()) {
                     1 -> {
-                        val intent = Intent(this, ExchangeInfoDialog::class.java)
+                        val intent = Intent(this, RatingActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         intent.putExtra("qrCode", remoteMessage.data["Code"])
                         intent.putExtra("productId", remoteMessage.data["IdCoupon"])
@@ -38,7 +39,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                         startActivity(intent)
                     }
                     2 -> {
-                        val intent = Intent(this, ExchangeInfoDialog::class.java)
+                        val intent = Intent(this, RatingActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         intent.putExtra("qrCode", remoteMessage.data["Code"])
                         intent.putExtra("productId", remoteMessage.data["IdProduct"])

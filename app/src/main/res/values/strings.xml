@@ -685,7 +685,8 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="no_account">¿Aun no tienes una cuenta?, </string>
     <string name="terms_cond_string">Estoy de acuerdo con los <u>terminos y condiciones</u></string>
     <string name="sent_otp_again"><u>REENVIAR OTP</u></string>
-
+    <string name="saving_detail">Detalle de ahorro</string>
+    <string name="see_more">ver más</string>
 
 
 </resources>

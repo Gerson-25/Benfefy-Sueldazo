@@ -6,87 +6,187 @@
     android:layout_margin="@dimen/base_margin"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/accent_button"
-        android:backgroundTint="@color/white"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:cardview="http://schemas.android.com/apk/res-auto"
-            xmlns:app="http://schemas.android.com/tools"
-            android:id="@+id/itemId"
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="155dp"
-            android:layout_margin="15dp"
-            android:foregroundTint="@android:color/transparent"
-            cardview:cardBackgroundColor="@android:color/transparent"
-            cardview:cardElevation="0dp"
-            app:ignore="NamespaceTypo">
+            android:layout_height="wrap_content"
+            android:background="@drawable/accent_button"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                xmlns:app="http://schemas.android.com/tools"
+                android:id="@+id/itemId"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/accent_button"
-                android:backgroundTint="@color/lightPrimary"
-                android:orientation="horizontal">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/commerceImageId"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    style="@style/CustomCardViewStyle"
-                    android:layout_margin="@dimen/base_margin"
-                    android:src="@drawable/benefy_promotional"
-                    android:background="@drawable/accent_button"
-                    android:contentDescription="@string/commerce_info_label"
-                    cardview:layout_constraintBottom_toBottomOf="parent"
-                    cardview:layout_constraintStart_toStartOf="parent"
-                    cardview:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="155dp"
+                android:layout_margin="15dp"
+                android:foregroundTint="@android:color/transparent"
+                cardview:cardBackgroundColor="@android:color/transparent"
+                cardview:cardElevation="0dp"
+                app:ignore="NamespaceTypo">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    cardview:layout_constraintEnd_toEndOf="parent"
-                    cardview:layout_constraintBottom_toBottomOf="parent">
+                    android:background="@drawable/accent_button"
+                    android:backgroundTint="@color/lightPrimary"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/cuponImageId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        style="@style/CustomCardViewStyle"
+                        android:layout_margin="@dimen/base_margin"
+                        android:src="@drawable/benefy_promotional"
+                        android:contentDescription="@string/commerce_info_label"
+                        cardview:layout_constraintBottom_toBottomOf="parent"
+                        cardview:layout_constraintStart_toStartOf="parent"
+                        cardview:layout_constraintTop_toTopOf="parent" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        cardview:layout_constraintEnd_toEndOf="parent"
+                        cardview:layout_constraintBottom_toBottomOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Beneficio"
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                android:textColor="@color/darkGray"
+                                android:fontFamily="@font/worksans_medium"/>
+
+                            <TextView
+                                android:id="@+id/discountPercentageId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="35sp"
+                                android:textColor="@color/colorPrimary"
+                                android:textAlignment="center"
+                                android:text="10%"
+                                android:fontFamily="@font/worksans_bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="en hamburguesas"
+                                android:textAlignment="center"
+                                android:textSize="14sp"
+                                android:textColor="@color/darkGray"
+                                android:fontFamily="@font/worksans_regular"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/descriptionId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/container">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/commerceNameId"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:textColor="@color/colorAccent"
+                        android:textSize="17sp"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/worksans_bold"
+                        android:text="commerce name"/>
+                    <LinearLayout
+                        android:id="@+id/options"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="@dimen/base_margin"
+                        android:gravity="center_vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/conditionsId"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Beneficio"
-                            android:textAlignment="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/darkGray"
-                            android:fontFamily="@font/worksans_medium"/>
+                        <ImageButton
+                            android:id="@+id/location"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_location"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/google_image"
+                            app:tint="@color/colorPrimary"/>
 
-                        <TextView
-                            android:id="@+id/discountPercentageId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="35sp"
-                            android:textColor="@color/colorPrimary"
-                            android:textAlignment="center"
-                            android:text="10%"
-                            android:fontFamily="@font/worksans_bold" />
+                        <ImageButton
+                            android:id="@+id/linkedin"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_linkedin_social"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/google_image"
+                            android:visibility="gone"/>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="en hamburguesas"
-                            android:textAlignment="center"
-                            android:textSize="14sp"
-                            android:textColor="@color/darkGray"
-                            android:fontFamily="@font/worksans_regular"/>
+                        <ImageButton
+                            android:id="@+id/whatsapp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_whatsapp_social"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/google_image"
+                            app:tint="@color/colorPrimary"/>
+
+                        <ImageButton
+                            android:id="@+id/share"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_share"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/google_image"
+                            app:tint="@color/colorPrimary"/>
 
                     </LinearLayout>
 
@@ -94,204 +194,152 @@
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:id="@+id/descriptionId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:padding="8dp"
-            android:gravity="center_vertical"
-            app:layout_constraintTop_toBottomOf="@id/container">
-
             <LinearLayout
-                android:layout_width="0dp"
+                android:id="@+id/informationId"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
                 android:orientation="horizontal"
+                android:layout_marginTop="4dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp">
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/descriptionId">
 
                 <TextView
-                    android:id="@+id/titleId"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/couponInfoId"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="17sp"
-                    android:layout_gravity="center_vertical"
-                    android:fontFamily="@font/worksans_bold"
-                    android:text="commerce name"/>
-                <LinearLayout
-                    android:id="@+id/options"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginStart="@dimen/base_margin"
-                    android:gravity="center_vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/conditionsId"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <ImageButton
-                        android:id="@+id/location"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_location"
-                        android:background="@null"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/google_image"
-                        app:tint="@color/colorPrimary"/>
-
-                    <ImageButton
-                        android:id="@+id/linkedin"
-                        android:layout_width="52dp"
-                        android:layout_height="52dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_linkedin_social"
-                        android:background="@null"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/google_image"
-                        android:tint="@color/colorPrimaryDark"
-                        android:visibility="gone"/>
-
-                    <ImageButton
-                        android:id="@+id/whatsapp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_whatsapp_social"
-                        android:background="@null"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/google_image"
-                        app:tint="@color/colorPrimary"/>
-
-                    <ImageButton
-                        android:id="@+id/share"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_share"
-                        android:background="@null"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/google_image"
-                        app:tint="@color/colorPrimary"/>
-
-                </LinearLayout>
+                    android:layout_marginEnd="@dimen/base_margin"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/worksans_regular"
+                    android:textColor="@color/colorAccent"
+                    android:text="Obtén 20% de descuento en Container, presenta este QR y accede directamente a el"
+                    />
 
             </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/qrCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/informationId">
 
-        <LinearLayout
-            android:id="@+id/informationId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:padding="8dp"
-            app:layout_constraintTop_toBottomOf="@id/descriptionId">
+                <ImageView
+                    android:id="@+id/qrImageId"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_qr"
+                    tools:ignore="ContentDescription"
+                    tools:tint="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/qrCodeId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/worksans_regular"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:text="UCNWPP"/>
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/couponInfoId"
+                android:id="@+id/terms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/base_margin"
-                android:layout_marginEnd="@dimen/base_margin"
-                android:gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/terminos_y_condiciones_menu"
+                android:textAlignment="center"
+                android:background="@drawable/accent_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingTop="@dimen/base_margin"
+                android:layout_marginBottom="15dp"
+                android:paddingBottom="@dimen/base_margin"
+                android:fontFamily="@font/worksans_bold"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/descriptionContent"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/loaderId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/loadingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:fontFamily="@font/worksans_regular"
                 android:textColor="@color/colorAccent"
-                android:text="Obtén 20% de descuento en Container, presenta este QR y accede directamente a el"
-                />
+                android:text="Estamos cargando tu cupón" />
 
-        </LinearLayout>
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="95dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/loadingLabel"
+                android:layout_centerHorizontal="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorPrimary"
+                android:layout_marginTop="10dp" />
 
-        <LinearLayout
-            android:id="@+id/qrCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/informationId">
-
-            <ImageView
-                android:id="@+id/qrImageId"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:scaleType="centerCrop"
-                android:tint="@color/colorAccent"
-                android:src="@drawable/ic_qr"
-                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/errorId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@color/white">
 
             <TextView
-                android:id="@+id/qrCodeId"
-                android:layout_width="match_parent"
+                android:id="@+id/errorLabel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/worksans_bold"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="UCNWPP"/>
+                android:layout_below="@+id/errorIcon"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/worksans_medium"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:text="Upss.. Algo salió mal" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/errorBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/errorLabel"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/worksans_regular"
+                android:gravity="center_horizontal"
+                android:text="No pudimos cargar tu cupón, \nintentalo mas tarde."
+                android:textColor="@color/colorAccent" />
 
-        <TextView
-            android:id="@+id/userQuantityId"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:fontFamily="@font/circular_book"
-            app:layout_constraintStart_toStartOf="@id/qrCode"
-            app:layout_constraintEnd_toEndOf="@id/qrCode"
-            app:layout_constraintTop_toBottomOf="@id/quantityId"/>
+            <ImageView
+                android:id="@+id/errorIcon"
+                android:layout_width="95dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/base_margin"
+                android:indeterminateTint="@color/colorPrimary"
+                android:src="@drawable/ic_ticket_broken" />
 
-        <TextView
-            android:id="@+id/terms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/terminos_y_condiciones_menu"
-            android:textAlignment="center"
-            android:background="@drawable/accent_button"
-            android:backgroundTint="@color/colorPrimary"
-            android:paddingTop="@dimen/base_margin"
-            android:paddingBottom="@dimen/base_margin"
-            android:fontFamily="@font/worksans_bold"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/descriptionContent"/>
-
-        <TextView
-            android:id="@+id/conditionsId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:textAlignment="center"
-            android:fontFamily="@font/circular_book"
-            app:layout_constraintTop_toBottomOf="@id/terms"/>
-
-
-    </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </ScrollView>

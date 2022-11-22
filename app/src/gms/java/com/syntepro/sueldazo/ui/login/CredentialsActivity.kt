@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessaging
 import com.syntepro.sueldazo.R
 import com.syntepro.sueldazo.database.DataBaseAdapter
 import com.syntepro.sueldazo.entity.app.Pais
 import com.syntepro.sueldazo.entity.service.User
+import com.syntepro.sueldazo.entity.service.UserTokenRequest
 import com.syntepro.sueldazo.room.database.RoomDataBase
 import com.syntepro.sueldazo.room.entity.CountryUser
 import com.syntepro.sueldazo.service.NetworkService2
@@ -22,6 +24,7 @@ import com.syntepro.sueldazo.ui.login.model.ValidarClienteRequest
 import com.syntepro.sueldazo.ui.login.model.ValidarClienteResponse
 import com.syntepro.sueldazo.utils.Constants
 import com.syntepro.sueldazo.utils.Constants.Companion.userCountryProfile
+import com.syntepro.sueldazo.utils.Functions
 import com.syntepro.sueldazo.utils.Functions.Companion.showError
 import com.syntepro.sueldazo.utils.UserType
 import kotlinx.android.synthetic.gms.activity_credentials.*
@@ -81,7 +84,8 @@ class CredentialsActivity : AppCompatActivity() {
 
     private fun setAnonymousData() {
         val userProfile = with(User()){
-             idDocument = getRandomString()
+            idDocument = getRandomString()
+            idUser = "C885394C-EB7B-464D-7B59-08DA6432E51A"
             this
         }
         Constants.userProfile = userProfile

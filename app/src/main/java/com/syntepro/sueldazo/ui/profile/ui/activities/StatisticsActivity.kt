@@ -1,5 +1,7 @@
 package com.syntepro.sueldazo.ui.profile.ui.activities
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -7,7 +9,14 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.widget.Toolbar
 import com.github.aachartmodel.aainfographics.aachartcreator.*
+import com.github.mikephil.charting.animation.Easing
+import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.data.PieData
+import com.github.mikephil.charting.data.PieDataSet
+import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.utils.MPPointF
 import com.merckers.core.extension.failure
 import com.merckers.core.extension.observe
 import com.syntepro.sueldazo.R
@@ -26,11 +35,11 @@ import java.time.Month
 import java.time.format.TextStyle
 import java.util.*
 
-class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
+class StatisticsActivity: BaseActivity() {
 
     private lateinit var profileViewModel: ProfileViewModel
+    lateinit var pieChart: PieChart
     private val roomDataBase: RoomDataBase by lazy { RoomDataBase.getRoomDatabase(this@StatisticsActivity) }
-    private var aaChartModel = AAChartModel()
     private var xVals: MutableList<String>? = null
     private var yVals1: MutableList<BarEntry>? = null
     private var yVals2: MutableList<BarEntry>? = null
@@ -46,12 +55,15 @@ class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
         appComponent.inject(this)
         setContentView(R.layout.activity_statistics)
 
-        // Toolbar
-        val myToolbar = findViewById<Toolbar>(R.id.mainToolbar)
-        setSupportActionBar(myToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = resources.getString(R.string.mis_estadisticas)
+        pieChart = findViewById(R.id.pieChart)
+        configPieChart()
+
+//        // Toolbar
+//        val myToolbar = findViewById<Toolbar>(R.id.mainToolbar)
+//        setSupportActionBar(myToolbar)
+//        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar!!.setDisplayShowHomeEnabled(true)
+//        supportActionBar!!.title = resources.getString(R.string.mis_estadisticas)
 
         profileViewModel = viewModel(viewModelFactory) {
             observe(userStats, ::handleUserStats)
@@ -59,8 +71,8 @@ class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
         }
 
         // Country User
-        val cu = roomDataBase.accessDao().country
-        txt_pais.text = cu.pais
+//        val cu = roomDataBase.accessDao().country
+//        txt_pais.text = cu.pais
 
         // Calendar Instance
         val date = Calendar.getInstance()
@@ -152,6 +164,89 @@ class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
         super.onBackPressed()
     }
 
+    private fun configPieChart(){
+        pieChart.setUsePercentValues(true)
+        pieChart.getDescription().setEnabled(false)
+        pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
+
+
+        pieChart.setDragDecelerationFrictionCoef(0.95f)
+
+        // on below line we are setting hole
+        // and hole color for pie chart
+        pieChart.setDrawHoleEnabled(true)
+        pieChart.setHoleColor(Color.WHITE)
+
+        // on below line we are setting circle color and alpha
+        pieChart.setTransparentCircleColor(Color.WHITE)
+        pieChart.setTransparentCircleAlpha(110)
+
+        // on  below line we are setting hole radius
+        pieChart.setHoleRadius(58f)
+        pieChart.setTransparentCircleRadius(61f)
+
+        // on below line we are setting center text
+        pieChart.setDrawCenterText(true)
+
+        // on below line we are setting
+        // rotation for our pie chart
+        pieChart.setRotationAngle(0f)
+
+        // enable rotation of the pieChart by touch
+        pieChart.setRotationEnabled(true)
+        pieChart.setHighlightPerTapEnabled(true)
+
+        // on below line we are setting animation for our pie chart
+        pieChart.animateY(1400, Easing.EaseInOutQuad)
+
+        // on below line we are disabling our legend for pie chart
+        pieChart.legend.isEnabled = false
+        pieChart.setEntryLabelColor(Color.WHITE)
+        pieChart.setEntryLabelTextSize(12f)
+
+        // on below line we are creating array list and
+        // adding data to it to display in pie chart
+        val entries: ArrayList<PieEntry> = ArrayList()
+        entries.add(PieEntry(70f))
+        entries.add(PieEntry(20f))
+        entries.add(PieEntry(10f))
+
+        // on below line we are setting pie data set
+        val dataSet = PieDataSet(entries, "Mobile OS")
+
+        // on below line we are setting icons.
+        dataSet.setDrawIcons(false)
+
+        // on below line we are setting slice for pie
+        dataSet.sliceSpace = 3f
+        dataSet.iconsOffset = MPPointF(0f, 40f)
+        dataSet.selectionShift = 5f
+
+        // add a lot of colors to list
+        val colors: ArrayList<Int> = ArrayList()
+        colors.add(resources.getColor(R.color.blue))
+        colors.add(resources.getColor(R.color.yellow))
+        colors.add(resources.getColor(R.color.red))
+
+        // on below line we are setting colors.
+        dataSet.colors = colors
+
+        // on below line we are setting pie data set
+        val data = PieData(dataSet)
+        data.setValueFormatter(PercentFormatter())
+        data.setValueTextSize(15f)
+        data.setValueTypeface(Typeface.DEFAULT_BOLD)
+        data.setValueTextColor(Color.WHITE)
+        pieChart.setData(data)
+
+        // undo all highlights
+        pieChart.highlightValues(null)
+
+        // loading chart
+        pieChart.invalidate()
+
+    }
+
     private fun loadUserStats(selectedMonth: Int, selectedYear: Int) {
         val request = UserStatsRequest(
                 country = userProfile?.actualCountry ?: "BO",
@@ -194,10 +289,6 @@ class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
                     .step(true)
                     .color("#D2DAE7")
                     .data(loses.toTypedArray())
-
-            setUpAAChartView(months.toTypedArray(), arrayOf(totalSavings, totalLoses))
-            configureLineChartAndSplineChartStyle()
-//            setUpBarChart(xVals!!, yVals1, yVals2)
         }
     }
 
@@ -206,122 +297,12 @@ class StatisticsActivity: BaseActivity(), AAChartView.AAChartViewCallBack {
             else DateFormatSymbols().months[number].toString()
     }
 
-    private fun setUpAAChartView(categories: Array<String>, data: Array<AASeriesElement>) {
-        AAChartView.setBackgroundColor(0)
-        AAChartView.background?.alpha = 0
-        AAChartView.callBack = this
-        aaChartModel = configureAAChartModel(categories, data)
-        AAChartView.aa_drawChartWithChartModel(aaChartModel)
-    }
-
-    private fun configureAAChartModel(categories: Array<String>, data: Array<AASeriesElement>): AAChartModel {
-        aaChartModel
-                .categories(categories)
-                .chartType(AAChartType.Spline)
-                .yAxisGridLineWidth(0f)
-                .legendEnabled(false)
-                .touchEventEnabled(true)
-//                .series(data)
-
-        return aaChartModel
-    }
-
-    private fun configureLineChartAndSplineChartStyle() {
-        aaChartModel
-                .markerSymbolStyle(AAChartSymbolStyleType.BorderBlank)
-                .markerRadius(6f)
-                .animationType(AAChartAnimationType.SwingFromTo)
-    }
-
-//    private fun setUpBarChart(titles: MutableList<String>, saving: MutableList<BarEntry>?, lost: MutableList<BarEntry>?) {
-//        val barWidth = 0.3f
-//        val barSpace = 0f
-//        val groupSpace = 0.4f
-//
-//        // Set the chart setting with the below following code
-//        barChart.description = null
-//        barChart.setPinchZoom(false)
-//        barChart.setScaleEnabled(false)
-//        barChart.setDrawBarShadow(false)
-//        barChart.setDrawGridBackground(false)
-//
-//        // Next create the dummy data for display the graph
-//        val groupCount = xVals!!.size
-//
-//        // Next, to draw the graph
-//        val set1 = BarDataSet(saving, getString(R.string.ahorro_p))
-//        set1.color = Color.rgb(254, 147, 5)
-//        val set2 = BarDataSet(lost, getString(R.string.perdida_p))
-//        set2.color = Color.rgb(210, 218, 231)
-//        val data = BarData(set1, set2)
-//        data.setValueFormatter(DefaultValueFormatter(2))
-//        barChart.data = data
-//        barChart.barData.barWidth = barWidth
-//        barChart.xAxis.axisMinimum = 0f
-//        barChart.xAxis.axisMaximum = 0 + barChart.barData.getGroupWidth(groupSpace, barSpace) * groupCount
-//        barChart.groupBars(0f, groupSpace, barSpace)
-//        barChart.data.isHighlightEnabled = false
-//        barChart.animateY(2000)
-//        barChart.invalidate()
-//
-//        // Draw the indicator
-//        val l = barChart.legend
-//        l.verticalAlignment = Legend.LegendVerticalAlignment.TOP
-//        l.horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
-//        l.orientation = Legend.LegendOrientation.HORIZONTAL
-//        l.setDrawInside(true)
-//        l.yOffset = 20f
-//        l.xOffset = 0f
-//        l.yEntrySpace = 0f
-//        l.textSize = 8f
-//
-//        // Draw the X-Axis and Y-Axis
-//        // X-axis
-//        val xAxis = barChart.xAxis
-//        xAxis.granularity = 1f
-//        xAxis.isGranularityEnabled = true
-//        xAxis.setCenterAxisLabels(true)
-//        xAxis.setDrawGridLines(false)
-//        xAxis.axisMaximum = titles.size.toFloat()
-//        xAxis.position = XAxis.XAxisPosition.TOP_INSIDE
-//        xAxis.valueFormatter = IndexAxisValueFormatter(titles)
-//
-//        // Y-axis
-//        barChart.axisRight.isEnabled = false
-//        val leftAxis = barChart.axisLeft
-//        leftAxis.valueFormatter = LargeValueFormatter()
-//        leftAxis.setDrawGridLines(true)
-//        leftAxis.spaceTop = 35f
-//        leftAxis.axisMinimum = 0f
-//
-//        // Get the primary text color of the theme
-//        val typedValue = TypedValue()
-//        val theme = this.theme
-//        theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true)
-//        @SuppressLint("Recycle") val arr = this.obtainStyledAttributes(typedValue.data, intArrayOf(android.R.attr.textColorPrimary))
-//        val primaryColor = arr.getColor(0, -1)
-//
-//        // Dark Theme
-//        barChart.data.setValueTextColor(primaryColor)
-//        set1.valueTextColor = primaryColor
-//        set2.valueTextColor = primaryColor
-//        xAxis.textColor = primaryColor
-//        leftAxis.textColor = primaryColor
-//    }
 
     private fun clearData() {
         xVals!!.clear()
         yVals1!!.clear()
         yVals2!!.clear()
         i = 1
-    }
-
-    override fun chartViewDidFinishLoad(aaChartView: AAChartView) {
-        Log.e("Chart", "Finish")
-    }
-
-    override fun chartViewMoveOverEventMessage(aaChartView: AAChartView, messageModel: AAMoveOverEventMessageModel) {
-        Log.e("Chart", "Finish")
     }
 
 }

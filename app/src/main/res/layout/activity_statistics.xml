@@ -108,15 +108,17 @@
 <!--                app:layout_constraintTop_toBottomOf="@+id/perdida"-->
 <!--                style="@style/TextAppearance.AppCompat"/>-->
 
-            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                android:id="@+id/AAChartView"
-                android:layout_width="match_parent"
-                android:layout_height="700dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/transparent"
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/perdida"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/perdida" />
 
             <ImageView
                 android:id="@+id/perdida"

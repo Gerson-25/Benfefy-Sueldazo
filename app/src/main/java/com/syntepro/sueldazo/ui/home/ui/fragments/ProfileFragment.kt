@@ -7,6 +7,7 @@ import com.syntepro.sueldazo.R
 import com.syntepro.sueldazo.core.base.BaseFragment
 import com.syntepro.sueldazo.ui.login.ConditionsActivity
 import com.syntepro.sueldazo.ui.menu.EditProfileActivity2
+import com.syntepro.sueldazo.ui.profile.ui.activities.StatisticsActivity
 import com.syntepro.sueldazo.utils.Constants
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -37,10 +38,10 @@ class ProfileFragment: BaseFragment() {
 //
 //        qrCode.setOnClickListener { Functions.showUserQR(requireContext()) }
 //
-//        stats.setOnClickListener {
-//            val intent = Intent(requireContext(), StatisticsActivity::class.java)
-//            startActivity(intent)
-//        }
+        stats.setOnClickListener {
+            val intent = Intent(requireContext(), StatisticsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun showData() {

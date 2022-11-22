@@ -6,10 +6,13 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.syntepro.sueldazo.R
 import com.syntepro.sueldazo.base.BaseActivity
 import com.syntepro.sueldazo.entity.app.SocialUser
 import com.syntepro.sueldazo.entity.service.GetUserRequest
+import com.syntepro.sueldazo.entity.service.UserTokenRequest
 import com.syntepro.sueldazo.service.NetworkService2
 import com.syntepro.sueldazo.service.RetrofitClientInstance
 import com.syntepro.sueldazo.ui.home.HomeActivity
@@ -145,6 +148,54 @@ class OTPValidationActivity : BaseActivity() {
         }
     }
 
+    fun updateDeviceToken(userID: String, deviceToken: String, userStore: Int) {
+        val request = with(UserTokenRequest()) {
+            country = Constants.userProfile?.country ?: "BO"
+            language = 1
+            idUser = userID
+            token = deviceToken
+            device = "Android"
+            store = userStore
+            this
+        }
+        val job = Job()
+        val scopeMainThread = CoroutineScope(job + Dispatchers.Main)
+        val apiService = RetrofitClientInstance.getClient(Constants.BASE_URL_MICROSUELDAZO).create(NetworkService2::class.java)
+        scopeMainThread.launch1 {
+            try {
+                val response = apiService.addUserToken(request)
+                when {
+                    response.isSuccessful -> {
+                        val ret = response.body()!!
+                        if (ret.isSuccess)
+                            Log.e("Synchronized Token", "${ret.data}")
+                        else
+                            Log.e("Error", "${ret.code}")
+                    }
+                    else -> { Log.e("Error", "${response.message()} - ${response.errorBody()}") }
+                }
+            } catch (e: Exception) {
+                Log.e("Exception", e.message ?: e.cause?.message ?: e.cause.toString())
+            }
+        }
+    }
+
+    fun firebaseToken(idUser: String) {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                return@OnCompleteListener
+            }
+
+            val token = task.result
+            Log.e("Firebase Token", token)
+            updateDeviceToken(
+                idUser,
+                token,
+                Constants.PLAY_STORE
+            )
+        })
+    }
+
     private fun obtenerToken(){
         val request = ObtenerTokenRequest (
             country = "BO",
@@ -219,6 +270,7 @@ class OTPValidationActivity : BaseActivity() {
                         if (ret.isSuccess){
                             ret.data?.let{
                                 Constants.userProfile = it
+                                firebaseToken(it.idUser ?: "")
                                 goToHome()
                             }
                         } else {
@@ -262,6 +314,7 @@ class OTPValidationActivity : BaseActivity() {
 
     private fun goToHome(){
         val intent = Intent(this@OTPValidationActivity, HomeActivity::class.java)
+        intent.putExtra("isAnonymousUser", false)
         startActivity(intent)
     }
 

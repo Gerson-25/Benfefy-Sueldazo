@@ -55,4 +55,10 @@
     <color name="colorTextPrimary">#FFFFFF</color>
 
     <color name="secondary_card_gray">#86888A</color>
+
+    <!-- Pie Chart Colors -->
+    <color name="chart_color_1">#F29849</color>
+    <color name="chart_color_2">#07C4D9</color>
+    <color name="chart_color_3">#9A8DF2</color>
+    <color name="chart_color_4">#F266CD</color>
 </resources>

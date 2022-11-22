@@ -51,6 +51,7 @@ import com.syntepro.sueldazo.ui.commerce.ui.activities.CommerceDetail2Activity
 import com.syntepro.sueldazo.ui.coupon.model.BestDiscountRequest
 import com.syntepro.sueldazo.ui.coupon.model.FeaturedCouponRequest
 import com.syntepro.sueldazo.ui.coupon.ui.activities.CouponDetail2Activity
+import com.syntepro.sueldazo.ui.coupon.ui.activities.RatingActivity
 import com.syntepro.sueldazo.ui.home.model.*
 import com.syntepro.sueldazo.ui.home.viewModel.HomeViewModel
 import com.syntepro.sueldazo.ui.login.CredentialsActivity
@@ -234,6 +235,15 @@ class HomeActivity : AppCompatActivity() {
         // Load Global data
 //        loadGlobalData()
 
+        ntfId.setOnClickListener {
+            val intent = Intent(this, RatingActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.putExtra("qrCode", "")
+            intent.putExtra("productId", "")
+            intent.putExtra("productType", 0)
+            startActivity(intent)
+        }
+
         // Get the primary text color of the theme
         val typedValue = TypedValue()
         val theme = this.theme
@@ -242,10 +252,10 @@ class HomeActivity : AppCompatActivity() {
         val primaryColor = arr.getColor(0, -1)
 
 
-        ntfId.setOnClickListener {
-            val intent = Intent(this@HomeActivity, NotificationsActivity::class.java)
-            startActivity(intent)
-        }
+//        ntfId.setOnClickListener {
+//            val intent = Intent(this@HomeActivity, NotificationsActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
     override fun onStart() {

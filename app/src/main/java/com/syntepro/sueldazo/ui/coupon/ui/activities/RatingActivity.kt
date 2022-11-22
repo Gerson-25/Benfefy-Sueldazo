@@ -1,5 +1,6 @@
 package com.syntepro.sueldazo.ui.coupon.ui.activities
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
@@ -44,7 +45,7 @@ class RatingActivity : BaseActivity() {
         val extras = intent.extras
         if (extras != null) {
             couponQRCode = extras.getString("qrCode")
-            couponID = extras.getString("couponId")
+            couponID = extras.getString("productId")
             couponType = extras.getInt("productType")
         }
 
@@ -88,56 +89,57 @@ class RatingActivity : BaseActivity() {
         dialog.show()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     fun onNumberSelected(view: View) {
         when (view.id) {
             R.id.one -> {
                 setTextColor()
-                one.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                one.background = getDrawable(R.drawable.button_shape_selected)
                 b = 1
             }
             R.id.two -> {
                 setTextColor()
-                two.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                two.background = getDrawable(R.drawable.button_shape_selected)
                 b = 2
             }
             R.id.three -> {
                 setTextColor()
-                three.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                three.background = getDrawable(R.drawable.button_shape_selected)
                 b = 3
             }
             R.id.four -> {
                 setTextColor()
-                four.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                four.background = getDrawable(R.drawable.button_shape_selected)
                 b = 4
             }
             R.id.five -> {
                 setTextColor()
-                five.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                five.background = getDrawable(R.drawable.button_shape_selected)
                 b = 5
             }
             R.id.six -> {
                 setTextColor()
-                six.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                six.background = getDrawable(R.drawable.button_shape_selected)
                 b = 6
             }
             R.id.seven -> {
                 setTextColor()
-                seven.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                seven.background = getDrawable(R.drawable.button_shape_selected)
                 b = 7
             }
             R.id.eight -> {
                 setTextColor()
-                eight.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                eight.background = getDrawable(R.drawable.button_shape_selected)
                 b = 8
             }
             R.id.nine -> {
                 setTextColor()
-                nine.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                nine.background = getDrawable(R.drawable.button_shape_selected)
                 b = 9
             }
             R.id.ten -> {
                 setTextColor()
-                ten.setTextColor(resources.getColor(R.color.colorPrimaryLigth))
+                ten.background = getDrawable(R.drawable.button_shape_selected)
                 b = 10
             }
         }
@@ -147,46 +149,47 @@ class RatingActivity : BaseActivity() {
         when (view.id) {
             R.id.molesto -> {
                 setImageResource()
-                molesto.setImageResource(R.drawable.ic_molesto_select)
+                molesto.setImageResource(R.drawable.ic_terrible_selected)
             }
             R.id.frustrado -> {
                 setImageResource()
-                frustrado.setImageResource(R.drawable.ic_frustrado_select)
+                frustrado.setImageResource(R.drawable.ic_bad_selected)
             }
             R.id.indiferente -> {
                 setImageResource()
-                indiferente.setImageResource(R.drawable.ic_indiferente_select)
+                indiferente.setImageResource(R.drawable.ic_moreless_selected)
             }
             R.id.contento -> {
                 setImageResource()
-                contento.setImageResource(R.drawable.ic_contento_select)
+                contento.setImageResource(R.drawable.ic_good_selected)
             }
             R.id.muy_contento -> {
                 setImageResource()
-                muy_contento.setImageResource(R.drawable.ic_muy_contento_select)
+                muy_contento.setImageResource(R.drawable.ic_excelent_selected)
             }
         }
     }
 
     private fun setImageResource() {
-        molesto!!.setImageResource(R.drawable.ic_molesto)
-        frustrado!!.setImageResource(R.drawable.ic_frustrado)
-        indiferente!!.setImageResource(R.drawable.ic_indiferente)
-        contento!!.setImageResource(R.drawable.ic_contento)
-        muy_contento!!.setImageResource(R.drawable.ic_muy_contento)
+        molesto!!.setImageResource(R.drawable.ic_terrible_unselected)
+        frustrado!!.setImageResource(R.drawable.ic_bad_unselected)
+        indiferente!!.setImageResource(R.drawable.ic_moreless_unselected)
+        contento!!.setImageResource(R.drawable.ic_good_unselected)
+        muy_contento!!.setImageResource(R.drawable.ic_excelent_unselected)
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setTextColor() {
-        one!!.setTextColor(resources.getColor(R.color.black))
-        two!!.setTextColor(resources.getColor(R.color.black))
-        three!!.setTextColor(resources.getColor(R.color.black))
-        four!!.setTextColor(resources.getColor(R.color.black))
-        five!!.setTextColor(resources.getColor(R.color.black))
-        six!!.setTextColor(resources.getColor(R.color.black))
-        seven!!.setTextColor(resources.getColor(R.color.black))
-        eight!!.setTextColor(resources.getColor(R.color.black))
-        nine!!.setTextColor(resources.getColor(R.color.black))
-        ten!!.setTextColor(resources.getColor(R.color.black))
+        one!!.background = getDrawable(R.drawable.button_shape)
+        two!!.background = getDrawable(R.drawable.button_shape)
+        three!!.background = getDrawable(R.drawable.button_shape)
+        four!!.background = getDrawable(R.drawable.button_shape)
+        five!!.background = getDrawable(R.drawable.button_shape)
+        six!!.background = getDrawable(R.drawable.button_shape)
+        seven!!.background = getDrawable(R.drawable.button_shape)
+        eight!!.background = getDrawable(R.drawable.button_shape)
+        nine!!.background = getDrawable(R.drawable.button_shape)
+        ten!!.background = getDrawable(R.drawable.button_shape)
     }
 
     private fun updateRating() {

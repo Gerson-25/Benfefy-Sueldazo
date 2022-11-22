@@ -39,6 +39,118 @@
 
             </LinearLayout>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/savingDisclaimer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/worksans_regular"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12dp"
+                        android:layout_margin="@dimen/base_margin"
+                        android:text="Este mes ahorraste un 10% en tus sueldo" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="@dimen/base_margin">
+
+                        <LinearLayout
+                            android:id="@+id/totalExpensives"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/expensvies"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorPrimary"
+                                android:orientation="horizontal"
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="100Bs"
+                                    android:textColor="@color/colorAccent"
+                                    app:fontFamily="@font/worksans_regular"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    tools:text="@{savings.comprasCurrency()}"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/savings"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorAccent"
+                                android:orientation="horizontal"
+                                android:verticalScrollbarPosition="right">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal|center_vertical"
+                                    android:text="100Bs"
+                                    app:fontFamily="@font/worksans_regular"
+                                    android:textColor="@color/white"
+                                    tools:text="@{savings.ahorroCurrency()}"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginBottom="@dimen/base_margin"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/expensivesLabel"
+                            android:layout_width="match_parent"
+                            tools:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Compras totales"
+                            android:textColor="@color/white"
+                            app:fontFamily="@font/worksans_bold" />
+
+                        <TextView
+                            android:id="@+id/savingsLabel"
+                            tools:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="Ahorro"
+                            android:textColor="@color/white"
+                            app:fontFamily="@font/worksans_bold"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
@@ -46,13 +158,61 @@
                 android:backgroundTint="@color/lightPrimary"
                 android:layout_margin="25dp">
 
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sección resumen ahorro"
-                    android:fontFamily="@font/worksans_bold"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center_horizontal"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/pieChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/base_margin"
+                        android:layout_marginBottom="@dimen/base_margin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/base_margin"
+                    android:layout_marginTop="@dimen/base_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/saving_detail"
+                        android:fontFamily="@font/worksans_bold"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_horizontal"
+                        android:textSize="14sp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/categoryList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/saving_category_item"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/accent_button"
+                        android:layout_marginTop="@dimen/base_margin"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="@dimen/base_margin"
+                        android:layout_marginStart="@dimen/base_margin"
+                        android:fontFamily="@font/worksans_regular"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:text="@string/see_more"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
