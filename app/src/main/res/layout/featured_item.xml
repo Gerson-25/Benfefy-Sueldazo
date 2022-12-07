@@ -22,16 +22,40 @@
             android:orientation="horizontal"
             cardview:layout_constraintGuide_percent="0.6" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/couponImageId"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            style="@style/CustomCardViewStyle"
-            android:src="@drawable/benefy_promotional"
-            cardview:layout_constraintTop_toTopOf="parent"
-            cardview:layout_constraintBottom_toBottomOf="@id/divider"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/coupons_label"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/couponImageId"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                style="@style/CustomCardViewStyle"
+                android:src="@drawable/benefy_promotional"
+                cardview:layout_constraintTop_toTopOf="parent"
+                cardview:layout_constraintBottom_toBottomOf="@id/divider"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/coupons_label"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blockedCoupon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_gravity="center_horizontal|center_vertical"
+                cardview:cardCornerRadius="45dp"
+                cardview:cardBackgroundColor="@color/colorPrimary">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/ic_baseline_lock_24"/>
+            </androidx.cardview.widget.CardView>
+
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/titleCouponId"

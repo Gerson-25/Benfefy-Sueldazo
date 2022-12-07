@@ -1,4 +1,4 @@
-package com.syntepro.sueldazo.entity.firebase;
+package com.appbenefy.sueldazo.entity.firebase;
 
 import com.google.firebase.firestore.DocumentId;
 

@@ -13,7 +13,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
-import com.syntepro.sueldazo.R
+import com.appbenefy.sueldazo.R
 import java.util.*
 
 class PickerDialog<T: ListablePicker> : DialogFragment(), OnItemPickListClickListener<T> {

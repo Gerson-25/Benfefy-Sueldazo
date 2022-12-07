@@ -338,7 +338,7 @@
         <!-- Share Provider -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.syntepro.sueldazo.provider"
+            android:authorities="com.appbenefy.sueldazo.provider"
             android:exported="false"
             android:grantUriPermissions="true">
 

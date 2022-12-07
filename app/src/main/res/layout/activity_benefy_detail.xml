@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
-                <com.syntepro.sueldazo.utils.ProportionalImageView
+                <com.appbenefy.sueldazo.utils.ProportionalImageView
                     android:id="@+id/couponImageId"
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"

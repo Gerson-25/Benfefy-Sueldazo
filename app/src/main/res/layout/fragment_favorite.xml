@@ -103,7 +103,7 @@
                         android:layout_weight="0.5"
                         android:text="@string/view_all"
                         android:textAllCaps="false"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/colorAccent"
                         android:textSize="12sp" />
 
                     <ImageView

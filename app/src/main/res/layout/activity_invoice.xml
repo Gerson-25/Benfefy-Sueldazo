@@ -45,7 +45,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"/>
 
-            <com.syntepro.sueldazo.core.app.MerckersRadioGroup
+            <com.appbenefy.sueldazo.core.app.MerckersRadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -104,7 +104,7 @@
 
                 </LinearLayout>
 
-            </com.syntepro.sueldazo.core.app.MerckersRadioGroup>
+            </com.appbenefy.sueldazo.core.app.MerckersRadioGroup>
 
             <View
                 android:layout_width="match_parent"

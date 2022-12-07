@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/nav_corporate_id"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.CorporateFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.CorporateFragment"
         android:label="fragment_corporate"
         tools:layout="@layout/fragment_corporate" />
     <fragment
         android:id="@+id/nav_miles_id"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.MilesFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.MilesFragment"
         android:label="fragment_miles"
         tools:layout="@layout/fragment_miles" />
     <fragment
         android:id="@+id/nav_seals_id"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.CardFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
 </navigation>

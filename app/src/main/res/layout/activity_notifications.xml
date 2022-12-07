@@ -34,7 +34,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listId"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_margin="25dp"
+                tools:listitem="@layout/rv_notificaciones_items"/>
 
             <include layout="@layout/notifications_empty_layout"/>
 

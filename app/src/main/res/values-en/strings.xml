@@ -280,7 +280,7 @@
     <string name="close_label">Close</string>
     <string name="following_label">Following</string>
     <string name="coupons_list_label">Coupon list</string>
-    <string name="coupons_list_empty">Currently no coupons available</string>
+    <string name="coupons_list_empty">Currently no coupons \navailable</string>
     <string name="invalid_url">Invalid URL</string>
     <string name="app_url">https://beneficioslatam.com</string>
     <string name="sendto">Send to</string>

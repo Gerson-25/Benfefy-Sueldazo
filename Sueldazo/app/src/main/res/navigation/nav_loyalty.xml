@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.syntepro.sueldazo.ui.home.ui.fragments.HomeFragment"
+        android:name="com.appbenefy.sueldazo.ui.home.ui.fragments.HomeFragment"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_lealtad"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.LoyaltyInfoFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.LoyaltyInfoFragment"
         tools:layout="@layout/fragment_loyalty_info" >
         <action
             android:id="@+id/action_nav_lealtad_to_nav_loyalty_plan"
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_loyalty_plan"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.LoyaltyPlanFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.LoyaltyPlanFragment"
         android:label="Planes de Lealtad"
         tools:layout="@layout/fragment_loyalty_plan" >
         <argument
@@ -37,15 +37,15 @@
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.syntepro.sueldazo.ui.home.ui.fragments.ProfileFragment"
+        android:name="com.appbenefy.sueldazo.ui.home.ui.fragments.ProfileFragment"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_test"
-        android:name="com.syntepro.sueldazo.ui.home.WalletFragment"
+        android:name="com.appbenefy.sueldazo.ui.home.WalletFragment"
         android:label="WalletFragment" />
     <fragment
         android:id="@+id/nav_add_plan"
-        android:name="com.syntepro.sueldazo.ui.lealtad.ui.fragments.AddPlanFragment"
+        android:name="com.appbenefy.sueldazo.ui.lealtad.ui.fragments.AddPlanFragment"
         android:label="@string/loyalty_label"
         tools:layout="@layout/fragment_add_plan">
         <argument
@@ -55,10 +55,10 @@
     </fragment>
     <fragment
         android:id="@+id/nav_benfy"
-        android:name="com.syntepro.sueldazo.ui.home.ui.fragments.BenefyFragment"
+        android:name="com.appbenefy.sueldazo.ui.home.ui.fragments.BenefyFragment"
         android:label="" />
     <fragment
         android:id="@+id/nav_favorite"
-        android:name="com.syntepro.sueldazo.ui.home.ui.fragments.FavoriteFragment"
+        android:name="com.appbenefy.sueldazo.ui.home.ui.fragments.FavoriteFragment"
         android:label="FavoriteFragment" />
 </navigation>

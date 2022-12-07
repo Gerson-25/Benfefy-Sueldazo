@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.syntepro.sueldazo"
+    package="com.appbenefy.sueldazo"
     tools:ignore="LockedOrientationActivity">
 
     <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
@@ -327,7 +327,7 @@
         <!-- Share Provider -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.syntepro.sueldazo.provider"
+            android:authorities="com.appbenefy.sueldazo.provider"
             android:exported="false"
             android:grantUriPermissions="true">
 

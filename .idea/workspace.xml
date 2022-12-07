@@ -19,16 +19,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b054db7e-acab-4a3e-9688-4a72741d8613" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/SavingCategory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/PercentCustomFormatter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_shape_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bad_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_excelent_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_good_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_moreless_selected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_terrible_unselected.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_ticket_broken.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/saving_category_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/ScreenItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/ApiTracking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/GPS_Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/NetworkService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/OnCategoryClickListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/SavingCategory.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_lock_24.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -43,30 +41,504 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_AAChartModel_AAChartCore_Kotlin__SNAPSHOT_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_AAChartModel_AAChartCore_Kotlin__SNAPSHOT_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/sueldazo.app.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/androidTest/java/com/syntepro/appbeneficiosbolivia/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/androidTest/java/com/syntepro/appbeneficiosbolivia/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/database/DataBaseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/database/DataBaseAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/database/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/database/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/NavigationTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/NavigationTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/app/Provincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Cupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Cupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Cupon_Beneficio.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Cupon_Beneficio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/firebase/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/service/CercaDeTi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/entity/service/CercaDeTi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/dao/AccessDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/dao/AccessDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/database/RoomDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/database/RoomDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/CountryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/CountryUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/FirebaseToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/FirebaseToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/LocationServiceCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/LocationServiceCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NavigationCategoryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NavigationCategoryUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NavigationCouponUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NavigationCouponUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NotificationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/NotificationUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/RemoteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/RemoteConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/UserConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/room/entity/UserConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/ApiTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/ApiTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/GPS_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/GPS_Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/service/NetworkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/CercaDeTiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/CercaDeTiActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/adapter/NearAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/explore/adapter/NearAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/Cupon_BeneficioAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/Cupon_BeneficioAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/CustomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/home/adapter/CustomAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/menu/ScannerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/menu/ScannerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/sudamericana/viewModel/SurveyViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/ui/sudamericana/viewModel/SurveyViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/DispatchGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/java/com/syntepro/appbeneficiosbolivia/utils/DispatchGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/res/navigation/loyalty_detail_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/res/navigation/loyalty_detail_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/main/res/navigation/nav_loyalty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/main/res/navigation/nav_loyalty.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sueldazo/app/src/test/java/com/syntepro/appbeneficiosbolivia/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sueldazo/app/src/test/java/com/syntepro/appbeneficiosbolivia/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agconnect-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/agconnect-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/CredentialsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/CredentialsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/MyFirebaseMessagingService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/MyFirebaseMessagingService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/NetworkService2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/NetworkService2.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/FeaturedCouponRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/FeaturedCouponRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/RatingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/RatingActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/HomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/FeaturedGiftCardAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/SavingsCategoryAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/FavoriteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/FavoriteFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/ProfileFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/OTPValidationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/OTPValidationActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/StatisticsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/StatisticsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/syntepro/sueldazo/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/appbenefy/sueldazo/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/service/NotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/service/NotificationService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/coupon/AgencyActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/coupon/AgencyActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/coupon/AgencyDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/coupon/AgencyDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/coupon/CouponDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/coupon/CouponDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/explore/MapsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/explore/MapsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/location/LocationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/location/LocationService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/CredentialsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/CredentialsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/LogoutService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/LogoutService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/ResetPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/ResetPasswordActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/SignUpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/SignUpActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/WelcomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/WelcomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/menu/EditProfileActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/menu/EditProfileActivity2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/shop/ui/activities/MapDeliveryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/shop/ui/activities/MapDeliveryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/gms/res/layout/activity_agency.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/gms/res/layout/activity_agency.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/hms/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hms/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/accounts/model/AccountsApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/accounts/model/AccountsApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/accounts/model/AccountsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/accounts/model/AccountsRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/accounts/model/AccountsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/accounts/model/AccountsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/accounts/usecase/DoCustomerInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/accounts/usecase/DoCustomerInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/accounts/viewModel/AccountsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/accounts/viewModel/AccountsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/base/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/base/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/base/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/base/BaseRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/base/BaseRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/AndroidApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/AndroidApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/app/ErrorMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/app/ErrorMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/app/MerckersRadioGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/app/MerckersRadioGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/app/Version.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/app/Version.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/base/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/base/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/base/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/base/Fragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/base/Fragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/di/ApplicationComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/di/ApplicationComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/di/ApplicationModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/di/ApplicationModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/di/viewmodel/ViewModelModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/di/viewmodel/ViewModelModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/entities/BaseHeaderRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/entities/BaseHeaderRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/entities/BaseRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/entities/BaseRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/entities/BaseResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/entities/BaseResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/entities/BaseServiceRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/entities/BaseServiceRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/entities/ResultMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/entities/ResultMessage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/extension/Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/extension/Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/extension/BottomNavigationView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/extension/BottomNavigationView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/extension/CustomCardView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/extension/CustomCardView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/extension/ImageView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/extension/ImageView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/extension/TextInputLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/extension/TextInputLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/firebase/FirebaseApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/firebase/FirebaseApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/firebase/SnapshotLiveData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/firebase/SnapshotLiveData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/language/Language.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/language/Language.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/language/MerckersContextWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/language/MerckersContextWrapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/pickers/ImageChooser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/pickers/ImageChooser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/core/preference/AppPreference.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/core/preference/AppPreference.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/database/DataBaseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/database/DataBaseAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/database/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/database/DatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/Horarios.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/Horarios.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/NavigationCategory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/NavigationCategory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/NavigationCoupon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/NavigationCoupon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/NavigationTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/NavigationTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/Pais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/Provincia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/Provincia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/QRCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/QRCode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/ScreenItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/SocialUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/SocialUser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/app/UserQRInformation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/app/UserQRInformation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Comentario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Comentario.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Comercio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Comercio.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/ComercioPickList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/ComercioPickList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Cupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Cupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Cupon_Beneficio.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Cupon_Beneficio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/MisPlanesLealtad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/MisPlanesLealtad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/PlanLealtad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/PlanLealtad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Rubro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Rubro.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/SeguirComercio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/SeguirComercio.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/TarjetaSellos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/TarjetaSellos.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/TotalComercio.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/TotalComercio.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/firebase/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/firebase/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/AddFavoriteRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/AddFavoriteRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/Agency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/Agency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/AnonymousUser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/AnonymousUser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BaseRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BaseRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BaseResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BaseResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BaseResponseBoolean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BaseResponseBoolean.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BaseResponseModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BaseResponseModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BaseResponseString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BaseResponseString.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/BranchOfficeWS.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/BranchOfficeWS.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/Category.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/Category.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/CategoryRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/CategoryRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/CercaDeTi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/CercaDeTi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/City.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/City.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/GetUserRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/GetUserRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/NotificacionPushWS.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/NotificacionPushWS.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/PresentDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/PresentDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/PushProximidad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/PushProximidad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/SaveUserRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/SaveUserRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/ScheduleRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/ScheduleRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/ScheduleResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/ScheduleResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/State.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/State.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/StatesRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/StatesRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/Sucursal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/Sucursal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/Sucursales.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/Sucursales.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/TokenRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/TokenRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/UnlinkLoyalty.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/UnlinkLoyalty.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/UpdateActualCountryRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/UpdateActualCountryRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/UserOrder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/UserOrder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/UserTokenRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/UserTokenRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/UserUpdateRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/UserUpdateRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VIPCategoryActiveWS.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VIPCategoryActiveWS.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VersionRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VersionRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/Versions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/Versions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VersionsRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VersionsRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VipActiveCommerceWS.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VipActiveCommerceWS.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VipCategorySearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VipCategorySearch.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VipCommerceSearch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VipCommerceSearch.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VipCoupon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VipCoupon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/entity/service/VipCouponsRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/entity/service/VipCouponsRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/converter/DateConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/converter/DateConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/dao/AccessDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/dao/AccessDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/database/Executor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/database/Executor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/database/RoomDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/database/RoomDataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/CountryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/CountryUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/FirebaseToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/FirebaseToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/LocationServiceCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/LocationServiceCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/NavigationCategoryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/NavigationCategoryUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/NavigationCouponUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/NavigationCouponUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/NotificationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/NotificationUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/RemoteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/RemoteConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/room/entity/UserConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/room/entity/UserConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/ApiConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/ApiConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/ApiTracking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/BaseDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/BaseDataSource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/BaseDataSourceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/BaseDataSourceFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/GPS_Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/InvoiceIntegration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/InvoiceIntegration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/MyFirebaseMessagingService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/NetworkService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/NetworkService2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/NetworkService2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/RetrofitClientInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/RetrofitClientInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/ServiceStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/ServiceStatus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/State.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/State.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyDetailRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyDetailRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyDetailResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyDetailResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/model/AgencyService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/model/AgencyService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/ui/AgencyDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/ui/AgencyDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/ui/activities/AgencyActivity2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/ui/activities/AgencyActivity2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/ui/adapters/AgencyAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/ui/adapters/AgencyAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/usecase/DoAgencyDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/usecase/DoAgencyDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/agency/viewModel/AgencyViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/agency/viewModel/AgencyViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/benefy/BenefyDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/benefy/BenefyDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/benefy/PromotionalCodeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/benefy/PromotionalCodeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/benefy/model/PurchasedProductDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/benefy/model/PurchasedProductDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/benefy/model/PurchasedProductDetailRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/benefy/model/PurchasedProductDetailRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/category/CategoryActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/category/CategoryActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/adapter/CommerceListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/adapter/CommerceListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/BranchRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/BranchRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/BranchResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/BranchResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceAgencyRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceAgencyRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceAgencyResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceAgencyResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceByBranchDataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceByBranchDataModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceByBranchRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceByBranchRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceByBranchResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceByBranchResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceDataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceDataModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceDetailRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceDetailRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceDetailResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceDetailResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceFilterRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceFilterRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceFilterResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceFilterResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/CommerceService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/CommerceService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/OnCategoryClickListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/ParentDataFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/ParentDataFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/model/ParentModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/model/ParentModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/BranchDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/BranchDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/CommerceAgencyDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/CommerceAgencyDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/CommerceByBranchDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/CommerceByBranchDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/CommerceByBranchesDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/CommerceByBranchesDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/activities/BranchFilterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/activities/BranchFilterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/activities/Commerce2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/activities/Commerce2Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/activities/CommerceDetail2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/activities/CommerceDetail2Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/activities/CommerceList2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/activities/CommerceList2Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/adapters/BranchAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/adapters/BranchAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/adapters/CommerceByBranchesAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/adapters/CommerceByBranchesAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/adapters/CommerceListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/adapters/CommerceListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/ui/adapters/CustomSearchAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/ui/adapters/CustomSearchAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/usecase/DoBranch.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/usecase/DoBranch.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/usecase/DoCommerce.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/usecase/DoCommerce.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/usecase/DoCommerceAgency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/usecase/DoCommerceAgency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/usecase/DoCommerceDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/usecase/DoCommerceDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/usecase/DoCommerceFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/usecase/DoCommerceFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/commerce/viewModel/CommerceViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/commerce/viewModel/CommerceViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/QRAmountActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/QRAmountActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/QRDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/QRDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/adapter/PagingCardAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/adapter/PagingCardAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/adapter/VipCouponAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/adapter/VipCouponAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/BestDiscountRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/BestDiscountRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/BestDiscountResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/BestDiscountResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponAgencyRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponAgencyRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponAgencyResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponAgencyResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponDetailRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponDetailRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponDetailResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponDetailResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponListRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponListRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponListResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponListResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/CouponService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/CouponService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/FeaturedCouponRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/FeaturedCouponRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/FeaturedCouponResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/FeaturedCouponResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/SaveCouponRatingRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/SaveCouponRatingRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/model/UpdateCouponQuantityRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/model/UpdateCouponQuantityRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/BestDiscountDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/BestDiscountDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/CouponListDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/CouponListDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/FavoriteData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/FavoriteData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/FeaturedCouponDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/FeaturedCouponDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/BestDiscountListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/activities/BestDiscountListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/activities/CouponListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/RatingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/activities/RatingActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/adapters/BestDiscountListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/adapters/BestDiscountListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/adapters/BestDiscountMosaicAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/adapters/BestDiscountMosaicAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/adapters/CouponListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/adapters/CouponListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/adapters/CouponMosaicAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/adapters/CouponMosaicAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoBestDiscounts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoBestDiscounts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoCouponAgency.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoCouponAgency.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoCouponDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoCouponDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoCouponList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoCouponList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoCouponRating.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoCouponRating.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoFeaturedCoupons.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoFeaturedCoupons.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/usecase/DoUpdateCouponQuantity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/usecase/DoUpdateCouponQuantity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/viewModel/CouponViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/viewModel/CouponViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/explore/CercaDeTiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/explore/CercaDeTiActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/explore/ExploreCouponsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/explore/ExploreCouponsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/explore/adapter/CardAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/explore/adapter/CardAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/explore/adapter/NearAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/explore/adapter/NearAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/extras/IntroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/extras/IntroActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/extras/adapter/IntroViewPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/extras/adapter/IntroViewPagerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/filter/FilterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/filter/FilterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/ErrorInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/ErrorInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/ExchangeInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/ExchangeInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/InformationDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/InformationDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/StampsQRInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/StampsQRInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/SuccessGiftActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/SuccessGiftActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/UserQRInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/UserQRInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/general/WarningInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/general/WarningInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/WalletFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/WalletFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/adapter/CategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/adapter/CategoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/adapter/Cupon_BeneficioAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/adapter/Cupon_BeneficioAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/adapter/CustomAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/adapter/CustomAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/adapter/GiftCardsAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/adapter/ItemAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/domain/CategoryRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/domain/CategoryRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/ArticleResponseDataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/ArticleResponseDataModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/BannerRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/BannerRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/BannerResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/BannerResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/CategoryRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/CategoryRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/FavoriteRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/FavoriteRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/FavoriteResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/FavoriteResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/FeaturedGiftCardRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/FeaturedGiftCardRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/HomeApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/HomeApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/HomeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/HomeRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/HomeService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/HomeService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/ParameterRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/ParameterRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/ParameterResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/ParameterResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/PurchasedProductsRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/PurchasedProductsRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/PurchasedProductsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/PurchasedProductsResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/RegisterCodeRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/RegisterCodeRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/RegisterCodeResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/RegisterCodeResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/SavingCategory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/StatesRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/StatesRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/StatesResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/StatesResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/SudamericanaData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/SudamericanaData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/TransactionData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/TransactionData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/model/UserSavingsRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/model/UserSavingsRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/ArticlesDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/ArticlesDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/BannerDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/BannerDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/FavoriteDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/FavoriteDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/PurchaseProductDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/PurchaseProductDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/ArticleAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/BannerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/BannerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/BestDiscountAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/BestDiscountAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/FavoriteAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/FavoriteAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/FeaturedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/FeaturedAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/ProductsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/ProductsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/adapters/SavingsCategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/adapters/SavingsCategoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/BenefyFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/fragments/BenefyFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/FavoriteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/fragments/FavoriteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/fragments/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/ui/fragments/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/ui/fragments/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoBanners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoBanners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoCategories.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoCategories.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoFavorites.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoFavorites.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoFeaturedGiftCards.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoGiftCards.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoItems.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoParameters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoParameters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoPurchaseProducts.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoPurchaseProducts.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoStates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoStates.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/usecase/DoUserSavings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/usecase/DoUserSavings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/viewModel/CategoryViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/viewModel/CategoryViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/home/viewModel/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/home/viewModel/HomeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/CitySelectionActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/CitySelectionActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/ConditionsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/ConditionsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/OTPValidationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/OTPValidationActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/UserData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ObtenerTokenRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ObtenerTokenRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ObtenerTokenResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ObtenerTokenResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ValidarClienteRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ValidarClienteRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ValidarClienteResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ValidarClienteResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ValidateTokenRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ValidateTokenRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/model/ValidateTokenResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/login/model/ValidateTokenResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/AboutActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/AboutActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/CommentsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/CommentsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/ConfigurationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/ConfigurationActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/HelpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/HelpActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/ProfileActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/ProfileActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/ScannerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/ScannerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/menu/adapter/CommentsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/menu/adapter/CommentsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationCountRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationCountRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationCountResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationCountResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/NotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/NotificationService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/model/ReadNotificationRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/model/ReadNotificationRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/ui/NotificationDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/ui/NotificationDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/ui/activities/NotificationsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/ui/activities/NotificationsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/ui/adapter/NotificationsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/ui/adapter/NotificationsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/usecase/DoNotification.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/usecase/DoNotification.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/usecase/DoNotificationCount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/usecase/DoNotificationCount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/usecase/DoReadNotification.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/usecase/DoReadNotification.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/notifications/viewModel/NotificationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/notifications/viewModel/NotificationViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/ProfileApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/ProfileApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/ProfileRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/ProfileRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/ProfileService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/ProfileService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/Stats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/Stats.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/TransactionDetailRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/TransactionDetailRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/TransactionDetailResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/TransactionDetailResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/TransactionRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/TransactionRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/TransactionResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/TransactionResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/TransactionsByDateDataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/TransactionsByDateDataModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/UserStatsRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/UserStatsRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/UserStatsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/UserStatsResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/model/YearStats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/model/YearStats.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/TransactionDiff.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/TransactionDiff.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/BottomNavigationDrawerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/activities/BottomNavigationDrawerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/StatisticsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/activities/StatisticsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/TransactionsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/activities/TransactionsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/activities/TransactionsInfoDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/activities/TransactionsInfoDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/ui/adapters/TransactionsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/ui/adapters/TransactionsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/usecase/DoTransactionDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/usecase/DoTransactionDetail.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/usecase/DoUserStats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/usecase/DoUserStats.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/usecase/DoUserTransactions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/usecase/DoUserTransactions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/profile/viewModel/ProfileViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/profile/viewModel/ProfileViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ArticleRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ArticleResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/CountriesRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/CountriesResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/DeliveryDetail.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/DeliveryPrices.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/DispatchPoints.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/DistanceAmountDeliveryRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/DistanceAmountDeliveryResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/GiftCard.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/GiftCardDetailRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/GiftCardRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/GiftDetailRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/GiftDetailResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ItemDetailRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/PaymentOrderRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/PaymentOrderResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ProcessPaymentRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ShopApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ShopRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/ShopService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/model/UserArticleGift.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/GiftCardDiff.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/OnlineCouponDiff.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/CardInformationActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/CouponGiftDetailActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/DeliveryInformationActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/GiftCouponInformationActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/GiftDetailActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/InvoiceActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/PaymentOrderActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/ShopActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/ShopDetailActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/SuccessGiftUserActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/activities/SuccessPaymentActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/adapters/DiscountAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/ui/adapters/GiftCardAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/usecase/DoGiftDetail.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/viewModel/DiscountViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/viewModel/GiftCardViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/shop/viewModel/ShopViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/model/SudamericanaApi.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/model/SudamericanaRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/model/SudamericanaService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/model/SurveyRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/activities/SurveyActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/FifthQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/FirstQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/FourthQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/SecondQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/SixthQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/ui/fragments/ThirdQuestionFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/usecase/DoSaveSurvey.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/sudamericana/viewModel/SurveyViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/CircleButton.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/MilesGoalsInfoDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/StampCardInfoDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/StampInfoDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/StampsAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/wallet/WalletAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/CircleTransform.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/CircleTransform.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/DispatchGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/DispatchGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/Functions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/Functions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/Global.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/Global.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/Helpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/Helpers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/NotificationCenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/NotificationCenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/PercentCustomFormatter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/PercentCustomFormatter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/PreCachingLayoutManagerHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/PreCachingLayoutManagerHelper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/ProportionalImageView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/ProportionalImageView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/TextView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/TextView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/UploadData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/UploadData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/utils/UserType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/utils/UserType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/ErrorEditText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/ErrorEditText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickerDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickerDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickerEditText.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/syntepro/util/picker/PickerEditText.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_benefy_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_benefy_detail.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon_detail2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon_detail2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_statistics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notifications.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_shop_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_shop_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/best_discounts_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/best_discounts_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/data_transaction_section_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/data_transaction_section_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/empty_featured_coupons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty_featured_coupons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/empty_home_discount_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/empty_home_discount_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/featured_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/featured_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/rv_notificaciones_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/rv_notificaciones_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/loyalty_detail_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/loyalty_detail_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_loyalty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_loyalty.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-en/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/syntepro/sueldazo/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/appbenefy/sueldazo/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +572,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="Gerson-dev" />
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,7 +588,6 @@
   <component name="ProjectId" id="2ArAGkVYimEusFg13Gnsa9Zqs77" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -136,13 +607,13 @@
     <property name="android-custom-viewC:/Users/msi/StudioProjects/sueldazo/app/src/main/java/com/syntepro/sueldazo/utils/ProportionalImageView.kt_SELECTED" value="ProportionalImageView" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\msi\StudioProjects\sueldazo\app" />
       <recent name="C:\Users\msi\StudioProjects\sueldazo\app\src\main\res\drawable" />
       <recent name="C:\Users\msi\StudioProjects\sueldazo\app\src\main\res\layout" />
-      <recent name="C:\Users\msi\StudioProjects\sueldazo\app" />
       <recent name="C:\Users\msi\StudioProjects\beneficios-app-bolivia\AppBeneficiosBolivia\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -152,6 +623,7 @@
       <recent name="com.syntepro.appbeneficiosbolivia" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.appbenefy.sueldazo.ui.savings.ui.activities" />
       <recent name="com.syntepro.appbeneficiosbolivia.entity.service" />
     </key>
   </component>
@@ -241,54 +713,59 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/service/MyFirebaseMessagingService.kt</url>
-          <line>81</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>77</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/SignUpActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/SignUpActivity.kt</url>
           <line>83</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/CredentialsActivity.kt</url>
-          <line>121</line>
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/CredentialsActivity.kt</url>
+          <line>132</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/login/OTPValidationActivity.kt</url>
-          <line>50</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/SignUpActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/SignUpActivity.kt</url>
           <line>177</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/gms/java/com/syntepro/sueldazo/ui/login/SignUpActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/gms/java/com/appbenefy/sueldazo/ui/login/SignUpActivity.kt</url>
           <line>176</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt</url>
-          <line>121</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt</url>
-          <line>224</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt</url>
-          <line>203</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/syntepro/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/ui/coupon/ui/activities/CouponDetail2Activity.kt</url>
           <line>207</line>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>33</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>27</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>43</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/appbenefy/sueldazo/service/MyFirebaseMessagingService.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

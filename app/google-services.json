@@ -1,49 +1,34 @@
 {
   "project_info": {
-    "project_number": "845383368644",
-    "project_id": "bex-desarrollo",
-    "storage_bucket": "bex-desarrollo.appspot.com"
+    "project_number": "399689643773",
+    "project_id": "sueldazo-3dff4",
+    "storage_bucket": "sueldazo-3dff4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:845383368644:android:6d466a6c55cbfec6dbae91",
+        "mobilesdk_app_id": "1:399689643773:android:d05bce2542317b3c617094",
         "android_client_info": {
-          "package_name": "com.syntepro.appbeneficiosbolivia"
+          "package_name": "com.appbenefy.sueldazo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "845383368644-r8tg7dc6qjspvrmn8debjui0ppb4cte9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.syntepro.appbeneficiosbolivia",
-            "certificate_hash": "d17356f724dc4fecc2c3a83fa52db117acee9e8d"
-          }
-        },
-        {
-          "client_id": "845383368644-2774lopdpqlvnailnmvol23itpb3m0nt.apps.googleusercontent.com",
+          "client_id": "399689643773-2k699gpmr2m2ajlofu6g78j3pmu7eg77.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCAx5NFwRx5RrvlMHBNESeDZFTc6NJ6Pu0"
+          "current_key": "AIzaSyCbs604Cl5suyI6Xb-FfIm6c58MrB1MMVg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "845383368644-2774lopdpqlvnailnmvol23itpb3m0nt.apps.googleusercontent.com",
+              "client_id": "399689643773-2k699gpmr2m2ajlofu6g78j3pmu7eg77.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "845383368644-8imc708v00kemvdad395bh4v39e1m8iu.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.syntepro.boliviaBeneficios"
-              }
             }
           ]
         }

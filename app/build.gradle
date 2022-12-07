@@ -13,7 +13,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.syntepro.appbeneficiosbolivia"
+        applicationId "com.appbenefy.sueldazo"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

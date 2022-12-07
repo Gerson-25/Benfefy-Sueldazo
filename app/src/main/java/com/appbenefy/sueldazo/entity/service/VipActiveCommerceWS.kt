@@ -1,0 +1,7 @@
+package com.appbenefy.sueldazo.entity.service
+
+class VipActiveCommerceWS {
+    var pais:String? = ""
+    var idUsuario:String? = ""
+    var idComercio:String? = ""
+}

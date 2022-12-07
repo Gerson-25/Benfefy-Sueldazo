@@ -2,9 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemId"
     android:layout_width="match_parent"
-    android:layout_height="175dp"
+    android:layout_height="155dp"
     android:layout_margin="15dp"
     android:foregroundTint="@android:color/transparent"
     cardview:cardBackgroundColor="@android:color/transparent"
@@ -18,20 +19,43 @@
         android:backgroundTint="@color/lightPrimary"
         android:orientation="horizontal">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/commerceImageId"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            style="@style/CustomCardViewStyle"
-            android:layout_margin="@dimen/base_margin"
-            android:src="@drawable/benefy_promotional"
-            android:background="@drawable/accent_button"
-            android:contentDescription="@string/commerce_info_label"
-            cardview:layout_constraintBottom_toBottomOf="parent"
-            cardview:layout_constraintStart_toStartOf="parent"
-            cardview:layout_constraintTop_toTopOf="parent" />
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/commerceImageId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                style="@style/CustomCardViewStyle"
+                android:layout_margin="@dimen/base_margin"
+                android:src="@drawable/benefy_promotional"
+                android:background="@drawable/accent_button"
+                android:contentDescription="@string/commerce_info_label"
+                cardview:layout_constraintBottom_toBottomOf="parent"
+                cardview:layout_constraintStart_toStartOf="parent"
+                cardview:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blockedCoupon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                cardview:cardCornerRadius="45dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                cardview:cardBackgroundColor="@color/colorPrimary">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:src="@drawable/ic_baseline_lock_24"/>
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +107,7 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:background="@drawable/accent_button"
                     android:backgroundTint="@color/colorAccent"
                     android:textAllCaps="false"

@@ -1,6 +1,6 @@
-package com.syntepro.sueldazo;
+package com.appbenefy.sueldazo;
 
-import com.syntepro.sueldazo.utils.UploadData;
+import com.appbenefy.sueldazo.utils.UploadData;
 
 import org.junit.Test;
 

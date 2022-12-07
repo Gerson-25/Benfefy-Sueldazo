@@ -23,7 +23,7 @@
 		"project_id":"9105385871708451134",
 		"app_id":"101700091",
 		"api_key":"CV5qYDvCLKYFz24wlUmCsjOjrWR8owmgVeHxYovlY7FhzNhtuY7+sgpLSwRUkRwO3rlxTk0mjAMvu4xjoC4IdYdLT/yB",
-		"package_name":"com.syntepro.appbeneficiosbolivia"
+		"package_name":"com.appbenefy.sueldazo"
 	},
 	"service":{
 		"analytics":{
@@ -45,7 +45,7 @@
 	"configuration_version":"2.0",
 	"appInfos":[
 		{
-			"package_name":"com.syntepro.appbeneficiosbolivia",
+			"package_name":"com.appbenefy.sueldazo",
 			"app_id":"101700091"
 		}
 	]

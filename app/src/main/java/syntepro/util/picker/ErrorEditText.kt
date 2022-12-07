@@ -14,7 +14,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.syntepro.sueldazo.R
+import com.appbenefy.sueldazo.R
 
 /**
  * Parent [android.widget.EditText] for storing and displaying error states.

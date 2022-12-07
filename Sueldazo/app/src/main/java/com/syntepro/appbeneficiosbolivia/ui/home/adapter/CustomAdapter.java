@@ -1,4 +1,4 @@
-package com.syntepro.sueldazo.ui.home.adapter;
+package com.appbenefy.sueldazo.ui.home.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.syntepro.sueldazo.R;
+import com.appbenefy.sueldazo.R;
 
 import java.util.ArrayList;
 
