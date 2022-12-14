@@ -3,6 +3,7 @@ package com.appbenefy.sueldazo.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
@@ -21,6 +22,7 @@ import com.appbenefy.sueldazo.utils.Constants
 import com.appbenefy.sueldazo.utils.Functions
 import com.appbenefy.sueldazo.utils.Functions.Companion.showError
 import com.appbenefy.sueldazo.utils.Underline
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.activity_o_t_p_validation.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,6 +40,10 @@ class OTPValidationActivity : BaseActivity() {
     var cellPhone: String = "-------"
     var alreadyRegister: Boolean = false
     var idClient: Int? = null
+    var names: String? = null
+    var lastNames: String? = null
+    var dateBirth: String? = null
+    var email: String?  = null
 
     @OptIn(ExperimentalTime::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +59,10 @@ class OTPValidationActivity : BaseActivity() {
             cellPhone = extras.getString("cellPhone", "-------")!!
             alreadyRegister = extras.getBoolean("isBenefyClient", false)
             idClient = extras.getInt("idClient", 0)
+            names = extras.getString("names", "")
+            lastNames = extras.getString("lastNames", "")
+            dateBirth = extras.getString("dateBirth", "")
+            email = extras.getString("email", "")
         }
 
         val countDownTimer = object : CountDownTimer(300000, 1000){
@@ -82,7 +92,7 @@ class OTPValidationActivity : BaseActivity() {
             if (otpId.text.toString().isNotEmpty()) {
                 showLoading(true)
                 validateOtp()
-            } else Functions.showError(this@OTPValidationActivity, "Ingrese el código OTP enviado a su número telefónico", "Ingrese OTP")
+            } else showError(this@OTPValidationActivity, "Ingrese el código OTP enviado a su número telefónico", "Ingrese OTP")
         }
 
         sendDisclaimer.text = "Acabamos de enviar un código mediante sms al número $cellPhone, que nos permitirá validar tu cuenta."
@@ -317,12 +327,18 @@ class OTPValidationActivity : BaseActivity() {
     private fun signUp(){
         val intent = Intent(this@OTPValidationActivity, SignUpActivity::class.java)
         intent.putExtra("isAnonymousUser", false)
+        intent.putExtra("names", names)
+        intent.putExtra("lastNames", lastNames)
+        intent.putExtra("dateBirth", dateBirth)
+        intent.putExtra("email", email)
         intent.putExtra("documentId", documentId)
+        intent.putExtra("cellPhone", cellPhone)
         startActivity(intent)
     }
 
     private fun goToHome(){
-        val intent = Intent(this@OTPValidationActivity, HomeActivity::class.java)
+        Constants.TYPE_OF_USER = UserType.VERIFIED_USER
+        val intent = Intent(this, HomeActivity::class.java)
         intent.putExtra("isAnonymousUser", false)
         startActivity(intent)
     }

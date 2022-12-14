@@ -309,9 +309,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="65498c" />
-                            <entry key="outputName" value="ic_baseline_close_24" />
-                            <entry key="sourceFile" value="C:\Users\msi\Downloads\ticket_broken.svg" />
+                            <entry key="outputName" value="ic_card_1" />
+                            <entry key="sourceFile" value="C:\Users\msi\Downloads\SVG-20221018T034022Z-001\SVG\card-1.svg" />
                           </map>
                         </option>
                       </PersistentState>

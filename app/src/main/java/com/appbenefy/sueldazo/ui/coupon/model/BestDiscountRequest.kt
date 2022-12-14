@@ -8,7 +8,7 @@ data class BestDiscountRequest(
         val language: Int,
         val recordsNumber: Int,
         val pageNumber: Int,
-        val idCategoryType: String
-//        val longitude: Double?,
-//        val latitude: Double?
+        val idCategoryType: String,
+        val longitude: Double?,
+        val latitude: Double?
 )

@@ -2,10 +2,12 @@ package com.appbenefy.sueldazo.ui.login
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.ArrayAdapter
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.github.rtoshiro.util.format.SimpleMaskFormatter
 import com.github.rtoshiro.util.format.text.MaskTextWatcher
@@ -29,6 +31,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.ZoneOffset
 import java.util.*
 import java.util.regex.Pattern
 
@@ -37,12 +41,16 @@ class SignUpActivity : AppCompatActivity() {
     private val adapter by lazy { DataBaseAdapter(this.applicationContext) }
     private val mCalendar = Calendar.getInstance()
     private var mDateSelected: Date? = Date()
-    private val nomCountry = ArrayList<String>()
-    private val flags = intArrayOf(R.drawable.sv, R.drawable.bo, R.drawable.gt)
     private val format = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     var isAnonymousUser = false
     var document = ""
+    var names: String? = null
+    var lastNames: String? = null
+    var dateBirth: String? = null
+    var email: String?  = null
+    var cellPhone: String = "-------"
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -50,11 +58,19 @@ class SignUpActivity : AppCompatActivity() {
         // Init DataBase
         adapter.createDatabase()
 
+
         val extras = intent.extras
         if (extras != null) {
+            cellPhone = extras.getString("cellPhone", "-------")!!
             isAnonymousUser = extras.getBoolean("isAnonymousUser", false)
             document = extras.getString("documentId", "")
+            names = extras.getString("names", "")
+            lastNames = extras.getString("lastNames", "")
+            dateBirth = extras.getString("dateBirth", "")
+            email = extras.getString("email", "")
         }
+
+        initForm()
 
         // Gender Status Spinner
         val g = arrayOf(getString(R.string.male), getString(R.string.female))
@@ -76,7 +92,8 @@ class SignUpActivity : AppCompatActivity() {
 
         setAnonymousFields(isAnonymousUser)
 
-        button.setOnClickListener {
+        signup.setOnClickListener {
+            showLoading(true)
             val formIsValid = if (isAnonymousUser) validateAnonymousForm() else validateForm()
             if (formIsValid) {
                 if (isAnonymousUser) saveAnonymousData() else saveData()
@@ -121,6 +138,20 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    private fun initForm(){
+        edt_nombre.setText(names ?: "")
+        edt_apellido.setText(lastNames ?: "")
+        edt_telefono.setText(cellPhone)
+        edt_email.setText(email ?: "")
+        dateField.setText(dateBirth ?: "")
+
+        edt_nombre.isEnabled = false
+        edt_apellido.isEnabled = false
+        edt_telefono.isEnabled =  cellPhone == "-------"
+        edt_email.isEnabled = false
+        dateField.isEnabled = false
+    }
+
     private fun updateLabel() {
         dateField.setText(Helpers.dateToStrReg(mCalendar.time, DateFormat.DATE_FIELD))
         mDateSelected = mCalendar.time
@@ -160,16 +191,20 @@ class SignUpActivity : AppCompatActivity() {
         ).show()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun saveData(){
         val request = with(SaveUserRequest()) {
+            country = "BO"
+            actualCountry = "BO"
             names = tl_nombre.editText?.text.toString()
             lastNames = tl_apellido.editText?.text.toString()
-            birthDate = format.format(mDateSelected ?: Date())
+            birthDate = LocalDate.parse(dateBirth).atStartOfDay(ZoneOffset.UTC).toString()
             email = edt_email.text.toString()
             phone = edt_telefono.text.toString().replace("-", "")
             idDocument = document.toLong()
             gender = sp_genero.selectedItem.toString()
             maritalStatus = sp_estado.selectedItem.toString()
+            photoUrl = "https://firebasestorage.googleapis.com/v0/b/beneficios-uat.appspot.com/o/imagesProfile%2FBdq8CvOHCGgIvnYmGLSKF9HNzlv2?alt=media&token=821c4ca1-11ca-440b-9a37-1e0888398eec"
             this
         }
         val job = Job()
@@ -189,7 +224,7 @@ class SignUpActivity : AppCompatActivity() {
                                     names = request.names
                                     lastNames = request.lastNames
                                     phone = request.phone?.replace("-", "")
-                                    birthDate = request.birthDate
+                                    birthDate = request.birthDate.toString()
                                     gender = request.gender
                                     maritalStatus = request.maritalStatus
                                     photoUrl = request.photoUrl
@@ -212,21 +247,18 @@ class SignUpActivity : AppCompatActivity() {
                         } else {
                             val message = ret.description ?: getString(R.string.social_error)
                             showError(this@SignUpActivity, message, getString(R.string.error_message_title))
-                            progress_circular.visibility = View.GONE
-                            button.visibility = View.VISIBLE
+                            showLoading(false)
                         }
                     }
                     else -> {
                         val message = response.message() ?: getString(R.string.social_error)
                         showError(this@SignUpActivity, message, getString(R.string.error_message_title))
-                        progress_circular.visibility = View.GONE
-                        button.visibility = View.VISIBLE
+                        showLoading(false)
                     }
                 }
             } catch (e: Exception) {
                 showError(this@SignUpActivity, getString(R.string.social_error), getString(R.string.error_message_title))
-                progress_circular.visibility = View.GONE
-                button.visibility = View.VISIBLE
+                showLoading(false)
             }
         }
     }
@@ -240,6 +272,11 @@ class SignUpActivity : AppCompatActivity() {
         }
         Constants.userProfile = userProfile
         updateUI()
+    }
+
+    fun showLoading(show: Boolean){
+        progress_circular.visibility = if (show) View.VISIBLE else View.GONE
+        signup.visibility = if (show) View.GONE else View.VISIBLE
     }
 
     // Update UI

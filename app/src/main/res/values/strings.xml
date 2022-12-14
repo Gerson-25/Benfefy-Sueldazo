@@ -308,7 +308,7 @@ Luego de completar el proceso de inscripción al Servicio, Ud. recibirá una con
     <string name="close_label">Cerrar</string>
     <string name="following_label">Siguiendo</string>
     <string name="coupons_list_label">Lista de Cupones</string>
-    <string name="coupons_list_empty">Actualmente no hay \ncupones disponibles</string>
+    <string name="coupons_list_empty">No hay cupones</string>
     <string name="invalid_url">URL Inválida</string>
     <string name="app_url">https://beneficioslatam.com</string>
     <string name="sendto">Enviado a</string>

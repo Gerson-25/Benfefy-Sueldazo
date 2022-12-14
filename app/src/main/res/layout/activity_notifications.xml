@@ -7,16 +7,95 @@
     android:orientation="vertical"
     tools:context=".ui.notifications.ui.activities.NotificationsActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/mainToolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ToolbarTheme"
-        app:titleTextColor="@color/white"
-        tools:targetApi="lollipop" />
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@color/white"
+            android:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_margin="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/welcomeId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/worksans_regular"
+                        android:textSize="20sp"
+                        android:text="@string/welcome"
+                        android:gravity="center_vertical"
+                        tools:text="Hola Usuario,"/>
+                    <TextView
+                        android:id="@+id/checkProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/worksans_regular"
+                        android:textSize="14sp"
+                        android:text="Revisa tu información"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ntfId"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/ic_empty_notifications"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="20dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:cardCornerRadius="25dp"
+            app:cardBackgroundColor="@color/colorPrimary">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:tint="@color/white"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/ic_notification"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/worksans_bold"
+            android:textSize="18sp"
+            android:layout_marginStart="@dimen/base_margin"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="center_vertical"
+            android:text="@string/notificaciones_menu"/>
+    </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScroll"

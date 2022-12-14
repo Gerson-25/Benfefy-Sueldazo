@@ -10,8 +10,9 @@ import retrofit2.http.POST
 interface ProfileApi {
     companion object {
         private const val USER_STATS = "User/GetUserStats"
-        private const val USER_TRANSACTION = "Transaction/GetTransactionsList"
+        private const val USER_TRANSACTION = "User/GetUserSavingDetails"
         private const val TRANSACTION_DETAIL = "Transaction/GetTransactionDetail"
+        private const val SAVINGS_RESUME = "User/GetUserSavingHeader"
     }
 
     @Headers(CONTENT_TYPE_JSON)
@@ -24,11 +25,17 @@ interface ProfileApi {
     @POST(USER_TRANSACTION)
     fun getUserTransactions(
             @Body body: TransactionRequest
-    ): Call<BaseResponse<List<TransactionResponse>>>
+    ): Call<BaseResponse<SavingDetailsResponse>>
 
     @Headers(CONTENT_TYPE_JSON)
     @POST(TRANSACTION_DETAIL)
     fun getTransactionDetail(
             @Body body: TransactionDetailRequest
     ): Call<BaseResponse<TransactionDetailResponse>>
+
+    @Headers(CONTENT_TYPE_JSON)
+    @POST(SAVINGS_RESUME)
+    fun getSavingsResume(
+        @Body body: TransactionRequest
+    ): Call<BaseResponse<SavingResumeResponse>>
 }

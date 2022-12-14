@@ -7,6 +7,9 @@ import android.widget.RelativeLayout
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.appbenefy.sueldazo.R
+import com.appbenefy.sueldazo.ui.coupon.model.FeaturedCouponResponse
+import com.appbenefy.sueldazo.ui.coupon.ui.FeaturedCouponDiff
+import com.appbenefy.sueldazo.ui.profile.model.SavingDetails
 import com.appbenefy.sueldazo.ui.profile.model.TransactionsByDateDataModel
 import com.appbenefy.sueldazo.ui.profile.ui.TransactionDiff
 import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsActivity
@@ -18,15 +21,15 @@ import javax.inject.Inject
 import kotlin.properties.Delegates
 
 class TransactionsAdapter @Inject constructor() :
-        PagedListAdapter<TransactionsByDateDataModel, TransactionsAdapter.BaseViewHolder<*>>(
-                TransactionDiff()
+        PagedListAdapter<FeaturedCouponResponse, TransactionsAdapter.BaseViewHolder<*>>(
+            FeaturedCouponDiff()
         ) {
 
     private var activity: TransactionsActivity? = null
 
     fun setActivity(activity: TransactionsActivity) { this.activity = activity }
 
-    internal var collection: List<TransactionsByDateDataModel> by Delegates.observable(emptyList()) { _, _, _ ->
+    internal var collection: List<SavingDetails> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
     }
 
@@ -58,32 +61,32 @@ class TransactionsAdapter @Inject constructor() :
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return collection[position].type
-    }
+//    override fun getItemViewType(position: Int): Int {
+//        return collection[position].type
+//    }
 
     abstract class BaseViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
         abstract fun bind(item: T, position: Int)
     }
 
-    inner class HeaderViewHolder(val view: View): BaseViewHolder<TransactionsByDateDataModel>(view) {
-        override fun bind(item: TransactionsByDateDataModel, position: Int) {
-            view.monthNameId.text = item.month
-
-            view.setOnClickListener { activity?.collapseMonth(item.numberMonth, item.year) }
+    inner class HeaderViewHolder(val view: View): BaseViewHolder<SavingDetails>(view) {
+        override fun bind(item: SavingDetails, position: Int) {
+//            view.monthNameId.text = item.month
+//
+//            view.setOnClickListener { activity?.collapseMonth(item.numberMonth, item.year) }
         }
     }
 
-    inner class DataViewHolder(val view: View): BaseViewHolder<TransactionsByDateDataModel>(view) {
-        override fun bind(item: TransactionsByDateDataModel, position: Int) {
-            if (item.transaction.visible) {
-                view.containerCard.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-                view.titleId.text = item.transaction.title
-                view.dateId.text = "${view.context.getString(R.string.transaction_date)} ${Helpers.dateToStr(item.transaction.transactionDate, DateFormat.LONG)}"
-            } else
-                view.containerCard.layoutParams = RelativeLayout.LayoutParams(0, 0)
-
-            view.setOnClickListener { activity?.openDetail(item.transaction.idTransaction) }
+    inner class DataViewHolder(val view: View): BaseViewHolder<SavingDetails>(view) {
+        override fun bind(item: SavingDetails, position: Int) {
+//            if (item.transaction.visible) {
+//                view.containerCard.layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
+//                view.titleId.text = item.transaction.title
+//                view.dateId.text = "${view.context.getString(R.string.transaction_date)} ${Helpers.dateToStr(item.transaction.transactionDate, DateFormat.LONG)}"
+//            } else
+//                view.containerCard.layoutParams = RelativeLayout.LayoutParams(0, 0)
+//
+//            view.setOnClickListener { activity?.openDetail(item.transaction.idTransaction) }
         }
     }
 

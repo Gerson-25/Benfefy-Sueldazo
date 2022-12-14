@@ -13,6 +13,7 @@ import com.appbenefy.sueldazo.R
 import com.appbenefy.sueldazo.base.BaseActivity
 import com.appbenefy.sueldazo.core.entities.BaseResponse
 import com.appbenefy.sueldazo.ui.benefy.BenefyDetailActivity
+import com.appbenefy.sueldazo.ui.coupon.ui.activities.CouponDetail2Activity
 import com.appbenefy.sueldazo.ui.coupon.ui.activities.RatingActivity
 import com.appbenefy.sueldazo.ui.general.SuccessGiftActivity
 import com.appbenefy.sueldazo.ui.home.HomeActivity
@@ -40,12 +41,12 @@ class NotificationsActivity : BaseActivity(){
         appComponent.inject(this)
         setContentView(R.layout.activity_notifications)
 
-        // Toolbar
-        val myToolbar = findViewById<Toolbar>(R.id.mainToolbar)
-        setSupportActionBar(myToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = resources.getString(R.string.notificaciones_noti)
+//        // Toolbar
+//        val myToolbar = findViewById<Toolbar>(R.id.mainToolbar)
+//        setSupportActionBar(myToolbar)
+//        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar!!.setDisplayShowHomeEnabled(true)
+//        supportActionBar!!.title = resources.getString(R.string.notificaciones_noti)
 
         notificationViewModel = viewModel(viewModelFactory) {
             observe(notification, ::handleNotifications)
@@ -142,7 +143,7 @@ class NotificationsActivity : BaseActivity(){
             when (objectJSON.get("NotificationType").asInt) {
                 3 -> {
                     val productIndex = objectJSON.get("IdPurchasedProductIndex")?.asInt
-                    callIntent<BenefyDetailActivity> {
+                    callIntent<CouponDetail2Activity> {
                         this.putExtra("productId", productIndex)
                     }
                 }

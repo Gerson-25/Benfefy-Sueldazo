@@ -69,7 +69,7 @@ class Helpers {
                     photoFile?.also {
                         photoURI = FileProvider.getUriForFile(
                             context!!,
-                            "com.syntepro.sueldazo.provider",
+                            "com.appbenefy.sueldazo.provider",
                             it
                         )
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)

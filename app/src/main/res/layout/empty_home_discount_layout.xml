@@ -12,26 +12,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_centerInParent="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:background="@drawable/accent_button"
+        android:backgroundTint="@color/gray_tb"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="30dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_sin_cupones"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/ic_empty_coupon"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/worksans_regular"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:text="@string/coupons_list_empty"
             android:textColor="@color/secondaryGray"
-            android:textStyle="normal"
-            android:text="@string/coupons_list_empty"/>
+            android:textStyle="normal" />
 
     </LinearLayout>
 

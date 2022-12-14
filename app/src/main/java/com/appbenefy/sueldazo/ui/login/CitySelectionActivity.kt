@@ -18,6 +18,8 @@ import com.appbenefy.sueldazo.room.database.RoomDataBase
 import com.appbenefy.sueldazo.room.entity.CountryUser
 import com.appbenefy.sueldazo.ui.home.HomeActivity
 import com.appbenefy.sueldazo.ui.home.adapter.CustomAdapter
+import com.appbenefy.sueldazo.utils.Constants
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.activity_country_selection.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -75,6 +77,7 @@ class CitySelectionActivity : AppCompatActivity(), AdapterView.OnItemSelectedLis
         simpleSpinnerCountry.onItemSelectedListener = this
 
         btn_Aceptar.setOnClickListener {
+            Constants.TYPE_OF_USER = UserType.VERIFIED_USER
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }

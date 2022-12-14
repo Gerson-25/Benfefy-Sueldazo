@@ -5,7 +5,7 @@ import com.appbenefy.sueldazo.ui.profile.model.TransactionsByDateDataModel
 
 class TransactionDiff: DiffUtil.ItemCallback<TransactionsByDateDataModel>() {
     override fun areItemsTheSame(oldItem: TransactionsByDateDataModel, newItem: TransactionsByDateDataModel): Boolean {
-        return oldItem.transaction.idTransaction == newItem.transaction.idTransaction
+        return oldItem.transaction == newItem.transaction
     }
 
     override fun areContentsTheSame(oldItem: TransactionsByDateDataModel, newItem: TransactionsByDateDataModel): Boolean {

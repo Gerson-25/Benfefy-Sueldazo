@@ -18,12 +18,16 @@ import com.appbenefy.sueldazo.ui.home.usecase.*
 import com.appbenefy.sueldazo.ui.notifications.model.NotificationCountRequest
 import com.appbenefy.sueldazo.ui.notifications.model.NotificationCountResponse
 import com.appbenefy.sueldazo.ui.notifications.usecase.DoNotificationCount
+import com.appbenefy.sueldazo.ui.profile.model.SavingResumeResponse
+import com.appbenefy.sueldazo.ui.profile.model.TransactionRequest
+import com.appbenefy.sueldazo.ui.profile.usecase.DoSavingsResume
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class HomeViewModel
 @Inject constructor(
+    private val doSavingsResume: DoSavingsResume,
         private val doCategories: DoCategories,
         private val doParameters: DoParameters,
         private val doFavorites: DoFavorites,
@@ -36,6 +40,7 @@ class HomeViewModel
         private val doUserSavings: DoUserSavings
 ) : BaseViewModel() {
 
+    var savingsResume: MutableLiveData<BaseResponse<SavingResumeResponse>> = MutableLiveData()
     val categories: MutableLiveData<BaseResponse<List<Category>>> = MutableLiveData()
     val parameters: MutableLiveData<BaseResponse<ParameterResponse>> = MutableLiveData()
     val favorites: MutableLiveData<BaseResponse<List<FavoriteResponse>>> = MutableLiveData()
@@ -52,6 +57,11 @@ class HomeViewModel
             doCategories(DoCategories.Params(request)) {
                 it.fold(::handleFailure, ::handleCategories)
             }
+
+    fun loadSavingsResume(request: TransactionRequest) =
+        doSavingsResume(DoSavingsResume.Params(request)) {
+            it.fold(::handleFailure, ::handleSavingsResume)
+        }
 
     fun loadParams(request: ParameterRequest) =
             doParameters(DoParameters.Params(request)) {
@@ -101,6 +111,10 @@ class HomeViewModel
 
     private fun handleCategories(response: BaseResponse<List<Category>>) {
         this.categories.value = response
+    }
+
+    private fun handleSavingsResume(response: BaseResponse<SavingResumeResponse>) {
+        this.savingsResume.value = response
     }
 
     private fun handleParameters(response: BaseResponse<ParameterResponse>) {

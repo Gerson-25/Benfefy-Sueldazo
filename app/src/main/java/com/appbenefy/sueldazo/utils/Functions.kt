@@ -48,6 +48,8 @@ import org.json.JSONObject
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.util.*
 
 
@@ -559,6 +561,21 @@ class Functions {
                 "Guatemala" -> "GT"
                 else -> ""
             }
+        }
+
+        fun Double.ToCurrencyFormat(): String{
+            val locale = Locale("es",  "BO")
+            val tw = NumberFormat.getCurrencyInstance(locale)
+            val symbol = (tw as DecimalFormat).decimalFormatSymbols.currencySymbol
+            return "$symbol $this"
+        }
+
+        fun Int.ToCurrencyFormat(): String{
+            val locale = Locale("es",  "BO")
+            val tw = NumberFormat.getCurrencyInstance(locale)
+            val symbol = (tw as DecimalFormat).decimalFormatSymbols.currencySymbol
+
+            return "$symbol $this"
         }
 
     }

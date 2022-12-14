@@ -71,7 +71,7 @@ interface NetworkService2 {
 
     @Headers("Content-Type: application/json", "No-Authentication: true")
     @POST("api/User/SaveAnonymousUser")
-    suspend fun updateAnonymousUser(@Body body: UserUpdateRequest): Response<BaseResponseBoolean>
+    suspend fun updateAnonymousUser(@Body body: UserAnonymousUpdateRequest): Response<BaseResponseBoolean>
 
     @Headers("Content-Type: application/json")
     @POST("api/Purchase/GetPurchasedProductDetail")

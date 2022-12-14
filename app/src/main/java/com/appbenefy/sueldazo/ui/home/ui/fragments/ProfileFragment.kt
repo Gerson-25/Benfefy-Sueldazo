@@ -9,6 +9,7 @@ import com.appbenefy.sueldazo.ui.login.ConditionsActivity
 import com.appbenefy.sueldazo.ui.menu.EditProfileActivity2
 import com.appbenefy.sueldazo.ui.profile.ui.activities.StatisticsActivity
 import com.appbenefy.sueldazo.utils.Constants
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment: BaseFragment() {
@@ -45,6 +46,7 @@ class ProfileFragment: BaseFragment() {
     }
 
     private fun showData() {
+        savingId.visibility = if (Constants.TYPE_OF_USER == UserType.VERIFIED_USER) View.VISIBLE else View.INVISIBLE
         Constants.userProfile?.let {
             val fullName = "${it.names ?: ""} ${it.lastNames ?: ""}"
             name.text = fullName

@@ -12,6 +12,7 @@ import com.appbenefy.sueldazo.ui.coupon.ui.FeaturedCouponDiff
 import com.appbenefy.sueldazo.ui.home.ui.fragments.FavoriteFragment
 import com.appbenefy.sueldazo.utils.Constants
 import com.appbenefy.sueldazo.utils.Functions
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.best_discounts_item.view.*
 import kotlinx.android.synthetic.main.featured_item.view.*
 import kotlinx.android.synthetic.main.featured_item.view.blockedCoupon
@@ -53,8 +54,9 @@ class FeaturedAdapter@Inject constructor() :
             view.titleCouponId.text = model.title
             view.subtitleCouponId.text = model.commerceName
 
-            if (fragment?.showBlocked() == true){
-                view.blockedCoupon.visibility = View.VISIBLE
+            when(Constants.TYPE_OF_USER){
+                UserType.VERIFIED_USER -> view.blockedCoupon.visibility = View.GONE
+                else -> view.blockedCoupon.visibility = View.VISIBLE
             }
 
             when(model.couponType) {
@@ -80,7 +82,13 @@ class FeaturedAdapter@Inject constructor() :
                 }
             }
 
-            view.itemId.setOnClickListener { fragment?.openBestDiscountDetail(model.idCommerce) }
+            view.itemId.setOnClickListener {
+                if (fragment?.showBlocked() == true){
+                    fragment?.notRegisterUser()
+                } else {
+                    fragment?.openBestDiscountDetail(model.idCoupon)
+                }
+            }
             view.favorite.setOnClickListener { fragment?.favorite(model, position) }
         }
     }

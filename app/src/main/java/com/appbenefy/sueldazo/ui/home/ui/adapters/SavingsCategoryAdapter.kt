@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.appbenefy.sueldazo.R
+import com.appbenefy.sueldazo.entity.service.Category
 import com.appbenefy.sueldazo.ui.home.model.FavoriteResponse
 import com.appbenefy.sueldazo.ui.home.model.SavingCategory
 import com.appbenefy.sueldazo.ui.home.ui.FavoriteDiff
@@ -24,7 +25,7 @@ class SavingsCategoryAdapter@Inject constructor() :
 
     fun parentFragment(fragment: HomeFragment) { this.fragment = fragment }
 
-    internal var collection: List<SavingCategory> by Delegates.observable(emptyList()) { _, _, _ ->
+    internal var collection: List<Category> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
     }
 
@@ -40,13 +41,8 @@ class SavingsCategoryAdapter@Inject constructor() :
     }
 
     inner class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-        fun bind(model: SavingCategory) {
-            model.color.let {
-                if (it.isNotEmpty() && it.startsWith("#"))
-                    view.icon.borderColor = Color.parseColor(it)
-            }
-            view.nameId.text = model.categoryName
-
+        fun bind(model: Category) {
+            view.nameId.text = model.name
         }
     }
 

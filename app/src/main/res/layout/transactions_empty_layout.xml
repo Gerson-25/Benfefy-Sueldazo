@@ -8,7 +8,8 @@
     android:layout_gravity="center"
     android:layout_weight="1"
     android:layout_margin="10dp"
-    android:visibility="gone">
+    android:visibility="gone"
+    tools:visibility="visible">
 
     <ImageView
         android:id="@+id/image"
@@ -27,6 +28,7 @@
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
+        android:fontFamily="@font/worksans_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="@font/worksans_regular"
         android:textColor="@color/colorAccent"
         android:textStyle="normal"
         app:layout_constraintTop_toBottomOf="@id/title"

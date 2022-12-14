@@ -1,8 +1,11 @@
 package com.appbenefy.sueldazo.ui.home.ui.fragments
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -18,15 +21,23 @@ import com.appbenefy.sueldazo.R
 import com.appbenefy.sueldazo.core.base.BaseFragment
 import com.appbenefy.sueldazo.core.base.viewModel
 import com.appbenefy.sueldazo.core.entities.BaseResponse
+import com.appbenefy.sueldazo.entity.service.Category
+import com.appbenefy.sueldazo.ui.coupon.ui.activities.CouponDetail2Activity
 import com.appbenefy.sueldazo.ui.home.model.*
 import com.appbenefy.sueldazo.ui.home.ui.adapters.BannerAdapter
 import com.appbenefy.sueldazo.ui.home.ui.adapters.SavingsCategoryAdapter
 import com.appbenefy.sueldazo.ui.home.viewModel.HomeViewModel
 import com.appbenefy.sueldazo.ui.notifications.model.NotificationCountResponse
+import com.appbenefy.sueldazo.ui.profile.model.SavingResume
+import com.appbenefy.sueldazo.ui.profile.model.SavingResumeResponse
+import com.appbenefy.sueldazo.ui.profile.model.TransactionRequest
+import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsActivity
+import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsFilterDialog
 
 import com.appbenefy.sueldazo.utils.Constants
 import com.appbenefy.sueldazo.utils.Functions
 import com.appbenefy.sueldazo.utils.PercentCustomFormatter
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.ArrayList
 import javax.inject.Inject
@@ -49,6 +60,8 @@ class HomeFragment : BaseFragment() {
 
         homeViewModel = viewModel(viewModelFactory) {
             observe(banners, ::handleBanners)
+            observe(savingsResume, ::handleSavingResume)
+            observe(categories, ::handleCategories)
             observe(parameters, ::parametersResponse)
             observe(counter, ::handleCounter)
             observe(states, ::handleStates)
@@ -66,16 +79,35 @@ class HomeFragment : BaseFragment() {
 
         configureRecyclerview()
         getBanners()
-        configPieChart()
+//        configPieChart()
         getCategories()
+        loadTransactions()
+
+        filter.setOnClickListener {
+            openFilter()
+        }
+
+        seeMore.setOnClickListener {
+            openMoreDetails("")
+        }
+
+        when(Constants.TYPE_OF_USER){
+            UserType.VERIFIED_USER -> {
+                registerAccount.visibility = View.GONE
+                savingDetails.visibility = View.VISIBLE
+            }
+            else -> {
+                registerAccount.visibility = View.VISIBLE
+                savingDetails.visibility = View.GONE
+            }
+        }
 
     }
 
-    private fun configPieChart(){
+    private fun configPieChart(list: List<SavingResume>){
         pieChart.setUsePercentValues(true)
         pieChart.description.isEnabled = false
         pieChart.setExtraOffsets(5f, 10f, 5f, 5f)
-
 
         pieChart.dragDecelerationFrictionCoef = 0.95f
 
@@ -114,10 +146,9 @@ class HomeFragment : BaseFragment() {
         // on below line we are creating array list and
         // adding data to it to display in pie chart
         val entries: ArrayList<PieEntry> = ArrayList()
-        entries.add(PieEntry(40f))
-        entries.add(PieEntry(30f))
-        entries.add(PieEntry(20f))
-        entries.add(PieEntry(10f))
+        list.forEach {
+            entries.add(PieEntry(it.porcentajeAhorro.toFloat()))
+        }
 
         // on below line we are setting pie data set
         val dataSet = PieDataSet(entries, "Mobile OS")
@@ -136,6 +167,8 @@ class HomeFragment : BaseFragment() {
         colors.add(resources.getColor(R.color.chart_color_2))
         colors.add(resources.getColor(R.color.chart_color_3))
         colors.add(resources.getColor(R.color.chart_color_4))
+        colors.add(resources.getColor(R.color.colorAccent))
+        colors.add(resources.getColor(R.color.colorPrimary))
 
         // on below line we are setting colors.
         dataSet.colors = colors
@@ -181,14 +214,23 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun getCategories(){
-        val list = listOf(
-            SavingCategory(categoryName = "Salud", color = "#F29849"),
-            SavingCategory(categoryName = "Mascotas", color = "#07C4D9"),
-            SavingCategory(categoryName = "Comida", color = "#9A8DF2"),
-            SavingCategory(categoryName = "Hogar", color = "#F266CD")
+        val request = CategoryRequest(
+            country = "BO",
+            language = 1,
+            filterType = 1
         )
-        savingsCategoryAdapter.collection = list
-        savingsCategoryAdapter.notifyDataSetChanged()
+        homeViewModel.loadCategories(request)
+    }
+
+    private fun loadTransactions() {
+        val request = TransactionRequest(
+            country = Constants.userProfile?.actualCountry ?: "BO",
+            language = Functions.getLanguage(),
+            recordsNumber = Constants.LIST_PAGE_SIZE,
+            pageNumber = 1,
+            idUser = Constants.userProfile?.idUser ?: ""
+        )
+        homeViewModel.loadSavingsResume(request)
     }
 
     private fun getBanners() {
@@ -208,6 +250,17 @@ class HomeFragment : BaseFragment() {
         }
     }
 
+    private fun handleCategories(categories: BaseResponse<List<Category>>?) {
+        categories?.data?.let {
+            savingsCategoryAdapter.collection = it
+            savingsCategoryAdapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun handleSavingResume(savingsResume: BaseResponse<SavingResumeResponse>?) {
+        configPieChart(savingsResume?.data?.detalle ?: listOf())
+    }
+
     private fun parametersResponse(response: BaseResponse<ParameterResponse>?) {
         response?.data?.let {
             Constants.sudamericanaParameters = it.SUDAMERICANA_PARAMETROS
@@ -221,6 +274,23 @@ class HomeFragment : BaseFragment() {
 
     private fun handleStates(response: BaseResponse<List<StatesResponse>>?) {
         Constants.countryStates = response?.data?.toMutableList()
+    }
+
+    fun openFilter() {
+        val intent = Intent(requireContext(), TransactionsFilterDialog::class.java)
+        intent.putExtra("screen", 0)
+        startActivityForResult(intent, 1)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK){
+            Log.d("", "")
+        }
+    }
+
+    fun openMoreDetails(idCommerce: String) {
+        val intent = Intent(requireContext(), TransactionsActivity::class.java)
+        startActivity(intent)
     }
 
     fun openBanner(item: Any) {

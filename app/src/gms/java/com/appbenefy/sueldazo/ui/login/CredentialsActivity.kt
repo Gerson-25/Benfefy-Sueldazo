@@ -3,6 +3,7 @@ package com.appbenefy.sueldazo.ui.login
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -41,6 +42,11 @@ class CredentialsActivity : AppCompatActivity() {
     var documentoId = ""
     var isBenefyClient = false
     val STRING_LENGTH = 10;
+    var names: String? = null
+    var lastNames: String? = null
+    var dateBirth: String? = null
+    var email: String?  = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,12 +61,20 @@ class CredentialsActivity : AppCompatActivity() {
                 validarDocumento {
                     isBenefyClient = it?.isClientBenefy ?: false
                     if (it?.isValidClient == true){
+                        names = it.names
+                        lastNames = it.lastNames
+                        dateBirth = it.dateBirth
+                        email = it.email
                         if (it.sendToken){
                             val intent = Intent(applicationContext, OTPValidationActivity::class.java)
                             intent.putExtra("documentId", documentoId)
                             intent.putExtra("token", it.token)
                             intent.putExtra("isBenefyClient", isBenefyClient)
                             intent.putExtra("cellPhone", it.cellPhone)
+                            intent.putExtra("names", it.names)
+                            intent.putExtra("lastNames", it.lastNames)
+                            intent.putExtra("dateBirth", it.dateBirth)
+                            intent.putExtra("email", it.email)
                             intent.putExtra("idClient", it.idClient)
                             startActivity(intent)
                         } else {
@@ -80,19 +94,22 @@ class CredentialsActivity : AppCompatActivity() {
         }
 
         visit.setOnClickListener {
-            setAnonymousData()
-            Constants.TYPE_OF_USER = UserType.VERIFIED_USER
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("isAnonymousUser", true)
-            startActivity(intent)
+            showLoading(true)
+            Handler().postDelayed({
+                showLoading(false)
+                setAnonymousData()
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("isAnonymousUser", true)
+                startActivity(intent)
+            }, 3000)
         }
 
     }
 
     private fun setAnonymousData() {
         val userProfile = with(User()){
-            idDocument = getRandomString()
-            idUser = "C885394C-EB7B-464D-7B59-08DA6432E51A"
+//            idUser = getRandomString()
+            idUser = "AC92E678-F7A2-4C59-46C9-08DAC917FFFC"
             isAnonymousUser = true
             this
         }
@@ -128,6 +145,10 @@ class CredentialsActivity : AppCompatActivity() {
                                 intent.putExtra("token", it)
                                 intent.putExtra("isBenefyClient", isBenefyClient)
                                 intent.putExtra("cellPhone", ret.data?.cellPhone)
+                                intent.putExtra("names", names)
+                                intent.putExtra("lastNames", lastNames)
+                                intent.putExtra("dateBirth", dateBirth)
+                                intent.putExtra("email", email)
                                 intent.putExtra("idClient", idClient)
                                 startActivity(intent)
                             }

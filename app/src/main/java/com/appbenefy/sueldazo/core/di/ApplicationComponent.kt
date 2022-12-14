@@ -36,6 +36,7 @@ import com.appbenefy.sueldazo.ui.home.ui.fragments.HomeFragment
 import com.appbenefy.sueldazo.ui.notifications.ui.activities.NotificationsActivity
 import com.appbenefy.sueldazo.ui.profile.ui.activities.StatisticsActivity
 import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsActivity
+import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsFilterDialog
 import com.appbenefy.sueldazo.ui.profile.ui.activities.TransactionsInfoDialog
 import dagger.Component
 import javax.inject.Singleton
@@ -66,4 +67,5 @@ interface ApplicationComponent {
     fun inject(benefyFragment: BenefyFragment)
     fun inject(transactionsActivity: TransactionsActivity)
     fun inject(transactionsInfoDialog: TransactionsInfoDialog)
+    fun inject(transactionsFilterDialog: TransactionsFilterDialog)
 }

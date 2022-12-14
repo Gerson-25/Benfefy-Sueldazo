@@ -27,6 +27,7 @@ import com.appbenefy.sueldazo.service.NetworkService2
 import com.appbenefy.sueldazo.service.RetrofitClientInstance
 import com.appbenefy.sueldazo.utils.Constants
 import com.appbenefy.sueldazo.utils.Functions
+import com.appbenefy.sueldazo.utils.Functions.Companion.showError
 import com.appbenefy.sueldazo.utils.Helpers
 import com.appbenefy.sueldazo.utils.UserType
 import com.theartofdev.edmodo.cropper.CropImage
@@ -64,7 +65,7 @@ class EditProfileActivity2 : BaseActivity(){
     private var mDateSelected: Date? = Date()
     private var currentImage: String? = null
     private var selectedCountry: String? = null
-    val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+    val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
     var userId: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -230,7 +231,7 @@ class EditProfileActivity2 : BaseActivity(){
                 dateField.setText(Helpers.dateToStr(mDateSelected ?: Date(), DateFormat.DATE_FIELD))
             }
             edt_email.setText(it.email)
-            userId = it.idDocument ?: ""
+            userId = it.idUser ?: ""
         }
     }
 
@@ -267,15 +268,19 @@ class EditProfileActivity2 : BaseActivity(){
                         filePath.downloadUrl.addOnSuccessListener { uri ->
                             thumbRef.downloadUrl.addOnSuccessListener { uri2 ->
                                 if (Constants.TYPE_OF_USER == UserType.ANONYMOUSE_USER){
-                                    savePersistentData(uri.toString())
-                                    Handler().postDelayed({
-                                        this.finish()
-                                    }, 3000)
-                                    loading(false)
+                                    saveAnonymousDataWS(uri.toString(), "") {
+                                        if (it){
+                                            savePersistentData(uri.toString())
+                                            this.finish()
+                                            loading(false)
+                                        } else showError(this, getString(R.string.error_inesperado), getString(R.string.editar_perfil))
+                                    }
                                 } else {
                                     saveDataWS(uri.toString(), uri2.toString()) {
-                                        if (it) this.finish()
-                                        else showError()
+                                        if (it) {
+                                            savePersistentData(uri.toString())
+                                            this.finish()
+                                        } else showError(this, getString(R.string.error_inesperado), getString(R.string.editar_perfil))
                                     }
                                 }
                             }
@@ -283,25 +288,29 @@ class EditProfileActivity2 : BaseActivity(){
                     }
                 } catch (e: IOException) {
                     loading(false)
-                    showError()
+                    showError(this, e.message, getString(R.string.editar_perfil))
                     Log.e("Error", "${e.message}")
                 }
             }.addOnFailureListener { e ->
                 loading(false)
-                showError()
+                showError(this, e.message, getString(R.string.editar_perfil))
                 Log.e("Error", "${e.message}")
             }
         } else {
             if (Constants.TYPE_OF_USER == UserType.ANONYMOUSE_USER){
-                savePersistentData(currentImage)
-                Handler().postDelayed({
-                    this.finish()
-                }, 3000)
-                loading(false)
+                saveAnonymousDataWS(currentImage, "") {
+                    if (it){
+                        savePersistentData(currentImage)
+                        this.finish()
+                        loading(false)
+                    } else showError(this, getString(R.string.error_inesperado), getString(R.string.editar_perfil))
+                }
             } else {
                 saveDataWS(currentImage, null) {
-                    if (it) this.finish()
-                    else showError()
+                    if (it) {
+                        savePersistentData(currentImage)
+                        this.finish()
+                    } else showError(this, getString(R.string.error_inesperado), getString(R.string.editar_perfil))
                 }
             }
         }
@@ -326,6 +335,7 @@ class EditProfileActivity2 : BaseActivity(){
             birthDate = format.format(mDateSelected ?: Date())
             gender = sp_genero.selectedItem.toString()
             martialStatus = sp_estado.selectedItem.toString()
+            email = edt_email.text.toString()
             this
         }
         val apiServe = RetrofitClientInstance.getClient(Constants.BASE_URL_MICROSUELDAZO)
@@ -341,7 +351,7 @@ class EditProfileActivity2 : BaseActivity(){
                         savePersistentData(pictureName)
                         completion(true)
                     } else {
-                        showError()
+                        showError(this@EditProfileActivity2, ret.message(), getString(R.string.editar_perfil))
                         completion(false)
                         loading(false)
                         Toast.makeText(
@@ -352,7 +362,55 @@ class EditProfileActivity2 : BaseActivity(){
                         ).show()
                     }
                 } else {
-                    showError()
+                    showError(this@EditProfileActivity2, ret.message(), getString(R.string.editar_perfil))
+                    loading(false)
+                    completion(false)
+                    Toast.makeText(this@EditProfileActivity2, ret.message(), Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                completion(false)
+                loading(false)
+                Toast.makeText(this@EditProfileActivity2, "Ocurrió un error.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun saveAnonymousDataWS(pictureName: String?, thumbName: String?, completion: (Boolean) -> Unit) {
+        val request = with(UserAnonymousUpdateRequest()) {
+            country = Constants.userProfile?.actualCountry ?: "BO"
+            language = 1
+            idUser = Constants.userProfile?.idUser
+            photoUrl = pictureName ?: Constants.PROFILE_IMAGE
+            names = nameField.text.toString()
+            lastNames = lastNameField.text.toString()
+            email = edt_email.text.toString()
+            this
+        }
+        val apiServe = RetrofitClientInstance.getClient(Constants.BASE_URL_MICROSUELDAZO)
+        val inst = apiServe.create(NetworkService2::class.java)
+        val job = Job()
+        val scopeMainThread = CoroutineScope(job + Dispatchers.Main)
+        scopeMainThread.launch {
+            try {
+                val ret = inst.updateAnonymousUser(request)
+                if (ret.isSuccessful) {
+                    val response: BaseResponseBoolean = ret.body()!!
+                    if (response.isSuccess) {
+                        savePersistentData(pictureName)
+                        completion(true)
+                    } else {
+                        showError(this@EditProfileActivity2, ret.message(), getString(R.string.editar_perfil))
+                        completion(false)
+                        loading(false)
+                        Toast.makeText(
+                            this@EditProfileActivity2,
+                            response.description
+                                ?: "",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } else {
+                    showError(this@EditProfileActivity2, ret.message(), getString(R.string.editar_perfil))
                     loading(false)
                     completion(false)
                     Toast.makeText(this@EditProfileActivity2, ret.message(), Toast.LENGTH_SHORT).show()
@@ -394,7 +452,5 @@ class EditProfileActivity2 : BaseActivity(){
         save.visibility = if (loading) View.GONE else View.VISIBLE
     }
 
-    private fun showError() {
-        save?.text = getString(R.string.accept)
-    }
+
 }

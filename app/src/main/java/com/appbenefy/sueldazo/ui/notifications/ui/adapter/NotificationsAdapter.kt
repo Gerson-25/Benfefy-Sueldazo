@@ -49,6 +49,12 @@ class NotificationsAdapter @Inject constructor() :
             view.title.text = model.title
             view.description.text = model.subtitle
 
+            view.seeCoupon.visibility = if (model.idNotificationType == 3) View.VISIBLE else View.GONE
+            view.seeCoupon.setOnClickListener {
+                activity?.readNotification(model.idNotificationPush)
+                activity?.openNotification(model.payload)
+            }
+
             view.setOnClickListener {
                 if (!model.read) {
                     activity?.readNotification(model.idNotificationPush)

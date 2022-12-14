@@ -11,7 +11,7 @@ import com.appbenefy.sueldazo.entity.service.Category
 import com.appbenefy.sueldazo.utils.Functions
 import kotlinx.android.synthetic.main.category_item.view.*
 
-class CategoryAdapter(val type: Int, val adapterOnClick : (Any) -> Unit):
+class CategoryAdapter(val type: Int, val adapterOnClick : (Category) -> Unit):
         RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private var dataList = mutableListOf<Category>()
@@ -43,15 +43,15 @@ class CategoryAdapter(val type: Int, val adapterOnClick : (Any) -> Unit):
             Functions.showImage(model.urlImage, itemView.imageCategoryId)
             itemView.nameId.text = model.name
 
-//            itemView.itemId.setOnClickListener {
-//                adapterOnClick(model)
+            itemView.itemId.setOnClickListener {
+                adapterOnClick(model)
 //                if(lastItem != adapterPosition) {
 //                    uncheckCard(lastMaterialCard)
 //                    markCurrent(itemView.itemId)
 //                }
 //                lastItem = adapterPosition
 //                lastMaterialCard = itemView.itemId
-//            }
+            }
 
 //            if(lastItem == adapterPosition) {
 //                markCurrent(itemView.itemId)

@@ -7,27 +7,29 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:backgroundTint="@color/gray_tb"
+    android:paddingBottom="15dp"
     android:background="@drawable/accent_button">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="4dp">
 
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_gravity="end"
             card:layout_constraintEnd_toEndOf="parent"
             card:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_baseline_close_24"/>
+            android:src="@drawable/ic_exit"/>
 
         <TextView
             android:id="@+id/title"
             style="@style/TextAppearance.AppCompat"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
             android:ellipsize="end"
             android:layout_marginEnd="35dp"
             android:fontFamily="@font/worksans_regular"
@@ -42,22 +44,37 @@
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginEnd="35dp"
             android:ellipsize="end"
             android:fontFamily="@font/worksans_regular"
             android:textColor="@color/colorAccent"
-            android:layout_marginBottom="15dp"
             android:textSize="14sp"
-            card:layout_constraintBottom_toBottomOf="parent"
             card:layout_constraintEnd_toEndOf="parent"
             card:layout_constraintStart_toStartOf="parent"
             card:layout_constraintTop_toBottomOf="@id/title"
             tools:text="Acabas de canjear el cupon xxxxxxx. Tu ahorro para esta compra es de $xx.xx" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/seeCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/accent_button"
+            android:layout_marginStart="35dp"
+            android:text="ver beneficio"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="@font/worksans_regular"
+            android:layout_marginTop="@dimen/base_margin"
+            card:layout_constraintBottom_toBottomOf="parent"
+            card:layout_constraintStart_toStartOf="parent"
+            card:layout_constraintTop_toBottomOf="@+id/description" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -54,41 +54,13 @@
             android:excludeFromRecents="true"
             android:theme="@style/LoginTheme" />
         <activity
-            android:name=".ui.shop.ui.activities.CardInformationActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.InvoiceActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.DeliveryInformationActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
-            android:name=".ui.shop.ui.activities.CouponGiftDetailActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
-            android:name=".ui.shop.ui.activities.SuccessGiftUserActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.GiftDetailActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
             android:name=".ui.general.SuccessGiftActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.GiftCouponInformationActivity"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
         <activity
             android:name=".ui.coupon.ui.activities.BestDiscountListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.coupon.ui.activities.CouponListActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.sudamericana.ui.activities.SurveyActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.commerce.ui.activities.CommerceList2Activity"
@@ -118,13 +90,6 @@
             android:name=".ui.commerce.ui.activities.Commerce2Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.wallet.MilesGoalsInfoDialog"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
-            android:name=".ui.shop.ui.activities.SuccessPaymentActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.agency.ui.activities.AgencyActivity2"
             android:screenOrientation="portrait" />
         <activity
@@ -150,15 +115,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/ConditionsTheme"/>
         <activity
-            android:name=".ui.shop.ui.activities.PaymentOrderActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.ShopDetailActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.shop.ui.activities.ShopActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -172,6 +128,14 @@
         <activity
             android:name=".ui.coupon.QRDetailActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.profile.ui.activities.TransactionsFilterDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/simpleDialog"/>
+        <activity
+            android:name=".ui.home.ui.dialog.NotRegisterDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/simpleDialog"/>
         <activity
             android:name=".ui.coupon.QRAmountActivity"
             android:excludeFromRecents="true"
@@ -278,14 +242,7 @@
         <activity
             android:name=".ui.login.ResetPasswordActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.wallet.StampCardInfoDialog"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" />
-        <activity
-            android:name=".ui.wallet.StampInfoDialog"
-            android:excludeFromRecents="true"
-            android:theme="@style/simpleDialog" /> <!-- <activity -->
+        <!-- <activity -->
         <!-- android:name=".ui.MainActivity" -->
         <!-- android:adjustViewBounds="true" -->
         <!-- android:screenOrientation="portrait" -->
@@ -309,9 +266,9 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/Base.Theme.AppCompat" /> <!-- START Location Service -->
-        <service
-            android:name=".service.GPS_Service"
-            android:exported="false" /> <!-- END Location Service -->
+<!--        <service-->
+<!--            android:name=".service.GPS_Service"-->
+<!--            android:exported="false" /> &lt;!&ndash; END Location Service &ndash;&gt;-->
         <!-- &lt;!&ndash; START Notification Service &ndash;&gt; -->
         <!-- <service -->
         <!-- android:name=".service.Notification_Service" -->

@@ -62,6 +62,7 @@ import com.appbenefy.sueldazo.utils.Constants
 import com.appbenefy.sueldazo.utils.Functions
 import com.appbenefy.sueldazo.utils.Functions.Companion.userCountry
 import com.appbenefy.sueldazo.utils.Functions.Companion.userTimeZone
+import com.appbenefy.sueldazo.utils.UserType
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.coroutines.*
@@ -114,6 +115,7 @@ class HomeActivity : AppCompatActivity() {
             .getDynamicLink(intent)
             .addOnSuccessListener(this) { pendingDynamicLinkData: PendingDynamicLinkData? ->
                 // Get deep link from result (may be null if no link is found)
+                if (Constants.TYPE_OF_USER == UserType.ANONYMOUSE_USER) return@addOnSuccessListener
                 if (pendingDynamicLinkData != null) {
                     analytics = FirebaseAnalytics.getInstance(this@HomeActivity)
                     val deepLink = pendingDynamicLinkData.link
@@ -149,7 +151,7 @@ class HomeActivity : AppCompatActivity() {
             }.addOnFailureListener(this) { e: java.lang.Exception? -> Log.w("Dynamic Link", "getDynamicLink:onFailure", e) }
 
         // GPS Permission
-        if (!runtimePermissions()) enableService()
+//        if (!runtimePermissions()) enableService()
 
         // Abel Acosta
         initNavigation()
@@ -226,7 +228,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 100) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) enableService()
+//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) enableService()
         }
     }
 
@@ -253,38 +255,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Web Service Functions
-     */
-    private fun updateUserCountry(newCountry: String?) {
-        val request = with(UpdateActualCountryRequest()) {
-            country = Constants.userProfile?.country
-            language = 1
-            idUser = Constants.userProfile?.idUser
-            idUserFirebase = Constants.userProfile?.idUserFirebase
-            actualCountry = newCountry
-            this
-        }
-        val job = Job()
-        val scopeMainThread = CoroutineScope(job + Dispatchers.Main)
-        val apiService = RetrofitClientInstance.getClient(Constants.BASE_URL_MICRO2).create(NetworkService2::class.java)
-        scopeMainThread.launch {
-            try {
-                val response = apiService.updateActualCountry(request)
-                when {
-                    response.isSuccessful -> {
-                        val ret = response.body()!!
-                        if (ret.isSuccess) Log.e("Update", "Success")
-                        else Log.e("Error", "${ret.code}")
-                    }
-                    else -> { Log.e("Error", "${response.message()} - ${response.errorBody()}") }
-                }
-            } catch (e: Exception) {
-                Log.e("Exception", e.message ?: e.cause?.message ?: e.cause.toString())
-            }
-        }
-    }
-
 
     private fun runtimePermissions(): Boolean {
         return Build.VERSION.SDK_INT >= 23 && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -307,7 +277,6 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    // Abel Acosta
     @RequiresApi(Build.VERSION_CODES.M)
     private fun initNavigation() {
         navController = findNavController(R.id.nav_host_fragment)
@@ -321,7 +290,7 @@ class HomeActivity : AppCompatActivity() {
 
         if (Constants.userProfile?.actualCountry == "BO") {
             try {
-                navController.navigate(R.id.nav_benfy)
+                navController.navigate(R.id.nav_home)
             } catch (e: Exception) { Log.e("Exception", e.printStackTrace().toString()) }
         }
 

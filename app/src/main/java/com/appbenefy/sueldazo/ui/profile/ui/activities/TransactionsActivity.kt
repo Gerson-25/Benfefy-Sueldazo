@@ -1,5 +1,6 @@
 package com.appbenefy.sueldazo.ui.profile.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
@@ -11,9 +12,7 @@ import com.merckers.core.extension.observe
 import com.appbenefy.sueldazo.R
 import com.appbenefy.sueldazo.base.BaseActivity
 import com.appbenefy.sueldazo.core.entities.BaseResponse
-import com.appbenefy.sueldazo.ui.profile.model.TransactionRequest
-import com.appbenefy.sueldazo.ui.profile.model.TransactionResponse
-import com.appbenefy.sueldazo.ui.profile.model.TransactionsByDateDataModel
+import com.appbenefy.sueldazo.ui.profile.model.*
 import com.appbenefy.sueldazo.ui.profile.ui.adapters.TransactionsAdapter
 import com.appbenefy.sueldazo.ui.profile.viewModel.ProfileViewModel
 import com.appbenefy.sueldazo.utils.Constants
@@ -30,7 +29,7 @@ class TransactionsActivity : BaseActivity(), BottomNavigationDrawerFragment.Bott
     @Inject
     lateinit var transactionsAdapter: TransactionsAdapter
     private lateinit var profileViewModel: ProfileViewModel
-    private var transactionOriginalList: MutableList<TransactionResponse> = mutableListOf()
+    private var transactionOriginalList: MutableList<SavingDetails> = mutableListOf()
     private var page: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,21 +37,13 @@ class TransactionsActivity : BaseActivity(), BottomNavigationDrawerFragment.Bott
         appComponent.inject(this)
         setContentView(R.layout.activity_transactions)
 
-        // Toolbar
-        val myToolbar = findViewById<View>(R.id.mainToolbar) as Toolbar
-        setSupportActionBar(myToolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        supportActionBar!!.title = getString(R.string.mis_transacciones)
-
         profileViewModel = viewModel(viewModelFactory) {
             observe(userTransactions, ::handleTransactions)
             failure(failure, ::handleError)
         }
 
         filterId.setOnClickListener{
-            val bottomNavigationDrawerFragment = BottomNavigationDrawerFragment()
-            bottomNavigationDrawerFragment.show(supportFragmentManager, bottomNavigationDrawerFragment.tag)
+            openFilter()
         }
 
         swipeRefreshLayout.setDistanceToTriggerSync(300)
@@ -109,35 +100,41 @@ class TransactionsActivity : BaseActivity(), BottomNavigationDrawerFragment.Bott
         profileViewModel.getUserTransactions(request)
     }
 
-    private fun handleTransactions(response: BaseResponse<List<TransactionResponse>>?) {
+    private fun handleTransactions(response: BaseResponse<SavingDetailsResponse>?) {
         showProgress(false)
         response?.data?.let {
             if (page > 1) {
-                val temp = transactionOriginalList
-                val full = merge(temp, it)
+                val temp = transactionOriginalList.toList()
+                val full = merge(temp, it.detalle)
                 transactionOriginalList = full.toMutableList()
-                transactionsAdapter.collection = getTransactionModel(full)
+                transactionsAdapter.collection = it.detalle
             } else {
-                if (it.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionOriginalList = it.toMutableList()
-                transactionsAdapter.collection = getTransactionModel(it)
+                if (it.detalle.isEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+                transactionOriginalList = it.detalle.toMutableList()
+                transactionsAdapter.collection = it.detalle
             }
         } ?: run { showEmptyLayout(true) }
     }
 
-    fun collapseMonth(month: Int, year: Int) {
-        try {
-            val temp = transactionOriginalList
-            temp.forEachIndexed { index, transactionResponse ->
-                transactionResponse.takeIf { ot -> getMonth(ot.transactionDate) == month && getYear(ot.transactionDate) == year }?.let {
-                    transactionOriginalList[index] = it.copy(visible = !it.visible)
-                }
-            }
-            transactionsAdapter.collection = getTransactionModel(temp)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+    fun openFilter() {
+        val intent = Intent(this, TransactionsFilterDialog::class.java)
+        intent.putExtra("screen", 1)
+        startActivityForResult(intent, 1)
     }
+
+//    fun collapseMonth(month: Int, year: Int) {
+//        try {
+//            val temp = transactionOriginalList
+//            temp.forEachIndexed { index, transactionResponse: SavingDetails ->
+//                transactionResponse.takeIf { ot -> getMonth(ot.transactionDate) == month && getYear(ot.transactionDate) == year }?.let {
+//                    transactionOriginalList[index] = it.copy(visible = !it.visible)
+//                }
+//            }
+//            transactionsAdapter.collection = getTransactionModel(temp)
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//    }
 
     fun openDetail(id: String?) {
         id?.let {
@@ -147,30 +144,30 @@ class TransactionsActivity : BaseActivity(), BottomNavigationDrawerFragment.Bott
         }
     }
 
-    private fun getTransactionModel(it: List<TransactionResponse>): MutableList<TransactionsByDateDataModel> {
-        val dataModel: MutableList<TransactionsByDateDataModel> = mutableListOf()
-        var lastMonthEvaluate = 0
-        for (t in it) {
-            val actualMonth = getMonth(t.transactionDate) + 1
-            if (lastMonthEvaluate != actualMonth) {
-                lastMonthEvaluate = actualMonth
-                val dateDataModel = TransactionsByDateDataModel()
-                dateDataModel.type = 1
-                dateDataModel.month = "${getMonthName(lastMonthEvaluate)} ${getYear(t.transactionDate)}"
-                dateDataModel.numberMonth = actualMonth - 1
-                dateDataModel.year = getYear(t.transactionDate)
-                dataModel.add(dateDataModel)
-                val transactionMonth = it.filter { trs -> getMonth(trs.transactionDate) == getMonth(t.transactionDate) }
-                for (tm in transactionMonth) {
-                    val transactionDataModel = TransactionsByDateDataModel()
-                    transactionDataModel.type = 2
-                    transactionDataModel.transaction = tm
-                    dataModel.add(transactionDataModel)
-                }
-            }
-        }
-        return dataModel
-    }
+//    private fun getTransactionModel(it: List<SavingDetailsResponse>): MutableList<TransactionsByDateDataModel> {
+//        val dataModel: MutableList<TransactionsByDateDataModel> = mutableListOf()
+//        var lastMonthEvaluate = 0
+//        for (t in it) {
+//            val actualMonth = getMonth(t.transactionDate) + 1
+//            if (lastMonthEvaluate != actualMonth) {
+//                lastMonthEvaluate = actualMonth
+//                val dateDataModel = TransactionsByDateDataModel()
+//                dateDataModel.type = 1
+//                dateDataModel.month = "${getMonthName(lastMonthEvaluate)} ${getYear(t.transactionDate)}"
+//                dateDataModel.numberMonth = actualMonth - 1
+//                dateDataModel.year = getYear(t.transactionDate)
+//                dataModel.add(dateDataModel)
+//                val transactionMonth = it.filter { trs -> getMonth(trs.transactionDate) == getMonth(t.transactionDate) }
+//                for (tm in transactionMonth) {
+//                    val transactionDataModel = TransactionsByDateDataModel()
+//                    transactionDataModel.type = 2
+//                    transactionDataModel.transaction = tm
+//                    dataModel.add(transactionDataModel)
+//                }
+//            }
+//        }
+//        return dataModel
+//    }
 
     private fun <T> merge(first: List<T>, second: List<T>): List<T> {
         val list: MutableList<T> = ArrayList(first)
@@ -209,72 +206,72 @@ class TransactionsActivity : BaseActivity(), BottomNavigationDrawerFragment.Bott
     }
 
     override fun onOptionsClick(id: Int) {
-        when(id) {
-            R.id.all_nav -> {
-                if (transactionOriginalList.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(transactionOriginalList)
-            }
-
-            R.id.exchange_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_COUPON }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.plusMiles_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == MILES }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.plusLoyalty_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == SEALS }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.miles_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_MILES }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.loyaltyCards_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_LOYALTY }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.addLoyalty_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == LINK_LOYALTY_PLAN }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.deleteLoyalty_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == UNLINK_LOYALTY }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.blockingLoyalty_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == BLOCKING_LOYALTY }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.giftedArticle_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == GIFTED_ARTICLES }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-
-            R.id.myArticleGift_nav -> {
-                val filter = transactionOriginalList.filter { o -> o.idTransactionType == MY_GIFT }
-                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
-                transactionsAdapter.collection = getTransactionModel(filter)
-            }
-        }
+//        when(id) {
+//            R.id.all_nav -> {
+//                if (transactionOriginalList.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(transactionOriginalList)
+//            }
+//
+//            R.id.exchange_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_COUPON }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.plusMiles_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == MILES }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.plusLoyalty_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == SEALS }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.miles_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_MILES }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.loyaltyCards_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == EXCHANGE_LOYALTY }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.addLoyalty_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == LINK_LOYALTY_PLAN }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.deleteLoyalty_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == UNLINK_LOYALTY }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.blockingLoyalty_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == BLOCKING_LOYALTY }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.giftedArticle_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == GIFTED_ARTICLES }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//
+//            R.id.myArticleGift_nav -> {
+//                val filter = transactionOriginalList.filter { o -> o.idTransactionType == MY_GIFT }
+//                if (filter.isNullOrEmpty()) showEmptyLayout(true) else showEmptyLayout(false)
+//                transactionsAdapter.collection = getTransactionModel(filter)
+//            }
+//        }
     }
 
 }

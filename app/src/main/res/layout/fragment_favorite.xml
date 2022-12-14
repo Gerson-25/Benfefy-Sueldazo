@@ -107,6 +107,18 @@
                         android:textSize="12sp" />
 
                     <ImageView
+                        android:id="@+id/search"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical"
+                        android:clickable="true"
+                        android:contentDescription="@string/location_label"
+                        android:focusable="true"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/colorPrimary" />
+
+                    <ImageView
                         android:id="@+id/sortBy"
                         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                         android:layout_width="35dp"
@@ -127,6 +139,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/featuredCoupons">
+
+                    <ProgressBar
+                        android:id="@+id/loadingFeatures"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"/>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/featuredCouponListId"
@@ -167,12 +185,19 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/discountCoupons">
 
+                    <ProgressBar
+                        android:id="@+id/loadingBenefits"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"/>
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/CouponListId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clipToPadding="true"
                         tools:listitem="@layout/best_discounts_item" />
+
 
                     <include layout="@layout/empty_home_discount_layout" />
 
